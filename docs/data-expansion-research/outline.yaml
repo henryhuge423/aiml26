@@ -1,0 +1,13 @@
+topic: 青光眼眼底图像数据扩展与筛查比例
+items:
+  - AIROGS full training
+  - JustRAIGS
+  - LAG
+  - REFUGE and REFUGE2
+  - PAPILA
+  - Chaksu
+  - Existing EyeQ ODIR ACRIMA HYGD
+execution:
+  batch_size: 3
+  items_per_agent: 1
+  output_dir: ./results

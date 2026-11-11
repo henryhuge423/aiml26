@@ -1,0 +1,22 @@
+{
+  "purpose": "research_training",
+  "task": "quality",
+  "architecture": "efficientnet_b0",
+  "manifest": "data/prepared/eyeq_quality_v1/manifest.csv",
+  "release": "data/prepared/eyeq_quality_v1/release.json",
+  "teacher_cache": "data/prepared/eyeq_quality_v1/teacher_scores.csv",
+  "run_dir": "runs/eyeq_quality_v1/quality_student",
+  "image_size": 384,
+  "batch_size": 16,
+  "epochs": 20,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "gradient_clip": 5.0,
+  "ordinal_weight": 0.05,
+  "seed": 20261109,
+  "device": "cuda",
+  "amp": true,
+  "checkpoint_every": 100,
+  "num_workers": 4,
+  "prefetch_factor": 2
+}

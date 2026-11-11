@@ -1,0 +1,26 @@
+{
+  "slides": 5,
+  "words_per_slide": [
+    97,
+    90,
+    100,
+    100,
+    107
+  ],
+  "total_spoken_words": 494,
+  "spoken_seconds_at_120_wpm": 247,
+  "original_sha256": "a4f43c0bfed193a076f19f03468d0418b506e955a6078f7259a8920605f39c69",
+  "original_unchanged": true,
+  "bounds_issues": [],
+  "visual_review": "Reviewed rendered five slides and eight PDF pages; no clipping or overlap found",
+  "powerpoint_text_overflow_count": 0,
+  "ooxml_validation": "All validations PASSED",
+  "dataset_pages": 8,
+  "candidate_counts_verified": true,
+  "current_scope": "Review-budget image ranking; compute allocation extension",
+  "files": {
+    "team_project\\Eye_Sentinel_Project_Proposal_v3.pptx": "cf6a6d9d6f1a0ea8dbf1639588bd505f863016397720e267576c6e2389ecfd20",
+    "team_project\\Eye_Sentinel_Dataset_Introduction.pdf": "6cc243cb6ef36da1e72b041ba0b037ebc7c9dc3737d5938cea5b413571472134",
+    "team_project\\Eye_Sentinel_Dataset_Introduction.md": "5bf783855776948d77cd6474f1fd10106489b312f8c2fe8b85f067726a706344"
+  }
+}

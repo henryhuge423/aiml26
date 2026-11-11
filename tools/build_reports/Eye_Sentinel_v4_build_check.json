@@ -1,0 +1,24 @@
+{
+  "slides": 5,
+  "script_words": [
+    103,
+    102,
+    106,
+    110,
+    109
+  ],
+  "source_v3_unchanged": true,
+  "bounds_issues": [],
+  "dataset_pages": 6,
+  "powerpoint_text_overflow_count": 0,
+  "ooxml_validation": "All validations PASSED",
+  "visual_review": "Reviewed five rendered slides and six PDF pages after language revision",
+  "script_words_total": 530,
+  "script_minutes_at_120_wpm": 4.4,
+  "files": {
+    "Eye_Sentinel_Project_Proposal_v4.pptx": "ae946e7dfa1c0b643c2495644c6239caddda77173a0feda300860db83e063b16",
+    "Eye_Sentinel_Dataset_Introduction.md": "2cc0c8bb33095c47ba63605b6d99f0f3b655e0651977cbe7bed9b225f2b5d6d6",
+    "Eye_Sentinel_Dataset_Introduction.pdf": "69f0e7b5dfd12f5660d4861a1720246ed7b17618f168c7bac8faf9e1725f31c2",
+    "Eye_Sentinel_Speaker_Notes_v4.md": "a2b559ae5b3b292ff9bc4245fae1d691f8ebe1c104230014adf220aff678ff3b"
+  }
+}

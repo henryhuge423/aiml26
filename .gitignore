@@ -1,0 +1,58 @@
+# Credentials and local settings
+github.token
+.git-askpass.cmd
+.codex_repo/
+.env
+.env.*
+!.env.example
+
+# Local environments, build products, and Python cache
+.envs/
+.venv/
+venv/
+.build/
+.cache/
+.test_tmp/
+tmp/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Dataset payloads, download archives, and generated model assets
+archive/
+models/
+data/external/
+data/external_glaucoma/
+data/*
+!data/DATASETS-1106.md
+!data/README.md
+references/
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.gz
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+
+# Runtime outputs and logs (a compact, shareable degradation audit is retained)
+runs/*
+!runs/degradation_pilot_20261111/
+!runs/degradation_pilot_20261111/summary.json
+!runs/degradation_pilot_20261111/real_pairs_summary.json
+!runs/degradation_pilot_20261111/paired_scores.csv
+!runs/degradation_pilot_20261111/real_pairs_quality.csv
+!runs/degradation_pilot_20261111/distribution.png
+*.log
+*.jsonl
+
+# Generated office and preview files
+*.pdf
+*.pptx
+*.docx
+tools/build_reports/*_preview/

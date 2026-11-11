@@ -1,0 +1,17 @@
+fields:
+  - name: counts_and_prevalence
+    description: 图像和患者数量、类别及抽样比例
+    detail_level: detailed
+  - name: label_and_quality
+    description: 临床定义、标注方法与图像质量标签
+    detail_level: detailed
+  - name: access_and_licence
+    description: 可获取版本、许可、大小、审批和逐图真值
+    detail_level: detailed
+  - name: independent_increment
+    description: 与现有数据的图像及患者关联和可新增数量
+    detail_level: detailed
+  - name: intended_use
+    description: 训练、边界开发、比例敏感分析或独立测试适用性
+    detail_level: detailed
+uncertain: []

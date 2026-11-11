@@ -1,0 +1,21 @@
+{
+  "purpose": "research_training",
+  "task": "glaucoma",
+  "architecture": "efficientnet_b0",
+  "manifest": "data/prepared/formal_v3/manifest.csv",
+  "release": "data/prepared/formal_v3/release.json",
+  "run_dir": "runs/formal_v3/glaucoma_a",
+  "image_size": 320,
+  "batch_size": 16,
+  "epochs": 20,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "gradient_clip": 5.0,
+  "seed": 20261109,
+  "device": "cuda",
+  "amp": true,
+  "checkpoint_every": 100,
+  "selection_source": "airogs-light-v2",
+  "num_workers": 4,
+  "prefetch_factor": 2
+}

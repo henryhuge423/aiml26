@@ -1,0 +1,115 @@
+{
+  "originals": 179,
+  "variants_excluding_original": 716,
+  "positive_labels": 83,
+  "negative_labels": 96,
+  "counts_by_source_label": {
+    "DATASET_101/ODIR-5K / 0": 32,
+    "DATASET_101/ODIR-5K / 1": 19,
+    "Kaggle-Eye_diseases_classification / 0": 32,
+    "Kaggle-Eye_diseases_classification / 1": 32,
+    "airogs-light-v2 / 0": 32,
+    "airogs-light-v2 / 1": 32
+  },
+  "sample_seed": 20261111,
+  "example_sample_id": "g:44b6e906c5f437b76d2e0a22",
+  "display_threshold": 0.5,
+  "variants": {
+    "original": [
+      "original",
+      0.0
+    ],
+    "blur_mild": [
+      "blur",
+      2.0
+    ],
+    "blur_strong": [
+      "blur",
+      5.0
+    ],
+    "dark_mild": [
+      "dark",
+      0.7
+    ],
+    "dark_strong": [
+      "dark",
+      0.4
+    ]
+  },
+  "boundary_scores_sha256": "68f28ee9d5a6b6b273a92a2cde27691a9cc98bd31725eae1f17050eab61b5089",
+  "paired_scores_sha256": "0a502e0505628b781cbc4e27e8a0c066faa595ca2289823d486015433d00a6e8",
+  "p_a": {
+    "original_score_max_abs_diff": 0.00020754337310791016,
+    "original_batch_control_max_abs_diff": 0.0,
+    "original_batch_controls": 4,
+    "checkpoint_sha256": "a9e1ed071c58805b58ce1fb0aa5fe1b79f8a5f546fd432b97c307800300afb74"
+  },
+  "q": {
+    "original_score_max_abs_diff": 4.6312808990478516e-05,
+    "original_batch_control_max_abs_diff": 0.0,
+    "original_batch_controls": 4,
+    "checkpoint_sha256": "96b2b32a0d9bc5b765e12f343d989ae1572ea5c4d4de3d4d198b93facb42a146"
+  },
+  "results": {
+    "original": {
+      "median_delta_q": 0.0,
+      "q_decreases": 0,
+      "median_abs_delta_p": 0.0,
+      "threshold_crossings": 0,
+      "positive_label_down": 0,
+      "positive_label_up": 0,
+      "negative_label_down": 0,
+      "negative_label_up": 0,
+      "positive_label_below_threshold": 8,
+      "negative_label_at_or_above_threshold": 1
+    },
+    "blur_mild": {
+      "median_delta_q": -0.2532327473163605,
+      "q_decreases": 178,
+      "median_abs_delta_p": 0.0032407045364379883,
+      "threshold_crossings": 21,
+      "positive_label_down": 8,
+      "positive_label_up": 2,
+      "negative_label_down": 0,
+      "negative_label_up": 11,
+      "positive_label_below_threshold": 14,
+      "negative_label_at_or_above_threshold": 12
+    },
+    "blur_strong": {
+      "median_delta_q": -0.43755826354026794,
+      "q_decreases": 179,
+      "median_abs_delta_p": 0.009016856551170349,
+      "threshold_crossings": 31,
+      "positive_label_down": 21,
+      "positive_label_up": 2,
+      "negative_label_down": 1,
+      "negative_label_up": 7,
+      "positive_label_below_threshold": 27,
+      "negative_label_at_or_above_threshold": 7
+    },
+    "dark_mild": {
+      "median_delta_q": -0.06539109349250793,
+      "q_decreases": 170,
+      "median_abs_delta_p": 1.2954795238329098e-05,
+      "threshold_crossings": 7,
+      "positive_label_down": 5,
+      "positive_label_up": 1,
+      "negative_label_down": 0,
+      "negative_label_up": 1,
+      "positive_label_below_threshold": 12,
+      "negative_label_at_or_above_threshold": 2
+    },
+    "dark_strong": {
+      "median_delta_q": -0.21449393033981323,
+      "q_decreases": 177,
+      "median_abs_delta_p": 0.00010716915130615234,
+      "threshold_crossings": 16,
+      "positive_label_down": 13,
+      "positive_label_up": 1,
+      "negative_label_down": 1,
+      "negative_label_up": 1,
+      "positive_label_below_threshold": 20,
+      "negative_label_at_or_above_threshold": 1
+    }
+  }
+}

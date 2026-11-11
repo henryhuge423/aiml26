@@ -1,0 +1,19 @@
+{
+  "Real Fundus": {
+    "pairs": 120,
+    "higher_on_better_photo": 120,
+    "lower_on_better_photo": 0,
+    "ties": 0,
+    "median_delta_q_high_minus_low": 0.6054727137088776,
+    "archive_sha256": "3ea1624b89c8fbe4563c0e74a11202ff31e4007481bbdbea4494d6332b1d5926"
+  },
+  "HRF same-eye": {
+    "pairs": 18,
+    "higher_on_better_photo": 16,
+    "lower_on_better_photo": 2,
+    "ties": 0,
+    "median_delta_q_high_minus_low": 0.04194292426109314,
+    "archive_sha256": "e0818e5e5c938025e76a3f3474afa785f7b734616da1daf721cbd7fe6d86ca78"
+  },
+  "checkpoint_sha256": "96b2b32a0d9bc5b765e12f343d989ae1572ea5c4d4de3d4d198b93facb42a146"
+}
