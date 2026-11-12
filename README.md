@@ -1,66 +1,36 @@
-# Eye Sentinel team project
+# Eye Sentinel
 
-## 当前实验（2026-11-11）
+[English](README.en.md) | 中文
 
-项目训练、数据分布与后续计划见 [完整进度报告](docs/progress/eye_sentinel_full_progress_20261111.pdf)。较早的 [简要报告](docs/progress/eye_sentinel_progress_20261111.pdf) 记录了退化试验的初步结果。
+Eye Sentinel 研究如何结合眼底照片的青光眼筛查分数和图像质量分数，将需要人工判断的照片送交复核。项目使用两套疾病分类模型和一套质量模型，在相同复核数量下比较不同复核方法。
 
-**formal_v3 已于纽约时间11月10日11:44完成全部五阶段**：疾病A、B候选和质量学生各20轮，13,789条教师缓存完整，质量GPU跨epoch预检通过。最佳检查点已独立核验并重算model_val预测。本次三路Luna审计发现2张boundary同图变体与train/val关联，已生成独立修正清单：1,232→1,230张，并完成对应p_A/p_B/q开发推理。原训练、验证、最终测试及检查点保持原指纹，65项测试和最终验收通过；灰区和最终测试尚未运行。
+## 当前进度
 
-- [当前训练记录、数据规模与恢复方法](docs/TRAINING-STATUS-1110.md)
-- [本次三路Luna审计、修复与继续处理](docs/EXPERIMENT-AUDIT-1110.md)
-- [早间恢复、阶段结果及EyeQ下载/存储审计](docs/TRAINING-REVIEW-1110.md)
-- [实时队列状态](runs/formal_v3/pipeline/status.json)
-- [独立复核与修复验证](runs/formal_v3/pipeline/review.md)
+截至 2026 年 11 月 11 日，两套疾病模型、原质量模型及加入 EyeQ 标注的质量模型均已完成 20 轮训练。疾病模型的训练集有 10,354 张图片，模型验证集有 1,190 张。修正后的 1,230 张开发图片已获得疾病分数和质量分数，正在用于研究人工复核规则。
 
-EyeQ的88.31GB下载包及28,792张官方标签原图完整，官方train/test分别12,543/16,249。全量筛查确认212条图像关联，含48条EyeQ—AIROGS及125条EyeQ—Kaggle关联；发现官方split混合组件18个，EyeQ官方test中19图关联既有开发数据。完整结果在 `data/audit/session_20261110/eyeq_overlap/final_summary.json`。
+两套疾病模型在 AIROGS 验证集上的 AUROC 分别为 0.9766 和 0.9831。加入 EyeQ 的质量模型在 117 张 EyeQ 验证图上的三档质量 macro-F1 为 0.811。分类阈值、复核规则和最终测试仍待完成。
 
-新版 `eyeq_quality_v1` 使用 EyeQ 官方训练集中的 1,007 张训练、117 张验证，加入人工三档质量监督。旧质量数据中与留出样本有关联或疑似重复的部分暂时隔离。见 [本轮设置与恢复方法](runs/eyeq_quality_v1/README.md) 和 [运行状态](runs/eyeq_quality_v1/status.json)。
+在一项配对试验中，179 张开发图片各生成两档模糊和两档暗光版本。使用 0.5 作为展示阈值时，83 张原标签为阳性的图片中，原图有 8 张低于阈值，较强模糊版本有 27 张。完整数据、结果和图表见 [中文进度报告](docs/progress/eye_sentinel_full_progress_20261111.pdf) 和 [English progress report](docs/progress/eye_sentinel_full_progress_20261111_en.pdf)。
 
-后续边界开发使用 [修正清单](data/prepared/formal_v3_boundary_repaired_20261110/manifest.csv) 和 [已生成的开发分数](runs/formal_v3/boundary_development_repaired_20261110/boundary_pq.csv)，不再使用原1,232张全表做边界分析。原始冻结文件保留。
+## 数据
 
-## 历史准备入口（2026-11-09）
+疾病模型使用 AIROGS-Light、ODIR-5K 和 Kaggle Eye Diseases 图像。质量模型使用这些图像、FIQS 和 EyeQ。数据扩展工作还包括 AIROGS 原图、Chaksu、PAPILA、FIVES、MSHF、RIM-ONE、BEH、Real Fundus 和 HRF。各来源的标签定义、图像关联与当前使用状态记录在[数据扩展报告](docs/degradation-and-data-2026-11-11.md)和[数据集清单](data/DATASETS-1106.md)中。
 
-最新方向依据用户完整说明：训练青光眼模型与 FTHNet 蒸馏质量模型获得 p、q；在验证集观察正确/错误分布，确定人工复核灰区并锁定；测试复核率由边界实际产生，与可靠对照模型按不确定性复核相同数量图片，比较剩余自动结果的错检率和青光眼漏检。详细定义见训练协议。
+## 项目资料
 
-- [全量审计与开训准备状态](docs/AUDIT-1109.md)：49,256 个图片文件全像素解码、下载完整性、标签/重复问题与环境缺口。
-- [训练准备协议](docs/TRAINING-PROTOCOL-1109.md)
-- [最新数据划分、EyeQ联合监督与batch/loader实测](docs/superpowers/specs/2026-11-09-data-expansion-design.md)：三路Luna审计与逐图草案；扩展版本尚未放行。
-- [正式训练准备状态与证据](docs/TRAINING-READINESS.md)
-- [运行手册与训练命令](docs/TRAINING-RUNBOOK.md)
-- [Luna 实际图片质量抽样](data/audit/2026-11-09/luna/audit.md)
-- [模型下载和验证登记](data/audit/2026-11-09/model_registry.json)
+- [当前提案](proposal-1106.pdf)
+- [训练状态与数据规模](docs/TRAINING-STATUS-1110.md)
+- [实验复核与 EyeQ 处理](docs/EXPERIMENT-AUDIT-1110.md)
+- [训练协议](docs/TRAINING-PROTOCOL-1109.md)与[运行手册](docs/TRAINING-RUNBOOK.md)
+- [数据扩展与退化试验](docs/degradation-and-data-2026-11-11.md)
+- [外部青光眼数据审计](data/audit/data_expansion_20261111/batch_glaucoma_external.md)和[图像质量数据审计](data/audit/data_expansion_20261111/batch_quality_external.md)
+- [EyeQ 质量模型训练](runs/eyeq_quality_v1/README.md)
 
-以下是11月9日的准备证据，未运行v2正式20epoch训练。v2冻结研究数据在 `data/prepared/formal_v2/`，包括家族级去重/技术隔离、来源标签与已知患者分组；其教师缓存和原配置工程预检证据保留历史范围。当前训练使用顶部的v3和新GPU证据。原始图片未改变。未知患者ID、近重复检索覆盖和质量标注的研究范围见准备状态；旧 `data/prepared/formal/` 已弃用。
+## 目录
 
-## 1106 方案与历史审查
-
-[proposal-1106.pdf](proposal-1106.pdf) 是之前的完整提案。下列审查与建议保留作为历史参考；质量模型选择已由上述用户更新具体化。
-
-- [方案审查与建议](docs/proposal-1106-review.md)
-- [数据集登记与获取状态](data/DATASETS-1106.md)
-- [项目行动清单](docs/NEXT-STEPS.md)
-
-以下 v4 交付物、相关 notes 和 tools 为历史材料，记录了此前的设计。
-
-## Historical v4 deliverables
-
-- [Proposal v4](archive/proposal_versions/Eye_Sentinel_Project_Proposal_v4.pptx): quality-aware glaucoma screening, retake feedback and expert review. Five slides with English scripts and Chinese notes.
-- [Speaker notes v4](docs/historical/Eye_Sentinel_Speaker_Notes_v4.md): English script and Chinese reading notes for rehearsal.
-- [Dataset introduction PDF](docs/historical/Eye_Sentinel_Dataset_Introduction.pdf)
-- [Dataset introduction source](docs/historical/Eye_Sentinel_Dataset_Introduction.md)
-
-## Folder guide
-
-- `configs/` and `training/`: experiment settings and model training code.
-- `data/`: cleaned image sources, metadata, review samples, audit records, and AppleDouble sidecars. The redundant 4.59 GB EyeWorld ZIP has been removed; its content validation record remains in `data/audit/source_archive_validation.json`.
-- `docs/`: experiment status, protocols, reviews, data research and progress reports.
-- `models/`: model weights and third-party implementations.
-- `runs/`: training outputs, evaluation records and degradation experiments.
-- `tmp/`: report-building scripts and rendered previews.
-- `references/`: original project brief, FrontofEyeDx cleaning instructions and the historical quality-aware glaucoma screening proposal.
-- `notes/`: proposal alignment, related work, and the historical presentation review.
-- `tests/`: automated checks for data preparation and training workflows.
-- `tools/`: `build_eye_sentinel_v4.py` rebuilds the v4 deck and the dataset PDF. The PDF reads the Markdown source. Earlier builders and decks remain available for project history.
-- `archive/proposal_versions/`: superseded proposal decks retained for project history.
-
-For the image inventory and use limitations, start with [the data workspace guide](data/README.md).
+- `configs/` 和 `training/` 存放实验配置与训练代码。
+- `data/` 存放数据、清单和审计记录。
+- `docs/` 存放进度报告、实验记录和协议。
+- `models/` 和 `runs/` 存放模型资源与实验结果。
+- `tools/` 和 `tests/` 存放数据处理、训练工具及测试。
+- `notes/`、`references/` 和 `archive/` 存放背景资料与历史方案。
