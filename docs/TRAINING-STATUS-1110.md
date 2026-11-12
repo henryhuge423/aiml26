@@ -2,7 +2,7 @@
 
 **当前完成状态：** 队列于2026-11-10 16:44:22 UTC（纽约11:44）完成全部五阶段。A/B各20轮、12,960个batch step；质量学生20轮、15,200个batch step；教师缓存13,789条，质量GPU预检通过。batch step包含AMP跳步，不等于有效优化器更新数。三个任务的best/last、20条epoch日志及run_summary均已存在。本次三路Luna复核、最佳权重验证及EyeQ继续处理见 [本次审计](EXPERIMENT-AUDIT-1110.md)。已完成训练无需重启；下文启动、恢复与质量门控描述保留为运行历史。
 
-**EyeQ更新：** 原图已在纽约14:01完成导入和逐图解码/SHA256，28,792张全部关联官方标签；没有加入本轮正式训练。全量关联筛查及后续版本按新审计记录推进。
+**EyeQ 更新：** 28,792 张原图已完成导入、逐图解码、SHA256 和官方标签匹配。后续独立的 `eyeq_quality_v1` 已完成 20 轮训练，使用 4,722 张训练图和 616 张验证图，其中 EyeQ 分别为 1,007 张和 117 张。详见 [EyeQ 训练记录](../runs/eyeq_quality_v1/README.md) 和 [运行状态](../runs/eyeq_quality_v1/status.json)。
 
 **本次最终复核：** 65项测试通过。EyeQ全量像素筛查及已知患者/家族闭包完成，确认212条关系，追出2张boundary副本与既有train/val关联。后续开发清单改用 `data/prepared/formal_v3_boundary_repaired_20261110/`（1,230张）；其p_A/p_B/q在 `runs/formal_v3/boundary_development_repaired_20261110/` 已完成，真实验证锚点差均0。原训练/验证/test和checkpoint未改；未锁定灰区、未跑最终测试。下述1,232张为历史冻结规模。
 
@@ -27,7 +27,7 @@
 
 配置在 `configs/formal_v3/`：A为EfficientNet-B0，B候选为ResNet50，质量学生为EfficientNet-B0。batch16、workers4、prefetch2、每epoch重建loader、20epochs、AdamW lr1e-4、CUDA AMP；两个疾病模型同预算。所有正式训练均从固定ImageNet权重初始化，工程预检权重不用于正式初始化。
 
-EyeQ本地无匹配训练原图，当前0张纳入；有序人工监督延期。质量监督为冻结FTHNet的20裁剪均值，和人工MOS明确区分。2,246条旧教师目标已逐身份/路径/内容/split/计算指纹重绑定；11,543条新增目标由队列计算。质量训练必须等13,789条目标全部有限且绑定正确，并通过新版质量GPU预检。
+formal_v3 原质量模型使用冻结 FTHNet 的 20 裁剪均值作为教师目标，共 13,789 条，包含 2,246 条重绑定目标和 11,543 条新增目标。EyeQ 的三档人工监督随后用于独立的 eyeq_quality_v1 训练。
 
 ## 顺序队列和故障处理
 

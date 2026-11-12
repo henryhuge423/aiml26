@@ -4,7 +4,7 @@ $previewDir = Join-Path $PSScriptRoot 'build_reports/v4_preview'
 New-Item -ItemType Directory -Path $previewDir -Force | Out-Null
 $pptApp = New-Object -ComObject PowerPoint.Application
 try {
-    $deck = $pptApp.Presentations.Open((Join-Path $projectDir 'Eye_Sentinel_Project_Proposal_v4.pptx'), $true, $false, $false)
+    $deck = $pptApp.Presentations.Open((Join-Path $projectDir 'archive/proposal_versions/Eye_Sentinel_Project_Proposal_v4.pptx'), $true, $false, $false)
     $deck.Export($previewDir, 'PNG', 1600, 900)
     $deck.SaveAs((Join-Path $previewDir 'proposal_preview.pdf'), 32)
     $overflow = @()

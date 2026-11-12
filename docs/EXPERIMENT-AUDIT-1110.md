@@ -2,7 +2,7 @@
 
 用户本次要求：检查team-project进度，发现问题修复并继续，使用Luna子代理审计。主代理已派出三路Luna，分别检查训练产物、EyeQ标签/原图和代码可靠性。报告在 `data/audit/session_20261110/{luna_training,luna_eyeq,luna_code}.md`。
 
-**最终状态：** 三个正式模型各20轮完成，最佳权重复算通过；65项测试和逐条产物验收通过。新增关联找到2张与train/model_val同图的boundary副本，已在独立evaluation-only清单排除，1,232→1,230张，并完成修正开发集的p_A/p_B/q推理。原训练、model_val、最终test及六个检查点哈希均保持。EyeQ原图齐全、全量候选筛查及已知家族闭包完成，新质量训练尚未放行。最终验收文件为 `data/audit/session_20261110/final_verification.json`。
+**最终状态：** 三个正式模型各 20 轮完成，最佳权重复算、65 项测试和逐条产物验收通过。关联审计发现两张边界图与 train/model_val 图像相同，修正后的开发集为 1,230 张，已完成 p_A/p_B/q 推理。EyeQ 原图导入和关联筛查完成，随后独立的 `eyeq_quality_v1` 也完成了 20 轮训练。正式训练验收记录见 `data/audit/session_20261110/final_verification.json`，新版质量训练见 [运行状态](../runs/eyeq_quality_v1/status.json)。
 
 ## 已确认的训练进度
 
@@ -22,7 +22,9 @@ model_val按预定规则选中的AIROGS AUROC：A 0.97660（第16轮）、B候�
 
 Luna对补丁做了独立静态复核，报告为 `data/audit/session_20261110/patch_review.md`。已保留旧编排review gate，在新gate中绑定重试修复、测试及审查证据并记录lineage；30项输入哈希全部匹配。没有为此次复核重启已完成的正式训练。
 
-## EyeQ处理范围
+## EyeQ 处理范围（当时记录）
+
+本节记录导入和关联筛查阶段。此后 `eyeq_quality_v1` 已完成训练，具体数据和运行结果见文首链接。
 
 下载包 `D:/downloads/diabetic-retinopathy-detection.zip` 为88,310,951,633字节，原包保留。选择性导入目录 `D:/datasets/EyeQ_20261110/originals`。官方train/test为12,543/16,249，总计28,792，逐条标签/角色/grade匹配、所有路径存在，原导入全像素解码与SHA256已完成。与formal_v3无字节级重复，官方患者前缀和精确内容没有跨官方split。
 

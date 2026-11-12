@@ -18,7 +18,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'Eye_Sentinel_Project_Proposal_v4.pptx'
+OUT = ROOT / 'archive/proposal_versions/Eye_Sentinel_Project_Proposal_v4.pptx'
 NAVY, TEAL, GRAY, MUTED = '162E46', '087F8C', '445768', '71808D'
 PALE, GOLD, GREEN, RED = 'EFF4F6', 'A66B0A', '28734E', 'A43B40'
 
@@ -188,7 +188,7 @@ def build_pdf():
         t=re.sub(r'\[([^\]]+)\]\((https?://[^)]+)\)',r'<link href="\2" color="#087F8C">\1</link>',t)
         t=re.sub(r'\*\*(.+?)\*\*',r'<b>\1</b>',t)
         return t.replace('`','')
-    lines=(ROOT/'Eye_Sentinel_Dataset_Introduction.md').read_text(encoding='utf-8-sig').splitlines()
+    lines=(ROOT/'docs/historical/Eye_Sentinel_Dataset_Introduction.md').read_text(encoding='utf-8-sig').splitlines()
     story=[];i=0
     while i<len(lines):
         line=lines[i].strip()
@@ -214,7 +214,7 @@ def build_pdf():
         c.setFont('YaHei',8);c.setFillColor(colors.HexColor('#71808D'))
         c.drawString(54,28,'Eye Sentinel   /   数据与实验方案   /   2026-10-23')
         c.drawRightString(A4[0]-54,28,str(d.page))
-    path=ROOT/'Eye_Sentinel_Dataset_Introduction.pdf'
+    path=ROOT/'docs/historical/Eye_Sentinel_Dataset_Introduction.pdf'
     doc=SimpleDocTemplate(str(path),pagesize=A4,rightMargin=54,leftMargin=54,topMargin=45,bottomMargin=48,title='Eye Sentinel 数据集与实验方案',author='Eye Sentinel Team')
     doc.build(story,onFirstPage=footer,onLaterPages=footer)
     from pypdf import PdfReader
@@ -228,7 +228,7 @@ if __name__=='__main__':
     script=['# Eye Sentinel v4 演讲稿', '', '五页英文讲稿及对应中文理解稿。英文全文约 '+str(sum(len(s.split()) for s in SCRIPTS))+' 词，按每分钟 120 词讲述约需 '+str(round(sum(len(s.split()) for s in SCRIPTS)/120,1))+' 分钟。', '']
     for n,(title,en,zh) in enumerate(zip(headings,SCRIPTS,CHINESE),1):
         script.extend([f'## Slide {n}: {title}', '', '### English', '', en, '', '### 中文理解稿', '', zh, ''])
-    (ROOT/'Eye_Sentinel_Speaker_Notes_v4.md').write_text('\n'.join(script),encoding='utf-8')
+    (ROOT/'docs/historical/Eye_Sentinel_Speaker_Notes_v4.md').write_text('\n'.join(script),encoding='utf-8')
     path=ROOT/'tools/build_reports/Eye_Sentinel_v4_build_check.json'
     path.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False,indent=2))

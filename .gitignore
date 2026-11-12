@@ -21,13 +21,25 @@ __pycache__/
 .mypy_cache/
 
 # Dataset payloads, download archives, and generated model assets
-archive/
-models/
+archive/*
+!archive/proposal_versions/
+archive/proposal_versions/*
+!archive/proposal_versions/Eye_Sentinel_Project_Proposal_v3.pptx
+!archive/proposal_versions/Eye_Sentinel_Project_Proposal_v4.pptx
+models/*
+!models/README.md
 data/external/
 data/external_glaucoma/
 data/*
 !data/DATASETS-1106.md
 !data/README.md
+!data/audit/
+data/audit/*
+!data/audit/data_expansion_20261111/
+data/audit/data_expansion_20261111/*
+!data/audit/data_expansion_20261111/batch_glaucoma_external.md
+!data/audit/data_expansion_20261111/batch_quality_external.md
+!data/audit/data_expansion_20261111/batch_prior_external.md
 references/
 *.zip
 *.7z
@@ -42,6 +54,9 @@ references/
 
 # Runtime outputs and logs (a compact, shareable degradation audit is retained)
 runs/*
+!runs/eyeq_quality_v1/
+runs/eyeq_quality_v1/*
+!runs/eyeq_quality_v1/README.md
 !runs/degradation_pilot_20261111/
 !runs/degradation_pilot_20261111/summary.json
 !runs/degradation_pilot_20261111/real_pairs_summary.json
@@ -54,5 +69,10 @@ runs/*
 # Generated office and preview files
 *.pdf
 *.pptx
+!proposal-1106.pdf
+!docs/progress/*.pdf
+!docs/historical/*.pdf
+!archive/proposal_versions/Eye_Sentinel_Project_Proposal_v4.pptx
+!archive/proposal_versions/Eye_Sentinel_Project_Proposal_v3.pptx
 *.docx
 tools/build_reports/*_preview/

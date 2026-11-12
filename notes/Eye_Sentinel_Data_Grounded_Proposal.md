@@ -1,6 +1,6 @@
-# Eye Sentinel：当前 proposal 与数据安排
+# Eye Sentinel：2026-10-23 proposal 与数据安排
 
-更新：2026-10-23。
+更新：2026-10-23。本文记录当时的外眼图像实验方案；目前的青光眼研究与训练结果见 [项目进度](../docs/degradation-and-data-2026-11-11.md)。
 
 我们研究有限复核额度下的图片选择：每一百张图片只能选出五张、十张或二十张时，怎样找到更多错误预测和未知类别图片？全球健康中的复核能力与计算条件在这里转成实验设置。
 
@@ -21,9 +21,9 @@
 
 ## 当前材料
 
-- [Proposal v3](../Eye_Sentinel_Project_Proposal_v3.pptx)
-- [Dataset PDF](../Eye_Sentinel_Dataset_Introduction.pdf)
-- [Dataset Markdown](../Eye_Sentinel_Dataset_Introduction.md)
+- [Proposal v3](../archive/proposal_versions/Eye_Sentinel_Project_Proposal_v3.pptx)
+- [Dataset PDF](../docs/historical/Eye_Sentinel_Dataset_Introduction.pdf)
+- [Dataset Markdown](../docs/historical/Eye_Sentinel_Dataset_Introduction.md)
 - [评分表对照](Eye_Sentinel_Rubric_Alignment_2026-10-22.md)
 
 本次修改前的文件保存在 `../archive/proposal_versions/before_resource_revision_2026-10-23.zip`。

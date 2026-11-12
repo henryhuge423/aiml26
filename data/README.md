@@ -1,6 +1,6 @@
 # Eye Sentinel data workspace
 
-**Current status (2026-11-10):** `prepared/formal_v3/` completed three 20-epoch models and all 13,789 teacher targets. EyeQ has 28,792 imported, decoded and hashed originals on D:, with cross-source association evidence under `audit/session_20261110/eyeq_overlap/`; it is not released for training. Two newly linked boundary duplicates are excluded by the separate evaluation-only `prepared/formal_v3_boundary_repaired_20261110/` subset (1,230 rows); use its generated boundary scores for further development. Original train/model_val/final tests and checkpoints remain unchanged. See [latest experiment audit](../docs/EXPERIMENT-AUDIT-1110.md). The following v2 preparation descriptions are historical.
+**Current status (2026-11-11):** The formal_v3 disease models and original quality model each completed 20 epochs, with 13,789 teacher targets. The separate EyeQ quality model also completed 20 epochs using 1,007 EyeQ training images and 117 EyeQ validation images. All 28,792 EyeQ originals were imported, decoded and hashed on D:, and cross-source association evidence is under `audit/session_20261110/eyeq_overlap/`. The repaired boundary development subset contains 1,230 images with model scores. See the [latest data and experiment report](../docs/degradation-and-data-2026-11-11.md) and [EyeQ training record](../runs/eyeq_quality_v1/README.md). The following v2 preparation descriptions are historical.
 
 **Current audit (2026-11-09):** [readiness report](../docs/AUDIT-1109.md), [training protocol](../docs/TRAINING-PROTOCOL-1109.md), and [Luna image review](audit/2026-11-09/luna/audit.md). New evidence is under `audit/2026-11-09/`; source files were not changed. Full decoding found one truncated FIQS original and ten exact duplicate pairs in HYGD. Candidate worklists are not frozen training sets. The earlier [proposal-1106](../proposal-1106.pdf), [registry](DATASETS-1106.md), [review](../docs/proposal-1106-review.md), and v4 descriptions below are historical. Original sources and audit records retain their paths.
 
@@ -8,7 +8,7 @@
 
 Audit and reorganization date: 2026-10-22. Proposal v4 focuses on quality-aware glaucoma screening from fundus photographs. The workspace also retains Wide-Field and FrontofEyeDx for future extensions.
 
-For source counts, grouping rules and the v4 experiments, see [Eye Sentinel Dataset Introduction](../Eye_Sentinel_Dataset_Introduction.pdf) and its [Markdown source](../Eye_Sentinel_Dataset_Introduction.md).
+For source counts, grouping rules and the v4 experiments, see [Eye Sentinel Dataset Introduction](../docs/historical/Eye_Sentinel_Dataset_Introduction.pdf) and its [Markdown source](../docs/historical/Eye_Sentinel_Dataset_Introduction.md).
 
 ## Layout
 

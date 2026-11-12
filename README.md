@@ -1,6 +1,8 @@
 # Eye Sentinel team project
 
-## 当前实验（2026-11-10）
+## 当前实验（2026-11-11）
+
+项目训练、数据分布与后续计划见 [完整进度报告](docs/progress/eye_sentinel_full_progress_20261111.pdf)。较早的 [简要报告](docs/progress/eye_sentinel_progress_20261111.pdf) 记录了退化试验的初步结果。
 
 **formal_v3 已于纽约时间11月10日11:44完成全部五阶段**：疾病A、B候选和质量学生各20轮，13,789条教师缓存完整，质量GPU跨epoch预检通过。最佳检查点已独立核验并重算model_val预测。本次三路Luna审计发现2张boundary同图变体与train/val关联，已生成独立修正清单：1,232→1,230张，并完成对应p_A/p_B/q开发推理。原训练、验证、最终测试及检查点保持原指纹，65项测试和最终验收通过；灰区和最终测试尚未运行。
 
@@ -38,20 +40,26 @@ EyeQ的88.31GB下载包及28,792张官方标签原图完整，官方train/test�
 - [数据集登记与获取状态](data/DATASETS-1106.md)
 - [项目行动清单](docs/NEXT-STEPS.md)
 
-以下 v4 交付物、相关 notes 和 tools 均为历史材料，其模型、重拍和实验细节可能与 1106 方案不同。保留原位置以免破坏旧脚本和链接。
+以下 v4 交付物、相关 notes 和 tools 为历史材料，记录了此前的设计。
 
 ## Historical v4 deliverables
 
-- [Proposal v4](Eye_Sentinel_Project_Proposal_v4.pptx): quality-aware glaucoma screening, retake feedback and expert review. Five slides with English scripts and Chinese notes.
-- [Speaker notes v4](Eye_Sentinel_Speaker_Notes_v4.md): English script and Chinese reading notes for rehearsal.
-- [Dataset introduction PDF](Eye_Sentinel_Dataset_Introduction.pdf)
-- [Dataset introduction source](Eye_Sentinel_Dataset_Introduction.md)
+- [Proposal v4](archive/proposal_versions/Eye_Sentinel_Project_Proposal_v4.pptx): quality-aware glaucoma screening, retake feedback and expert review. Five slides with English scripts and Chinese notes.
+- [Speaker notes v4](docs/historical/Eye_Sentinel_Speaker_Notes_v4.md): English script and Chinese reading notes for rehearsal.
+- [Dataset introduction PDF](docs/historical/Eye_Sentinel_Dataset_Introduction.pdf)
+- [Dataset introduction source](docs/historical/Eye_Sentinel_Dataset_Introduction.md)
 
 ## Folder guide
 
+- `configs/` and `training/`: experiment settings and model training code.
 - `data/`: cleaned image sources, metadata, review samples, audit records, and AppleDouble sidecars. The redundant 4.59 GB EyeWorld ZIP has been removed; its content validation record remains in `data/audit/source_archive_validation.json`.
-- `references/`: original project brief and FrontofEyeDx cleaning instructions.
+- `docs/`: experiment status, protocols, reviews, data research and progress reports.
+- `models/`: model weights and third-party implementations.
+- `runs/`: training outputs, evaluation records and degradation experiments.
+- `tmp/`: report-building scripts and rendered previews.
+- `references/`: original project brief, FrontofEyeDx cleaning instructions and the historical quality-aware glaucoma screening proposal.
 - `notes/`: proposal alignment, related work, and the historical presentation review.
+- `tests/`: automated checks for data preparation and training workflows.
 - `tools/`: `build_eye_sentinel_v4.py` rebuilds the v4 deck and the dataset PDF. The PDF reads the Markdown source. Earlier builders and decks remain available for project history.
 - `archive/proposal_versions/`: superseded proposal decks retained for project history.
 

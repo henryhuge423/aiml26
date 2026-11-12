@@ -1,6 +1,6 @@
 # Eye Sentinel：已有工作、数据与 proposal 差异
 
-核查日期：2026-10-22。本文保留下载数据前的文献与初步定位记录；其中“未见原图、缺少元数据、来源不明”等判断应以同日完成的数据审计为准。请先阅读 [数据集介绍 PDF](../Eye_Sentinel_Dataset_Introduction.pdf)、[数据集说明](../Eye_Sentinel_Dataset_Introduction.md) 和 [当前审计目录](../data/audit/current/README.md)。整理前审计快照位于 `../data/audit/baseline/data_audit/`。本文的文献对照可继续参考；数据整理记录见 `../data/audit/`。
+核查日期：2026-10-22。本文保留下载数据前的文献与初步定位记录；其中“未见原图、缺少元数据、来源不明”等判断应以同日完成的数据审计为准。请先阅读 [数据集介绍 PDF](../docs/historical/Eye_Sentinel_Dataset_Introduction.pdf)、[数据集说明](../docs/historical/Eye_Sentinel_Dataset_Introduction.md) 和 [当前审计目录](../data/audit/current/README.md)。整理前审计快照位于 `../data/audit/baseline/data_audit/`。本文的文献对照可继续参考；数据整理记录见 `../data/audit/`。
 
 ## 建议的主张
 

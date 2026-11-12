@@ -119,17 +119,17 @@ Global health 的联系可写为：理解低成本眼部图像模型在噪声数
 
 ## 8. 修改时需同步的文件
 
-- `../Eye_Sentinel_Project_Proposal_v3.pptx`：正文及全部演讲备注。
+- `../archive/proposal_versions/Eye_Sentinel_Project_Proposal_v3.pptx`：正文及全部演讲备注。
 - `../tools/build_eye_sentinel_v3.py`：重建时会恢复旧叙事，必须同步修改。
-- `../Eye_Sentinel_Dataset_Introduction.md` 与 PDF。
+- `../docs/historical/Eye_Sentinel_Dataset_Introduction.md` 与 PDF。
 - `../data/audit/current/build_dataset_guide.py`：PDF 的实际生成器；其内容独立写在代码里，不能只改 Markdown 后直接重建。
 - `Eye_Sentinel_Data_Grounded_Proposal.md`：目前仍将临床采集和试点列作后续阶段。
 - `Eye_Sentinel_Related_Work_and_Innovation.md`：保留历史意义时应标明旧范围；其中仍有“目前没有完整原始图像库”等已经过时的段落，且主张包含症状和转诊研究。
 
 ## 本地依据
 
-- [Proposal v3](../Eye_Sentinel_Project_Proposal_v3.pptx)
-- [Dataset Markdown](../Eye_Sentinel_Dataset_Introduction.md)；[Dataset PDF](../Eye_Sentinel_Dataset_Introduction.pdf)
+- [Proposal v3](../archive/proposal_versions/Eye_Sentinel_Project_Proposal_v3.pptx)
+- [Dataset Markdown](../docs/historical/Eye_Sentinel_Dataset_Introduction.md)；[Dataset PDF](../docs/historical/Eye_Sentinel_Dataset_Introduction.pdf)
 - [项目 brief](../references/Project%20Opportunity_EyeSentinel.pdf)；[清理手册](../references/Instructions%20to%20Derm-FrontofEyeDx%20Database.pdf)
 - [当前图像清单](../data/audit/current/image_files.csv)；[类别数量](../data/audit/current/class_counts.csv)
 - [按子集合的类别数量](../data/audit/current/source_class_counts.csv)
