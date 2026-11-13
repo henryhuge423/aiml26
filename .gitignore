@@ -71,6 +71,7 @@ runs/eyeq_quality_v1/*
 *.pptx
 !proposal-1106.pdf
 !docs/progress/*.pdf
+!docs/progress/**/*.pdf
 !docs/historical/*.pdf
 !archive/proposal_versions/Eye_Sentinel_Project_Proposal_v4.pptx
 !archive/proposal_versions/Eye_Sentinel_Project_Proposal_v3.pptx

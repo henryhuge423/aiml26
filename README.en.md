@@ -10,7 +10,7 @@ As of November 11, 2026, both disease models, the original quality model, and a 
 
 The disease models achieved AUROCs of 0.9766 and 0.9831 on AIROGS validation images. The EyeQ-trained quality model achieved a three-grade macro-F1 of 0.811 on 117 EyeQ validation images. Classification thresholds, the review rule, and final testing are the next steps.
 
-In a paired experiment, two levels of blur and two levels of darkening were applied to each of 179 development images. At a display threshold of 0.5, 8 of 83 images labeled positive scored below the threshold in their original form, compared with 27 after stronger blur. The reports describe the datasets, results, and figures in [English](docs/progress/eye_sentinel_full_progress_20261111_en.pdf) and [中文](docs/progress/eye_sentinel_full_progress_20261111.pdf).
+In a paired experiment, two levels of blur and two levels of darkening were applied to each of 179 development images. At a display threshold of 0.5, 8 of 83 images labeled positive scored below the threshold in their original form, compared with 27 after stronger blur. The reports describe the datasets, results, and figures in [English](docs/progress/2026-11-11/eye_sentinel_full_progress_20261111_en.pdf) and [中文](docs/progress/2026-11-11/eye_sentinel_full_progress_20261111.pdf).
 
 ## Data
 

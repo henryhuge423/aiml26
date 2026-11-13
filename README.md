@@ -10,7 +10,7 @@ Eye Sentinel 研究如何结合眼底照片的青光眼筛查分数和图像质�
 
 两套疾病模型在 AIROGS 验证集上的 AUROC 分别为 0.9766 和 0.9831。加入 EyeQ 的质量模型在 117 张 EyeQ 验证图上的三档质量 macro-F1 为 0.811。分类阈值、复核规则和最终测试仍待完成。
 
-在一项配对试验中，179 张开发图片各生成两档模糊和两档暗光版本。使用 0.5 作为展示阈值时，83 张原标签为阳性的图片中，原图有 8 张低于阈值，较强模糊版本有 27 张。完整数据、结果和图表见 [中文进度报告](docs/progress/eye_sentinel_full_progress_20261111.pdf) 和 [English progress report](docs/progress/eye_sentinel_full_progress_20261111_en.pdf)。
+在一项配对试验中，179 张开发图片各生成两档模糊和两档暗光版本。使用 0.5 作为展示阈值时，83 张原标签为阳性的图片中，原图有 8 张低于阈值，较强模糊版本有 27 张。完整数据、结果和图表见 [中文进度报告](docs/progress/2026-11-11/eye_sentinel_full_progress_20261111.pdf) 和 [English progress report](docs/progress/2026-11-11/eye_sentinel_full_progress_20261111_en.pdf)。
 
 ## 数据
 
