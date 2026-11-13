@@ -18,6 +18,9 @@ The disease models use images from AIROGS-Light, ODIR-5K, and Kaggle Eye Disease
 
 ## Project documents
 
+- [Progress report index and latest training figures](docs/progress/README.en.md)
+- [Full project directory guide](docs/DIRECTORY.en.md)
+
 - [Current proposal](proposal-1106.pdf)
 - [Training status and dataset sizes](docs/TRAINING-STATUS-1110.md)
 - [Experiment review and EyeQ processing](docs/EXPERIMENT-AUDIT-1110.md)

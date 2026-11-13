@@ -18,6 +18,9 @@ Eye Sentinel 研究如何结合眼底照片的青光眼筛查分数和图像质�
 
 ## 项目资料
 
+- [进展报告目录及最新训练图表](docs/progress/README.md)
+- [完整项目目录说明](docs/DIRECTORY.md)
+
 - [当前提案](proposal-1106.pdf)
 - [训练状态与数据规模](docs/TRAINING-STATUS-1110.md)
 - [实验复核与 EyeQ 处理](docs/EXPERIMENT-AUDIT-1110.md)
