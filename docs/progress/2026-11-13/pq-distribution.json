@@ -1,0 +1,85 @@
+{
+  "n": 1220,
+  "positives": 503,
+  "fn": 90,
+  "fp": 39,
+  "threshold": 0.5,
+  "counts_by_p_then_q": [
+    [
+      19,
+      82,
+      216,
+      274,
+      78
+    ],
+    [
+      4,
+      10,
+      26,
+      25,
+      3
+    ],
+    [
+      1,
+      8,
+      22,
+      21,
+      9
+    ],
+    [
+      3,
+      20,
+      24,
+      24,
+      4
+    ],
+    [
+      19,
+      75,
+      140,
+      96,
+      17
+    ]
+  ],
+  "errors_by_p_then_q": [
+    [
+      0,
+      6,
+      14,
+      22,
+      3
+    ],
+    [
+      2,
+      3,
+      11,
+      9,
+      1
+    ],
+    [
+      1,
+      3,
+      8,
+      7,
+      5
+    ],
+    [
+      0,
+      4,
+      7,
+      5,
+      2
+    ],
+    [
+      1,
+      5,
+      6,
+      3,
+      1
+    ]
+  ],
+  "input_sha256": {
+    "data\\audit\\data_expansion_20261113\\repaired_boundary_pq.csv": "639eab9a09711393bf07f1bec1cacec8960c69ec2cbe448888acd6985eaaad39",
+    "runs\\expanded_20261113\\expanded_degradation50\\last_development_predictions.csv": "ccef34494e2e0abf9488e0c06fc3824a9932cbe70b5fd1bf399ebbb072a1ac75"
+  }
+}

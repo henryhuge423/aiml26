@@ -51,6 +51,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -139,6 +140,7 @@ original training or validation photographs linked to official EyeQ test
 images were excluded. The original rule-development portion contains
 1,220 images following identity checks.
 
+{\def\LTcaptype{none} % do not increment counter
 \Needspace{8\baselineskip}
 \begin{longtable}[]{@{}lrrr@{}}
 \toprule\noalign{}
@@ -154,6 +156,7 @@ Internal and added reserved tests & 1,233 & 2,237 & 3,470 \\
 ACRIMA external test & 705 & 0 & 705 \\
 HYGD external test & 737 & 0 & 737 \\
 \end{longtable}
+}
 
 Training includes 6,405 positives, model validation 823, and rule
 development 814. Known patients and confirmed linked photographs are
@@ -205,6 +208,7 @@ separation. Actual misses and false positives are evaluated at a chosen
 threshold. The following results use original photographs from the same
 rule-development set, calculated separately within each source.
 
+{\def\LTcaptype{none} % do not increment counter
 \Needspace{8\baselineskip}
 \begin{longtable}[]{@{}lrrrr@{}}
 \toprule\noalign{}
@@ -218,6 +222,7 @@ ODIR & 0.9712 & 0.9315 & 0.9281 & 0.9404 \\
 LAG & 0.9465 & 0.9890 & 0.9844 & 0.9832 \\
 KEH & 0.6627 & 0.9333 & 0.9321 & 0.9368 \\
 \end{longtable}
+}
 
 Development images / positives are AIROGS 773 / 380, ODIR 305 / 28, LAG
 481 / 169, and KEH 153 / 75.
@@ -256,6 +261,35 @@ and all three expanded arms detect 12/12; the binomial 95\% interval for
 detection counts are identical across the expanded arms. The observed
 real poor-quality detection gain therefore accompanies data expansion.
 Same-source negatives are needed to assess false positives.
+
+\subsection{Disease and quality score
+distribution}\label{disease-and-quality-score-distribution}
+
+The figure matches disease score p from the update-1,200 checkpoint of
+the 50\% mixed-degradation arm with raw regression score q from the
+previously verified FTHNet-distilled quality student. It covers 1,220
+retained original rule-development images (503 positive and 717
+negative). Higher q indicates better predicted quality; it is neither a
+human quality grade nor a calibrated probability. The 833 added
+development images do not yet have verified scores from this same
+quality model and are excluded.
+
+\begin{figure}[H]
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={Disease and quality scores on original rule-development images}]{pq-distribution.en.png}}
+\caption{Disease and quality scores on original rule-development images}
+\end{figure}
+
+Figure 3 follows the earlier display: disease score p is on a nonlinear
+horizontal axis, quality score q is on the vertical axis, and colors
+show the original labels. For display, p is clipped to 0.0001--0.9999.
+The dashed line marks the illustrative threshold of 0.5: positives to
+its left are missed, and negatives to its right are false positives.
+These account for 90/503 and 39/717 images, respectively. This threshold
+is illustrative, and no review boundary has been selected. The
+\href{pq-distribution.json}{figure data} contain counts and errors in
+linear p and q bins, together with input hashes; see also the
+\href{../../../tools/plot_pq_overview_20261113.py}{plotting program}.
 
 \subsection{Priorities identified by the
 analysis}\label{priorities-identified-by-the-analysis}

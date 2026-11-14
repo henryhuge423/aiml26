@@ -6,11 +6,12 @@
   "languages": {
     "zh": {
       "pages": 3,
-      "pdf_sha256": "d52858c557a372ad35fbf8d4c48dba66681964d8c75608f2489c12a35b5b26a5"
+      "pdf_sha256": "9a479b349181afe3a9c14fa34f9e0adaa6097bda7d00785dd4200089cebce052"
     },
     "en": {
-      "pages": 3,
-      "pdf_sha256": "54c769a3d81872dd122e9ed8b393fc0fa6d9d5f85fa18b224fa692326cf97ed4"
+      "pages": 4,
+      "pdf_sha256": "a9cbd7a41552ed879227b4b9e8273ce337ae722d1b6dbf17c9188ca5075bacde"
     }
-  }
+  },
+  "note": "Updated after adding p-q figure; compiled with XeLaTeX."
 }

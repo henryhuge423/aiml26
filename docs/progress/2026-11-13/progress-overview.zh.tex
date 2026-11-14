@@ -51,6 +51,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -123,6 +124,7 @@ KEH 和 LAG 开发集的图像排序；在合成失焦条件下，50\%
 张图像的疾病训练与评价清单。原训练与验证部分中，18 张关联官方 EyeQ
 测试图像的照片已移除；规则开发部分沿用身份关联核查后的 1,220 张原图。
 
+{\def\LTcaptype{none} % do not increment counter
 \Needspace{8\baselineskip}
 \begin{longtable}[]{@{}lrrr@{}}
 \toprule\noalign{}
@@ -138,6 +140,7 @@ KEH 和 LAG 开发集的图像排序；在合成失焦条件下，50\%
 ACRIMA 外部测试 & 705 & 0 & 705 \\
 HYGD 外部测试 & 737 & 0 & 737 \\
 \end{longtable}
+}
 
 训练集含 6,405 张阳性，模型验证集含 823 张阳性，规则开发集含 814
 张阳性。已知患者和确认的关联图像按组分配用途。PAPILA
@@ -176,6 +179,7 @@ AUROC
 AUROC 为 0.93 表示这一排序概率约为 93\%；0.5 相当于随机排序，1.0
 表示完全区分。实际漏诊和误报需在选定阈值下另行评价。下表来自同一规则开发集的原图，各来源独立计算。
 
+{\def\LTcaptype{none} % do not increment counter
 \Needspace{8\baselineskip}
 \begin{longtable}[]{@{}lrrrr@{}}
 \toprule\noalign{}
@@ -189,6 +193,7 @@ ODIR & 0.9712 & 0.9315 & 0.9281 & 0.9404 \\
 LAG & 0.9465 & 0.9890 & 0.9844 & 0.9832 \\
 KEH & 0.6627 & 0.9333 & 0.9321 & 0.9368 \\
 \end{longtable}
+}
 
 各来源开发图像数／阳性数分别为 AIROGS 773／380、ODIR 305／28、LAG
 481／169、KEH 153／75。
@@ -218,6 +223,27 @@ KEH & 0.6627 & 0.9333 & 0.9321 & 0.9368 \\
 下，原数据组检出 7/12，三个扩展组均检出 12/12；12/12 的二项分布 95\%
 区间为
 73.5\%--100\%。该子集全部为阳性，且三个扩展组的检出数一致，因此本轮的真实低质量检出改善主要体现在数据扩展。后续需结合相同来源的阴性图像评价误报。
+
+\subsection{疾病分数与质量分数的分布}\label{ux75beux75c5ux5206ux6570ux4e0eux8d28ux91cfux5206ux6570ux7684ux5206ux5e03}
+
+下图使用修正后原规则开发集的 1,220 张原图（阳性 503、阴性
+717），逐图匹配本轮 50\% 混合退化组第 1,200 次更新的疾病分数 p 与此前
+FTHNet 蒸馏质量学生的原始回归分数 q。q
+越高表示预测质量越好，并非人工质量等级或已校准概率。新增的 833
+张开发图尚无同一质量模型的已核验分数，因此不在图中。
+
+\begin{figure}[H]
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={规则开发原图的疾病和质量分数分布}]{pq-distribution.zh.png}}
+\caption{规则开发原图的疾病和质量分数分布}
+\end{figure}
+
+图 3 沿用此前的展示方式：横轴为疾病分数
+p，采用非线性刻度；纵轴为质量分数 q，颜色表示原始标签。为便于显示，接近
+0 和 1 的 p 分别截到 0.0001 和 0.9999。虚线是示例阈值
+0.5：虚线左侧的阳性为漏诊，右侧的阴性为误报；本子集分别有 90/503 和
+39/717 张。该阈值仅供展示，复核灰区尚未确定。按线性 p、q
+分箱的图像数、错误数及输入指纹见\href{pq-distribution.json}{图表数据}，生成方法见\href{../../../tools/plot_pq_overview_20261113.py}{绘图程序}。
 
 \subsection{分析指出的下一步}\label{ux5206ux6790ux6307ux51faux7684ux4e0bux4e00ux6b65}
 

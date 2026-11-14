@@ -58,6 +58,14 @@ Figure 2 shows original-image AUROC for four sources on the left and miss and fa
 
 Real poor-quality development cases comprise seven FIVES and five MSHF positive images. At threshold 0.5, original-data training detects 7/12 and all three expanded arms detect 12/12; the binomial 95% interval for 12/12 is 73.5%–100%. All images in this subset are positive, and detection counts are identical across the expanded arms. The observed real poor-quality detection gain therefore accompanies data expansion. Same-source negatives are needed to assess false positives.
 
+## Disease and quality score distribution
+
+The figure matches disease score p from the update-1,200 checkpoint of the 50% mixed-degradation arm with raw regression score q from the previously verified FTHNet-distilled quality student. It covers 1,220 retained original rule-development images (503 positive and 717 negative). Higher q indicates better predicted quality; it is neither a human quality grade nor a calibrated probability. The 833 added development images do not yet have verified scores from this same quality model and are excluded.
+
+![Disease and quality scores on original rule-development images](pq-distribution.en.png)
+
+Figure 3 follows the earlier display: disease score p is on a nonlinear horizontal axis, quality score q is on the vertical axis, and colors show the original labels. For display, p is clipped to 0.0001–0.9999. The dashed line marks the illustrative threshold of 0.5: positives to its left are missed, and negatives to its right are false positives. These account for 90/503 and 39/717 images, respectively. This threshold is illustrative, and no review boundary has been selected. The [figure data](pq-distribution.json) contain counts and errors in linear p and q bins, together with input hashes; see also the [plotting program](../../../tools/plot_pq_overview_20261113.py).
+
 ## Priorities identified by the analysis
 
 After expansion, original-source image presentations fall from 19,186 to 9,484; all three expanded arms have the same image-sampling sequence. Adaptation to added sources and reduced original-source sampling occur together. The next round will use an original-source sampling quota to separate their effects.
