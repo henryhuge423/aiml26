@@ -1,0 +1,16 @@
+{
+  "rows": 4099,
+  "roles": {
+    "val": 2046,
+    "boundary": 2053
+  },
+  "checkpoint_sha256": "96b2b32a0d9bc5b765e12f343d989ae1572ea5c4d4de3d4d198b93facb42a146",
+  "recorded_training_fingerprint": "a78bedfb8401a30dfd1e2e7459022ee8fb88d5deefe8669f4b7e79efc1085cf4",
+  "current_training_fingerprint": "81d6ce5c1c6cef54b4700802bdcd15c4678505bc605217c29cb83d96ccec793a",
+  "manifest_sha256": "6761e6d8076999de2e0bee2e5fb7832d490d16afac9341228e21499926fcad66",
+  "scores_sha256": "be5d010a7f4c42ef0eb0befec45b8d321ce7c47a736945386ea1abaf45519832",
+  "anchor_max_abs_difference": 0.0,
+  "quality_score_kind": "FTHNet_distilled_student_raw_regression",
+  "protected_test_inference": false,
+  "original_boundary_max_abs_difference": 1.9609928131103516e-05
+}

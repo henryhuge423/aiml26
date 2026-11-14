@@ -5,13 +5,13 @@
   },
   "languages": {
     "zh": {
-      "pages": 3,
-      "pdf_sha256": "0ebeba7c2b739b318528b8e5f31111f86401139bb62c4ee0e7ac2fe6d74dde3b"
+      "pages": 5,
+      "pdf_sha256": "cb820ee14d83b44195fe292ed9e1d6d914621aae835924f6de48935d87a7404f"
     },
     "en": {
-      "pages": 4,
-      "pdf_sha256": "3460ab682f38f870463ae23db29c18bdddd0fddc9b415f5107559f82934af73e"
+      "pages": 6,
+      "pdf_sha256": "ef5352d2b59937da327804b8104971b475b04590c45c667af7b4a3b7b26fa749"
     }
   },
-  "note": "Updated after adding p-q figure; compiled with XeLaTeX."
+  "note": "Updated November 14 with full development and validation p-q distributions."
 }

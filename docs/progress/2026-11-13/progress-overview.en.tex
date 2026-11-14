@@ -265,33 +265,53 @@ Same-source negatives are needed to assess false positives.
 \subsection{Disease and quality score
 distribution}\label{disease-and-quality-score-distribution}
 
-The figure matches disease score p from the update-1,200 checkpoint of
-the 50\% mixed-degradation arm with raw regression score q from the
-previously verified FTHNet-distilled quality student. It covers 1,220
-retained original rule-development images (503 positive and 717
-negative). Higher q indicates better predicted quality; it is neither a
-human quality grade nor a calibrated probability. The 833 added
-development images do not yet have verified scores from this same
-quality model and are excluded.
+Added November 14, 2026: the figures show all 4,099 original photographs
+in the rule-development and model-validation sets, including the newly
+added images. Each photograph has disease score p from the update-1,200
+checkpoint of the 50\% mixed-degradation arm and raw regression score q
+from the previously verified FTHNet-distilled quality student. Higher q
+indicates better predicted quality; it is neither a human grade nor a
+calibrated probability. Model validation was used to select checkpoints;
+rule development is used to study review boundaries. The sets are shown
+separately and are not independent test results.
 
 \begin{figure}[H]
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={Disease and quality scores on original rule-development images}]{pq-distribution.en.png}}
-\caption{Disease and quality scores on original rule-development images}
+\pandocbounded{\includegraphics[keepaspectratio,alt={Error distribution and error rates in the rule-development set}]{pq-distribution-boundary.en.png}}
+\caption{Error distribution and error rates in the rule-development set}
 \end{figure}
 
-Figure 3 uses a nonlinear horizontal axis for disease score p and a
-vertical axis for quality score q. Pale circles show correct
-predictions; red crosses highlight false negatives, and blue diamonds
-highlight false positives. For display, p is clipped to 0.0001--0.9999.
-At the illustrative threshold of 0.5, marked by the dashed line, there
-are 90 misses among 503 positives and 39 false positives among 717
-negatives. Correct predictions remain visible to show how many might
-also fall in a potential review region. This threshold is illustrative,
-and no review boundary has been selected. The
-\href{pq-distribution.json}{figure data} contain counts and errors in
-linear p and q bins, together with input hashes; see also the
-\href{../../../tools/plot_pq_overview_20261113.py}{plotting program}.
+In Figure 3, pale circles show correct predictions, red crosses mark
+false negatives, and blue diamonds mark false positives. The horizontal
+p axis is nonlinear; the vertical axis shows q. For display, p is
+clipped to 0.0001--0.9999. The dashed line marks an illustrative
+threshold of 0.5. The rule-development set has 2,053 images, including
+814 positives; at this threshold, 124/814 positives are missed and
+84/1,239 negatives are false positives.
+
+The heatmap shows the error rate in each p--q bin: the color and
+percentage represent errors divided by all images in the bin, and the
+text gives both counts. Empty cells have no images; hatching marks cells
+with fewer than five images, where rates are unstable. The p-bin edges
+match the scatterplot ticks, but cells have equal widths, so horizontal
+distance does not represent a score difference.
+
+\begin{figure}[H]
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={Error distribution and error rates in the model-validation set}]{pq-distribution-val.en.png}}
+\caption{Error distribution and error rates in the model-validation set}
+\end{figure}
+
+Figure 4 shows the same model on 2,046 model-validation images,
+including 823 positives. At the illustrative threshold, 122/823
+positives are missed and 86/1,223 negatives are false positives. These
+figures are exploratory; neither a clinical threshold nor a review
+boundary has been fixed. Reserved tests remain for evaluation after the
+rule is locked. The \href{pq-distribution.json}{figure data} contain bin
+counts and input hashes; see also the
+\href{../../../tools/plot_pq_overview_20261113.py}{plotting program} and
+\href{../../../tools/score_expanded_pq_quality.py}{quality-score
+inference program}.
 
 \subsection{Priorities identified by the
 analysis}\label{priorities-identified-by-the-analysis}
