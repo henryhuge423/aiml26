@@ -1,0 +1,11 @@
+{
+  "command": "tools/training_python.cmd -m pytest tests -q",
+  "result": "82 passed, 3 subtests passed in 36.78s",
+  "passed": 82,
+  "subtests_passed": 3,
+  "exit_code": 0,
+  "recorded_at": "2026-11-13T23:27:47.530009+00:00",
+  "environment": ".envs/training",
+  "scope": "Complete tests directory, including sampling, degradation training, cohort checks, paired analysis, cache and recovery.",
+  "source": "Observed output of exec session 90144 during the documentation task."
+}

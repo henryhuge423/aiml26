@@ -1,0 +1,16 @@
+{
+  "inputs": {
+    "cohort_sha256": "d641b6708ea8b26d2d67d56a324bab1469b03b20e8c761448ba110dd8a0aa40a",
+    "comparison_sha256": "0560e1504680f63b2454148ab64c9a57ca14854a80a7e72e53a12416d98e8722"
+  },
+  "languages": {
+    "zh": {
+      "pages": 3,
+      "pdf_sha256": "d52858c557a372ad35fbf8d4c48dba66681964d8c75608f2489c12a35b5b26a5"
+    },
+    "en": {
+      "pages": 3,
+      "pdf_sha256": "54c769a3d81872dd122e9ed8b393fc0fa6d9d5f85fa18b224fa692326cf97ed4"
+    }
+  }
+}

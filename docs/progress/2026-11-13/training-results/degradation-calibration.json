@@ -1,0 +1,372 @@
+{
+  "pillow_version": "13.0.0",
+  "preprocessing": "RGB -> square black pad -> bilinear 320x320 resize -> degradation",
+  "statistic_role": "Descriptive development image statistics; not clinical assessability or disease outcomes",
+  "family_seeds": {
+    "defocus": 0,
+    "scatter": 1,
+    "illumination": 2
+  },
+  "data": {
+    "HRF same-eye development": {
+      "pairs": 18,
+      "archive_sha256": "e0818e5e5c938025e76a3f3474afa785f7b734616da1daf721cbd7fe6d86ca78",
+      "comparison": {
+        "real_low": {
+          "mean_luminance_ratio_to_high": {
+            "median": 1.016090716453275,
+            "p10": 0.9130140442769681,
+            "p90": 1.3799959833861648
+          },
+          "green_contrast_std_ratio_to_high": {
+            "median": 1.0175513375232572,
+            "p10": 0.8844762077009766,
+            "p90": 1.2983997643001084
+          },
+          "green_laplacian_variance_ratio_to_high": {
+            "median": 0.5154615176289468,
+            "p10": 0.29404778608490206,
+            "p90": 0.821531621867332
+          }
+        },
+        "illumination": {
+          "mean_luminance_ratio_to_high": {
+            "median": 1.0997730103685521,
+            "p10": 1.0855144502628409,
+            "p90": 1.107606536969515
+          },
+          "green_contrast_std_ratio_to_high": {
+            "median": 1.1315135078493577,
+            "p10": 1.0896800447390238,
+            "p90": 1.1775990383918218
+          },
+          "green_laplacian_variance_ratio_to_high": {
+            "median": 1.1942783694145187,
+            "p10": 1.1022501362898325,
+            "p90": 1.2247415098040315
+          }
+        },
+        "defocus": {
+          "mean_luminance_ratio_to_high": {
+            "median": 0.9986419501372651,
+            "p10": 0.997518942081943,
+            "p90": 1.000146776654203
+          },
+          "green_contrast_std_ratio_to_high": {
+            "median": 0.997736435412023,
+            "p10": 0.9943694687134117,
+            "p90": 1.003235178349185
+          },
+          "green_laplacian_variance_ratio_to_high": {
+            "median": 0.8046476473645955,
+            "p10": 0.7350785795291532,
+            "p90": 1.0203485037588569
+          }
+        },
+        "scatter": {
+          "mean_luminance_ratio_to_high": {
+            "median": 1.3781657678420574,
+            "p10": 1.2440746954637645,
+            "p90": 1.412756788843489
+          },
+          "green_contrast_std_ratio_to_high": {
+            "median": 0.9722289800985318,
+            "p10": 0.940900192129776,
+            "p90": 0.9986076401411775
+          },
+          "green_laplacian_variance_ratio_to_high": {
+            "median": 0.8489978263152516,
+            "p10": 0.8439263114652438,
+            "p90": 0.8577117050765763
+          }
+        }
+      }
+    },
+    "Real Fundus development": {
+      "pairs": 120,
+      "archive_sha256": "3ea1624b89c8fbe4563c0e74a11202ff31e4007481bbdbea4494d6332b1d5926",
+      "comparison": {
+        "real_low": {
+          "mean_luminance_ratio_to_high": {
+            "median": 1.0129353335897333,
+            "p10": 0.8837867633084442,
+            "p90": 1.1636864696892057
+          },
+          "green_contrast_std_ratio_to_high": {
+            "median": 0.951150456409249,
+            "p10": 0.84370923352631,
+            "p90": 1.0781383808022464
+          },
+          "green_laplacian_variance_ratio_to_high": {
+            "median": 0.1007249541560244,
+            "p10": 0.07354460692128728,
+            "p90": 0.2308454980546589
+          }
+        },
+        "illumination": {
+          "mean_luminance_ratio_to_high": {
+            "median": 1.064448089793946,
+            "p10": 1.0534869043643962,
+            "p90": 1.076802352214852
+          },
+          "green_contrast_std_ratio_to_high": {
+            "median": 1.05726915593825,
+            "p10": 1.020712974727227,
+            "p90": 1.0993583061650938
+          },
+          "green_laplacian_variance_ratio_to_high": {
+            "median": 1.005157184559243,
+            "p10": 0.9729006831359283,
+            "p90": 1.0484251790167525
+          }
+        },
+        "defocus": {
+          "mean_luminance_ratio_to_high": {
+            "median": 0.9988880779326963,
+            "p10": 0.9986474966117685,
+            "p90": 0.9992173079155335
+          },
+          "green_contrast_std_ratio_to_high": {
+            "median": 0.997071681018946,
+            "p10": 0.9956780273423467,
+            "p90": 0.9981651168584785
+          },
+          "green_laplacian_variance_ratio_to_high": {
+            "median": 0.7191086446770096,
+            "p10": 0.6632033169099708,
+            "p90": 0.8042208146818387
+          }
+        },
+        "scatter": {
+          "mean_luminance_ratio_to_high": {
+            "median": 1.1609189346667024,
+            "p10": 1.1308845654408928,
+            "p90": 1.1995684427337376
+          },
+          "green_contrast_std_ratio_to_high": {
+            "median": 0.928261777636492,
+            "p10": 0.923511364937054,
+            "p90": 0.9345710398907048
+          },
+          "green_laplacian_variance_ratio_to_high": {
+            "median": 0.7811010295633094,
+            "p10": 0.7502170388277525,
+            "p90": 0.8111364691323603
+          }
+        }
+      }
+    }
+  },
+  "replay_examples": [
+    {
+      "source": "HRF same-eye development",
+      "pair_id": "10",
+      "high_name": "10_good.JPG",
+      "metadata": {
+        "version": "fundus-mild-v1",
+        "seed": 2,
+        "probability": 1.0,
+        "original_rgb_sha256": "3c04ba27da8f6a8aaeb19644a23877b71f3142c5024041d87124294963ee5c62",
+        "applied": true,
+        "family": "illumination",
+        "context": {
+          "image_size": [
+            320,
+            320
+          ],
+          "field_box": [
+            59,
+            61,
+            260,
+            262
+          ],
+          "field_diameter_pixels": 201.0,
+          "empty_field": false
+        },
+        "parameters": {
+          "exposure": 1.0456902962377121,
+          "gamma": 0.9229789855337742,
+          "edge_attenuation": 0.1400150788948481,
+          "center_x_fraction": 0.5457121053623589,
+          "center_y_fraction": 0.4375802146733207
+        }
+      }
+    },
+    {
+      "source": "HRF same-eye development",
+      "pair_id": "10",
+      "high_name": "10_good.JPG",
+      "metadata": {
+        "version": "fundus-mild-v1",
+        "seed": 0,
+        "probability": 1.0,
+        "original_rgb_sha256": "3c04ba27da8f6a8aaeb19644a23877b71f3142c5024041d87124294963ee5c62",
+        "applied": true,
+        "family": "defocus",
+        "context": {
+          "image_size": [
+            320,
+            320
+          ],
+          "field_box": [
+            59,
+            61,
+            260,
+            262
+          ],
+          "field_diameter_pixels": 201.0,
+          "empty_field": false
+        },
+        "parameters": {
+          "gaussian_sigma_at_512": 0.5614602859042921,
+          "secondary": "jpeg",
+          "jpeg_quality": 76,
+          "gaussian_sigma_pixels": 0.22041702630227092
+        }
+      }
+    },
+    {
+      "source": "HRF same-eye development",
+      "pair_id": "10",
+      "high_name": "10_good.JPG",
+      "metadata": {
+        "version": "fundus-mild-v1",
+        "seed": 1,
+        "probability": 1.0,
+        "original_rgb_sha256": "3c04ba27da8f6a8aaeb19644a23877b71f3142c5024041d87124294963ee5c62",
+        "applied": true,
+        "family": "scatter",
+        "context": {
+          "image_size": [
+            320,
+            320
+          ],
+          "field_box": [
+            59,
+            61,
+            260,
+            262
+          ],
+          "field_diameter_pixels": 201.0,
+          "empty_field": false
+        },
+        "parameters": {
+          "gaussian_sigma_at_512": 0.5720798063598169,
+          "veiling_opacity": 0.09640546129960707,
+          "field_sigma_fraction": 0.7247325808041942,
+          "veil_rgb": [
+            0.9,
+            0.88,
+            0.82
+          ],
+          "gaussian_sigma_pixels": 0.2245860177311
+        }
+      }
+    },
+    {
+      "source": "Real Fundus development",
+      "pair_id": "00001",
+      "high_name": "Real_Fundus/gt/00001.PNG",
+      "metadata": {
+        "version": "fundus-mild-v1",
+        "seed": 2,
+        "probability": 1.0,
+        "original_rgb_sha256": "46a0fc2c804b8ab29c25f610b06c86099750d401879be91f8be2b2c9e085c8c7",
+        "applied": true,
+        "family": "illumination",
+        "context": {
+          "image_size": [
+            320,
+            320
+          ],
+          "field_box": [
+            0,
+            0,
+            320,
+            320
+          ],
+          "field_diameter_pixels": 320.0,
+          "empty_field": false
+        },
+        "parameters": {
+          "exposure": 1.0456902962377121,
+          "gamma": 0.9229789855337742,
+          "edge_attenuation": 0.1400150788948481,
+          "center_x_fraction": 0.5457121053623589,
+          "center_y_fraction": 0.4375802146733207
+        }
+      }
+    },
+    {
+      "source": "Real Fundus development",
+      "pair_id": "00001",
+      "high_name": "Real_Fundus/gt/00001.PNG",
+      "metadata": {
+        "version": "fundus-mild-v1",
+        "seed": 0,
+        "probability": 1.0,
+        "original_rgb_sha256": "46a0fc2c804b8ab29c25f610b06c86099750d401879be91f8be2b2c9e085c8c7",
+        "applied": true,
+        "family": "defocus",
+        "context": {
+          "image_size": [
+            320,
+            320
+          ],
+          "field_box": [
+            0,
+            0,
+            320,
+            320
+          ],
+          "field_diameter_pixels": 320.0,
+          "empty_field": false
+        },
+        "parameters": {
+          "gaussian_sigma_at_512": 0.5614602859042921,
+          "secondary": "jpeg",
+          "jpeg_quality": 76,
+          "gaussian_sigma_pixels": 0.35091267869018256
+        }
+      }
+    },
+    {
+      "source": "Real Fundus development",
+      "pair_id": "00001",
+      "high_name": "Real_Fundus/gt/00001.PNG",
+      "metadata": {
+        "version": "fundus-mild-v1",
+        "seed": 1,
+        "probability": 1.0,
+        "original_rgb_sha256": "46a0fc2c804b8ab29c25f610b06c86099750d401879be91f8be2b2c9e085c8c7",
+        "applied": true,
+        "family": "scatter",
+        "context": {
+          "image_size": [
+            320,
+            320
+          ],
+          "field_box": [
+            0,
+            0,
+            320,
+            320
+          ],
+          "field_diameter_pixels": 320.0,
+          "empty_field": false
+        },
+        "parameters": {
+          "gaussian_sigma_at_512": 0.5720798063598169,
+          "veiling_opacity": 0.09640546129960707,
+          "field_sigma_fraction": 0.7247325808041942,
+          "veil_rgb": [
+            0.9,
+            0.88,
+            0.82
+          ],
+          "gaussian_sigma_pixels": 0.35754987897488555
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "CoFe_author_blur": {
+    "status": "executed_cpu",
+    "shape": [
+      3,
+      320,
+      320
+    ],
+    "finite": true,
+    "parameters": {
+      "sigma": 6.786515937614926,
+      "rad_w": 3,
+      "rad_h": 3
+    }
+  },
+  "CoFe_author_illumination": {
+    "status": "executed_cpu"
+  },
+  "CUNSB_author_generator": {
+    "status": "strict_checkpoint_loaded_forward_executed_cpu",
+    "tensors": 316,
+    "output_shape": [
+      1,
+      3,
+      320,
+      320
+    ],
+    "finite": true,
+    "output_min": -1.0,
+    "output_max": 0.9999039173126221,
+    "seconds": 3.1793742179870605,
+    "mean_absolute_rgb_change": 1.9175227864583333,
+    "scope": "One generator forward at t=0; not the complete five-step bridge, a clinical reproduction, or a disease result"
+  }
+}

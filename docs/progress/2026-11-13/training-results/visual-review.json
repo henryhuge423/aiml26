@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-13",
+  "languages_reviewed": [
+    "zh",
+    "en"
+  ],
+  "pdf_pages_reviewed": {
+    "zh": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "en": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "pdf_sha256": {
+    "zh": "8828790c4b4d6fac5a73c8168fadf1756e897b1a15345c3f52130b046ea43053",
+    "en": "81a45b7461436bce2f109b0d09b70891b9180eed3197665d654c3fb808330633"
+  },
+  "figures_reviewed": [
+    "cohort-and-quality.png",
+    "training-curves.png",
+    "development-results.png",
+    "degradation-preview.png",
+    "cunsb-generator-input.png",
+    "cunsb-generator-smoke.png"
+  ],
+  "figure_sha256": {
+    "cohort-and-quality.png": "51cf5ef03fa8105a2c34be9056fd41072acc7487bbf96ef7bbc4f404e2658d9d",
+    "training-curves.png": "2f949b86d9c66e02face1d3a899abb43996bbfdcea10785b59f157b5bcf244e0",
+    "development-results.png": "d8e22ab169233a70a9a687b8bd52f9529c18195855cd7e616c3e68336a2051e0",
+    "degradation-preview.png": "6a44116ee5f52cf8d0f1e5fb628a4c91a862283e25264e868bd6cfa911f355c7",
+    "cunsb-generator-input.png": "e93efc639809e89f426056662ecbbb8807f3315af191b48135bef5bf1b0ea838",
+    "cunsb-generator-smoke.png": "c8a12a0df3e2efff776be1ca9a86cbb4680a6b33f157de0217400daafb9b7c59"
+  },
+  "report_layout_passed": true,
+  "review_scope": "Both languages, complete PDF pages, AUROC definition, selected versus update-1200 comparisons, table readability, figure labels, and clipping; technical document review",
+  "results_separated": [
+    "validation-selected checkpoints",
+    "checkpoints at update 1200",
+    "real-quality development",
+    "fixed synthetic stress"
+  ],
+  "rendered_contact_sheets": {
+    "zh": [
+      ".build/progress-20261113-training/contact-zh-1.jpg",
+      ".build/progress-20261113-training/contact-zh-2.jpg"
+    ],
+    "en": [
+      ".build/progress-20261113-training/contact-en-1.jpg",
+      ".build/progress-20261113-training/contact-en-2.jpg"
+    ]
+  }
+}

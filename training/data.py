@@ -72,20 +72,30 @@ def attach_teacher_targets(rows: list[dict], cache: dict) -> list[dict]:
     return result
 
 
-def epoch_indices(rows: list[dict], seed: int, epoch: int, balance_sources: bool) -> list[int]:
+def epoch_indices(rows: list[dict], seed: int, epoch: int, balance_sources: bool, strategy: str|None=None) -> list[int]:
     generator=torch.Generator().manual_seed(seed+epoch)
+    if strategy not in {None,'equal_source_class','inverse_sqrt','shuffle'}:
+        raise ValueError('unknown sampling strategy')
+    if strategy=='shuffle':balance_sources=False
     if not balance_sources:return torch.randperm(len(rows),generator=generator).tolist()
     counts=collections.Counter((r['source'],r['label']) for r in rows)
     classes=collections.defaultdict(set)
     for src,label in counts:classes[src].add(label)
-    weights=torch.tensor([1/(len(classes[r['source']])*counts[r['source'],r['label']]) for r in rows],dtype=torch.double)
+    weights=torch.tensor([counts[r['source'],r['label']]**-.5 if strategy=='inverse_sqrt' else
+        1/(len(classes[r['source']])*counts[r['source'],r['label']]) for r in rows],dtype=torch.double)
     return torch.multinomial(weights,len(rows),replacement=True,generator=generator).tolist()
 
 
 class ImageRows(torch.utils.data.Dataset):
-    def __init__(self,rows,data_root,size,task,train=False,seed=20261109,epoch=0):
+    def __init__(self,rows,data_root,size,task,train=False,seed=20261109,epoch=0,degradation=None,return_metadata=False):
         self.rows,self.root,self.task=rows,Path(data_root).resolve(),task
         self.train,self.seed,self.epoch=train,seed,epoch
+        self.size,self.return_metadata=size,return_metadata
+        self.degradation=None
+        if degradation:
+            if task!='glaucoma':raise ValueError('degradation requires image-specific quality targets for quality training')
+            from .fundus_degradation import FundusDegradation
+            self.degradation=FundusDegradation(**degradation) if train else None
         self.transform=T.Compose([T.Resize((size,size))]+([T.RandomHorizontalFlip()] if train else [])+
             [T.ToTensor(),T.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225])])
 
@@ -102,8 +112,13 @@ class ImageRows(torch.utils.data.Dataset):
             image=ImageOps.pad(image,(side,side),color=0)
         # Per-image/epoch augmentation is deterministic and does not consume model/dropout RNG.
         image_seed=int(hashlib.sha256(f'{self.seed}:{self.epoch}:{row["sample_id"]}'.encode()).hexdigest()[:15],16)
+        metadata={'applied':False,'family':'original'}
+        if self.degradation is not None:
+            image=image.resize((self.size,self.size),Image.Resampling.BILINEAR)
+            image,metadata=self.degradation.augment(image,seed=image_seed)
         with torch.random.fork_rng(devices=[]):
             torch.random.default_generator.manual_seed(image_seed)
             tensor=self.transform(image)
         target=float(row['label'] if self.task=='glaucoma' else row['teacher_q'])
-        return tensor,torch.tensor(target,dtype=torch.float32),row['sample_id']
+        result=(tensor,torch.tensor(target,dtype=torch.float32),row['sample_id'])
+        return (*result,json.dumps(metadata,sort_keys=True)) if self.return_metadata else result

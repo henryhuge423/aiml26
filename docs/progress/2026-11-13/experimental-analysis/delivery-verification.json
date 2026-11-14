@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "metric_values_cross_checked": 336,
+  "local_links_verified": 98,
+  "prediction_files_unchanged": 8,
+  "complete_prediction_identities_per_file": 4867,
+  "protected_test_inference": false,
+  "original_manifest_unchanged": true,
+  "current_training_report_links_verified": true,
+  "expanded_per_image_draw_counts_identical": true,
+  "statistical_unit_tests": {
+    "passed_in_this_session": 4,
+    "suite": "tests/test_expansion_analysis.py",
+    "command": "python -m pytest tests/test_expansion_analysis.py -q",
+    "result": "4 passed in 1.22s"
+  },
+  "final_visual_review": {
+    "pdf_pages": 11,
+    "figures": 8,
+    "record": "visual-review.json"
+  },
+  "pdf_pages": {
+    "zh": {
+      "pages": 5,
+      "latex_retained": true,
+      "pdf_bytes": 660646
+    },
+    "en": {
+      "pages": 6,
+      "latex_retained": true,
+      "pdf_bytes": 478309
+    }
+  },
+  "artifact_sha256": {
+    "docs\\progress\\2026-11-13\\experimental-analysis\\defocus-ranking-shifts.en.png": "d0749cf8cdfeaabcd54d0f1083346ab8f089c6fd5838bc6a2274977a06a6d32a",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\defocus-ranking-shifts.zh.png": "fcec8ec2e71a804e5bb57624846dee31d4f6fa00a6b036904d016f3b62f825a8",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\experimental-analysis.en.md": "8ec2948b2092a229474b458cb7207e6f5dcdd29c0ba45a33a81d3d6f34211a40",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\experimental-analysis.en.pdf": "b31c40e128b20274073743a67b0645e802da4fdcf1aed8eee826cf640a16228f",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\experimental-analysis.en.tex": "a03a4bbee4213bb1d95a2aa699b79b7e6f7e235edf49ec75b6b4420de520fe64",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\experimental-analysis.zh.md": "b35eca31fc14b3f15072207a8d79f453e53581266e002ac9a3968b3bafdf5c3a",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\experimental-analysis.zh.pdf": "94dfdb7c6984fb512d72e784dc1c95798c86142467e04fb68f93c96db7672dbd",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\experimental-analysis.zh.tex": "9062e9272d8c07bca0625b815850604c07c69b7f76d9fdc673d9cad39743fc1d",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\exposure-selection.en.png": "6b8e4444af9c0a103906015a9ee65f6d8bbfd8bc5d5f886c39bc6ff760613741",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\exposure-selection.zh.png": "e8996fb3b1634d54b4531cc1f4fc1687d929c11eafd86622c7cc572b7a151979",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\paired-source-contrasts.csv": "5d218c0343dc450ad9c7b9d21c002439cbed9a11c47fdedf45a8c60b30fbd124",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\real-quality-labels.en.png": "b43ea19b5b8be661c2956c0c05a9826cdce28136ed829addaf8938b6a2fb5224",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\real-quality-labels.zh.png": "b13a7de61ba7089781f12651d351343b053dcde73cc92d473d4b7a504b2f6bb1",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\source-differences.en.png": "aa661287c5cb0f2a825b068171eebc66a9851179899c9c4a0e14f606ea058741",
+    "docs\\progress\\2026-11-13\\experimental-analysis\\source-differences.zh.png": "7aefa8722d16202cefc7f0f728a56d855a16490718bc3b48e9faa4d04d231413"
+  },
+  "analysis_sha256": "c73c071ad1990a322330dd989f9d2ff1a34d1be5f0d027237556e6e7606f0b14",
+  "code_sha256": {
+    "tools\\analyze_expansion_results_20261113.py": "a4cd3001ba2a42d9c957c0d72c5a0d1e82d5b5090d324f54c862c20c6a9d4552",
+    "tools\\report_expansion_analysis_20261113.py": "cae98e6c1a1274383e953d683a0195024fecf91203d121db7d4dbd3059b7940c",
+    "tools\\verify_expansion_analysis_20261113.py": "a955433b1c6b9ee2bf294e40b8fb7b55153b278ca7c0f34d9e75ec771ecb4b40",
+    "tests\\test_expansion_analysis.py": "198ec5c6edc248e88b348b59def458dad57112ca00a5e392b34e733e112b632f"
+  }
+}

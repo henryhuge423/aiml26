@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "sealed_input_hashes": 85,
+  "admitted": 9070,
+  "positive_labels": 3446,
+  "auxiliary_suspects": 204,
+  "poor_quality_positives": 146,
+  "development_images": 1220,
+  "development_positives": 503,
+  "identity_only_prediction_filter_verified": true,
+  "protected_original_manifest_hash_verified": true,
+  "final_test_predictions_loaded": false,
+  "checked_local_links": 104,
+  "pdf_pages": {
+    "zh": 7,
+    "en": 9
+  },
+  "reviewed_figures": 2,
+  "visual_review_record": "visual_review.json",
+  "historical_input_documentation_updates_verified": {
+    "tools\\finalize_expansion_20261113.py": {
+      "recorded_sha256": "ed67ed7bb027ed0329b4ffd59fe9831c54287880664dbc63c45be4428d412723",
+      "current_sha256": "85425b572bf5466125407d5b440279522d47f58fe789c16b07926623f7d58638",
+      "restored_original_sha256": "ed67ed7bb027ed0329b4ffd59fe9831c54287880664dbc63c45be4428d412723",
+      "verified_changes": [
+        "report paths moved to the data-review subdirectory",
+        "LF line endings converted to CRLF on Windows"
+      ]
+    }
+  },
+  "artifact_sha256": {
+    "docs/progress/2026-11-13/data-review/admission-and-sources.png": "59dc8fbc68f7d09fa6667b90b5c490909e6d3201330d9cbdb2a01322e79732d7",
+    "docs/progress/2026-11-13/data-review/admission-chart-data.json": "e8afc259809b0999d03bf120951dabe0691e3b6e3b33f6d0e1d0fa6152215335",
+    "docs/progress/2026-11-13/data-review/analyze_splits.py": "cc815eecf8996abe1f97a1e7602db907554d7fea8d45d16b075cd2edf292591b",
+    "docs/progress/2026-11-13/data-review/build_pdfs.py": "e813183999df4dae7b4faf08bb0b60149ef46fee4d2afc633491c3d2a5242a2a",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.en.md": "641643f52e70b7ffbbd675cf95eb260399bbc02d51510a8db2f049308de3ddaa",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.en.pdf": "de6a1917c3eaa7cfdc07240fd696ebef843d52a4be6b2ad67f4b4768f49e4263",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.en.tex": "c9d81ed946a8cc512781b58d40d006389bd34bb734456fbb293ddf9dd2d366fd",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.zh.md": "483c1f1bff7521102e0af0322d3c7bd00332341cdb6fdfaee5938927764b3628",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.zh.pdf": "0db9dc36d108a682b16abc51ee04e809438a6483db417e28b756919df8eb585f",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.zh.tex": "e8dbdb55138fab4123de4c122687f12b030c963d780e080163ab5a84915fe15c",
+    "docs/progress/2026-11-13/data-review/development_analysis.json": "e9cf344fe52fc515a773516bfe215814219b943a9e10d0d4a9e85df8d6b6a78f",
+    "docs/progress/2026-11-13/data-review/experiment-proposal.json": "425366d3e0adae243c56ee36cc37da03f2582684dc0c1a8878f837b680c80808",
+    "docs/progress/2026-11-13/data-review/fill_report.py": "9995f14932decdddfe4f45af24db581db71ecb788268249898de52bdf4a6c09a",
+    "docs/progress/2026-11-13/data-review/pdf_build.json": "ee490d00e140052c0252d793f948b7a06ac03375d062bd4b639cdfaf8bbf0ca4",
+    "docs/progress/2026-11-13/data-review/plot_admission.py": "b105160bcdd40a20fdf23d9a4379a9aae43a24bbae52593141d1c77d4a3d2685",
+    "docs/progress/2026-11-13/data-review/positive_counts_and_precision.png": "08388ea9d6fa92128ac301b40e33ca6ea9492bb07c0713723e197d50d9c3d821",
+    "docs/progress/2026-11-13/data-review/render_pages.py": "9859f1904c4acde6f6a819f43f6114f7eb3f697d9f41c93a9e0648bc8a4ede4a",
+    "docs/progress/2026-11-13/data-review/verify_delivery.py": "ba560626475f7cf92294aa64ca16d74e5a644c42e91716600ff8b10d252081ba",
+    "docs/progress/2026-11-13/data-review/visual_review.json": "d8d6c0702f391425d1c072374c0e869cec26b72a454cf496d5797f0fd8bef751"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-13",
+  "status": "proposed_experiments_not_executed",
+  "purpose": "Test acquisition, degradation robustness, and training-set saturation separately",
+  "protected_existing_releases": [
+    "data/prepared/formal_v3/",
+    "data/prepared/formal_v3_boundary_repaired_20261110/",
+    "data/prepared/eyeq_quality_v1/"
+  ],
+  "disease_augmentation_ablation": {
+    "architecture": "efficientnet_b0",
+    "image_size": 320,
+    "arms": [
+      {"original_probability": 1.0, "mild_moderate_degradation_probability": 0.0},
+      {"original_probability": 0.7, "mild_moderate_degradation_probability": 0.3},
+      {"original_probability": 0.5, "mild_moderate_degradation_probability": 0.5}
+    ],
+    "reference_retinal_diameter_pixels": 512,
+    "degradation_sampling": "Independent of disease label; source, label and quality cross-strata monitored",
+    "initial_parameter_grid_not_clinically_validated": {
+      "blur_sigma_at_reference_diameter": [0.5, 1.0, 2.0],
+      "exposure_multiplier": [0.7, 0.85, 1.15],
+      "gamma": [0.8, 1.0, 1.25],
+      "jpeg_quality": [60, 75, 90],
+      "noise_std_in_0_to_1_scale": [0.005, 0.01, 0.02],
+      "spatial_illumination": "Smooth retinal-mask-bound vignetting or shadow; calibrate on real paired development images"
+    },
+    "strong_stress_only": {"blur_sigma_at_reference_diameter": 5, "exposure_multiplier": 0.4},
+    "label_policy": "Disease loss only when source label is reliable and optic disc remains assessable. Unassessable images retain diagnosis metadata but use rejection evaluation, not ordinary supervised disease loss.",
+    "quality_target_policy": "Never reuse original-image teacher q or EyeQ human grade after degradation; regenerate targets for exact variant or obtain new quality labels.",
+    "evaluation": "All arms share held-out clean, real mild/moderate poor-quality, and unassessable groups. Synthetic paired stress results are separately reported and cluster-resampled by parent image/patient.",
+    "checkpoint_selection": "Predeclared source-specific/macro performance and calibration constraints on model validation; final epochs kept distinct from selected checkpoints"
+  },
+  "source_class_sampler_ablation": {
+    "baseline": "equal_source_equal_class_with_replacement",
+    "alternative": "Weights proportional to inverse square root of source-class count, normalized globally; monitor realized source-class counts, patient repetitions, and calibration",
+    "reason": "Current sampler repeats each of 213 ODIR positives about 8.10 times per epoch and each of 3608 AIROGS positives about 0.478 times"
+  },
+  "learning_curve": {
+    "nested_training_group_fractions": [0.25, 0.5, 0.75, 1.0],
+    "seeds": [20261113, 20261114, 20261115],
+    "unit": "known patient / linked image group; retain source and diagnosis strata",
+    "selection_rule_proposed": "Choose smaller training size only if development confidence interval excludes >0.01 AUROC loss and >0.02 sensitivity loss at predeclared specificity, with no material real-poor-quality deficit",
+    "optimization_budget": "Common maximum optimizer-step budget and validation cadence; report actual steps and best checkpoint. Fractions remain distinct-patient/image counts, not augmented-file counts.",
+    "test_policy": "Existing trained images may be used for cross-fitted development of a new from-initialization model, but never relabeled as an untouched test of existing weights"
+  },
+  "new_data_allocation": {
+    "known_patient_sources": "If author splits permit, source-stratified group allocation 60% train / 10% model validation / 10% rule development / 20% held-out test; counts are subject to positive-case precision requirements",
+    "unknown_patient_sources": "Internal model/rule validation may use the jointly audited image-association groups, explicitly labeled image-group validation rather than patient-independent validation. Independent external testing requires entire source-family holdout.",
+    "related_hospital_sources": "LAG/GRAPE share a hospital; confirmed GRAPE-FIVES, FIVES-FundusAVSeg and FIVES-MSHF associations connect five sources. Allocate them jointly by known patient/confirmed image groups for training and internal validation, never as mutually independent external cohorts.",
+    "source_holdout": "Keep at least one full new source for evaluation before any model-performance inspection; keep existing ACRIMA and HYGD external roles",
+    "evaluation_positive_targets": "Aim for roughly 200 independent positives in the main clinically compatible validation/test cohort and enrich real low-quality positives. This supports about +/-3 percentage-point precision near 95% sensitivity under an independent binomial approximation, not paired-comparison power.",
+    "paired_comparison_power": "Estimate discordant automatic-FN probabilities on development only and calculate paired power; do not derive it from total image count or AUC alone"
+  }
+}

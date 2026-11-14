@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "weight_max_abs_difference": 0.0,
+  "next_losses_exact": true,
+  "epoch_crossed": true,
+  "successful_updates": 6,
+  "workers": 2,
+  "degradation_probability": 0.3,
+  "fingerprint": "2b081d8eade36f9bb29ee067b6d07d85f8522ae99b75507c903add4bbc11288b",
+  "checkpoints_sha256": [
+    "6fbbd98363ee5dd78bc858ac01c76318171d3519797fb78489effa86544775ad",
+    "6fbbd98363ee5dd78bc858ac01c76318171d3519797fb78489effa86544775ad"
+  ]
+}

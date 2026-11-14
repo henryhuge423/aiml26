@@ -2,40 +2,29 @@
 
 English | [中文](README.md)
 
-Eye Sentinel studies how glaucoma screening scores and fundus image quality can guide referrals for human review. The project uses two disease classifiers and an image-quality model to compare review strategies at the same review volume.
+Eye Sentinel studies how glaucoma-classification scores and fundus-image quality scores can select photographs for manual review. The project will compare quality-guided review with a second disease model selecting the same number of images by uncertainty, measuring errors and glaucoma misses among the remaining automated results.
 
-## Current progress
+## Current progress: November 13, 2026
 
-As of November 11, 2026, both disease models, the original quality model, and a quality model trained with EyeQ labels have each completed 20 epochs. The disease models used 10,354 training images and 1,190 model-validation images. Disease and quality scores have been generated for a corrected development set of 1,230 images to support review-rule design.
+This round completed public-data review, identity grouping, dataset allocation, and four EfficientNet-B0 experiments. The additive pool contains 9,070 images. The joint release includes 15,480 training images, 2,046 model-validation images, and 2,053 rule-development images. Each arm completed 1,200 optimizer updates, comparing original data, expanded data, and 30%/50% mixed degradation.
 
-The disease models achieved AUROCs of 0.9766 and 0.9831 on AIROGS validation images. The EyeQ-trained quality model achieved a three-grade macro-F1 of 0.811 on 117 EyeQ validation images. Classification thresholds, the review rule, and final testing are the next steps.
+On the same rule-development originals at update 1,200, expansion raises KEH [AUROC](docs/progress/2026-11-13/progress-overview.en.md#observed-results) from 0.6627 to 0.9333 and LAG from 0.9465 to 0.9890, while AIROGS and ODIR decline. Under synthetic defocus, 50% degradation improves ranking and reduces false positives while increasing misses at threshold 0.5. Detection among 12 real poor-quality development positives improves from 7/12 to 12/12, with identical counts across the three expanded arms.
 
-In a paired experiment, two levels of blur and two levels of darkening were applied to each of 179 development images. At a display threshold of 0.5, 8 of 83 images labeled positive scored below the threshold in their original form, compared with 27 after stronger blur. The reports describe the datasets, results, and figures in [English](docs/progress/2026-11-11/eye_sentinel_full_progress_20261111_en.pdf) and [中文](docs/progress/2026-11-11/eye_sentinel_full_progress_20261111.pdf).
+The next round addresses original-source sampling, checkpoint selection, and real poor-quality negatives. Classification thresholds, manual-review rules, and final testing remain to be completed. Both earlier disease models, the original quality model, and the EyeQ quality model completed 20 epochs, documented in the November 12 report.
 
-## Data
+See the [bilingual progress overview](docs/progress/2026-11-13/README.en.md) ([English PDF](docs/progress/2026-11-13/progress-overview.en.pdf) · [中文 PDF](docs/progress/2026-11-13/progress-overview.zh.pdf)) for results, sample context, and next steps. The day's data review, training report, and statistical analysis are now grouped under one date.
 
-The disease models use images from AIROGS-Light, ODIR-5K, and Kaggle Eye Diseases. The quality models use those images alongside FIQS and EyeQ. Data expansion also includes original AIROGS images, Chaksu, PAPILA, FIVES, MSHF, RIM-ONE, BEH, Real Fundus, and HRF. The [data expansion report](docs/degradation-and-data-2026-11-11.md) and [dataset inventory](data/DATASETS-1106.md) document label definitions, image associations, and the current role of each source.
+## Documentation and operations
 
-## Project documents
+- [Documentation guide](docs/README.en.md): current operations, research materials, and historical records.
+- [Progress report index](docs/progress/README.en.md): bilingual reports, PDFs, and figures by date.
+- [Current runbook](docs/operations/training-runbook.en.md) and [next steps](docs/operations/next-steps.en.md).
+- [Project proposal](proposal-1106.pdf) and [full directory guide](docs/DIRECTORY.en.md).
 
-- [Progress report index and latest training figures](docs/progress/README.en.md)
-- [Full project directory guide](docs/DIRECTORY.en.md)
+## Data and implementation
 
-- [Current proposal](proposal-1106.pdf)
-- [Training status and dataset sizes](docs/TRAINING-STATUS-1110.md)
-- [Experiment review and EyeQ processing](docs/EXPERIMENT-AUDIT-1110.md)
-- [Training protocol](docs/TRAINING-PROTOCOL-1109.md) and [runbook](docs/TRAINING-RUNBOOK.md)
-- [Data expansion and degradation experiments](docs/degradation-and-data-2026-11-11.md)
-- [External glaucoma dataset audit](data/audit/data_expansion_20261111/batch_glaucoma_external.md) and [image-quality dataset audit](data/audit/data_expansion_20261111/batch_quality_external.md)
-- [EyeQ quality model training](runs/eyeq_quality_v1/README.md)
+Original disease data come from AIROGS-Light, ODIR-5K, and Kaggle Eye Diseases. The additive pool retains labels and groups from LAG, GRAPE, KEH, BEH, PAPILA, FIVES, MSHF, Fundus-AVSeg, LES-AV, HRF, CRFO, Chákṣu, and three original AIROGS referral-positive images. Quality models use FIQS and EyeQ. Manifests separately record source label definitions, imaging domains, and confirmed image links.
 
-The detailed experiment records are currently in Chinese.
+`configs/` and `training/` contain configurations and training code; `tools/` and `tests/` contain processing tools and automated checks. `data/` stores manifests and audits, while `models/` and `runs/` hold local weights and run artifacts. The repository shares code, documents, figures, and selected result summaries; raw datasets, weights, and full logs stay local.
 
-## Directory guide
-
-- `configs/` and `training/` contain experiment configurations and training code.
-- `data/` contains datasets, manifests, and audit records.
-- `docs/` contains progress reports, experiment records, and protocols.
-- `models/` and `runs/` contain model resources and experiment outputs.
-- `tools/` and `tests/` contain data-processing and training tools and tests.
-- `notes/`, `references/`, and `archive/` contain background materials and earlier proposals.
+[Data workspace](data/README.md) · [Joint data release](data/prepared/expanded_20261113/README.en.md) · [Additive pool](data/prepared/expansion_20261113/README.en.md)

@@ -1,0 +1,66 @@
+[
+  {
+    "file": "pretrain_net_D.pth",
+    "tensors": 37,
+    "first_keys": [
+      "model_main.0.conv1.weight",
+      "model_main.0.down.filt",
+      "model_main.0.dense.weight",
+      "model_main.0.dense.bias",
+      "model_main.1.conv1.weight",
+      "model_main.1.norm.weight",
+      "model_main.1.norm.bias",
+      "model_main.1.norm.running_mean"
+    ],
+    "finite": true,
+    "parameters": 3154308
+  },
+  {
+    "file": "pretrain_net_E.pth",
+    "tensors": 37,
+    "first_keys": [
+      "model_main.0.conv1.weight",
+      "model_main.0.down.filt",
+      "model_main.0.dense.weight",
+      "model_main.0.dense.bias",
+      "model_main.1.conv1.weight",
+      "model_main.1.norm.weight",
+      "model_main.1.norm.bias",
+      "model_main.1.norm.running_mean"
+    ],
+    "finite": true,
+    "parameters": 3163524
+  },
+  {
+    "file": "pretrain_net_F.pth",
+    "tensors": 24,
+    "first_keys": [
+      "mlp_0.0.weight",
+      "mlp_0.0.bias",
+      "mlp_0.2.weight",
+      "mlp_0.2.bias",
+      "mlp_1.0.weight",
+      "mlp_1.0.bias",
+      "mlp_1.2.weight",
+      "mlp_1.2.bias"
+    ],
+    "finite": true,
+    "parameters": 650240
+  },
+  {
+    "file": "pretrain_net_G.pth",
+    "tensors": 316,
+    "first_keys": [
+      "conv00.conv.weight",
+      "conv00.conv.bias",
+      "conv00.gn.weight",
+      "conv00.gn.bias",
+      "conv0x.gn_offset.weight",
+      "conv0x.gn_offset.bias",
+      "conv0x.gn.weight",
+      "conv0x.gn.bias"
+    ],
+    "finite": true,
+    "parameters": 21958275
+  }
+]

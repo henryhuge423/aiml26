@@ -1,0 +1,91 @@
+{
+  "inputs_sha256": {
+    "data/prepared/expansion_20261113/release.json": "67b8b13265bfa016c079232d2b3bd492ace2b0628035a76b8bc77d429b6bc72d",
+    "data/audit/data_expansion_20261113/local_summary.json": "c1431e0f0dadde66ce4116da464bb81220ab71a0c8697e138c7fbfa89b18ad3d"
+  },
+  "candidate_images": 13176,
+  "disease_pool_images": 9070,
+  "positive_images": 3446,
+  "auxiliary_suspects": 204,
+  "excluded_images": 3902,
+  "sources": {
+    "airogs_original_rg": {
+      "images": 3,
+      "positives": 3,
+      "linked_groups": 3,
+      "known_patient_ids": 0
+    },
+    "beh": {
+      "images": 333,
+      "positives": 83,
+      "linked_groups": 333,
+      "known_patient_ids": 0
+    },
+    "chaksu": {
+      "images": 861,
+      "positives": 0,
+      "linked_groups": 861,
+      "known_patient_ids": 0
+    },
+    "crfo": {
+      "images": 67,
+      "positives": 40,
+      "linked_groups": 36,
+      "known_patient_ids": 36
+    },
+    "fives": {
+      "images": 384,
+      "positives": 191,
+      "linked_groups": 374,
+      "known_patient_ids": 0
+    },
+    "fundus_avseg": {
+      "images": 42,
+      "positives": 14,
+      "linked_groups": 42,
+      "known_patient_ids": 0
+    },
+    "grape": {
+      "images": 518,
+      "positives": 518,
+      "linked_groups": 140,
+      "known_patient_ids": 140
+    },
+    "hrf": {
+      "images": 30,
+      "positives": 15,
+      "linked_groups": 30,
+      "known_patient_ids": 0
+    },
+    "keh": {
+      "images": 1529,
+      "positives": 747,
+      "linked_groups": 1529,
+      "known_patient_ids": 0
+    },
+    "lag_part1": {
+      "images": 4812,
+      "positives": 1688,
+      "linked_groups": 4812,
+      "known_patient_ids": 0
+    },
+    "les_av": {
+      "images": 22,
+      "positives": 11,
+      "linked_groups": 22,
+      "known_patient_ids": 0
+    },
+    "mshf": {
+      "images": 49,
+      "positives": 49,
+      "linked_groups": 49,
+      "known_patient_ids": 0
+    },
+    "papila": {
+      "images": 420,
+      "positives": 87,
+      "linked_groups": 210,
+      "known_patient_ids": 210
+    }
+  }
+}

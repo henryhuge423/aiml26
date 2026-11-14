@@ -1,0 +1,38 @@
+{
+  "reviewed_by": "data_review agent, direct visual inspection of all page panels and both figures",
+  "date": "2026-11-13",
+  "pdf_pages_reviewed": {
+    "zh": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "en": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "figures_reviewed": [
+    "positive_counts_and_precision.png",
+    "admission-and-sources.png"
+  ],
+  "review_method": "Read both Markdown reports; inspected all 16 final PDF pages in five numbered contact sheets after adding the bilingual AUROC definition, and both full-resolution figures.",
+  "findings": "AUROC full names, paired-ranking interpretation, ties, and reference values are legible on page 1 in both languages. Text, table continuation headers, captions, axes, legends, counts, and final references are legible; no clipped content or missing glyphs.",
+  "reviewed_sha256": {
+    "data-and-degradation-review.zh.pdf": "0db9dc36d108a682b16abc51ee04e809438a6483db417e28b756919df8eb585f",
+    "data-and-degradation-review.en.pdf": "de6a1917c3eaa7cfdc07240fd696ebef843d52a4be6b2ad67f4b4768f49e4263",
+    "positive_counts_and_precision.png": "08388ea9d6fa92128ac301b40e33ca6ea9492bb07c0713723e197d50d9c3d821",
+    "admission-and-sources.png": "59dc8fbc68f7d09fa6667b90b5c490909e6d3201330d9cbdb2a01322e79732d7"
+  }
+}

@@ -2,25 +2,27 @@
 
 [English](DIRECTORY.en.md) | 中文
 
-本目录说明 Eye Sentinel 仓库的用途和文件位置。项目位于课程工作区的 `team_project/`；课程作业和讲义位于其外，不属于本仓库。
+Eye Sentinel 仓库位于课程工作区的 `team_project/`。项目文档按进度、当前操作、研究及历史记录组织；数据和训练程序使用的路径保持原位置。
 
-| 位置 | 内容 |
+| 位置 | 内容与入口 |
 |---|---|
-| `README.md`、`README.en.md` | 项目概况和入口。 |
+| `README.md`、`README.en.md` | 项目目标、最新结果与主要入口。 |
 | `proposal-1106.pdf` | 当前项目提案。 |
-| `docs/progress/` | 中英文进展报告、图表及对应汇总数据；[查看报告目录](progress/README.md)。 |
-| `docs/` | 训练协议、数据研究、实验记录与历史材料；`superpowers/` 保存历史计划和设计记录。 |
-| `configs/` | 数据和训练配置，`formal_v3/` 是正式训练配置。 |
-| `training/` | 数据加载、模型、训练和验证程序。 |
-| `tools/` | 数据准备、审计、训练启动与其他项目工具。 |
-| `tests/` | 项目自动化检查。 |
-| `data/` | 数据集说明、审计记录；本地还可能包含数据、划分和清单。 |
-| `models/` | 模型资源与权重；权重保留在本地。 |
-| `runs/` | 各次训练的状态、指标、检查点和验证结果；少量可分享的汇总结果进入 Git。 |
-| `notes/` | 项目背景、评审和前期研究笔记。 |
-| `archive/` | 早期提案及历史材料。 |
-| `references/` | 本地参考资料。 |
-| `tmp/`、`.cache/`、`.build/`、`.test_tmp/` | 临时文件、缓存和构建结果。 |
+| `docs/README.md`、`docs/README.en.md` | [文档导航](README.md)。 |
+| `docs/progress/YYYY-MM-DD/` | 按日期保存的中英文进度报告、PDF、LaTeX、图表与汇总数据。 |
+| `docs/progress/2026-11-13/` | [新数据集与退化实验整体材料](progress/2026-11-13/README.md)，含 `data-review/`、`training-results/`、`experimental-analysis/`。 |
+| `docs/operations/` | 当前训练运行手册、准备核验、方法协议及下一步工作，中英文对应。 |
+| `docs/research/` | 数据扩展研究与结构化调研提纲。 |
+| `docs/historical/` | [按日期归档的审计和旧操作记录](historical/README.md)，以及早期数据介绍与讲稿。`planning/` 保留原设计和执行计划。 |
+| `configs/` | 训练配置；`formal_v3/` 是此前训练，`expanded_20261113/` 是本轮四组实验。 |
+| `training/` | 数据加载、模型、训练、质量监督和眼底退化实现。 |
+| `tools/`、`tests/` | 数据核验、训练、报告工具及自动化检查。 |
+| `data/` | [数据说明](../data/README.md)、来源文件、清单与审计。 |
+| `models/` | [模型资源说明](../models/README.md)，本地初始化、教师和训练权重。 |
+| `runs/` | 各轮训练状态、指标、预测与权重；精选汇总进入 Git。 |
+| `notes/` | 前期研究、可行性和课程评审笔记。 |
+| `archive/`、`references/` | 早期提案与本地参考资料。 |
 | `.envs/` | 本地运行环境。 |
+| `tmp/`、`.cache/`、`.build/`、`.test_tmp/` | 临时文件、缓存、PDF渲染与检查产物。 |
 
-GitHub 主要保存代码、配置、文档和选定的汇总结果。原始数据、模型权重、完整运行日志、本地环境与临时文件按 `.gitignore` 留在本地。为保持训练配置和已有文档中的路径有效，以上目录不按文件类型重新搬迁；新增进展报告集中放入 `docs/progress/`。历史技术记录保留原文，新报告提供中英文版本。
+文档主题目录使用小写英文和连字符，进度目录统一使用日期。历史正文保留，移动时更新引用。原始数据、权重、完整运行日志、环境及临时产物留在本地；GitHub 同步代码、配置、文档、PDF、图表和选定的汇总结果。

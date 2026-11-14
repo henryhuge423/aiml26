@@ -88,6 +88,8 @@ def fingerprint_inputs(config,root):
     name=INITIALIZATIONS[config['architecture']][0]
     body['initialization_digest']=sha256(root/'models/checkpoints'/name)
     body['training_code']={n:sha256(root/'training'/n) for n in ('data.py','models.py','engine.py')}
+    if config.get('degradation'):
+        body['training_code']['fundus_degradation.py']=sha256(root/'training/fundus_degradation.py')
     if config['task']=='quality':
         body['teacher_cache_digest']=sha256(root/config['teacher_cache'])
         body['teacher_meta_digest']=sha256((root/config['teacher_cache']).with_suffix('.json'))
@@ -95,7 +97,8 @@ def fingerprint_inputs(config,root):
 
 
 def loader(rows,config,root,train,epoch=0,indices=None):
-    dataset=ImageRows(rows,root/'data',config['image_size'],config['task'],train,config['seed'],epoch)
+    dataset=ImageRows(rows,root/'data',config['image_size'],config['task'],train,config['seed'],epoch,
+        degradation=config.get('degradation'),return_metadata=train and bool(config.get('degradation')))
     if indices is not None:dataset=torch.utils.data.Subset(dataset,indices)
     generator=torch.Generator().manual_seed(config['seed']+epoch+9187)
     workers=config.get('num_workers',0)
@@ -130,10 +133,11 @@ def evaluate(model,rows,config,root,run_dir):
         else:item['mae_to_teacher']=sum(abs(a-b) for a,b in zip(labels,scores))/len(labels)
         metrics['per_source'][source]=item
     if config['task']=='glaucoma':
-        source=config['selection_source']
-        auc=metrics['per_source'].get(source,{}).get('auc')
-        if auc is None:raise ValueError('validation selection source lacks both classes')
-        metrics['selection_value']=auc
+        sources=config.get('selection_sources') or [config['selection_source']]
+        values=[metrics['per_source'].get(source,{}).get('auc') for source in sources]
+        if any(auc is None for auc in values):raise ValueError('validation selection source lacks both classes')
+        metrics['selection_value']=sum(values)/len(values)
+        metrics['selection_sources']=sources
     else:metrics['selection_value']=-metrics['loss']
     with (run_dir/'validation_predictions.csv').open('w',newline='',encoding='utf-8-sig') as f:
         writer=csv.DictWriter(f,fieldnames=list(predictions[0]));writer.writeheader();writer.writerows(predictions)
@@ -151,6 +155,15 @@ def train(config_path: Path,root: Path,resume: Path|None=None,max_steps: int|Non
     torch.backends.cudnn.deterministic=True
     manifest=root/config['manifest'];release=root/config['release'];task=config['task']
     train_rows=load_rows(manifest,task,'train',release);val_rows=load_rows(manifest,task,'val',release)
+    if config.get('training_origins'):
+        train_rows=[r for r in train_rows if r.get('origin_cohort') in config['training_origins']]
+        if len(train_rows)<2 or {r['label'] for r in train_rows}!={'0','1'}:
+            raise ValueError('training origin filter needs nonempty binary cohort')
+    update_budget=config.get('max_optimizer_updates')
+    validation_interval=config.get('validation_every_updates')
+    for name,value in [('max_optimizer_updates',update_budget),('validation_every_updates',validation_interval)]:
+        if value is not None and (not isinstance(value,int) or isinstance(value,bool) or value<1):
+            raise ValueError(f'{name} must be a positive integer')
     if task=='quality':
         cache=load_cache(root/config['teacher_cache'],manifest,root,release)
         train_rows=attach_teacher_targets(train_rows,cache);val_rows=attach_teacher_targets(val_rows,cache)
@@ -181,6 +194,13 @@ def train(config_path: Path,root: Path,resume: Path|None=None,max_steps: int|Non
                 backup=run_dir/f'steps_before_recovery_{time.time_ns()}.jsonl'
                 backup.write_bytes(steps_path.read_bytes())
                 steps_path.write_text(''.join(json.dumps(r)+'\n' for r in committed),encoding='utf-8')
+        trace_path=run_dir/'degradation_trace.jsonl'
+        if trace_path.exists():
+            records=[json.loads(line) for line in trace_path.read_text(encoding='utf-8').splitlines() if line.strip()]
+            committed=[r for r in records if r['step']<=state['global_step']]
+            if len(committed)!=len(records):
+                (run_dir/f'degradation_trace_before_recovery_{time.time_ns()}.jsonl').write_bytes(trace_path.read_bytes())
+                trace_path.write_text(''.join(json.dumps(r)+'\n' for r in committed),encoding='utf-8')
         with (run_dir/'resume_events.jsonl').open('a',encoding='utf-8') as f:
             f.write(json.dumps(dict(checkpoint=str(resume),checkpoint_sha256=sha256(resume),
                                     committed_global_step=state['global_step']))+'\n')
@@ -188,14 +208,27 @@ def train(config_path: Path,root: Path,resume: Path|None=None,max_steps: int|Non
         raise ValueError('max_steps must exceed the resumed global_step')
     model.train();criterion=torch.nn.BCEWithLogitsLoss() if task=='glaucoma' else torch.nn.HuberLoss(delta=.1)
     before=next(model.parameters()).detach().clone();last_loss=None;started=time.time()
+    by_id={r['sample_id']:r for r in train_rows}
+    def validate(epoch):
+        metrics=evaluate(model,val_rows,config,root,run_dir)
+        if metrics['selection_value']>state['best_selection']:
+            state['best_selection']=metrics['selection_value']
+            save_checkpoint(run_dir/'best.pt',model,optimizer,scaler,state,binding)
+            (run_dir/'best_validation_predictions.csv').write_bytes((run_dir/'validation_predictions.csv').read_bytes())
+        state['last_validation_update']=state['optimizer_updates']
+        with (run_dir/'epochs.jsonl').open('a',encoding='utf-8') as f:
+            f.write(json.dumps(dict(epoch=epoch,step=state['global_step'],optimizer_updates=state['optimizer_updates'],**metrics))+'\n')
+    budget_reached=bool(update_budget and state.get('optimizer_updates',0)>=update_budget)
+    if budget_reached:raise ValueError('optimizer update budget already completed')
     for epoch in range(state['epoch'],config['epochs']):
-        order=epoch_indices(train_rows,config['seed'],epoch,task=='glaucoma')
+        order=epoch_indices(train_rows,config['seed'],epoch,task=='glaucoma',config.get('sampler'))
         # Drop a singleton tail because BatchNorm training may require >1 item.
         if len(order)%config['batch_size']==1:order=order[:-1]
         batches=loader(train_rows,config,root,True,epoch,order)
         skip=state['next_batch'] if epoch==state['epoch'] else 0
-        for batch_index,(x,y,ids) in enumerate(batches):
+        for batch_index,batch in enumerate(batches):
             if batch_index<skip:continue
+            x,y,ids=batch[:3]
             x,y=x.to(config['device']),y.to(config['device'])
             optimizer.zero_grad(set_to_none=True)
             with torch.autocast(device_type=config['device'],enabled=scaler.is_enabled()):
@@ -209,22 +242,53 @@ def train(config_path: Path,root: Path,resume: Path|None=None,max_steps: int|Non
             last_loss=float(loss.item())
             state.update(epoch=epoch,next_batch=batch_index+1,global_step=state['global_step']+1)
             record=dict(step=state['global_step'],epoch=epoch,batch=batch_index,loss=last_loss,**event)
+            seen=state.setdefault('sample_draw_counts',{})
+            strata=state.setdefault('source_class_draws',{})
+            families=state.setdefault('degradation_family_draws',{})
+            for sample in ids:
+                seen[sample]=seen.get(sample,0)+1
+                row=by_id[sample];key=row['source']+'/'+row['label']
+                strata[key]=strata.get(key,0)+1
+            if len(batch)>3:
+                metadata=[json.loads(value) for value in batch[3]]
+                degradation_strata=state.setdefault('source_class_degradation_draws',{})
+                for sample,rowmeta in zip(ids,metadata):
+                    family=rowmeta.get('family','original') if rowmeta.get('applied') else 'original'
+                    families[family]=families.get(family,0)+1
+                    row=by_id[sample];key=row['source']+'/'+row['label']+'/'+family
+                    degradation_strata[key]=degradation_strata.get(key,0)+1
+                if config.get('record_degradation_trace'):
+                    with (run_dir/'degradation_trace.jsonl').open('a',encoding='utf-8') as trace:
+                        for sample,rowmeta in zip(ids,metadata):
+                            if rowmeta.get('applied'):
+                                trace.write(json.dumps(dict(step=state['global_step'],epoch=epoch,sample_id=sample,**rowmeta))+'\n')
+                record['degradation_applied']=sum(bool(m.get('applied')) for m in metadata)
+            if validation_interval and event['optimizer_updated'] and state['optimizer_updates']%validation_interval==0:
+                validate(epoch)
+            budget_reached=bool(update_budget and state['optimizer_updates']>=update_budget)
             with (run_dir/'steps.jsonl').open('a',encoding='utf-8') as f:f.write(json.dumps(record)+'\n')
-            if state['global_step']%config.get('checkpoint_every',100)==0 or (max_steps and state['global_step']>=max_steps):
+            if state['global_step']%config.get('checkpoint_every',100)==0 or (max_steps and state['global_step']>=max_steps) or budget_reached:
                 save_checkpoint(run_dir/'last.pt',model,optimizer,scaler,state,binding)
-            if max_steps is not None and state['global_step']>=max_steps:break
+            if (max_steps is not None and state['global_step']>=max_steps) or budget_reached:break
+        if budget_reached:
+            if state.get('last_validation_update')!=state['optimizer_updates']:validate(epoch)
+            save_checkpoint(run_dir/'last.pt',model,optimizer,scaler,state,binding)
+            break
         if max_steps is not None and state['global_step']>=max_steps:break
-        metrics=evaluate(model,val_rows,config,root,run_dir)
-        if metrics['selection_value']>state['best_selection']:
-            state['best_selection']=metrics['selection_value']
-            save_checkpoint(run_dir/'best.pt',model,optimizer,scaler,state,binding)
+        if not validation_interval and state.get('last_validation_update')!=state['optimizer_updates']:validate(epoch)
         state.update(epoch=epoch+1,next_batch=0)
         save_checkpoint(run_dir/'last.pt',model,optimizer,scaler,state,binding)
-        with (run_dir/'epochs.jsonl').open('a',encoding='utf-8') as f:f.write(json.dumps(dict(epoch=epoch,**metrics))+'\n')
     changed=bool(torch.any(next(model.parameters()).detach()!=before).item())
     result=dict(global_step=state['global_step'],last_loss=last_loss,parameters_changed=changed,
         purpose=config.get('purpose','research_training'),fingerprint=binding,elapsed_seconds=time.time()-started,
         peak_gpu_bytes=torch.cuda.max_memory_allocated() if config['device']=='cuda' else None,
-        resumed_from=str(resume) if resume else None,training_rows=len(train_rows),validation_rows=len(val_rows))
+        resumed_from=str(resume) if resume else None,training_rows=len(train_rows),validation_rows=len(val_rows),
+        optimizer_updates=state.get('optimizer_updates',0),amp_overflows=state.get('amp_overflows',0),
+        optimizer_update_budget=update_budget,budget_completed=budget_reached,
+        unique_sample_draws=len(state.get('sample_draw_counts',{})),
+        unique_linked_groups_drawn=len({by_id[s]['related_group'] for s in state.get('sample_draw_counts',{})}),
+        max_sample_repeats=max(state.get('sample_draw_counts',{}).values(),default=0),
+        source_class_draws=state.get('source_class_draws',{}),degradation_family_draws=state.get('degradation_family_draws',{}),
+        source_class_degradation_draws=state.get('source_class_degradation_draws',{}))
     (run_dir/'run_summary.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
     print(json.dumps(result,indent=2));return result

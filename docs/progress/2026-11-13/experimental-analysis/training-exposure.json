@@ -1,0 +1,476 @@
+{
+  "original_clean": {
+    "total_draws": 19186,
+    "unique_images": 8339,
+    "strata": {
+      "origin/formal_v3": {
+        "unique_images": 8339,
+        "draws": 19186,
+        "max_repeats": 14,
+        "linked_groups": 7696
+      },
+      "source/DATASET_101/ODIR-5K": {
+        "unique_images": 1877,
+        "draws": 5037,
+        "max_repeats": 14,
+        "linked_groups": 1284
+      },
+      "source/airogs-light-v2": {
+        "unique_images": 5521,
+        "draws": 10326,
+        "max_repeats": 7,
+        "linked_groups": 5476
+      },
+      "source/Kaggle-Eye_diseases_classification": {
+        "unique_images": 941,
+        "draws": 3823,
+        "max_repeats": 12,
+        "linked_groups": 941
+      }
+    },
+    "draws_per_successful_update": 15.988333333333333,
+    "sample_draw_counts_sha256": "26d8aca8da9deffe21c0492d4aaf0f8c48025bbd02a165890ddf325284dba254",
+    "checkpoint_sha256": "b2ff1f8b8a7f3ca89dd7cc65c5e4611946d2269cf844a21e5fec781c5b9638b1"
+  },
+  "expanded_clean": {
+    "total_draws": 19192,
+    "unique_images": 9830,
+    "strata": {
+      "origin/formal_v3": {
+        "unique_images": 5929,
+        "draws": 9484,
+        "max_repeats": 8,
+        "linked_groups": 5568
+      },
+      "source/airogs-light-v2": {
+        "unique_images": 3706,
+        "draws": 5130,
+        "max_repeats": 5,
+        "linked_groups": 3687
+      },
+      "origin/expansion_20261113": {
+        "unique_images": 3901,
+        "draws": 9708,
+        "max_repeats": 30,
+        "linked_groups": 3660
+      },
+      "source/crfo": {
+        "unique_images": 43,
+        "draws": 391,
+        "max_repeats": 17,
+        "linked_groups": 23
+      },
+      "source/lag_part1": {
+        "unique_images": 1887,
+        "draws": 3089,
+        "max_repeats": 6,
+        "linked_groups": 1887
+      },
+      "source/fives": {
+        "unique_images": 171,
+        "draws": 803,
+        "max_repeats": 13,
+        "linked_groups": 165
+      },
+      "quality/fives/other/1": {
+        "unique_images": 43,
+        "draws": 179,
+        "max_repeats": 7,
+        "linked_groups": 38
+      },
+      "source/grape": {
+        "unique_images": 295,
+        "draws": 801,
+        "max_repeats": 8,
+        "linked_groups": 84
+      },
+      "source/chaksu": {
+        "unique_images": 439,
+        "draws": 987,
+        "max_repeats": 8,
+        "linked_groups": 439
+      },
+      "source/keh": {
+        "unique_images": 788,
+        "draws": 1770,
+        "max_repeats": 9,
+        "linked_groups": 788
+      },
+      "source/Kaggle-Eye_diseases_classification": {
+        "unique_images": 817,
+        "draws": 1811,
+        "max_repeats": 7,
+        "linked_groups": 817
+      },
+      "source/beh": {
+        "unique_images": 194,
+        "draws": 853,
+        "max_repeats": 12,
+        "linked_groups": 194
+      },
+      "source/DATASET_101/ODIR-5K": {
+        "unique_images": 1406,
+        "draws": 2543,
+        "max_repeats": 8,
+        "linked_groups": 1065
+      },
+      "quality/fives/poor/1": {
+        "unique_images": 43,
+        "draws": 192,
+        "max_repeats": 8,
+        "linked_groups": 42
+      },
+      "quality/fives/other/0": {
+        "unique_images": 82,
+        "draws": 422,
+        "max_repeats": 13,
+        "linked_groups": 82
+      },
+      "source/airogs_original_rg": {
+        "unique_images": 3,
+        "draws": 76,
+        "max_repeats": 30,
+        "linked_groups": 3
+      },
+      "source/hrf": {
+        "unique_images": 16,
+        "draws": 239,
+        "max_repeats": 20,
+        "linked_groups": 16
+      },
+      "source/les_av": {
+        "unique_images": 14,
+        "draws": 206,
+        "max_repeats": 25,
+        "linked_groups": 14
+      },
+      "source/mshf": {
+        "unique_images": 30,
+        "draws": 232,
+        "max_repeats": 12,
+        "linked_groups": 30
+      },
+      "quality/mshf/poor/1": {
+        "unique_images": 28,
+        "draws": 221,
+        "max_repeats": 12,
+        "linked_groups": 28
+      },
+      "source/fundus_avseg": {
+        "unique_images": 21,
+        "draws": 261,
+        "max_repeats": 24,
+        "linked_groups": 21
+      },
+      "quality/fives/poor/0": {
+        "unique_images": 3,
+        "draws": 10,
+        "max_repeats": 6,
+        "linked_groups": 3
+      },
+      "quality/mshf/other/1": {
+        "unique_images": 2,
+        "draws": 11,
+        "max_repeats": 7,
+        "linked_groups": 2
+      }
+    },
+    "draws_per_successful_update": 15.993333333333334,
+    "sample_draw_counts_sha256": "f2dc0100f024838668828be770fbac8b1a66b145b71d5f69bb36308493cd99b0",
+    "checkpoint_sha256": "80357cc874435b73c087b9863271c63a8951d79dba54bc2efaba6eb970cd6bdd"
+  },
+  "expanded_degradation30": {
+    "total_draws": 19192,
+    "unique_images": 9830,
+    "strata": {
+      "origin/formal_v3": {
+        "unique_images": 5929,
+        "draws": 9484,
+        "max_repeats": 8,
+        "linked_groups": 5568
+      },
+      "source/airogs-light-v2": {
+        "unique_images": 3706,
+        "draws": 5130,
+        "max_repeats": 5,
+        "linked_groups": 3687
+      },
+      "origin/expansion_20261113": {
+        "unique_images": 3901,
+        "draws": 9708,
+        "max_repeats": 30,
+        "linked_groups": 3660
+      },
+      "source/crfo": {
+        "unique_images": 43,
+        "draws": 391,
+        "max_repeats": 17,
+        "linked_groups": 23
+      },
+      "source/lag_part1": {
+        "unique_images": 1887,
+        "draws": 3089,
+        "max_repeats": 6,
+        "linked_groups": 1887
+      },
+      "source/fives": {
+        "unique_images": 171,
+        "draws": 803,
+        "max_repeats": 13,
+        "linked_groups": 165
+      },
+      "quality/fives/other/1": {
+        "unique_images": 43,
+        "draws": 179,
+        "max_repeats": 7,
+        "linked_groups": 38
+      },
+      "source/grape": {
+        "unique_images": 295,
+        "draws": 801,
+        "max_repeats": 8,
+        "linked_groups": 84
+      },
+      "source/chaksu": {
+        "unique_images": 439,
+        "draws": 987,
+        "max_repeats": 8,
+        "linked_groups": 439
+      },
+      "source/keh": {
+        "unique_images": 788,
+        "draws": 1770,
+        "max_repeats": 9,
+        "linked_groups": 788
+      },
+      "source/Kaggle-Eye_diseases_classification": {
+        "unique_images": 817,
+        "draws": 1811,
+        "max_repeats": 7,
+        "linked_groups": 817
+      },
+      "source/beh": {
+        "unique_images": 194,
+        "draws": 853,
+        "max_repeats": 12,
+        "linked_groups": 194
+      },
+      "source/DATASET_101/ODIR-5K": {
+        "unique_images": 1406,
+        "draws": 2543,
+        "max_repeats": 8,
+        "linked_groups": 1065
+      },
+      "quality/fives/poor/1": {
+        "unique_images": 43,
+        "draws": 192,
+        "max_repeats": 8,
+        "linked_groups": 42
+      },
+      "quality/fives/other/0": {
+        "unique_images": 82,
+        "draws": 422,
+        "max_repeats": 13,
+        "linked_groups": 82
+      },
+      "source/airogs_original_rg": {
+        "unique_images": 3,
+        "draws": 76,
+        "max_repeats": 30,
+        "linked_groups": 3
+      },
+      "source/hrf": {
+        "unique_images": 16,
+        "draws": 239,
+        "max_repeats": 20,
+        "linked_groups": 16
+      },
+      "source/les_av": {
+        "unique_images": 14,
+        "draws": 206,
+        "max_repeats": 25,
+        "linked_groups": 14
+      },
+      "source/mshf": {
+        "unique_images": 30,
+        "draws": 232,
+        "max_repeats": 12,
+        "linked_groups": 30
+      },
+      "quality/mshf/poor/1": {
+        "unique_images": 28,
+        "draws": 221,
+        "max_repeats": 12,
+        "linked_groups": 28
+      },
+      "source/fundus_avseg": {
+        "unique_images": 21,
+        "draws": 261,
+        "max_repeats": 24,
+        "linked_groups": 21
+      },
+      "quality/fives/poor/0": {
+        "unique_images": 3,
+        "draws": 10,
+        "max_repeats": 6,
+        "linked_groups": 3
+      },
+      "quality/mshf/other/1": {
+        "unique_images": 2,
+        "draws": 11,
+        "max_repeats": 7,
+        "linked_groups": 2
+      }
+    },
+    "draws_per_successful_update": 15.993333333333334,
+    "sample_draw_counts_sha256": "f2dc0100f024838668828be770fbac8b1a66b145b71d5f69bb36308493cd99b0",
+    "checkpoint_sha256": "2e7cb30227a501c4cafd8b6f675a44671d1cfc4dbbe83e169a4fe6fece66ccb2"
+  },
+  "expanded_degradation50": {
+    "total_draws": 19192,
+    "unique_images": 9830,
+    "strata": {
+      "origin/formal_v3": {
+        "unique_images": 5929,
+        "draws": 9484,
+        "max_repeats": 8,
+        "linked_groups": 5568
+      },
+      "source/airogs-light-v2": {
+        "unique_images": 3706,
+        "draws": 5130,
+        "max_repeats": 5,
+        "linked_groups": 3687
+      },
+      "origin/expansion_20261113": {
+        "unique_images": 3901,
+        "draws": 9708,
+        "max_repeats": 30,
+        "linked_groups": 3660
+      },
+      "source/crfo": {
+        "unique_images": 43,
+        "draws": 391,
+        "max_repeats": 17,
+        "linked_groups": 23
+      },
+      "source/lag_part1": {
+        "unique_images": 1887,
+        "draws": 3089,
+        "max_repeats": 6,
+        "linked_groups": 1887
+      },
+      "source/fives": {
+        "unique_images": 171,
+        "draws": 803,
+        "max_repeats": 13,
+        "linked_groups": 165
+      },
+      "quality/fives/other/1": {
+        "unique_images": 43,
+        "draws": 179,
+        "max_repeats": 7,
+        "linked_groups": 38
+      },
+      "source/grape": {
+        "unique_images": 295,
+        "draws": 801,
+        "max_repeats": 8,
+        "linked_groups": 84
+      },
+      "source/chaksu": {
+        "unique_images": 439,
+        "draws": 987,
+        "max_repeats": 8,
+        "linked_groups": 439
+      },
+      "source/keh": {
+        "unique_images": 788,
+        "draws": 1770,
+        "max_repeats": 9,
+        "linked_groups": 788
+      },
+      "source/Kaggle-Eye_diseases_classification": {
+        "unique_images": 817,
+        "draws": 1811,
+        "max_repeats": 7,
+        "linked_groups": 817
+      },
+      "source/beh": {
+        "unique_images": 194,
+        "draws": 853,
+        "max_repeats": 12,
+        "linked_groups": 194
+      },
+      "source/DATASET_101/ODIR-5K": {
+        "unique_images": 1406,
+        "draws": 2543,
+        "max_repeats": 8,
+        "linked_groups": 1065
+      },
+      "quality/fives/poor/1": {
+        "unique_images": 43,
+        "draws": 192,
+        "max_repeats": 8,
+        "linked_groups": 42
+      },
+      "quality/fives/other/0": {
+        "unique_images": 82,
+        "draws": 422,
+        "max_repeats": 13,
+        "linked_groups": 82
+      },
+      "source/airogs_original_rg": {
+        "unique_images": 3,
+        "draws": 76,
+        "max_repeats": 30,
+        "linked_groups": 3
+      },
+      "source/hrf": {
+        "unique_images": 16,
+        "draws": 239,
+        "max_repeats": 20,
+        "linked_groups": 16
+      },
+      "source/les_av": {
+        "unique_images": 14,
+        "draws": 206,
+        "max_repeats": 25,
+        "linked_groups": 14
+      },
+      "source/mshf": {
+        "unique_images": 30,
+        "draws": 232,
+        "max_repeats": 12,
+        "linked_groups": 30
+      },
+      "quality/mshf/poor/1": {
+        "unique_images": 28,
+        "draws": 221,
+        "max_repeats": 12,
+        "linked_groups": 28
+      },
+      "source/fundus_avseg": {
+        "unique_images": 21,
+        "draws": 261,
+        "max_repeats": 24,
+        "linked_groups": 21
+      },
+      "quality/fives/poor/0": {
+        "unique_images": 3,
+        "draws": 10,
+        "max_repeats": 6,
+        "linked_groups": 3
+      },
+      "quality/mshf/other/1": {
+        "unique_images": 2,
+        "draws": 11,
+        "max_repeats": 7,
+        "linked_groups": 2
+      }
+    },
+    "draws_per_successful_update": 15.993333333333334,
+    "sample_draw_counts_sha256": "f2dc0100f024838668828be770fbac8b1a66b145b71d5f69bb36308493cd99b0",
+    "checkpoint_sha256": "fa0255e6787d4dc3d76d30960a8997023c5ca2ec095bdb4d51b75ccdba9f9d46"
+  }
+}

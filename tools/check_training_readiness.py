@@ -62,8 +62,8 @@ def main():
             resumed_loss_difference=result['resumed_next_loss_abs_difference']))
     log=(ROOT/'data/audit/deep/tests_final.log').read_text(encoding='utf-8',errors='replace')
     assert re.search(r'Ran 31 tests',log) and '\nOK' in log and 'FAILED' not in log
-    documents=[ROOT/'README.md',ROOT/'docs/TRAINING-RUNBOOK.md',ROOT/'docs/TRAINING-READINESS.md',
-               ROOT/'docs/TRAINING-PROTOCOL-1109.md']
+    documents=[ROOT/'README.md',ROOT/'docs/operations/training-runbook.md',ROOT/'docs/operations/training-readiness.md',
+               ROOT/'docs/operations/training-protocol-2026-11-09.md']
     missing=[(str(path),target) for path in documents for target in re.findall(r'\]\(([^)]+)\)',path.read_text(encoding='utf-8'))
              if not target.startswith(('http','#')) and not (path.parent/target).exists()]
     assert not missing,missing

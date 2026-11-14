@@ -1,2 +1,11 @@
+# These experiment and report records hash file bytes across checkouts.
+docs/progress/2026-11-13/** -text
+data/prepared/*20261113/** -text
+runs/expanded_20261113/** -text
+tools/*_20261113.py -text
+tools/*_20261113.ps1 -text
+training/data.py -text
+training/engine.py -text
+training/fundus_degradation.py -text
 *.pdf binary
 *.pptx binary

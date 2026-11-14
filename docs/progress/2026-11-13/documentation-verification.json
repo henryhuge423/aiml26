@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "documents_checked": 71,
+  "local_links_checked": 556,
+  "overview_metric_values_checked": 32,
+  "reports": [
+    {
+      "report": "docs/progress/2026-11-13/progress-overview.zh.pdf",
+      "pages": 3,
+      "sha256": "d52858c557a372ad35fbf8d4c48dba66681964d8c75608f2489c12a35b5b26a5"
+    },
+    {
+      "report": "docs/progress/2026-11-13/progress-overview.en.pdf",
+      "pages": 3,
+      "sha256": "54c769a3d81872dd122e9ed8b393fc0fa6d9d5f85fa18b224fa692326cf97ed4"
+    },
+    {
+      "report": "docs/progress/2026-11-13/data-review/data-and-degradation-review.zh.pdf",
+      "pages": 7,
+      "sha256": "0db9dc36d108a682b16abc51ee04e809438a6483db417e28b756919df8eb585f"
+    },
+    {
+      "report": "docs/progress/2026-11-13/data-review/data-and-degradation-review.en.pdf",
+      "pages": 9,
+      "sha256": "de6a1917c3eaa7cfdc07240fd696ebef843d52a4be6b2ad67f4b4768f49e4263"
+    },
+    {
+      "report": "docs/progress/2026-11-13/training-results/training-results.zh.pdf",
+      "pages": 5,
+      "sha256": "8828790c4b4d6fac5a73c8168fadf1756e897b1a15345c3f52130b046ea43053"
+    },
+    {
+      "report": "docs/progress/2026-11-13/training-results/training-results.en.pdf",
+      "pages": 6,
+      "sha256": "81a45b7461436bce2f109b0d09b70891b9180eed3197665d654c3fb808330633"
+    },
+    {
+      "report": "docs/progress/2026-11-13/experimental-analysis/experimental-analysis.zh.pdf",
+      "pages": 5,
+      "sha256": "94dfdb7c6984fb512d72e784dc1c95798c86142467e04fb68f93c96db7672dbd"
+    },
+    {
+      "report": "docs/progress/2026-11-13/experimental-analysis/experimental-analysis.en.pdf",
+      "pages": 6,
+      "sha256": "b31c40e128b20274073743a67b0645e802da4fdcf1aed8eee826cf640a16228f"
+    }
+  ],
+  "figures_decoded": 20,
+  "historical_pdfs_unchanged": {
+    "training-progress.zh.pdf": "93443256c83f5087b2884d8369c889ed8f7cd2fe71a826d6058e873a7c695261",
+    "training-progress.en.pdf": "a47231b3faa8fa62915c8403f42f508932ad3f09c69875124cd17f094c36e59e"
+  },
+  "visual_review_records": {
+    "overview": "docs/progress/2026-11-13/overview-visual-review.json",
+    "data-review": "docs/progress/2026-11-13/data-review/visual_review.json",
+    "training-results": "docs/progress/2026-11-13/training-results/visual-review.json",
+    "experimental-analysis": "docs/progress/2026-11-13/experimental-analysis/visual-review.json"
+  },
+  "tests": {
+    "command": "tools/training_python.cmd -m pytest tests -q",
+    "result": "82 passed, 3 subtests passed in 36.78s",
+    "passed": 82,
+    "subtests_passed": 3,
+    "exit_code": 0,
+    "recorded_at": "2026-11-13T23:27:47.530009+00:00",
+    "environment": ".envs/training",
+    "scope": "Complete tests directory, including sampling, degradation training, cohort checks, paired analysis, cache and recovery.",
+    "source": "Observed output of exec session 90144 during the documentation task."
+  },
+  "training_updates_each": 1200,
+  "cohort_images": 24491,
+  "artifact_sha256": {
+    "docs/progress/2026-11-13/cohort-allocation.en.png": "0f443fa822cb09ca8d4d7af50f8573ce008dcaa8bd8fa4b1109fd161f6ccc24a",
+    "docs/progress/2026-11-13/cohort-allocation.zh.png": "b0d0add939766b1e94e1b31bf71f56a4051a16ff1db0e5551be403ad91c15d6f",
+    "docs/progress/2026-11-13/data-review/admission-and-sources.png": "59dc8fbc68f7d09fa6667b90b5c490909e6d3201330d9cbdb2a01322e79732d7",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.en.md": "641643f52e70b7ffbbd675cf95eb260399bbc02d51510a8db2f049308de3ddaa",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.en.pdf": "de6a1917c3eaa7cfdc07240fd696ebef843d52a4be6b2ad67f4b4768f49e4263",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.en.tex": "c9d81ed946a8cc512781b58d40d006389bd34bb734456fbb293ddf9dd2d366fd",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.zh.md": "483c1f1bff7521102e0af0322d3c7bd00332341cdb6fdfaee5938927764b3628",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.zh.pdf": "0db9dc36d108a682b16abc51ee04e809438a6483db417e28b756919df8eb585f",
+    "docs/progress/2026-11-13/data-review/data-and-degradation-review.zh.tex": "e8dbdb55138fab4123de4c122687f12b030c963d780e080163ab5a84915fe15c",
+    "docs/progress/2026-11-13/data-review/positive_counts_and_precision.png": "08388ea9d6fa92128ac301b40e33ca6ea9492bb07c0713723e197d50d9c3d821",
+    "docs/progress/2026-11-13/experiment-overview.en.png": "98301b45793b03dfcb1b7fba479ce5e4e3f41f053e8ec82308fd332b53564d6d",
+    "docs/progress/2026-11-13/experiment-overview.zh.png": "e2122d036cc50506235d3d0ce586434700c9d50db68d5eabb7c4c151df2b6012",
+    "docs/progress/2026-11-13/experimental-analysis/defocus-ranking-shifts.en.png": "d0749cf8cdfeaabcd54d0f1083346ab8f089c6fd5838bc6a2274977a06a6d32a",
+    "docs/progress/2026-11-13/experimental-analysis/defocus-ranking-shifts.zh.png": "fcec8ec2e71a804e5bb57624846dee31d4f6fa00a6b036904d016f3b62f825a8",
+    "docs/progress/2026-11-13/experimental-analysis/experimental-analysis.en.md": "8ec2948b2092a229474b458cb7207e6f5dcdd29c0ba45a33a81d3d6f34211a40",
+    "docs/progress/2026-11-13/experimental-analysis/experimental-analysis.en.pdf": "b31c40e128b20274073743a67b0645e802da4fdcf1aed8eee826cf640a16228f",
+    "docs/progress/2026-11-13/experimental-analysis/experimental-analysis.en.tex": "a03a4bbee4213bb1d95a2aa699b79b7e6f7e235edf49ec75b6b4420de520fe64",
+    "docs/progress/2026-11-13/experimental-analysis/experimental-analysis.zh.md": "b35eca31fc14b3f15072207a8d79f453e53581266e002ac9a3968b3bafdf5c3a",
+    "docs/progress/2026-11-13/experimental-analysis/experimental-analysis.zh.pdf": "94dfdb7c6984fb512d72e784dc1c95798c86142467e04fb68f93c96db7672dbd",
+    "docs/progress/2026-11-13/experimental-analysis/experimental-analysis.zh.tex": "9062e9272d8c07bca0625b815850604c07c69b7f76d9fdc673d9cad39743fc1d",
+    "docs/progress/2026-11-13/experimental-analysis/exposure-selection.en.png": "6b8e4444af9c0a103906015a9ee65f6d8bbfd8bc5d5f886c39bc6ff760613741",
+    "docs/progress/2026-11-13/experimental-analysis/exposure-selection.zh.png": "e8996fb3b1634d54b4531cc1f4fc1687d929c11eafd86622c7cc572b7a151979",
+    "docs/progress/2026-11-13/experimental-analysis/paired-source-contrasts.csv": "5d218c0343dc450ad9c7b9d21c002439cbed9a11c47fdedf45a8c60b30fbd124",
+    "docs/progress/2026-11-13/experimental-analysis/real-quality-labels.en.png": "b43ea19b5b8be661c2956c0c05a9826cdce28136ed829addaf8938b6a2fb5224",
+    "docs/progress/2026-11-13/experimental-analysis/real-quality-labels.zh.png": "b13a7de61ba7089781f12651d351343b053dcde73cc92d473d4b7a504b2f6bb1",
+    "docs/progress/2026-11-13/experimental-analysis/source-differences.en.png": "aa661287c5cb0f2a825b068171eebc66a9851179899c9c4a0e14f606ea058741",
+    "docs/progress/2026-11-13/experimental-analysis/source-differences.zh.png": "7aefa8722d16202cefc7f0f728a56d855a16490718bc3b48e9faa4d04d231413",
+    "docs/progress/2026-11-13/progress-overview.en.md": "38ed9a9169af92ca081dd13c4c21d2852fec38f7c481067a4ef77bc25138e81c",
+    "docs/progress/2026-11-13/progress-overview.en.pdf": "54c769a3d81872dd122e9ed8b393fc0fa6d9d5f85fa18b224fa692326cf97ed4",
+    "docs/progress/2026-11-13/progress-overview.en.tex": "ee2e20706f5ed08f6d6ecf9380babe868e784491ebc440e3f915eca331179361",
+    "docs/progress/2026-11-13/progress-overview.zh.md": "de1fe6e72ae026343b61527067c71c471402edb40e36c9071299ba8718823b0a",
+    "docs/progress/2026-11-13/progress-overview.zh.pdf": "d52858c557a372ad35fbf8d4c48dba66681964d8c75608f2489c12a35b5b26a5",
+    "docs/progress/2026-11-13/progress-overview.zh.tex": "afaba24d0562d588b8efcd795fd04bc0f7cf422344bf8d82238800a63d3a949b",
+    "docs/progress/2026-11-13/README.en.md": "d76d97b6fb2dee5f07abe619c71df8134f7eeea844c359646795a88bf1e2edcc",
+    "docs/progress/2026-11-13/README.md": "921b7b9e0e441b48c282b96e58f971b20a0184dab62c628457124b0a37229eb9",
+    "docs/progress/2026-11-13/training-results/cohort-and-quality.png": "51cf5ef03fa8105a2c34be9056fd41072acc7487bbf96ef7bbc4f404e2658d9d",
+    "docs/progress/2026-11-13/training-results/cunsb-generator-input.png": "e93efc639809e89f426056662ecbbb8807f3315af191b48135bef5bf1b0ea838",
+    "docs/progress/2026-11-13/training-results/cunsb-generator-smoke.png": "c8a12a0df3e2efff776be1ca9a86cbb4680a6b33f157de0217400daafb9b7c59",
+    "docs/progress/2026-11-13/training-results/data-audit.en.md": "2fdeecdd4a591b15f60c3d5b9e4b17c86158fcd3302fb4fc60c0aa4748f672a2",
+    "docs/progress/2026-11-13/training-results/data-audit.zh.md": "e8be396a4d0b7596fcb66d00fbda2c26d00b0ce7d9786621272c6c8671d1e75d",
+    "docs/progress/2026-11-13/training-results/degradation-audit.en.md": "7140b59e698c456628e4876997732852aacc137f5a8b3b4baa1e1aa7a9741fdf",
+    "docs/progress/2026-11-13/training-results/degradation-audit.zh.md": "01622a09c1598bee3b5bede52e5684c93b6b5f07e94044e8e6da466ffc3a4cf6",
+    "docs/progress/2026-11-13/training-results/degradation-pair-statistics.csv": "483ac7e5cb5e6e6eb3e849918e8ef20ddec05cb3c453a2ae813cc0ba91bf7fa3",
+    "docs/progress/2026-11-13/training-results/degradation-preview.png": "6a44116ee5f52cf8d0f1e5fb628a4c91a862283e25264e868bd6cfa911f355c7",
+    "docs/progress/2026-11-13/training-results/development-results.png": "d8e22ab169233a70a9a687b8bd52f9529c18195855cd7e616c3e68336a2051e0",
+    "docs/progress/2026-11-13/training-results/training-curves.png": "2f949b86d9c66e02face1d3a899abb43996bbfdcea10785b59f157b5bcf244e0",
+    "docs/progress/2026-11-13/training-results/training-results.en.md": "e8e0a8ec2a9475de78c509408d4af9885a456a135c0677018da3e4cf5b167628",
+    "docs/progress/2026-11-13/training-results/training-results.en.pdf": "81a45b7461436bce2f109b0d09b70891b9180eed3197665d654c3fb808330633",
+    "docs/progress/2026-11-13/training-results/training-results.en.tex": "3214f3f6389100ecea4b1e9f2c76e9156d019311dd9f547965e9411072dee055",
+    "docs/progress/2026-11-13/training-results/training-results.zh.md": "91627a926200eb362a925d55bf0ebf11393e0320d32c8a7b4fd925ec73f0331e",
+    "docs/progress/2026-11-13/training-results/training-results.zh.pdf": "8828790c4b4d6fac5a73c8168fadf1756e897b1a15345c3f52130b046ea43053",
+    "docs/progress/2026-11-13/training-results/training-results.zh.tex": "a724d589f92bd644b1bc065e353b616acca3f7c0fecf0b84c0a2ba624f89fb84"
+  },
+  "source": "tools/verify_documentation_20261113.py"
+}

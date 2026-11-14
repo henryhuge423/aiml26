@@ -1,45 +1,20 @@
-# Eye Sentinel data workspace
+# 数据工作区
 
-**Current status (2026-11-11):** The formal_v3 disease models and original quality model each completed 20 epochs, with 13,789 teacher targets. The separate EyeQ quality model also completed 20 epochs using 1,007 EyeQ training images and 117 EyeQ validation images. All 28,792 EyeQ originals were imported, decoded and hashed on D:, and cross-source association evidence is under `audit/session_20261110/eyeq_overlap/`. The repaired boundary development subset contains 1,230 images with model scores. See the [latest data and experiment report](../docs/degradation-and-data-2026-11-11.md) and [EyeQ training record](../runs/eyeq_quality_v1/README.md). The following v2 preparation descriptions are historical.
+[English](README.en.md) | 中文 · 2026 年 11 月 13 日更新
 
-**Current audit (2026-11-09):** [readiness report](../docs/AUDIT-1109.md), [training protocol](../docs/TRAINING-PROTOCOL-1109.md), and [Luna image review](audit/2026-11-09/luna/audit.md). New evidence is under `audit/2026-11-09/`; source files were not changed. Full decoding found one truncated FIQS original and ten exact duplicate pairs in HYGD. Candidate worklists are not frozen training sets. The earlier [proposal-1106](../proposal-1106.pdf), [registry](DATASETS-1106.md), [review](../docs/proposal-1106-review.md), and v4 descriptions below are historical. Original sources and audit records retain their paths.
+当前疾病训练与评价版本为 `prepared/expanded_20261113/`，包含 24,491 张图像：15,480 张训练、2,046 张模型验证、2,053 张规则开发、3,470 张内部及新增保留测试、705 张 ACRIMA 和 737 张 HYGD 外部测试。数据组成及检查见[联合版本说明](prepared/expanded_20261113/README.md)、[数据审计](../docs/progress/2026-11-13/training-results/data-audit.zh.md)和[进度总览](../docs/progress/2026-11-13/progress-overview.zh.md)。
 
-**Historical v2 research training preparation:** `prepared/formal_v2/` has complete teacher targets and passed real-GPU training/restart checks for its historical configuration. See [current readiness](../docs/TRAINING-READINESS.md) and [runbook](../docs/TRAINING-RUNBOOK.md). Deep Luna audits are under `audit/deep/`. `prepared/formal/` is superseded; technical image-family quarantine in v2 prevents an annotated duplicate from re-entering through a second source. Unknown patient identity and source-specific label limits remain recorded.
+新增池 `prepared/expansion_20261113/` 含 9,070 张有明确二分类标签的图像，另单列 204 张疑似图像。新增池是数据审查产物；联合版本记录其后续训练、验证、开发与测试分配。文件哈希、RGB 像素哈希、来源标签、已知患者和确认图像关联在清单与审计中保存。
 
-Audit and reorganization date: 2026-10-22. Proposal v4 focuses on quality-aware glaucoma screening from fundus photographs. The workspace also retains Wide-Field and FrontofEyeDx for future extensions.
+| 目录 | 内容 |
+|---|---|
+| `sources/`、`external/`、`external_glaucoma/`、`external_quality/` | 原始来源文件及后续下载。 |
+| `metadata/` | 来源索引和标签表。 |
+| `prepared/` | 按版本冻结的数据清单、发布记录和分组核验。 |
+| `audit/` | 来源核对、图像关联、标签和划分检查。 |
+| `review/` | 待复核图像及同图异标签记录。 |
+| `archive/` | 来源包和历史附属文件。 |
 
-For source counts, grouping rules and the v4 experiments, see [Eye Sentinel Dataset Introduction](../docs/historical/Eye_Sentinel_Dataset_Introduction.pdf) and its [Markdown source](../docs/historical/Eye_Sentinel_Dataset_Introduction.md).
+此前 `formal_v3` 疾病模型与原质量模型完成 20 轮，EyeQ 质量模型也完成 20 轮。质量数据包括 FIQS 和 EyeQ；EyeQ 导入覆盖 28,792 张原图，其中部分图像按允许清单参与质量训练。真实低质量阳性在联合疾病清单中分别为训练 72、验证 12、规则开发 12 和测试 50 张，FIVES 与 MSHF 保留各自质量定义。
 
-## Layout
-
-- `sources/eyeworld/`: expanded EyeWorld source tree; original Fundoscopy and Wide-Field folders and ODIR files remain grouped by source.
-- `sources/frontofeyedx/Dataset/`: FrontofEyeDx candidate images grouped by the original disease-folder labels.
-- `metadata/eyeworld/`: the 32,178-row EyeWorld image index.
-- `metadata/frontofeyedx/`: the disease worklist.
-- `review/exact_duplicate_label_conflicts/`: one copy each of 22 identical images that appeared under different disease-folder labels. These images are excluded from the class folders pending label review.
-- `audit/baseline/data_audit/`: the pre-cleanup inventory and report; its paths document the former `Eye Project Data` layout.
-- `audit/current/`: the post-cleanup inventory, class counts, ODIR summaries, and scripts.
-- `archive/macosx_sidecars/`: extracted `__MACOSX` AppleDouble sidecars, kept out of the image-source tree and excluded from model/audit counts.
-- `audit/source_archive_validation.json` and `audit/archive_cleanup_action.json`: content verification and the later removal record for the redundant ZIP.
-
-## What is in the sources
-
-EyeWorld contains Fundoscopy and Wide-Field images from several heterogeneous collections. Before cleanup it had 32,178 image-path records and 32,150 distinct file hashes. FrontofEyeDx has 2,321 images across 94 populated disease folders; counts range from 1 to 98 per folder (median 23), and 68 folders contain fewer than 30 images. The combined sources contain 34,471 distinct image contents. The current source and review folders should contain one physical file per SHA-256 hash.
-
-The EyeWorld workbook uses `id`, `filename`, `folder`, `dx`, `path`, `caption`, and `label`. The `caption`, path, folder name, and diagnosis fields can reveal the answer; do not pass them to an image model as input features. The workbook does not provide a complete per-image acquisition source, device, symptoms, or adjudicated clinical reference label.
-
-ODIR is a subset with 7,000 eye-image rows and 3,500 `orig_id` values; each ID has a left and right eye record. Split this subset by `orig_id` to keep paired eyes together. The ODIR metadata does not cover the rest of EyeWorld.
-
-## Cleanup record
-
-- Removed 4,214 images from the extra root `Dataset` tree after every file hash matched an EyeWorld image. The root copy added no unique image content.
-- Removed 28 extra exact-hash image files within EyeWorld. One physical image remains for each hash. All original path-to-label memberships are recorded in `audit/source_image_manifest_precleanup.csv`; review conflicts are listed in `audit/exact_hash_label_conflicts.csv`.
-- Removed four byte-identical README/workbook copies; see `audit/metadata_dedup_actions.csv`.
-- Verified the original 4,588,408,810-byte ZIP against the expanded EyeWorld tree, then removed the redundant compressed copy on explicit request. The verification and removal records remain in `audit/`.
-- Exact-hash checks do not detect crops, resizing, recompression, panels from the same case, or other near-duplicates. No clinical label adjudication or full-pixel decode was performed.
-
-## Use with proposal v4
-
-The binary candidate pool contains 3,726 glaucoma and 3,998 normal fundus images. ACRIMA contributes 396 glaucoma and 309 normal images within that total. Hold out its full 705-image source for evaluation, leaving 7,019 development candidates. Review folder labels, visible diagnostic text and image suitability, then group augmentation families and related versions before splitting. ODIR is a separate extension with 3,500 patient pairs grouped by `orig_id`.
-
-Proposal v4 uses MobileNetV3-Small, temperature scaling, retinal sharpness/contrast/exposure measures, and a combined quality-and-uncertainty review score. Compare random, uncertainty-only and combined ranking at 5%, 10% and 20% review allowances. Report released-negative glaucoma misses, NPV, negative coverage, review error capture and total referral workload. The dataset guide defines the retake workflow, source holdout, controlled degradations and CPU targets.
+数据文件、逐图清单和完整审计保留本地原路径。仓库发布来源说明、双语报告、冻结版本摘要及精选结果 JSON。[历史数据布局](../docs/historical/2026-10-22/data-workspace.md)和[早期数据登记](DATASETS-1106.md)保留此前阶段的记录。

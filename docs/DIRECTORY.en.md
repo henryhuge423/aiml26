@@ -2,25 +2,27 @@
 
 English | [中文](DIRECTORY.md)
 
-This guide describes the Eye Sentinel repository. It sits in `team_project/` within the course workspace; course assignments and lectures outside it are not part of this repository.
+The Eye Sentinel repository occupies `team_project/` within the course workspace. Documentation is organized into progress, current operations, research, and historical records. Dataset and training-program paths retain their locations.
 
-| Location | Contents |
+| Location | Contents and entry points |
 |---|---|
-| `README.md`, `README.en.md` | Project overview and entry points. |
+| `README.md`, `README.en.md` | Project goals, latest results, and main entry points. |
 | `proposal-1106.pdf` | Current project proposal. |
-| `docs/progress/` | Chinese and English progress reports, figures, and summary data; see the [report index](progress/README.en.md). |
-| `docs/` | Training protocols, data research, experiment records, and historical material; `superpowers/` holds earlier plans and designs. |
-| `configs/` | Data and training settings; `formal_v3/` contains the formal training configurations. |
-| `training/` | Data loading, models, training, and validation code. |
-| `tools/` | Data preparation, audits, training launchers, and other project tools. |
-| `tests/` | Automated project checks. |
-| `data/` | Dataset guides and audit records; local copies may also contain datasets, splits, and manifests. |
-| `models/` | Model resources and weights; weights remain local. |
-| `runs/` | Training status, metrics, checkpoints, and validation results; a small set of shareable summaries is tracked in Git. |
-| `notes/` | Background, reviews, and early research notes. |
-| `archive/` | Earlier proposals and historical materials. |
-| `references/` | Local reference materials. |
-| `tmp/`, `.cache/`, `.build/`, `.test_tmp/` | Temporary files, caches, and build outputs. |
-| `.envs/` | Local runtime environments. |
+| `docs/README.md`, `docs/README.en.md` | [Documentation guide](README.en.md). |
+| `docs/progress/YYYY-MM-DD/` | Bilingual progress reports, PDFs, LaTeX, figures, and summaries by date. |
+| `docs/progress/2026-11-13/` | [Combined dataset and degradation experiment materials](progress/2026-11-13/README.en.md), with `data-review/`, `training-results/`, and `experimental-analysis/`. |
+| `docs/operations/` | Current runbook, readiness checks, protocol, and next steps in both languages. |
+| `docs/research/` | Data-expansion research and structured outlines. |
+| `docs/historical/` | [Dated audits and earlier operations](historical/README.en.md), earlier dataset introduction, and speaker notes. `planning/` retains original designs and execution plans. |
+| `configs/` | Training configurations; `formal_v3/` is earlier training, and `expanded_20261113/` contains this round's four arms. |
+| `training/` | Data loading, models, training, quality supervision, and fundus degradation. |
+| `tools/`, `tests/` | Data checks, training and report tools, and automated checks. |
+| `data/` | [Data guide](../data/README.en.md), source files, manifests, and audits. |
+| `models/` | [Model resource guide](../models/README.en.md), local initialization, teacher, and trained weights. |
+| `runs/` | Training status, metrics, predictions, and weights; selected summaries are tracked in Git. |
+| `notes/` | Early research, feasibility reviews, and course-review notes. |
+| `archive/`, `references/` | Earlier proposals and local reference materials. |
+| `.envs/` | Local execution environment. |
+| `tmp/`, `.cache/`, `.build/`, `.test_tmp/` | Temporary files, caches, PDF renders, and check artifacts. |
 
-GitHub holds the code, configurations, documents, and selected summaries. Raw data, model weights, complete run logs, local environments, and temporary files stay local under `.gitignore`. Existing directories retain their paths so that training configurations and document links continue to work. New progress reports belong in `docs/progress/`. Historical technical records retain their original language; new reports are provided in both languages.
+Topic directories use lowercase names with hyphens; progress folders use dates. Historical text is retained, with references updated when moved. Raw data, weights, complete logs, environments, and temporary artifacts stay local. GitHub shares code, configurations, documents, PDFs, figures, and selected summaries.

@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "paired_development_identities_each": 4867,
+  "all_arms_successful_updates": 1200,
+  "amp_overflows": 0,
+  "protected_test_inference": false,
+  "local_links_verified": 119,
+  "report_artifact_sha256": {
+    "docs/progress/2026-11-13/training-results/training-results.zh.md": "91627a926200eb362a925d55bf0ebf11393e0320d32c8a7b4fd925ec73f0331e",
+    "docs/progress/2026-11-13/training-results/training-results.zh.pdf": "8828790c4b4d6fac5a73c8168fadf1756e897b1a15345c3f52130b046ea43053",
+    "docs/progress/2026-11-13/training-results/training-results.zh.tex": "a724d589f92bd644b1bc065e353b616acca3f7c0fecf0b84c0a2ba624f89fb84",
+    "docs/progress/2026-11-13/training-results/training-results.en.md": "e8e0a8ec2a9475de78c509408d4af9885a456a135c0677018da3e4cf5b167628",
+    "docs/progress/2026-11-13/training-results/training-results.en.pdf": "81a45b7461436bce2f109b0d09b70891b9180eed3197665d654c3fb808330633",
+    "docs/progress/2026-11-13/training-results/training-results.en.tex": "3214f3f6389100ecea4b1e9f2c76e9156d019311dd9f547965e9411072dee055",
+    "docs/progress/2026-11-13/training-results/cohort-and-quality.png": "51cf5ef03fa8105a2c34be9056fd41072acc7487bbf96ef7bbc4f404e2658d9d",
+    "docs/progress/2026-11-13/training-results/cunsb-generator-input.png": "e93efc639809e89f426056662ecbbb8807f3315af191b48135bef5bf1b0ea838",
+    "docs/progress/2026-11-13/training-results/cunsb-generator-smoke.png": "c8a12a0df3e2efff776be1ca9a86cbb4680a6b33f157de0217400daafb9b7c59",
+    "docs/progress/2026-11-13/training-results/data-audit.en.md": "2fdeecdd4a591b15f60c3d5b9e4b17c86158fcd3302fb4fc60c0aa4748f672a2",
+    "docs/progress/2026-11-13/training-results/data-audit.zh.md": "e8be396a4d0b7596fcb66d00fbda2c26d00b0ce7d9786621272c6c8671d1e75d",
+    "docs/progress/2026-11-13/training-results/degradation-audit.en.md": "7140b59e698c456628e4876997732852aacc137f5a8b3b4baa1e1aa7a9741fdf",
+    "docs/progress/2026-11-13/training-results/degradation-audit.zh.md": "01622a09c1598bee3b5bede52e5684c93b6b5f07e94044e8e6da466ffc3a4cf6",
+    "docs/progress/2026-11-13/training-results/degradation-preview.png": "6a44116ee5f52cf8d0f1e5fb628a4c91a862283e25264e868bd6cfa911f355c7",
+    "docs/progress/2026-11-13/training-results/development-results.png": "d8e22ab169233a70a9a687b8bd52f9529c18195855cd7e616c3e68336a2051e0",
+    "docs/progress/2026-11-13/training-results/training-curves.png": "2f949b86d9c66e02face1d3a899abb43996bbfdcea10785b59f157b5bcf244e0"
+  },
+  "unit_test_session": "2026-11-13 document revision: full suite rerun in the training environment",
+  "passed_unit_tests": 82,
+  "passed_subtests": 3,
+  "unit_suite": "tests",
+  "unit_test_command": "tools/training_python.cmd -m pytest tests -q",
+  "unit_test_duration_seconds": 36.78,
+  "visual_review": {
+    "date": "2026-11-13",
+    "languages_reviewed": [
+      "zh",
+      "en"
+    ],
+    "pdf_pages_reviewed": {
+      "zh": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "en": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "pdf_sha256": {
+      "zh": "8828790c4b4d6fac5a73c8168fadf1756e897b1a15345c3f52130b046ea43053",
+      "en": "81a45b7461436bce2f109b0d09b70891b9180eed3197665d654c3fb808330633"
+    },
+    "figures_reviewed": [
+      "cohort-and-quality.png",
+      "training-curves.png",
+      "development-results.png",
+      "degradation-preview.png",
+      "cunsb-generator-input.png",
+      "cunsb-generator-smoke.png"
+    ],
+    "figure_sha256": {
+      "cohort-and-quality.png": "51cf5ef03fa8105a2c34be9056fd41072acc7487bbf96ef7bbc4f404e2658d9d",
+      "training-curves.png": "2f949b86d9c66e02face1d3a899abb43996bbfdcea10785b59f157b5bcf244e0",
+      "development-results.png": "d8e22ab169233a70a9a687b8bd52f9529c18195855cd7e616c3e68336a2051e0",
+      "degradation-preview.png": "6a44116ee5f52cf8d0f1e5fb628a4c91a862283e25264e868bd6cfa911f355c7",
+      "cunsb-generator-input.png": "e93efc639809e89f426056662ecbbb8807f3315af191b48135bef5bf1b0ea838",
+      "cunsb-generator-smoke.png": "c8a12a0df3e2efff776be1ca9a86cbb4680a6b33f157de0217400daafb9b7c59"
+    },
+    "report_layout_passed": true,
+    "review_scope": "Both languages, complete PDF pages, AUROC definition, selected versus update-1200 comparisons, table readability, figure labels, and clipping; technical document review",
+    "results_separated": [
+      "validation-selected checkpoints",
+      "checkpoints at update 1200",
+      "real-quality development",
+      "fixed synthetic stress"
+    ],
+    "rendered_contact_sheets": {
+      "zh": [
+        ".build/progress-20261113-training/contact-zh-1.jpg",
+        ".build/progress-20261113-training/contact-zh-2.jpg"
+      ],
+      "en": [
+        ".build/progress-20261113-training/contact-en-1.jpg",
+        ".build/progress-20261113-training/contact-en-2.jpg"
+      ]
+    }
+  },
+  "cuda_resume_exact": true,
+  "verification_source_sha256": "cfd5eedc3745e59a6867162a578d0ec18718ca80e880298feeb3c00649e2a7bc"
+}

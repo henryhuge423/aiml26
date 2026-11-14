@@ -1,0 +1,27 @@
+{
+  "reviewed": true,
+  "date": "2026-11-13",
+  "reviewer": "root agent",
+  "method": "Direct visual inspection of all six final rendered PDF pages and all four embedded figure variants; bilingual prose read and source table values checked against update-1200 result JSON.",
+  "pages_reviewed": {
+    "zh": [
+      1,
+      2,
+      3
+    ],
+    "en": [
+      1,
+      2,
+      3
+    ]
+  },
+  "findings": "Readable captions, localized figure labels, complete table rows, consistent source and stress denominators, explicit AUROC definition and example; no clipped text or missing glyphs.",
+  "artifact_sha256": {
+    "cohort-allocation.en.png": "0f443fa822cb09ca8d4d7af50f8573ce008dcaa8bd8fa4b1109fd161f6ccc24a",
+    "cohort-allocation.zh.png": "b0d0add939766b1e94e1b31bf71f56a4051a16ff1db0e5551be403ad91c15d6f",
+    "experiment-overview.en.png": "98301b45793b03dfcb1b7fba479ce5e4e3f41f053e8ec82308fd332b53564d6d",
+    "experiment-overview.zh.png": "e2122d036cc50506235d3d0ce586434700c9d50db68d5eabb7c4c151df2b6012",
+    "progress-overview.en.pdf": "54c769a3d81872dd122e9ed8b393fc0fa6d9d5f85fa18b224fa692326cf97ed4",
+    "progress-overview.zh.pdf": "d52858c557a372ad35fbf8d4c48dba66681964d8c75608f2489c12a35b5b26a5"
+  }
+}

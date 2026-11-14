@@ -1,0 +1,19 @@
+{
+  "all_arms_completed": true,
+  "optimizer_updates_each": 1200,
+  "preflight_passed": true,
+  "protected_test_inference": false,
+  "cohort_images": 24491,
+  "reports": {
+    "zh": {
+      "pages": 5,
+      "pdf_bytes": 621412,
+      "latex_retained": true
+    },
+    "en": {
+      "pages": 6,
+      "pdf_bytes": 411344,
+      "latex_retained": true
+    }
+  }
+}

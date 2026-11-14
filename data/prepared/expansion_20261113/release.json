@@ -1,0 +1,116 @@
+{
+  "version": "audited-expansion-pool-v1",
+  "date": "2026-11-13",
+  "audit_complete": true,
+  "images": 9070,
+  "positive_images": 3446,
+  "sources": {
+    "airogs_original_rg": {
+      "images": 3,
+      "positives": 3,
+      "linked_groups": 3,
+      "known_patient_ids": 0
+    },
+    "beh": {
+      "images": 333,
+      "positives": 83,
+      "linked_groups": 333,
+      "known_patient_ids": 0
+    },
+    "chaksu": {
+      "images": 861,
+      "positives": 0,
+      "linked_groups": 861,
+      "known_patient_ids": 0
+    },
+    "crfo": {
+      "images": 67,
+      "positives": 40,
+      "linked_groups": 36,
+      "known_patient_ids": 36
+    },
+    "fives": {
+      "images": 384,
+      "positives": 191,
+      "linked_groups": 374,
+      "known_patient_ids": 0
+    },
+    "fundus_avseg": {
+      "images": 42,
+      "positives": 14,
+      "linked_groups": 42,
+      "known_patient_ids": 0
+    },
+    "grape": {
+      "images": 518,
+      "positives": 518,
+      "linked_groups": 140,
+      "known_patient_ids": 140
+    },
+    "hrf": {
+      "images": 30,
+      "positives": 15,
+      "linked_groups": 30,
+      "known_patient_ids": 0
+    },
+    "keh": {
+      "images": 1529,
+      "positives": 747,
+      "linked_groups": 1529,
+      "known_patient_ids": 0
+    },
+    "lag_part1": {
+      "images": 4812,
+      "positives": 1688,
+      "linked_groups": 4812,
+      "known_patient_ids": 0
+    },
+    "les_av": {
+      "images": 22,
+      "positives": 11,
+      "linked_groups": 22,
+      "known_patient_ids": 0
+    },
+    "mshf": {
+      "images": 49,
+      "positives": 49,
+      "linked_groups": 49,
+      "known_patient_ids": 0
+    },
+    "papila": {
+      "images": 420,
+      "positives": 87,
+      "linked_groups": 210,
+      "known_patient_ids": 210
+    }
+  },
+  "source_defined_glaucoma_positive_images": 3443,
+  "airogs_RG_referral_positive_images": 3,
+  "officially_poor_quality_positive_images": {
+    "FIVES_at_least_one_poor_dimension": 99,
+    "MSHF_overall_poor": 47
+  },
+  "auxiliary_suspect_images": 204,
+  "pixel_hash_decoder": "Pillow 13.0.0 RGB; original MSHF TIFF decoded by audit OpenCV and retained as equal-pixel PNG",
+  "pixel_hash_decoder_versions": {
+    "pillow": "13.0.0",
+    "opencv": "4.11.0"
+  },
+  "auxiliary_suspect_by_source": {
+    "papila": 68,
+    "chaksu": 136
+  },
+  "auxiliary_manifest_sha256": "5c3535c6ee7bc0d59d2b77d816119c685b31a818eb1d916b3d182f6d17834b05",
+  "manifest_sha256": "70508a9effc25fe3b0f849f7ccdfd777417b26b5787ab9ceb65cf1cb3424e20b",
+  "inputs": {
+    "data\\audit\\data_expansion_20261113\\local_decisions.csv": "8b433e554c1e7d4543054d2cf553c83fda54bbfdc3e59f9819976d380a78c60f",
+    "data\\audit\\data_expansion_20261113\\local_summary.json": "c1431e0f0dadde66ce4116da464bb81220ab71a0c8697e138c7fbfa89b18ad3d",
+    "tools\\finalize_expansion_20261113.py": "ed67ed7bb027ed0329b4ffd59fe9831c54287880664dbc63c45be4428d412723"
+  },
+  "research_training_released": false,
+  "reason": "Additive dataset pool; no training or source-role allocation was executed in this research turn",
+  "requirements": "Keep known patient and confirmed image groups intact across every role. LAG, GRAPE, FIVES, Fundus-AVSeg and MSHF require a joint source-family split, not independent source-specific random splits. Internal validation may use image-association groups where patient IDs are unknown, explicitly without a patient-independence claim. Independent external evaluation requires a source-family holdout. Respect author partitions. Keep disease target definitions and imaging domains explicit.",
+  "joint_source_roles": {
+    "LAG_GRAPE_FIVES_FundusAVSeg_MSHF": "joint patient/image-group allocation for training and internal validation; no mutually independent external-test claims"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "analysis": "analysis.json",
+  "checkpoint": "budget_end",
+  "real_quality_training_counts": {
+    "fives": {
+      "poor": {
+        "negative": 3,
+        "positive": 44
+      },
+      "other": {
+        "negative": 83,
+        "positive": 46
+      }
+    },
+    "mshf": {
+      "poor": {
+        "negative": 0,
+        "positive": 28
+      },
+      "other": {
+        "negative": 0,
+        "positive": 2
+      }
+    }
+  },
+  "real_quality_development_sensitivity": {
+    "original_clean": {
+      "combined": {
+        "hits": 7,
+        "n": 12,
+        "sensitivity": 0.5833333333333334,
+        "exact_binomial_95": [
+          0.2766696856821058,
+          0.8483477701915698
+        ]
+      },
+      "fives": {
+        "hits": 5,
+        "n": 7,
+        "sensitivity": 0.7142857142857143,
+        "exact_binomial_95": [
+          0.2904208637373427,
+          0.9633074338239145
+        ]
+      },
+      "mshf": {
+        "hits": 2,
+        "n": 5,
+        "sensitivity": 0.4,
+        "exact_binomial_95": [
+          0.052744950526316906,
+          0.8533672003653268
+        ]
+      }
+    },
+    "expanded_clean": {
+      "combined": {
+        "hits": 12,
+        "n": 12,
+        "sensitivity": 1.0,
+        "exact_binomial_95": [
+          0.7353515306029488,
+          1.0
+        ]
+      },
+      "fives": {
+        "hits": 7,
+        "n": 7,
+        "sensitivity": 1.0,
+        "exact_binomial_95": [
+          0.5903836027749966,
+          1.0
+        ]
+      },
+      "mshf": {
+        "hits": 5,
+        "n": 5,
+        "sensitivity": 1.0,
+        "exact_binomial_95": [
+          0.4781762498950185,
+          1.0
+        ]
+      }
+    },
+    "expanded_degradation30": {
+      "combined": {
+        "hits": 12,
+        "n": 12,
+        "sensitivity": 1.0,
+        "exact_binomial_95": [
+          0.7353515306029488,
+          1.0
+        ]
+      },
+      "fives": {
+        "hits": 7,
+        "n": 7,
+        "sensitivity": 1.0,
+        "exact_binomial_95": [
+          0.5903836027749966,
+          1.0
+        ]
+      },
+      "mshf": {
+        "hits": 5,
+        "n": 5,
+        "sensitivity": 1.0,
+        "exact_binomial_95": [
+          0.4781762498950185,
+          1.0
+        ]
+      }
+    },
+    "expanded_degradation50": {
+      "combined": {
+        "hits": 12,
+        "n": 12,
+        "sensitivity": 1.0,
+        "exact_binomial_95": [
+          0.7353515306029488,
+          1.0
+        ]
+      },
+      "fives": {
+        "hits": 7,
+        "n": 7,
+        "sensitivity": 1.0,
+        "exact_binomial_95": [
+          0.5903836027749966,
+          1.0
+        ]
+      },
+      "mshf": {
+        "hits": 5,
+        "n": 5,
+        "sensitivity": 1.0,
+        "exact_binomial_95": [
+          0.4781762498950185,
+          1.0
+        ]
+      }
+    }
+  },
+  "figures": [
+    "source-differences.zh.png",
+    "source-differences.en.png",
+    "exposure-selection.zh.png",
+    "exposure-selection.en.png",
+    "defocus-ranking-shifts.zh.png",
+    "defocus-ranking-shifts.en.png",
+    "real-quality-labels.zh.png",
+    "real-quality-labels.en.png"
+  ]
+}

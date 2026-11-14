@@ -1,0 +1,105 @@
+{
+  "reviewed": true,
+  "reviewed_at_utc": "2026-11-14T00:02:17.899364+00:00",
+  "review_method": "Both languages read in full. All final PDF pages visually inspected; all eight language-specific figures inspected in page renders and figure sheets. Final contact sheets checked after the AUROC explanation and table-width edits.",
+  "languages": {
+    "zh": {
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "pdf_sha256": "94dfdb7c6984fb512d72e784dc1c95798c86142467e04fb68f93c96db7672dbd",
+      "markdown_sha256": "b35eca31fc14b3f15072207a8d79f453e53581266e002ac9a3968b3bafdf5c3a",
+      "latex_sha256": "9062e9272d8c07bca0625b815850604c07c69b7f76d9fdc673d9cad39743fc1d",
+      "page_sha256": {
+        "1": "f0fdd2d5f70552114abf3c6dcfe1b2c2755c803b88e9a978b3c0cf4aae208714",
+        "2": "c7e420e1a43c75862855a64082f12aa5af350594417205997e7d993aab101fc9",
+        "3": "0e2b5dbecce36001239bcb1e5e7b8adbb0096d4bf37d594e8e4495a9b35cd90c",
+        "4": "78928b04db0a23d6e1e67bc964ea87bdbe67d7102613be1810232c83a60a2bee",
+        "5": "6fd3452b362390a02915a7c1d90b2170162924d2e5c8a1e51780b1812aac599d"
+      },
+      "contact_sheets": [
+        ".build/progress-20261113-analysis/contact-zh-1.jpg",
+        ".build/progress-20261113-analysis/contact-zh-2.jpg"
+      ]
+    },
+    "en": {
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "pdf_sha256": "b31c40e128b20274073743a67b0645e802da4fdcf1aed8eee826cf640a16228f",
+      "markdown_sha256": "8ec2948b2092a229474b458cb7207e6f5dcdd29c0ba45a33a81d3d6f34211a40",
+      "latex_sha256": "a03a4bbee4213bb1d95a2aa699b79b7e6f7e235edf49ec75b6b4420de520fe64",
+      "page_sha256": {
+        "1": "a8a5d808b9a7ccbad8e4cc065e0b3e40c42390c5c73d4ee3e0eaba763031210e",
+        "2": "fe06362593da41c643078e3c8535f02a1fa75b9433d76fc69099225b2626c82e",
+        "3": "be110c0355a116b20ccb15157abb34c01407977fc04385f9c2bea0f7d888dafb",
+        "4": "1934b07cdd6af9dde21a95991a209351192a53693002ee5d405261ca274f87bc",
+        "5": "a8cfaf344a7f59640d316b75804eabbad9159810ed1b0ae766db90407aec45ec",
+        "6": "ff5db208a64bf7ec7899630cf56016cb9dbfec093cbefbe8cc37233e44e62d6a"
+      },
+      "contact_sheets": [
+        ".build/progress-20261113-analysis/contact-en-1.jpg",
+        ".build/progress-20261113-analysis/contact-en-2.jpg"
+      ]
+    }
+  },
+  "figures": {
+    "source-differences.zh.png": {
+      "reviewed": true,
+      "sha256": "7aefa8722d16202cefc7f0f728a56d855a16490718bc3b48e9faa4d04d231413"
+    },
+    "source-differences.en.png": {
+      "reviewed": true,
+      "sha256": "aa661287c5cb0f2a825b068171eebc66a9851179899c9c4a0e14f606ea058741"
+    },
+    "exposure-selection.zh.png": {
+      "reviewed": true,
+      "sha256": "e8996fb3b1634d54b4531cc1f4fc1687d929c11eafd86622c7cc572b7a151979"
+    },
+    "exposure-selection.en.png": {
+      "reviewed": true,
+      "sha256": "6b8e4444af9c0a103906015a9ee65f6d8bbfd8bc5d5f886c39bc6ff760613741"
+    },
+    "defocus-ranking-shifts.zh.png": {
+      "reviewed": true,
+      "sha256": "fcec8ec2e71a804e5bb57624846dee31d4f6fa00a6b036904d016f3b62f825a8"
+    },
+    "defocus-ranking-shifts.en.png": {
+      "reviewed": true,
+      "sha256": "d0749cf8cdfeaabcd54d0f1083346ab8f089c6fd5838bc6a2274977a06a6d32a"
+    },
+    "real-quality-labels.zh.png": {
+      "reviewed": true,
+      "sha256": "b13a7de61ba7089781f12651d351343b053dcde73cc92d473d4b7a504b2f6bb1"
+    },
+    "real-quality-labels.en.png": {
+      "reviewed": true,
+      "sha256": "b43ea19b5b8be661c2956c0c05a9826cdce28136ed829addaf8938b6a2fb5224"
+    }
+  },
+  "checks": [
+    "clear AUROC definition, tied-score handling, and threshold interpretation in both languages",
+    "selected and update-1200 checkpoints distinguished",
+    "numbers agree between languages and retained analysis data",
+    "tables and prose within page margins",
+    "legible axes, complete confidence bars, and unobstructed legends",
+    "real-quality figure distinguishes source annotation standards and disease labels",
+    "all PDF pages and all report figures reviewed"
+  ],
+  "statistical_unit_tests": {
+    "passed_in_this_session": 4,
+    "suite": "tests/test_expansion_analysis.py",
+    "command": "python -m pytest tests/test_expansion_analysis.py -q",
+    "result": "4 passed in 1.22s"
+  },
+  "delivery_verification": "delivery-verification.json"
+}
