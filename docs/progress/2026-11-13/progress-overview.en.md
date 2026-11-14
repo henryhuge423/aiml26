@@ -64,7 +64,7 @@ The figure matches disease score p from the update-1,200 checkpoint of the 50% m
 
 ![Disease and quality scores on original rule-development images](pq-distribution.en.png)
 
-Figure 3 follows the earlier display: disease score p is on a nonlinear horizontal axis, quality score q is on the vertical axis, and colors show the original labels. For display, p is clipped to 0.0001–0.9999. The dashed line marks the illustrative threshold of 0.5: positives to its left are missed, and negatives to its right are false positives. These account for 90/503 and 39/717 images, respectively. This threshold is illustrative, and no review boundary has been selected. The [figure data](pq-distribution.json) contain counts and errors in linear p and q bins, together with input hashes; see also the [plotting program](../../../tools/plot_pq_overview_20261113.py).
+Figure 3 uses a nonlinear horizontal axis for disease score p and a vertical axis for quality score q. Pale circles show correct predictions; red crosses highlight false negatives, and blue diamonds highlight false positives. For display, p is clipped to 0.0001–0.9999. At the illustrative threshold of 0.5, marked by the dashed line, there are 90 misses among 503 positives and 39 false positives among 717 negatives. Correct predictions remain visible to show how many might also fall in a potential review region. This threshold is illustrative, and no review boundary has been selected. The [figure data](pq-distribution.json) contain counts and errors in linear p and q bins, together with input hashes; see also the [plotting program](../../../tools/plot_pq_overview_20261113.py).
 
 ## Priorities identified by the analysis
 

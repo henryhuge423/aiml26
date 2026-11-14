@@ -31,9 +31,17 @@ for lang in ('zh','en'):
     zh = lang == 'zh'
     fig, ax = plt.subplots(figsize=(10, 3.7), constrained_layout=True)
     for label, color in [(0, '#277892'), (1, '#c7735b')]:
-        group = d[d.label_p == label]
+        group = d[(d.label_p == label) & ~d.error]
         ax.scatter(group.prediction.clip(.0001, .9999), group.q, s=12, alpha=.38,
-                   color=color, edgecolors='none', label=(f'原标签 {label}' if zh else f'Original label {label}'))
+                   color=color, edgecolors='none', label=(f'预测正确：原标签 {label}' if zh else f'Correct: label {label}'), zorder=2)
+    for mask, marker, color, label in [
+        (d.fn, 'X', '#b53229', '假阴性（漏诊）' if zh else 'False negative'),
+        (d.fp, 'D', '#145e9c', '假阳性（误报）' if zh else 'False positive'),
+    ]:
+        group = d[mask]
+        ax.scatter(group.prediction.clip(.0001, .9999), group.q, s=42 if marker == 'X' else 32,
+                   marker=marker, color=color, edgecolors='white', linewidths=.55, alpha=.94,
+                   label=f'{label} (n={len(group)})', zorder=4)
     ax.set_xscale('logit')
     ax.set_xlim(.00006, .99994)
     ax.set_ylim(-.03, .95)
@@ -44,7 +52,7 @@ for lang in ('zh','en'):
     ax.spines[['top','right']].set_visible(False)
     ax.set_xlabel('疾病模型的分数 p（非线性刻度）' if zh else 'Disease-model score p (nonlinear scale)')
     ax.set_ylabel('质量模型分数 q' if zh else 'Quality-model score q')
-    ax.legend(loc='lower right', frameon=False)
+    ax.legend(loc='lower right', frameon=True, facecolor='white', framealpha=.9, fontsize=8)
     fig.savefig(OUT / f'pq-distribution.{lang}.png', dpi=200, facecolor='white')
     plt.close(fig)
 result = {'n':len(d), 'positives':int(d.label_p.sum()), 'fn':int(d.fn.sum()), 'fp':int(d.fp.sum()), 'threshold':0.5,
