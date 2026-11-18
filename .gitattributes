@@ -3,6 +3,7 @@ docs/progress/2026-11-13/** -text
 docs/progress/2026-11-15/** -text whitespace=cr-at-eol
 docs/progress/2026-11-16/** -text whitespace=cr-at-eol
 docs/progress/2026-11-18/** -text whitespace=cr-at-eol
+configs/calibrated_defocus_20261118/** -text
 data/prepared/*20261113/** -text
 runs/expanded_20261113/** -text
 runs/followup_20261115/** -text whitespace=cr-at-eol
@@ -14,5 +15,6 @@ tools/*_20261118.py -text whitespace=cr-at-eol
 training/data.py -text
 training/engine.py -text
 training/fundus_degradation.py -text
+training/calibrated_defocus.py -text
 *.pdf binary
 *.pptx binary
