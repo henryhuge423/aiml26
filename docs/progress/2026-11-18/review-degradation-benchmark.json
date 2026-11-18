@@ -1,0 +1,519 @@
+{
+  "clinician_projection": {
+    "units": "per 1000 photos",
+    "positive_rate": 0.032235168864967176,
+    "reviews": 100,
+    "model_only_fn": 4.241469587495681,
+    "model_only_fp": 41.862600837902185,
+    "policies": {
+      "quality_gray_zone": {
+        "reviewed_reference_positive": 7.634645257492226,
+        "reviewed_reference_negative": 92.36535474250763,
+        "captured_fn": 2.0359054019979266,
+        "captured_fp": 27.087565248054357,
+        "sensitivity_to_reduce_fn": 0.7333333333333334,
+        "scenarios": {
+          "perfect_reference_ceiling": {
+            "sensitivity": 1.0,
+            "specificity": 1.0,
+            "remaining_fn": 2.2055641854977543,
+            "remaining_fp": 14.775035589847828,
+            "net_errors_prevented": 29.123470650052283
+          },
+          "selected_eyepacs_graders": {
+            "sensitivity": 0.86,
+            "specificity": 0.964,
+            "remaining_fn": 3.274414521546666,
+            "remaining_fp": 18.100188360578105,
+            "net_errors_prevented": 24.729467543273092
+          },
+          "intermediate_assumption": {
+            "sensitivity": 0.75,
+            "specificity": 0.9,
+            "remaining_fn": 4.114225499870811,
+            "remaining_fp": 24.01157106409859,
+            "net_errors_prevented": 17.978273861428463
+          },
+          "lower_sensitivity_assumption": {
+            "sensitivity": 0.6,
+            "specificity": 0.88,
+            "remaining_fn": 5.259422288494645,
+            "remaining_fp": 25.858878158948745,
+            "net_errors_prevented": 14.985769977954476
+          }
+        }
+      },
+      "second_model_negative_reranking": {
+        "reviewed_reference_positive": 8.567768566741275,
+        "reviewed_reference_negative": 91.43223143325862,
+        "captured_fn": 2.9690287112469766,
+        "captured_fp": 27.087565248054357,
+        "sensitivity_to_reduce_fn": 0.6534653465346534,
+        "scenarios": {
+          "perfect_reference_ceiling": {
+            "sensitivity": 1.0,
+            "specificity": 1.0,
+            "remaining_fn": 1.2724408762487043,
+            "remaining_fp": 14.775035589847828,
+            "net_errors_prevented": 30.05659395930133
+          },
+          "selected_eyepacs_graders": {
+            "sensitivity": 0.86,
+            "specificity": 0.964,
+            "remaining_fn": 2.471928475592483,
+            "remaining_fp": 18.066595921445142,
+            "net_errors_prevented": 25.565546028360238
+          },
+          "intermediate_assumption": {
+            "sensitivity": 0.75,
+            "specificity": 0.9,
+            "remaining_fn": 3.414383017934023,
+            "remaining_fp": 23.918258733173687,
+            "net_errors_prevented": 18.771428674290156
+          },
+          "lower_sensitivity_assumption": {
+            "sensitivity": 0.6,
+            "specificity": 0.88,
+            "remaining_fn": 4.699548302945215,
+            "remaining_fp": 25.74690336183886,
+            "net_errors_prevented": 15.65761876061379
+          }
+        }
+      }
+    }
+  },
+  "degradation": {
+    "archive_sha256": "3ea1624b89c8fbe4563c0e74a11202ff31e4007481bbdbea4494d6332b1d5926",
+    "split_seed": 20261118,
+    "calibration_photo_pairs": 60,
+    "heldout_photo_pairs": 60,
+    "metrics": {
+      "real_low": {
+        "mean_luminance": {
+          "median": 1.033447533439312,
+          "p10": 0.913464862209618,
+          "p90": 1.163873663481221,
+          "log_ratio_wasserstein": 0.0
+        },
+        "green_contrast_std": {
+          "median": 0.9537922537947646,
+          "p10": 0.8890481219678688,
+          "p90": 1.0797694224210208,
+          "log_ratio_wasserstein": 0.0
+        },
+        "green_laplacian_variance": {
+          "median": 0.10835802986404655,
+          "p10": 0.07297245370289795,
+          "p90": 0.243472136011765,
+          "log_ratio_wasserstein": 0.0
+        }
+      },
+      "current": {
+        "mean_luminance": {
+          "median": 0.9994727963398033,
+          "p10": 0.7982416111514911,
+          "p90": 1.1467823389589615,
+          "log_ratio_wasserstein": 0.046221953523456864
+        },
+        "green_contrast_std": {
+          "median": 0.9589293530550524,
+          "p10": 0.8691553866686554,
+          "p90": 0.998228363077445,
+          "log_ratio_wasserstein": 0.02943284276413971
+        },
+        "green_laplacian_variance": {
+          "median": 0.7280778700514456,
+          "p10": 0.4521785364079304,
+          "p90": 1.5463712293867502,
+          "log_ratio_wasserstein": 1.8350128066813023
+        }
+      },
+      "cofe_100": {
+        "mean_luminance": {
+          "median": 0.9929526246786164,
+          "p10": 0.9919628763948645,
+          "p90": 0.9938429537064178,
+          "log_ratio_wasserstein": 0.0808469866287208
+        },
+        "green_contrast_std": {
+          "median": 0.9862248818412143,
+          "p10": 0.9680225076225848,
+          "p90": 0.9922314944877516,
+          "log_ratio_wasserstein": 0.06554541732140054
+        },
+        "green_laplacian_variance": {
+          "median": 0.31907050454829844,
+          "p10": 0.10408020379787919,
+          "p90": 0.5277566201271241,
+          "log_ratio_wasserstein": 0.7293021457452928
+        }
+      },
+      "cofe_111": {
+        "mean_luminance": {
+          "median": 0.8012708593616715,
+          "p10": 0.5938311100399326,
+          "p90": 1.0557138128788015,
+          "log_ratio_wasserstein": 0.2574056685459507
+        },
+        "green_contrast_std": {
+          "median": 1.0378581337150423,
+          "p10": 0.7927987800259634,
+          "p90": 1.4062461514586355,
+          "log_ratio_wasserstein": 0.1306865554374032
+        },
+        "green_laplacian_variance": {
+          "median": 0.17845391778985392,
+          "p10": 0.09651356400203247,
+          "p90": 0.5206454999901684,
+          "log_ratio_wasserstein": 0.5055386970427361
+        }
+      },
+      "arc": {
+        "mean_luminance": {
+          "median": 1.5402421489249916,
+          "p10": 1.3591566106037682,
+          "p90": 1.7560032357196247,
+          "log_ratio_wasserstein": 0.4020590161888618
+        },
+        "green_contrast_std": {
+          "median": 1.0586251430648348,
+          "p10": 0.7682709995758955,
+          "p90": 1.4854712100503698,
+          "log_ratio_wasserstein": 0.1667678105721307
+        },
+        "green_laplacian_variance": {
+          "median": 0.19945738627350793,
+          "p10": 0.1291518886309592,
+          "p90": 0.41068690816005904,
+          "log_ratio_wasserstein": 0.564006170712922
+        }
+      },
+      "calibrated": {
+        "mean_luminance": {
+          "median": 0.9897849986105308,
+          "p10": 0.8499029250763664,
+          "p90": 1.1287747950842788,
+          "log_ratio_wasserstein": 0.04318352478182865
+        },
+        "green_contrast_std": {
+          "median": 0.9641588144758534,
+          "p10": 0.8261621195474189,
+          "p90": 1.0949984521348142,
+          "log_ratio_wasserstein": 0.020780417347200136
+        },
+        "green_laplacian_variance": {
+          "median": 0.12020067288826625,
+          "p10": 0.06294938960325218,
+          "p90": 0.23858888675458026,
+          "log_ratio_wasserstein": 0.10808837133891679
+        }
+      }
+    },
+    "calibration_parameters": [
+      [
+        2.4,
+        1.265449891962161
+      ],
+      [
+        1.7,
+        0.9346948113578524
+      ],
+      [
+        1.2,
+        0.9813046791077843
+      ],
+      [
+        1.7,
+        1.0561430855065548
+      ],
+      [
+        2.4,
+        0.7863221072698028
+      ],
+      [
+        2.4,
+        1.0881898500093894
+      ],
+      [
+        2.4,
+        1.0657232516591864
+      ],
+      [
+        2.4,
+        1.1334235084200337
+      ],
+      [
+        1.7,
+        0.8398525984986042
+      ],
+      [
+        1.7,
+        0.9839066652105857
+      ],
+      [
+        2.4,
+        1.0305286762399393
+      ],
+      [
+        1.7,
+        0.9610596143878776
+      ],
+      [
+        1.7,
+        0.9994618011667281
+      ],
+      [
+        1.7,
+        1.210868455772629
+      ],
+      [
+        2.4,
+        1.0376748034544172
+      ],
+      [
+        1.7,
+        0.992017476232154
+      ],
+      [
+        2.4,
+        1.055256785035369
+      ],
+      [
+        1.7,
+        0.9728272451964247
+      ],
+      [
+        1.7,
+        0.9210729978383604
+      ],
+      [
+        2.4,
+        1.042120577939714
+      ],
+      [
+        1.7,
+        0.9180129171275151
+      ],
+      [
+        2.4,
+        1.0394938029380718
+      ],
+      [
+        1.7,
+        0.8235226560352539
+      ],
+      [
+        1.7,
+        0.8783511449960784
+      ],
+      [
+        1.2,
+        0.835627479933226
+      ],
+      [
+        1.7,
+        0.8219858420810078
+      ],
+      [
+        1.7,
+        0.9608308567113677
+      ],
+      [
+        0.5,
+        0.9028011882720807
+      ],
+      [
+        1.7,
+        1.0617889043051918
+      ],
+      [
+        2.4,
+        1.074246949227723
+      ],
+      [
+        0,
+        0.8597077820248044
+      ],
+      [
+        1.7,
+        0.9886839613454318
+      ],
+      [
+        1.7,
+        1.131800187100675
+      ],
+      [
+        1.7,
+        1.0526928106162217
+      ],
+      [
+        1.7,
+        1.0332859576376694
+      ],
+      [
+        2.4,
+        1.1180465802261486
+      ],
+      [
+        1.7,
+        0.8958917061503515
+      ],
+      [
+        1.7,
+        0.9152234447075109
+      ],
+      [
+        1.7,
+        0.9445446953991387
+      ],
+      [
+        1.7,
+        1.0428095539479598
+      ],
+      [
+        1.7,
+        1.10441961957371
+      ],
+      [
+        1.7,
+        1.0249685237530268
+      ],
+      [
+        1.7,
+        0.9024289123651338
+      ],
+      [
+        2.4,
+        1.2467435908365236
+      ],
+      [
+        2.4,
+        0.9085197455137946
+      ],
+      [
+        1.7,
+        0.8752326329865776
+      ],
+      [
+        2.4,
+        1.1685731511485784
+      ],
+      [
+        1.7,
+        0.9178282457319454
+      ],
+      [
+        2.4,
+        1.0004029264939667
+      ],
+      [
+        2.4,
+        1.191746359808375
+      ],
+      [
+        1.7,
+        0.8093993670638279
+      ],
+      [
+        1.7,
+        1.1224330348290277
+      ],
+      [
+        1.7,
+        1.0255202333740756
+      ],
+      [
+        1.7,
+        0.9332298152588283
+      ],
+      [
+        1.7,
+        0.9062454489218366
+      ],
+      [
+        1.2,
+        1.0008160800456083
+      ],
+      [
+        1.7,
+        1.1089922311993285
+      ],
+      [
+        1.7,
+        0.8843907208987071
+      ],
+      [
+        1.7,
+        0.8516109613599282
+      ],
+      [
+        1.7,
+        0.9718534988048958
+      ]
+    ],
+    "model_scores": {
+      "checkpoint_sha256": "61d0728b4c5cda8078d034db0852c2dbe7a9796440a2326857fa7d0407158c2a",
+      "original_score_anchor_max_difference": 0.00016320124268526248,
+      "methods": {
+        "real_low": {
+          "median_change": 0.00018291338346898556,
+          "median_absolute_change": 0.001230271333042765,
+          "absolute_change_over_005": 4,
+          "threshold_crossings": 0,
+          "score_change_wasserstein": 0.0
+        },
+        "current": {
+          "median_change": 0.00011607649503275752,
+          "median_absolute_change": 0.001014308407320641,
+          "absolute_change_over_005": 2,
+          "threshold_crossings": 0,
+          "score_change_wasserstein": 0.01050769188878272
+        },
+        "cofe_100": {
+          "median_change": 0.0004954769610776566,
+          "median_absolute_change": 0.001313382526859641,
+          "absolute_change_over_005": 3,
+          "threshold_crossings": 0,
+          "score_change_wasserstein": 0.01235208628829317
+        },
+        "cofe_111": {
+          "median_change": 0.006466401129728183,
+          "median_absolute_change": 0.006466401129728183,
+          "absolute_change_over_005": 13,
+          "threshold_crossings": 0,
+          "score_change_wasserstein": 0.021802784519229592
+        },
+        "arc": {
+          "median_change": -0.0003484585413389141,
+          "median_absolute_change": 0.0009546936489641666,
+          "absolute_change_over_005": 3,
+          "threshold_crossings": 0,
+          "score_change_wasserstein": 0.02270372030763941
+        },
+        "calibrated": {
+          "median_change": 0.00034059475001413375,
+          "median_absolute_change": 0.0018781668768497184,
+          "absolute_change_over_005": 4,
+          "threshold_crossings": 0,
+          "score_change_wasserstein": 0.012328575782411616
+        }
+      }
+    },
+    "split": "deterministic partition by photo pair; patient identifiers unavailable",
+    "clinical_labels_available": false,
+    "cofe_modes": {
+      "100": "author blur only",
+      "111": "author illumination, spots and blur"
+    },
+    "arc_mode": "author cataract simulation, one draw per photo; left half of saved pair"
+  },
+  "previous_review_results_sha256": "13a9b6f0228198c72aabdfd9e366706ad88ca270fb12870bc11fdef0081e2a25",
+  "analysis_sha256": "60086e88f04e972bd1b2fbca1301bd01961fc0c143528c6ba3aa391b1d5cbb43",
+  "sources": {
+    "eye_pacs": "https://pubmed.ncbi.nlm.nih.gov/37113471/",
+    "clinical_workflow": "https://www.nice.org.uk/guidance/ng81/chapter/Recommendations",
+    "real_fundus": "https://arxiv.org/abs/2201.00466",
+    "cofe": "https://arxiv.org/abs/2005.05594",
+    "arcnet": "https://arxiv.org/abs/2203.07737"
+  }
+}

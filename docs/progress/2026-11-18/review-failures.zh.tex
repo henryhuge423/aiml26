@@ -1,0 +1,183 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\PassOptionsToPackage{space}{xeCJK}
+\documentclass[
+  10pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=0.72in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Cambria}
+  \setmonofont[]{Consolas}
+  \ifXeTeX
+    \usepackage{xeCJK}
+    \setCJKmainfont[]{Microsoft YaHei}
+  \fi
+  \ifLuaTeX
+    \usepackage[]{luatexja-fontspec}
+    \setmainjfont[]{Microsoft YaHei}
+  \fi
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\renewcommand{\figurename}{图}
+\begin{document}
+
+\section{Eye Sentinel
+漏诊复核与同眼照片分析}\label{eye-sentinel-ux6f0fux8bcaux590dux6838ux4e0eux540cux773cux7167ux7247ux5206ux6790}
+
+2026 年 11 月 18 日 · \href{review-failures.en.md}{English} ·
+\href{review-failures.zh.pdf}{PDF}
+
+\textbf{第二个模型找到了原灰区漏掉的一部分阳性照片。} 在 773 张 AIROGS
+开发照片上，两种规则各复核 78 张。保留 EfficientNet-B0
+的原判和判阳侧复核名单，只给判阴照片重新排序，进入复核的漏诊从 16 增到
+24。按原始 AIROGS 的 3.2\%
+阳性比例重加权时，结果见下表。两种情景都以照片为单位。
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llrrr@{}}
+\toprule\noalign{}
+人群情景 & 复核规则 & 全部错误进复核 & 漏诊进复核 & 每千张仍漏诊 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+原开发比例 & 不确定性 & 32.8\% & 30.0\% & 45.3 \\
+& 质量灰区 & 32.8\% & 32.0\% & 44.0 \\
+& 加入第二模型，重排判阴 & 44.8\% & 48.0\% & 33.6 \\
+3.2\% 阳性 & 不确定性 & 57.5\% & 44.0\% & 2.4 \\
+& 质量灰区 & 63.2\% & 48.0\% & 2.2 \\
+& 加入第二模型，重排判阴 & 65.2\% & 70.0\% & 1.3 \\
+\end{longtable}
+}
+
+原开发集有 380 张转诊阳性。第二规则多送进复核的漏诊为 8
+张，关联组配对重采样的 95\% 区间为 {[}1, 12{]} 张。3.2\%
+情景的相应差值为每千张 0.93，区间为 {[}0.09, 1.60{]}。阳性比例取自
+AIROGS 公开训练集，重加权沿用开发照片两类各自的分数分布。
+\href{https://arxiv.org/html/2302.01738}{AIROGS 原论文}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.94\linewidth,height=\textheight,keepaspectratio,alt={380 张转诊阳性照片在两个模型上的分数。虚线为各模型自己的转诊阈值。}]{review-model-disagreement.zh.png}
+\caption{380
+张转诊阳性照片在两个模型上的分数。虚线为各模型自己的转诊阈值。}
+\end{figure}
+
+EfficientNet-B0 在复核前漏掉 50 张，ResNet-50 将其中 27
+张判阳。质量灰区之外的 34 个漏诊中，ResNet-50 判阳 15 张，还有 19
+张两个模型都判阴。两个模型均用同一训练协议下第 2,400 步的权重。在 767 张
+AIROGS
+模型验证图上用逻辑回归合并两个模型的对数几率分数，开发集按组合分数重排判阴侧，保留灰区原有的判阴名额和判阳名单。
+\href{backbone-comparison.zh.md}{同协议训练记录}
+
+\newpage
+
+\subsection{照片变糊时，分数怎样动}\label{ux7167ux7247ux53d8ux7ccaux65f6ux5206ux6570ux600eux6837ux52a8}
+
+在同一批 773 张图上分别模拟两档失焦，沿用原来的疾病阈值。真阳性漏诊从
+\textbf{50/380} 变为 \textbf{109/380} 和
+\textbf{230/380}。强失焦后，348/380 张真阳性的分数下降，32/380
+张上升。185 张从判阳变为漏诊，5
+张从漏诊变为判阳。同一档强失焦下，340/393
+张真阴性的分数上升。两类分数向相反方向移动，原先高分的阳性和低分的阴性因此更难区分。
+
+\begin{figure}
+\centering
+\includegraphics[width=0.98\linewidth,height=\textheight,keepaspectratio,alt={左图在有标签的 AIROGS 图上模拟失焦。右图用 Real Fundus 的真实同眼照片比较较清晰与较差照片的疾病分数，虚线表示两张分数相等。}]{review-paired-focus.zh.png}
+\caption{左图在有标签的 AIROGS 图上模拟失焦。右图用 Real Fundus
+的真实同眼照片比较较清晰与较差照片的疾病分数，虚线表示两张分数相等。}
+\end{figure}
+
+在 \textbf{120 对 Real Fundus 真实同眼照片}中，较差照片的疾病分数有
+\textbf{45 对下降、75 对上升}。只有 1
+对跨过阈值，较差照片由判阴变为判阳。图像质量变化包含失焦、光照和取景差异。发布数据缺少对应的青光眼参考标签，所以这些数值回答的是模型对同眼不同照片有多敏感。
+\href{https://arxiv.org/abs/2201.00466}{Real Fundus 数据论文}
+
+逐图检查中，一张原灰区漏掉的转诊阳性照片，质量分为
+0.89，血管轮廓清楚，但两个模型的疾病分数仅为 0.35 和
+0.43，重排后仍在复核名单外。这个例子适合请专家盲审视盘和杯盘区，查找照片质量分之外的线索。
+
+\subsection{对下一轮验证的决定}\label{ux5bf9ux4e0bux4e00ux8f6eux9a8cux8bc1ux7684ux51b3ux5b9a}
+
+保留现有质量灰区作为基线，继续核查两模型都判阴的高置信漏诊。优先补充有独立参考检查的真实首拍和重拍，记录视盘与杯盘区是否可判读。用连续入组的目标站点患者做患者级评估，固定每百人复核十人，同时报告每千人剩余漏诊和专家实际净纠正的错误。本轮只验证选图，实际人工纠错和重拍收益待测。当前结果来自单个训练种子、图像级开发分析。预留独立测试集仍封存。
+
+\href{review-failures-results.json}{汇总数据与输入哈希} ·
+\href{../../../tools/analyze_review_failures_20261118.py}{分析脚本} ·
+\href{../../../tools/plot_review_failures_20261118.py}{绘图脚本}
+
+\end{document}

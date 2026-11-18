@@ -1,0 +1,178 @@
+{
+  "stage": "exploratory_development",
+  "protected_test_inference": false,
+  "validation_images": 767,
+  "development_images": 773,
+  "positives": 380,
+  "development_groups": 772,
+  "screening_photo_positive_rate": 0.032235168864967176,
+  "ranking": {
+    "thresholds": {
+      "efficientnet": 0.6146538853645325,
+      "resnet50": 0.7471235990524292
+    },
+    "fit_logit_coefficients": [
+      0.39652543054188083,
+      0.38305133568376354
+    ],
+    "efficientnet_misses": 50,
+    "resnet_call_positive_among_efficientnet_misses": 27,
+    "outside_quality_review_misses": 34,
+    "resnet_call_positive_among_outside_quality_review_misses": 15,
+    "both_models_miss": 23,
+    "bootstrap_replicates": 2000,
+    "scenarios": {
+      "archived_mix": {
+        "review_budget": 78.0,
+        "review_negative": 31.0,
+        "units": "photos",
+        "total_fn": 50.0,
+        "total_fp": 17.0,
+        "policies": {
+          "uncertainty": {
+            "captured_fn": 15.0,
+            "captured_fp": 7.0,
+            "capture_fn": 0.3,
+            "capture_fp": 0.4117647058823529,
+            "capture_all": 0.3283582089552239,
+            "remaining_fn_per_1000": 45.278137128072444
+          },
+          "quality_gray_zone": {
+            "captured_fn": 16.0,
+            "captured_fp": 6.0,
+            "capture_fn": 0.32,
+            "capture_fp": 0.35294117647058826,
+            "capture_all": 0.3283582089552239,
+            "remaining_fn_per_1000": 43.98447606727038
+          },
+          "second_model_negative_reranking": {
+            "captured_fn": 24.0,
+            "captured_fp": 6.0,
+            "capture_fn": 0.48,
+            "capture_fp": 0.35294117647058826,
+            "capture_all": 0.44776119402985076,
+            "remaining_fn_per_1000": 33.63518758085382
+          }
+        },
+        "extra_captured_fn_vs_quality_ci95": [
+          1.0,
+          12.0
+        ]
+      },
+      "airogs_public_photo_mix": {
+        "review_budget": 100.0,
+        "review_negative": 67.31369489645115,
+        "units": "per_1000_photos",
+        "total_fn": 4.241469587495681,
+        "total_fp": 41.862600837902185,
+        "policies": {
+          "uncertainty": {
+            "captured_fn": 1.8662466184980988,
+            "captured_fp": 24.625059316413058,
+            "capture_fn": 0.43999999999999984,
+            "capture_fp": 0.5882352941176472,
+            "capture_all": 0.5745979843098104,
+            "remaining_fn_per_1000": 2.3752229689975817
+          },
+          "quality_gray_zone": {
+            "captured_fn": 2.035905401997926,
+            "captured_fp": 27.08756524805436,
+            "capture_fn": 0.4799999999999998,
+            "capture_fp": 0.6470588235294119,
+            "capture_all": 0.6316897918412149,
+            "remaining_fn_per_1000": 2.2055641854977543
+          },
+          "second_model_negative_reranking": {
+            "captured_fn": 2.9690287112469753,
+            "captured_fp": 27.08756524805436,
+            "capture_fn": 0.6999999999999996,
+            "capture_fp": 0.6470588235294119,
+            "capture_all": 0.6519292913179251,
+            "remaining_fn_per_1000": 1.2724408762487054
+          }
+        },
+        "extra_captured_fn_vs_quality_ci95": [
+          0.08686982370117412,
+          1.5998492333358219
+        ]
+      }
+    }
+  },
+  "synthetic_focus": {
+    "0": {
+      "2": {
+        "n": 393,
+        "median_low_minus_high": 0.0018557398070697673,
+        "iqr_low_minus_high": [
+          4.96354914503172e-07,
+          0.021187976002693176
+        ],
+        "lower_score_on_lower_quality": 98,
+        "higher_score_on_lower_quality": 295,
+        "high_positive_low_negative": 8,
+        "high_negative_low_positive": 8
+      },
+      "5": {
+        "n": 393,
+        "median_low_minus_high": 0.07259060576325282,
+        "iqr_low_minus_high": [
+          0.013792699202895164,
+          0.1896953284740448
+        ],
+        "lower_score_on_lower_quality": 53,
+        "higher_score_on_lower_quality": 340,
+        "high_positive_low_negative": 13,
+        "high_negative_low_positive": 12
+      }
+    },
+    "1": {
+      "2": {
+        "n": 380,
+        "median_low_minus_high": -0.03289330005645752,
+        "iqr_low_minus_high": [
+          -0.2004534888546914,
+          -0.00037159165367484093
+        ],
+        "lower_score_on_lower_quality": 289,
+        "higher_score_on_lower_quality": 91,
+        "high_positive_low_negative": 63,
+        "high_negative_low_positive": 4
+      },
+      "5": {
+        "n": 380,
+        "median_low_minus_high": -0.30615097284317017,
+        "iqr_low_minus_high": [
+          -0.47932790219783783,
+          -0.11533942818641663
+        ],
+        "lower_score_on_lower_quality": 348,
+        "higher_score_on_lower_quality": 32,
+        "high_positive_low_negative": 185,
+        "high_negative_low_positive": 5
+      }
+    }
+  },
+  "real_fundus": {
+    "n": 120,
+    "median_low_minus_high": 0.0002908207134169061,
+    "iqr_low_minus_high": [
+      -0.0004600459787980071,
+      0.005863587219209876
+    ],
+    "lower_score_on_lower_quality": 45,
+    "higher_score_on_lower_quality": 75,
+    "high_positive_low_negative": 0,
+    "high_negative_low_positive": 1,
+    "archive_sha256": "3ea1624b89c8fbe4563c0e74a11202ff31e4007481bbdbea4494d6332b1d5926",
+    "labels_available": false,
+    "exact_manifest_matches": 0
+  },
+  "provenance": {
+    "backbone_report_sha256": "17a6ba5a4e551d7497b28bc505aea3a9e6f623138ea7b37b0d8a5da7fd2dc7dc",
+    "manifest_sha256": "6761e6d8076999de2e0bee2e5fb7832d490d16afac9341228e21499926fcad66",
+    "analysis_sha256": "487d8306cf1ad3fbf87f9cbb6b5b5a03bb4af41c961e64dd791ab3da4aaa0f20",
+    "original_repeat_max_abs_difference": 0.0005382895469665527,
+    "airogs_case_table_sha256": "8d7bfd9b4be0d4f6fd75bf507c19e36ff6f1e95c3b935ebb38cb7e4d48638165",
+    "real_pairs_table_sha256": "7b370073a0debcc870769d2ed34159f07f5b9da9d821781f7ecd94776a9cdd1f"
+  }
+}
