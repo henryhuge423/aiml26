@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "verified_at": "2026-11-15T13:48:12.625803+00:00",
+  "completed_training_runs": 18,
+  "analyzed_selected_models": 18,
+  "verified_input_hashes": 96,
+  "verified_checkpoint_hashes": 18,
+  "verified_out_of_fold_scores": {
+    "runs/followup_20261115/completed_analysis/20261115-original_clean-out-of-fold.csv": "48b98828be88b9debdf1be9966b7d46411a508aa6fdd3d41063c8822d25a9098",
+    "runs/followup_20261115/completed_analysis/20261115-expanded_clean-out-of-fold.csv": "cffee5c1a6adcb2ba4d9d7d6ce8a230bc888a57927e917d975714f31bfb2da1b",
+    "runs/followup_20261115/completed_analysis/20261115-quota65_clean-out-of-fold.csv": "906c4a7a3a1ed39d0a4d04071a9e4fa218c789803e7f145614373578c7760be1",
+    "runs/followup_20261115/completed_analysis/20261115-expanded_mixed50-out-of-fold.csv": "cfd7c0df1d428f24f3702c11d8984deb321f7a7c8e9b317c8fb5ad9520a7395f",
+    "runs/followup_20261115/completed_analysis/20261115-quota65_mixed50-out-of-fold.csv": "677fbc69aadf8c760932148f9386b9302d8bde7f3473cc2363cb0180d3b60a2d",
+    "runs/followup_20261115/completed_analysis/20261115-quota65_defocus50-out-of-fold.csv": "9c9ba14a07b55bd799f68ecd7e178ac36a0e9977b099f0ed07999190c7a1aff1",
+    "runs/followup_20261115/completed_analysis/20261116-original_clean-out-of-fold.csv": "2ec725c8bf5b2369cc525a0c2fd799d9d8b4969d72d52b9ec017aeb5b3b35e62",
+    "runs/followup_20261115/completed_analysis/20261116-expanded_clean-out-of-fold.csv": "f07fb06ee1f09a06c6feaae8b31aa792c82296483d400815df1a5544287b97ca",
+    "runs/followup_20261115/completed_analysis/20261116-quota65_clean-out-of-fold.csv": "44be1f097dd14adb3250d343d63eb314d48185ecd28ae4d76580c757ea71e9b3",
+    "runs/followup_20261115/completed_analysis/20261116-expanded_mixed50-out-of-fold.csv": "1b069d6f631d97d49f3a1b8b650ddef6489f096fe2b51ad05d889b471be701f7",
+    "runs/followup_20261115/completed_analysis/20261116-quota65_mixed50-out-of-fold.csv": "6062cf8342be8e5d3a9daa8ff74d62b2883aa1b4a4165c4626e56a97c1363b84",
+    "runs/followup_20261115/completed_analysis/20261116-quota65_defocus50-out-of-fold.csv": "68d49bf2ecad62d4603414ef2c41424f748af9d713f0bedb7f65e63a9e8bb3ca",
+    "runs/followup_20261115/completed_analysis/20261117-original_clean-out-of-fold.csv": "b32f246435a897ce9ff21b828b3bc4110c66d69b67e06ba54345b03037903955",
+    "runs/followup_20261115/completed_analysis/20261117-expanded_clean-out-of-fold.csv": "9304c67b423653141bd4f84729e40d4895b86e0d1dc8c180d09dca2fa3bfb121",
+    "runs/followup_20261115/completed_analysis/20261117-quota65_clean-out-of-fold.csv": "efcb7cd084fcb6372052585dfc6742220a3bda334beeddf272f064fe204f950c",
+    "runs/followup_20261115/completed_analysis/20261117-expanded_mixed50-out-of-fold.csv": "165646c11e4348a36fa953a9f43d076641b2ac5a165f419e2f9401bc359a83ae",
+    "runs/followup_20261115/completed_analysis/20261117-quota65_mixed50-out-of-fold.csv": "0da7a2e52cafd280c740d8466a74fdc09bec31833b747d979116c4bb9ddf5f74",
+    "runs/followup_20261115/completed_analysis/20261117-quota65_defocus50-out-of-fold.csv": "f28659b0fb3dc61d69d07e5e5f6d32eb5050322363b7f93559ebb417bc27ea13"
+  },
+  "checked_local_links": 252,
+  "bilingual_numeric_tables_match": true,
+  "documents": [
+    {
+      "language": "zh",
+      "pages": 9,
+      "figures": 10,
+      "sha256": {
+        "completed-results.zh.md": "969f684a7c6c8ac57b6426fce5000f6ae28304b8749ab8edb90ee873f37eab74",
+        "completed-results.zh.tex": "b0aed3140dc3f35c557a0581e9152e320d5b18e948b9525787ce6aa814a68451",
+        "completed-results.zh.pdf": "a63483eed533868c9cb9086d33b51fff6eba8f96e57455c84580341920b44d29",
+        "source-auroc.zh.png": "0b341753696d07608be98424a3ce2f594a4a1df2b6b5312c47b84e3a3bc2db3d",
+        "paired-source-effects.zh.png": "f6dcaf59fe203c967c7d0053653c3b9d96fe099e2d508f9b85f687b8eabe1e41",
+        "validation-curves.zh.png": "467a83843b49f5b376965ddd9d65946d8bdc1b88feb6854fee44aae0f87a5158",
+        "stress-and-training-dose.zh.png": "a3c385809ac4f6b486d599b38a4db502628628887372917b81457219aeee40b0",
+        "misses-and-false-alarms.zh.png": "bfbf7c49821e84bee246565ce5dd6eb05d3e66e0c0faca0b4089845e7af02c8a",
+        "quality-error-rates.zh.png": "0620a21d27f3d8f36ac93e6fc20a74b81903df8b124aadcb91119754996c21c0",
+        "quality-review-effects.zh.png": "5c7f75b840186ec865767454bb7e7ae19a14de8099cf02c3844d44fddb7a68f6",
+        "disease-quality-distribution.zh.png": "0e8e62a5044ff6549959cb499fa3fd74c4fc4c62a2ecbf188f237d85a30f62a5",
+        "real-quality-composition.zh.png": "e9e3b6321602070689a04636c91028c7eb09e1fe4b182733a7b95a851742aa44",
+        "review-workload.zh.png": "a5c632e6e8c5f9178d1ca9e78d5959dfeed0384c310d76cab8f4cb0b9d58596a"
+      }
+    },
+    {
+      "language": "en",
+      "pages": 10,
+      "figures": 10,
+      "sha256": {
+        "completed-results.en.md": "7314b57a4ca684a26833ce1b1dd2b589e455c383d0913c9713dfc42f9b04fca9",
+        "completed-results.en.tex": "e41cb300badb7f4919732082914f5b457a76a13cd59a5242e11ec5d2253cae81",
+        "completed-results.en.pdf": "483bca569227098d7b43b59a916628c952b4fc2908ceed8c78c6047e520796dc",
+        "source-auroc.en.png": "3cbeb8f2138ab4fbde8ae589a0c0be6f5a94cb4ab191eb0a9a6a54dbbde52316",
+        "paired-source-effects.en.png": "cfcc131902140637c52a20c85b208af2c50d4b61bc10b2c01ad664ffe5d5ac7a",
+        "validation-curves.en.png": "346a6a2b95725ab8f1b7f3b41aa1562d35d735bbe3dbbcb7848f4470b3149e63",
+        "stress-and-training-dose.en.png": "830c127e20b7c63d9743f818728873681dd8df2ac04fe46342190468816e3381",
+        "misses-and-false-alarms.en.png": "9e78690d6211aeb738c83e7270b87a8f6b9dcedea04cc1ea63a196b494683cc9",
+        "quality-error-rates.en.png": "258ef689961656748fe6025a53055f9546797bb3dedf847058bcda808407fa98",
+        "quality-review-effects.en.png": "806c91688d6beb0f1e51aae48e208513aa4c2a643dbc76264a0f12581c1b861c",
+        "disease-quality-distribution.en.png": "47a1d51bed7956f2c5ec1ac012c6a1a65dccb408dfb11d000a2f6f8565ea07e0",
+        "real-quality-composition.en.png": "21f2ebad0d9747518caa6933bcea163a592987c4c055e580fb76abea2ec34938",
+        "review-workload.en.png": "d476981533cb870376cefccd1beca499576b068e3fe84c3bfa1a91a7a0b7eccb"
+      }
+    }
+  ],
+  "protected_test_inference": false,
+  "analysis_sha256": "c3160adedbb458cc2a2ea2bf70e444cb6ef487a138ffe5b2b6652a25fcc7a64d"
+}

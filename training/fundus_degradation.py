@@ -42,11 +42,14 @@ def retinal_context(image: Image.Image) -> dict[str, Any]:
 
 
 class FundusDegradation:
-    def __init__(self, probability: float = 0.3):
+    def __init__(self, probability: float = 0.3, families=None):
         probability = float(probability)
         if not math.isfinite(probability) or not 0 <= probability <= 1:
             raise ValueError("degradation probability must be between zero and one")
         self.probability = probability
+        self.families = tuple(FAMILIES if families is None else families)
+        if not self.families or len(set(self.families))!=len(self.families) or any(f not in FAMILIES for f in self.families):
+            raise ValueError('degradation families must be distinct recognized mechanisms')
 
     def __call__(self, image: Image.Image, *, seed: int) -> Image.Image:
         return self.augment(image, seed=seed)[0]
@@ -66,7 +69,7 @@ class FundusDegradation:
                       applied=applied, family="original", context=context, parameters={})
         if not applied:
             return original.copy(), record
-        family = str(rng.choice(FAMILIES))
+        family = str(rng.choice(self.families))
         record["family"] = family
         if family == "illumination":
             parameters = dict(exposure=float(rng.uniform(0.72, 1.12)),

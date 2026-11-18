@@ -1,0 +1,38 @@
+{
+  "global_step": 2400,
+  "last_loss": 0.13822616636753082,
+  "parameters_changed": true,
+  "purpose": "fixed_budget_research",
+  "fingerprint": "50e753f5f2eb4526e6474859f7b858e80f267a9503c27bc12263e531270ce5d8",
+  "elapsed_seconds": 661.2736940383911,
+  "peak_gpu_bytes": 1559653376,
+  "resumed_from": null,
+  "training_rows": 10338,
+  "validation_rows": 2046,
+  "optimizer_updates": 2400,
+  "amp_overflows": 0,
+  "optimizer_update_budget": 2400,
+  "budget_completed": true,
+  "unique_sample_draws": 9899,
+  "unique_linked_groups_drawn": 9059,
+  "max_sample_repeats": 21,
+  "source_class_draws": {
+    "DATASET_101/ODIR-5K/0": 7586,
+    "airogs-light-v2/1": 10439,
+    "airogs-light-v2/0": 10383,
+    "Kaggle-Eye_diseases_classification/1": 4226,
+    "Kaggle-Eye_diseases_classification/0": 3260,
+    "DATASET_101/ODIR-5K/1": 2464
+  },
+  "degradation_family_draws": {
+    "original": 38358
+  },
+  "source_class_degradation_draws": {
+    "DATASET_101/ODIR-5K/0/original": 7586,
+    "airogs-light-v2/1/original": 10439,
+    "airogs-light-v2/0/original": 10383,
+    "Kaggle-Eye_diseases_classification/1/original": 4226,
+    "Kaggle-Eye_diseases_classification/0/original": 3260,
+    "DATASET_101/ODIR-5K/1/original": 2464
+  }
+}

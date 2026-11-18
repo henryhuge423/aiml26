@@ -1,0 +1,84 @@
+{
+  "recorded_at": "2026-11-15T06:44:55.4559950Z",
+  "passed": true,
+  "documents": [
+    {
+      "language": "zh",
+      "markdown": "quality-and-training.zh.md",
+      "prose_reviewed": true,
+      "pdf": "quality-and-training.zh.pdf",
+      "pdf_sha256": "f4a37e90279a52f5e6c99aae3776f30f99e3d5cebb92bb180dc6f59149e67d1c",
+      "pages": 5,
+      "all_pdf_pages_reviewed": true,
+      "contact_sheets": [
+        ".build/quality-20261115/contact-zh-1.jpg",
+        ".build/quality-20261115/contact-zh-2.jpg"
+      ],
+      "figures": [
+        {
+          "file": "quality-counts-rates.zh.png",
+          "sha256": "2256723fc80a454600efd0f7cf8597fa72d415eb65b9271886d2f6540f5af4d0",
+          "reviewed": true
+        },
+        {
+          "file": "human-quality-scores.zh.png",
+          "sha256": "d554ee0867626636751ae3791d40e20ac392be163778097f541683666ddfcae5",
+          "reviewed": true
+        },
+        {
+          "file": "quality-label-composition.zh.png",
+          "sha256": "0b8975040af0203e5aac03f6e6ec6bb317f11cb24b5c9dcca4f30bcaba38e36d",
+          "reviewed": true
+        },
+        {
+          "file": "review-comparison.zh.png",
+          "sha256": "c780f5af836adacf0b5c0dadf8310c7f22ca0b9f9a760e488a37dec075c84c73",
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "markdown": "quality-and-training.en.md",
+      "prose_reviewed": true,
+      "pdf": "quality-and-training.en.pdf",
+      "pdf_sha256": "253dbb6fa44f0677f966a31c1a30739030c53ff2acdd400eaf69f5cf11ab7544",
+      "pages": 7,
+      "all_pdf_pages_reviewed": true,
+      "contact_sheets": [
+        ".build/quality-20261115/contact-en-1.jpg",
+        ".build/quality-20261115/contact-en-2.jpg"
+      ],
+      "figures": [
+        {
+          "file": "quality-counts-rates.en.png",
+          "sha256": "84a40cd58c7f6e6b91c92e2b46c48e564628cde57a0023856ffa0441c8275cc3",
+          "reviewed": true
+        },
+        {
+          "file": "human-quality-scores.en.png",
+          "sha256": "69eb52d9c10659dff349d35b80fdcfbcfe94ad3e18b797422728421734d7b996",
+          "reviewed": true
+        },
+        {
+          "file": "quality-label-composition.en.png",
+          "sha256": "efbfecc124b5e964f184ba52e1d5e9231901903da037be1c7ec88fbb340ecc33",
+          "reviewed": true
+        },
+        {
+          "file": "review-comparison.en.png",
+          "sha256": "26dc2b3116080ffb1089daa4c9ee84233461761907f430b3c0ebcc5c4b6baa81",
+          "reviewed": true
+        }
+      ]
+    }
+  ],
+  "reviewed_figure_count": 8,
+  "findings": [
+    "Chinese and English prose reviewed for consistency with the saved analysis and training snapshot.",
+    "All 12 PDF pages and all 8 report figures visually reviewed.",
+    "No clipping, missing glyphs, or legends obscuring plotted data in the delivered PDFs."
+  ],
+  "report_snapshot_is_historical": true,
+  "live_training_status": "../../../runs/followup_20261115/pipeline/status.json"
+}

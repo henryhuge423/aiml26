@@ -4,7 +4,17 @@
 
 Eye Sentinel 研究如何结合眼底照片的青光眼分类分数和图像质量分数，选择需要人工复核的照片。项目将比较质量引导复核与另一疾病模型按不确定性选择相同数量照片的方案，评价复核后自动结果的错误率与青光眼漏诊。
 
-## 当前进度：2026 年 11 月 13 日
+## 当前进度 · 2026 年 11 月 18 日
+
+在约 10% 的等量复核下，加入全图质量分数后，同一个疾病模型在合并开发集少漏诊 3 张，在单独校准的 AIROGS 开发集多漏诊 3 张。已完成灰区可视化、工作量比较和测试清单审计。两个候选阈值已拟合，独立测试等待确定主要评价队列。见[灰区评估与提案核对](docs/progress/2026-11-18/gray-zone.zh.md)（[中文 PDF](docs/progress/2026-11-18/gray-zone.zh.pdf) · [English PDF](docs/progress/2026-11-18/gray-zone.en.pdf)）。
+
+## 三种子训练 · 2026 年 11 月 15 日
+
+六方案、三个共同随机种子的 18 组训练及开发评价已完成，每组训练 2,400 次参数更新。扩展数据在三个种子中均改善 LAG 和 KEH；恢复原来源采样比例小幅改善 AIROGS，ODIR 的变化与训练阶段有关。退化增强的主要收益出现在合成失焦。18 个选中模型上，加入质量分数在复核相同 411 张图时增减 −4 至 +4 个错误；真实低质量训练图有 72 张阳性、3 张阴性。
+
+训练结果见[三种子训练完成分析](docs/progress/2026-11-15/completed-experiments/README.md)（[中文 PDF](docs/progress/2026-11-15/completed-experiments/completed-results.zh.pdf) · [English PDF](docs/progress/2026-11-15/completed-experiments/completed-results.en.pdf)），包含十组双语图表、选中权重与第 2,400 次更新的比较。完成状态见 [pipeline/status.json](runs/followup_20261115/pipeline/status.json)，当天材料见[进度目录](docs/progress/2026-11-15/README.md)。
+
+## 前一轮实验：2026 年 11 月 13 日
 
 本轮完成公开数据审查、关联分组、训练划分及四组 EfficientNet-B0 实验。新增池含 9,070 张图像；联合清单含 15,480 张训练图像、2,046 张模型验证图像和 2,053 张规则开发图像。四组均完成 1,200 次优化更新，比较原数据、扩展数据及 30%／50% 混合退化。
 

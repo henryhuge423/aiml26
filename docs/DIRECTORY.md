@@ -10,11 +10,12 @@ Eye Sentinel 仓库位于课程工作区的 `team_project/`。项目文档按进
 | `proposal-1106.pdf` | 当前项目提案。 |
 | `docs/README.md`、`docs/README.en.md` | [文档导航](README.md)。 |
 | `docs/progress/YYYY-MM-DD/` | 按日期保存的中英文进度报告、PDF、LaTeX、图表与汇总数据。 |
+| `docs/progress/2026-11-15/` | [当天进度目录](progress/2026-11-15/README.md)；`completed-experiments/` 保存 18 组训练完成分析、十组双语图表和完整统计，目录根保留早期质量分析快照。 |
 | `docs/progress/2026-11-13/` | [新数据集与退化实验整体材料](progress/2026-11-13/README.md)，含 `data-review/`、`training-results/`、`experimental-analysis/`。 |
 | `docs/operations/` | 当前训练运行手册、准备核验、方法协议及下一步工作，中英文对应。 |
 | `docs/research/` | 数据扩展研究与结构化调研提纲。 |
 | `docs/historical/` | [按日期归档的审计和旧操作记录](historical/README.md)，以及早期数据介绍与讲稿。`planning/` 保留原设计和执行计划。 |
-| `configs/` | 训练配置；`formal_v3/` 是此前训练，`expanded_20261113/` 是本轮四组实验。 |
+| `configs/` | 训练配置；`formal_v3/` 与 `expanded_20261113/` 保留此前实验，`followup_20261115/` 是六方案三种子队列。 |
 | `training/` | 数据加载、模型、训练、质量监督和眼底退化实现。 |
 | `tools/`、`tests/` | 数据核验、训练、报告工具及自动化检查。 |
 | `data/` | [数据说明](../data/README.md)、来源文件、清单与审计。 |

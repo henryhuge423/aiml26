@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "completed_new_runs": 3,
+  "compared_selected_runs": 12,
+  "checked_input_hashes": 50,
+  "bilingual_tables_match": true,
+  "analysis_sha256": "d706c8bdd8c7fef9e7acdfaa606e3a79732c97490ff170f7dddb4851953884d4",
+  "document_checks": {
+    "zh": {
+      "pages": 3,
+      "hashes": {
+        "quality-alignment.zh.md": "7d7057113deedd5b27f3dd85a0a8bd81ffcdb4071b7dae4e304eb68280436659",
+        "quality-alignment.zh.tex": "bbe89ecb0e9a314e0bdd7f6a243045973b969a8ba766c41eeae67ee3b9223c65",
+        "quality-alignment.zh.pdf": "0096796bcbb83910136764c0aca691a6e643db743dfb2975e87a80145d9e84b1",
+        "paired-quality.zh.png": "7b86328ad3815c5d5165d9f5ee5a091dd42c44aadfbb9e6a4aa925d2b13e464b"
+      }
+    },
+    "en": {
+      "pages": 3,
+      "hashes": {
+        "quality-alignment.en.md": "4da1f7bcf50c8fde221d17b2a950462b0dee995b0dae01ea1fb6c880d4c7bf65",
+        "quality-alignment.en.tex": "42e8de4a1b5ed59eeba406b5c2d785ab47826e97f2dd3b204e99f433ebd5e401",
+        "quality-alignment.en.pdf": "e850ac19019b85e50ca231d6548fce7a23699a0d71fc832f5edcac7f655e3fae",
+        "paired-quality.en.png": "fe29ba4294b543e80a9538534fd104ee53027e785b85f5ed5f4225e3538ed5f8"
+      }
+    }
+  },
+  "protected_test_inference": false
+}

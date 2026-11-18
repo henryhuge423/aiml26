@@ -72,7 +72,8 @@ def attach_teacher_targets(rows: list[dict], cache: dict) -> list[dict]:
     return result
 
 
-def epoch_indices(rows: list[dict], seed: int, epoch: int, balance_sources: bool, strategy: str|None=None) -> list[int]:
+def epoch_indices(rows: list[dict], seed: int, epoch: int, balance_sources: bool, strategy: str|None=None,
+                  original_fraction: float|None=None) -> list[int]:
     generator=torch.Generator().manual_seed(seed+epoch)
     if strategy not in {None,'equal_source_class','inverse_sqrt','shuffle'}:
         raise ValueError('unknown sampling strategy')
@@ -83,6 +84,19 @@ def epoch_indices(rows: list[dict], seed: int, epoch: int, balance_sources: bool
     for src,label in counts:classes[src].add(label)
     weights=torch.tensor([counts[r['source'],r['label']]**-.5 if strategy=='inverse_sqrt' else
         1/(len(classes[r['source']])*counts[r['source'],r['label']]) for r in rows],dtype=torch.double)
+    if original_fraction is not None:
+        if strategy!='inverse_sqrt' or not math.isfinite(original_fraction) or not 0<original_fraction<1:
+            raise ValueError('origin quota requires inverse_sqrt sampling and a fraction strictly between zero and one')
+        original=[i for i,r in enumerate(rows) if r.get('origin_cohort')=='formal_v3']
+        added=[i for i,r in enumerate(rows) if r.get('origin_cohort')=='expansion_20261113']
+        if not original or not added or len(original)+len(added)!=len(rows):
+            raise ValueError('origin quota requires both recognized origin cohorts')
+        # Spread the quota through the epoch, including a truncated update budget.
+        flags=[round((i+1)*original_fraction)>round(i*original_fraction) for i in range(len(rows))]
+        originals=torch.multinomial(weights[original],sum(flags),replacement=True,generator=generator).tolist()
+        additions=torch.multinomial(weights[added],len(flags)-sum(flags),replacement=True,generator=generator).tolist()
+        a,b=iter(originals),iter(additions)
+        return [original[next(a)] if flag else added[next(b)] for flag in flags]
     return torch.multinomial(weights,len(rows),replacement=True,generator=generator).tolist()
 
 

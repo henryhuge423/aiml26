@@ -1,0 +1,138 @@
+{
+  "disease_threshold": 0.5,
+  "a_update": 2100,
+  "protected_test_inference": false,
+  "cluster_bootstrap_repetitions": 2000,
+  "boundary": {
+    "n": 2053,
+    "k": 411,
+    "results": {
+      "A_uncertainty": {
+        "fn": 14,
+        "fp": 32,
+        "errors": 46,
+        "automatic_n": 1642,
+        "error_rate": 0.028014616321559074,
+        "before_review_fn": 68,
+        "before_review_fp": 101,
+        "delta_error_rate_vs_A_uncertainty_ci95": [
+          0.0,
+          0.0
+        ],
+        "delta_fn_vs_A_uncertainty_ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "A_q_floor_first": {
+        "fn": 16,
+        "fp": 32,
+        "errors": 48,
+        "automatic_n": 1642,
+        "error_rate": 0.029232643118148598,
+        "before_review_fn": 68,
+        "before_review_fp": 101,
+        "delta_error_rate_vs_A_uncertainty_ci95": [
+          -0.000612379252068249,
+          0.005968115623035408
+        ],
+        "delta_fn_vs_A_uncertainty_ci95": [
+          0.0,
+          6.0
+        ]
+      },
+      "A_eyeq_reject_first": {
+        "fn": 55,
+        "fp": 72,
+        "errors": 127,
+        "automatic_n": 1642,
+        "error_rate": 0.07734470158343483,
+        "before_review_fn": 68,
+        "before_review_fp": 101,
+        "delta_error_rate_vs_A_uncertainty_ci95": [
+          0.0349661189194054,
+          0.06029877973829183
+        ],
+        "delta_fn_vs_A_uncertainty_ci95": [
+          24.0,
+          54.0
+        ]
+      }
+    }
+  },
+  "shared_legacy_boundary": {
+    "n": 1220,
+    "k": 244,
+    "results": {
+      "A_uncertainty": {
+        "fn": 11,
+        "fp": 17,
+        "errors": 28,
+        "automatic_n": 976,
+        "error_rate": 0.028688524590163935,
+        "before_review_fn": 48,
+        "before_review_fp": 56,
+        "delta_error_rate_vs_A_uncertainty_ci95": [
+          0.0,
+          0.0
+        ],
+        "delta_fn_vs_A_uncertainty_ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "A_q_floor_first": {
+        "fn": 14,
+        "fp": 18,
+        "errors": 32,
+        "automatic_n": 976,
+        "error_rate": 0.03278688524590164,
+        "before_review_fn": 48,
+        "before_review_fp": 56,
+        "delta_error_rate_vs_A_uncertainty_ci95": [
+          0.0,
+          0.011156186612576065
+        ],
+        "delta_fn_vs_A_uncertainty_ci95": [
+          0.0,
+          6.0
+        ]
+      },
+      "A_eyeq_reject_first": {
+        "fn": 37,
+        "fp": 37,
+        "errors": 74,
+        "automatic_n": 976,
+        "error_rate": 0.07581967213114754,
+        "before_review_fn": 48,
+        "before_review_fp": 56,
+        "delta_error_rate_vs_A_uncertainty_ci95": [
+          0.03285420944558522,
+          0.060826311533837614
+        ],
+        "delta_fn_vs_A_uncertainty_ci95": [
+          15.975000000000001,
+          36.024999999999864
+        ]
+      },
+      "B_uncertainty": {
+        "fn": 9,
+        "fp": 12,
+        "errors": 21,
+        "automatic_n": 976,
+        "error_rate": 0.02151639344262295,
+        "before_review_fn": 35,
+        "before_review_fp": 38,
+        "delta_error_rate_vs_A_uncertainty_ci95": [
+          -0.01834862385321101,
+          0.00413244528857177
+        ],
+        "delta_fn_vs_A_uncertainty_ci95": [
+          -9.0,
+          6.0
+        ]
+      }
+    }
+  },
+  "scope": "fixed review budget development prototypes; no final boundary selected"
+}

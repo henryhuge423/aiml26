@@ -1,8 +1,30 @@
 # 训练运行手册
 
-2026 年 11 月 13 日更新 · [English](training-runbook.en.md)
+2026 年 11 月 15 日更新 · [English](training-runbook.en.md)
 
-当前实验版本为 `expanded_20261113`。四组训练及开发评价已完成；数据规模与结果见[进度总览](../progress/2026-11-13/progress-overview.zh.md)。以下命令在项目根目录 `team_project/` 执行。
+`followup_20261115` 使用冻结数据 `expanded_20261113`，六方案、三种子的 18 组训练和开发评价已完成，每组 2,400 次参数更新。报告见[完整训练与质量分析](../progress/2026-11-15/completed-experiments/completed-results.zh.md)。此前四组 1,200 次更新实验也已完成。以下命令在项目根目录 `team_project/` 执行。
+
+## 已完成训练的状态与复现
+
+```powershell
+Get-Content runs/followup_20261115/pipeline/status.json
+& ./tools/start_followup_experiments_20261115.ps1
+```
+
+启动入口检查是否已有训练驱动运行，在隐藏后台进程中依次执行训练和开发评价。完成组跳过训练；中断组恢复 `last.pt`。输入指纹绑定当前数据、配置、初始化和训练实现。
+
+`configs/followup_20261115/seed<种子>/` 保存六方案配置；`runs/followup_20261115/seed<种子>/<方案>/validation_checkpoints/` 每 300 次更新保存完整权重、预测和指标。选模使用五个主要来源的平均 AUROC，开发评价同时保留第 1,200、第 2,400 次更新及选中权重的结果。`runs/followup_20261115/comparison.json` 在每组评价结束后更新，`preflight/verification.json` 保存三项 CUDA 恢复预检。
+
+```powershell
+tools/training_python.cmd tools/evaluate_followup_20261115.py --summarize
+python tools/analyze_completed_followup_20261115.py
+python tools/report_completed_followup_20261115.py
+python tools/verify_completed_followup_20261115.py
+```
+
+以上命令根据保存的预测重新分析并构建 `completed-experiments/` 中的中英文报告、PDF、LaTeX 和十组图表。逐图复核分数保存到 `runs/followup_20261115/completed_analysis/`。日期目录根的早期报告保留训练启动时快照。
+
+## 11 月 13 日实验记录
 
 ## 环境、配置与输出
 

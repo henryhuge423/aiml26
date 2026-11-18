@@ -1,0 +1,37 @@
+{
+  "purpose": "fixed_budget_research",
+  "task": "glaucoma",
+  "architecture": "efficientnet_b0",
+  "manifest": "data/prepared/expanded_20261113/manifest.csv",
+  "release": "data/prepared/expanded_20261113/release.json",
+  "run_dir": "runs/followup_20261115/seed20261117/expanded_mixed50",
+  "image_size": 320,
+  "batch_size": 16,
+  "epochs": 20,
+  "max_optimizer_updates": 2400,
+  "validation_every_updates": 300,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "gradient_clip": 5.0,
+  "seed": 20261117,
+  "device": "cuda",
+  "amp": true,
+  "checkpoint_every": 100,
+  "selection_source": "airogs-light-v2",
+  "selection_sources": [
+    "airogs-light-v2",
+    "DATASET_101/ODIR-5K",
+    "Kaggle-Eye_diseases_classification",
+    "lag_part1",
+    "keh"
+  ],
+  "sampler": "inverse_sqrt",
+  "num_workers": 4,
+  "prefetch_factor": 2,
+  "cpu_threads": 4,
+  "save_validation_checkpoints": true,
+  "record_degradation_trace": false,
+  "degradation": {
+    "probability": 0.5
+  }
+}

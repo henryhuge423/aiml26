@@ -169,7 +169,11 @@ def train(config_path: Path,root: Path,resume: Path|None=None,max_steps: int|Non
         train_rows=attach_teacher_targets(train_rows,cache);val_rows=attach_teacher_targets(val_rows,cache)
     if config.get('purpose')=='preflight':
         # This is an explicitly named smoke subset, never a research performance result.
-        train_rows=train_rows[:config.get('preflight_train_rows',16)]
+        if config.get('original_sampling_fraction') is not None:
+            half=config.get('preflight_train_rows',32)//2
+            train_rows=([r for r in train_rows if r.get('origin_cohort')=='formal_v3'][:half]+
+                        [r for r in train_rows if r.get('origin_cohort')=='expansion_20261113'][:half])
+        else:train_rows=train_rows[:config.get('preflight_train_rows',16)]
         val_rows=val_rows[:config.get('preflight_val_rows',16)]
         if task=='glaucoma':
             val_rows=[]
@@ -211,17 +215,24 @@ def train(config_path: Path,root: Path,resume: Path|None=None,max_steps: int|Non
     by_id={r['sample_id']:r for r in train_rows}
     def validate(epoch):
         metrics=evaluate(model,val_rows,config,root,run_dir)
+        state['last_validation_update']=state['optimizer_updates']
+        if config.get('save_validation_checkpoints'):
+            snapshots=run_dir/'validation_checkpoints';snapshots.mkdir(exist_ok=True)
+            stem=f"update_{state['optimizer_updates']:06d}"
+            save_checkpoint(snapshots/f'{stem}.pt',model,optimizer,scaler,state,binding)
+            (snapshots/f'{stem}.csv').write_bytes((run_dir/'validation_predictions.csv').read_bytes())
+            (snapshots/f'{stem}.json').write_text(json.dumps(metrics,indent=2),encoding='utf-8')
         if metrics['selection_value']>state['best_selection']:
             state['best_selection']=metrics['selection_value']
             save_checkpoint(run_dir/'best.pt',model,optimizer,scaler,state,binding)
             (run_dir/'best_validation_predictions.csv').write_bytes((run_dir/'validation_predictions.csv').read_bytes())
-        state['last_validation_update']=state['optimizer_updates']
         with (run_dir/'epochs.jsonl').open('a',encoding='utf-8') as f:
             f.write(json.dumps(dict(epoch=epoch,step=state['global_step'],optimizer_updates=state['optimizer_updates'],**metrics))+'\n')
     budget_reached=bool(update_budget and state.get('optimizer_updates',0)>=update_budget)
     if budget_reached:raise ValueError('optimizer update budget already completed')
     for epoch in range(state['epoch'],config['epochs']):
-        order=epoch_indices(train_rows,config['seed'],epoch,task=='glaucoma',config.get('sampler'))
+        order=epoch_indices(train_rows,config['seed'],epoch,task=='glaucoma',config.get('sampler'),
+                            config.get('original_sampling_fraction'))
         # Drop a singleton tail because BatchNorm training may require >1 item.
         if len(order)%config['batch_size']==1:order=order[:-1]
         batches=loader(train_rows,config,root,True,epoch,order)

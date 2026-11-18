@@ -4,7 +4,17 @@ English | [中文](README.md)
 
 Eye Sentinel studies how glaucoma-classification scores and fundus-image quality scores can select photographs for manual review. The project will compare quality-guided review with a second disease model selecting the same number of images by uncertainty, measuring errors and glaucoma misses among the remaining automated results.
 
-## Current progress: November 13, 2026
+## Current progress · November 18, 2026
+
+At about 10% matched review, adding whole-image quality to the same disease classifier left three fewer misses on pooled development data and three more with AIROGS-only calibration. The gray-zone figures, workload comparison, and reserved-cohort inventory are complete. Two candidate cutoffs are fitted, and independent testing awaits the primary cohort definition. See the [gray-zone evaluation and proposal review](docs/progress/2026-11-18/gray-zone.en.md) ([English PDF](docs/progress/2026-11-18/gray-zone.en.pdf) · [中文 PDF](docs/progress/2026-11-18/gray-zone.zh.pdf)).
+
+## Three-seed training · November 15, 2026
+
+All 18 runs are complete: six conditions with three common seeds, each trained for 2,400 parameter updates, followed by development evaluation. Expansion improves LAG and KEH in all seeds. Restoring original-source sampling provides small AIROGS gains, while ODIR changes with training stage. Degradation mainly improves synthetic defocus. Across the 18 selected models, adding quality scores selects between four fewer and four more errors at the same 411-image review workload. Real poor-quality training photographs comprise 72 positives and three negatives.
+
+See the [completed three-seed analysis](docs/progress/2026-11-15/completed-experiments/README.en.md) ([English PDF](docs/progress/2026-11-15/completed-experiments/completed-results.en.pdf) · [中文 PDF](docs/progress/2026-11-15/completed-experiments/completed-results.zh.pdf)), with ten bilingual figures and separate selected-checkpoint and update-2,400 results. [pipeline/status.json](runs/followup_20261115/pipeline/status.json) records completion; the [dated index](docs/progress/2026-11-15/README.en.md) groups the day's materials.
+
+## Previous experiments: November 13, 2026
 
 This round completed public-data review, identity grouping, dataset allocation, and four EfficientNet-B0 experiments. The additive pool contains 9,070 images. The joint release includes 15,480 training images, 2,046 model-validation images, and 2,053 rule-development images. Each arm completed 1,200 optimizer updates, comparing original data, expanded data, and 30%/50% mixed degradation.
 

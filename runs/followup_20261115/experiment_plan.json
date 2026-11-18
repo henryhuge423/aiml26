@@ -1,0 +1,63 @@
+{
+  "created_at": "2026-11-15T05:29:13.927888+00:00",
+  "seeds": [
+    20261115,
+    20261116,
+    20261117
+  ],
+  "arms": [
+    "original_clean",
+    "expanded_clean",
+    "quota65_clean",
+    "expanded_mixed50",
+    "quota65_mixed50",
+    "quota65_defocus50"
+  ],
+  "jobs": [
+    "seed20261115/original_clean",
+    "seed20261115/expanded_clean",
+    "seed20261115/quota65_clean",
+    "seed20261115/expanded_mixed50",
+    "seed20261115/quota65_mixed50",
+    "seed20261115/quota65_defocus50",
+    "seed20261116/original_clean",
+    "seed20261116/expanded_clean",
+    "seed20261116/quota65_clean",
+    "seed20261116/expanded_mixed50",
+    "seed20261116/quota65_mixed50",
+    "seed20261116/quota65_defocus50",
+    "seed20261117/original_clean",
+    "seed20261117/expanded_clean",
+    "seed20261117/quota65_clean",
+    "seed20261117/expanded_mixed50",
+    "seed20261117/quota65_mixed50",
+    "seed20261117/quota65_defocus50"
+  ],
+  "successful_updates_per_run": 2400,
+  "selection_sources": [
+    "airogs-light-v2",
+    "DATASET_101/ODIR-5K",
+    "Kaggle-Eye_diseases_classification",
+    "lag_part1",
+    "keh"
+  ],
+  "original_quota": 0.65,
+  "sampler_within_origins": "inverse_sqrt_source_class",
+  "saved_validation_updates": [
+    300,
+    600,
+    900,
+    1200,
+    1500,
+    1800,
+    2100,
+    2400
+  ],
+  "inference_roles": [
+    "val",
+    "boundary"
+  ],
+  "protected_test_inference": false,
+  "manifest_sha256": "6761e6d8076999de2e0bee2e5fb7832d490d16afac9341228e21499926fcad66",
+  "release_sha256": "eb5cbd0705839b7f7e664a5bf3c6f5296edfa6eebdbdfa846aed4138c7d59bb0"
+}

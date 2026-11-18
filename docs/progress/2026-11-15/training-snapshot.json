@@ -1,0 +1,1032 @@
+{
+  "captured_at": "2026-11-15T06:28:42.791150+00:00",
+  "pipeline": {
+    "started_at": "2026-11-15T05:29:13.947983+00:00",
+    "pid": 27912,
+    "status": "training",
+    "completed": [
+      "seed20261115/original_clean",
+      "seed20261115/expanded_clean"
+    ],
+    "total_runs": 18,
+    "protected_test_inference": false,
+    "current_run": "seed20261115/quota65_clean"
+  },
+  "completed_training": [
+    {
+      "run": "seed20261115/expanded_clean",
+      "global_step": 2400,
+      "last_loss": 0.10061852633953094,
+      "parameters_changed": true,
+      "purpose": "fixed_budget_research",
+      "fingerprint": "1b7a54064619e08f140478931312c255756a6b04b0225df7b2a128dbb300c7c0",
+      "elapsed_seconds": 1134.065750837326,
+      "peak_gpu_bytes": 1559653376,
+      "resumed_from": null,
+      "training_rows": 15480,
+      "validation_rows": 2046,
+      "optimizer_updates": 2400,
+      "amp_overflows": 0,
+      "optimizer_update_budget": 2400,
+      "budget_completed": true,
+      "unique_sample_draws": 13016,
+      "unique_linked_groups_drawn": 12112,
+      "max_sample_repeats": 50,
+      "source_class_draws": {
+        "beh/1": 593,
+        "airogs-light-v2/1": 5117,
+        "lag_part1/1": 2722,
+        "keh/1": 1862,
+        "lag_part1/0": 3649,
+        "crfo/0": 380,
+        "airogs-light-v2/0": 5119,
+        "grape/1": 1496,
+        "mshf/1": 466,
+        "crfo/1": 404,
+        "DATASET_101/ODIR-5K/1": 1259,
+        "DATASET_101/ODIR-5K/0": 3767,
+        "keh/0": 1745,
+        "Kaggle-Eye_diseases_classification/0": 1569,
+        "fundus_avseg/0": 349,
+        "chaksu/0": 1884,
+        "Kaggle-Eye_diseases_classification/1": 2071,
+        "fives/0": 786,
+        "hrf/0": 238,
+        "beh/0": 1096,
+        "fives/1": 815,
+        "hrf/1": 219,
+        "airogs_original_rg/1": 143,
+        "les_av/0": 205,
+        "les_av/1": 216,
+        "fundus_avseg/1": 214
+      },
+      "degradation_family_draws": {
+        "original": 38384
+      },
+      "source_class_degradation_draws": {
+        "beh/1/original": 593,
+        "airogs-light-v2/1/original": 5117,
+        "lag_part1/1/original": 2722,
+        "keh/1/original": 1862,
+        "lag_part1/0/original": 3649,
+        "crfo/0/original": 380,
+        "airogs-light-v2/0/original": 5119,
+        "grape/1/original": 1496,
+        "mshf/1/original": 466,
+        "crfo/1/original": 404,
+        "DATASET_101/ODIR-5K/1/original": 1259,
+        "DATASET_101/ODIR-5K/0/original": 3767,
+        "keh/0/original": 1745,
+        "Kaggle-Eye_diseases_classification/0/original": 1569,
+        "fundus_avseg/0/original": 349,
+        "chaksu/0/original": 1884,
+        "Kaggle-Eye_diseases_classification/1/original": 2071,
+        "fives/0/original": 786,
+        "hrf/0/original": 238,
+        "beh/0/original": 1096,
+        "fives/1/original": 815,
+        "hrf/1/original": 219,
+        "airogs_original_rg/1/original": 143,
+        "les_av/0/original": 205,
+        "les_av/1/original": 216,
+        "fundus_avseg/1/original": 214
+      }
+    },
+    {
+      "run": "seed20261115/original_clean",
+      "global_step": 2400,
+      "last_loss": 0.5344845056533813,
+      "parameters_changed": true,
+      "purpose": "fixed_budget_research",
+      "fingerprint": "8090e2b4049340556aac80e513aad165e3bdcefcd852a01fa9bcc051c8350ff4",
+      "elapsed_seconds": 948.7105529308319,
+      "peak_gpu_bytes": 1559653376,
+      "resumed_from": null,
+      "training_rows": 10338,
+      "validation_rows": 2046,
+      "optimizer_updates": 2400,
+      "amp_overflows": 0,
+      "optimizer_update_budget": 2400,
+      "budget_completed": true,
+      "unique_sample_draws": 9928,
+      "unique_linked_groups_drawn": 9089,
+      "max_sample_repeats": 22,
+      "source_class_draws": {
+        "airogs-light-v2/0": 10352,
+        "Kaggle-Eye_diseases_classification/1": 4239,
+        "DATASET_101/ODIR-5K/0": 7677,
+        "airogs-light-v2/1": 10465,
+        "Kaggle-Eye_diseases_classification/0": 3203,
+        "DATASET_101/ODIR-5K/1": 2422
+      },
+      "degradation_family_draws": {
+        "original": 38358
+      },
+      "source_class_degradation_draws": {
+        "airogs-light-v2/0/original": 10352,
+        "Kaggle-Eye_diseases_classification/1/original": 4239,
+        "DATASET_101/ODIR-5K/0/original": 7677,
+        "airogs-light-v2/1/original": 10465,
+        "Kaggle-Eye_diseases_classification/0/original": 3203,
+        "DATASET_101/ODIR-5K/1/original": 2422
+      }
+    }
+  ],
+  "latest_validation": [
+    {
+      "run": "seed20261115/expanded_clean",
+      "latest": {
+        "epoch": 2,
+        "step": 2400,
+        "optimizer_updates": 2400,
+        "loss": 0.21751443019185948,
+        "n": 2046,
+        "per_source": {
+          "DATASET_101/ODIR-5K": {
+            "n": 277,
+            "auc": 0.9129464285714286
+          },
+          "Kaggle-Eye_diseases_classification": {
+            "n": 144,
+            "auc": 0.9837301587301588
+          },
+          "airogs-light-v2": {
+            "n": 767,
+            "auc": 0.9603794111647516
+          },
+          "beh": {
+            "n": 33,
+            "auc": 0.81
+          },
+          "chaksu": {
+            "n": 86,
+            "auc": null
+          },
+          "crfo": {
+            "n": 6,
+            "auc": 1.0
+          },
+          "fives": {
+            "n": 27,
+            "auc": 0.9780219780219781
+          },
+          "fundus_avseg": {
+            "n": 3,
+            "auc": 1.0
+          },
+          "grape": {
+            "n": 58,
+            "auc": null
+          },
+          "hrf": {
+            "n": 4,
+            "auc": 1.0
+          },
+          "keh": {
+            "n": 153,
+            "auc": 0.9562393162393162
+          },
+          "lag_part1": {
+            "n": 481,
+            "auc": 0.9915225307237142
+          },
+          "les_av": {
+            "n": 2,
+            "auc": 1.0
+          },
+          "mshf": {
+            "n": 5,
+            "auc": null
+          }
+        },
+        "selection_value": 0.9609635690858738,
+        "selection_sources": [
+          "airogs-light-v2",
+          "DATASET_101/ODIR-5K",
+          "Kaggle-Eye_diseases_classification",
+          "lag_part1",
+          "keh"
+        ]
+      }
+    },
+    {
+      "run": "seed20261115/original_clean",
+      "latest": {
+        "epoch": 3,
+        "step": 2400,
+        "optimizer_updates": 2400,
+        "loss": 0.38295526929265244,
+        "n": 2046,
+        "per_source": {
+          "DATASET_101/ODIR-5K": {
+            "n": 277,
+            "auc": 0.8837425595238095
+          },
+          "Kaggle-Eye_diseases_classification": {
+            "n": 144,
+            "auc": 0.9898809523809523
+          },
+          "airogs-light-v2": {
+            "n": 767,
+            "auc": 0.9736995988304888
+          },
+          "beh": {
+            "n": 33,
+            "auc": 0.79
+          },
+          "chaksu": {
+            "n": 86,
+            "auc": null
+          },
+          "crfo": {
+            "n": 6,
+            "auc": 0.625
+          },
+          "fives": {
+            "n": 27,
+            "auc": 0.8021978021978022
+          },
+          "fundus_avseg": {
+            "n": 3,
+            "auc": 1.0
+          },
+          "grape": {
+            "n": 58,
+            "auc": null
+          },
+          "hrf": {
+            "n": 4,
+            "auc": 1.0
+          },
+          "keh": {
+            "n": 153,
+            "auc": 0.5685470085470086
+          },
+          "lag_part1": {
+            "n": 481,
+            "auc": 0.9097443483538158
+          },
+          "les_av": {
+            "n": 2,
+            "auc": 1.0
+          },
+          "mshf": {
+            "n": 5,
+            "auc": null
+          }
+        },
+        "selection_value": 0.865122893527215,
+        "selection_sources": [
+          "airogs-light-v2",
+          "DATASET_101/ODIR-5K",
+          "Kaggle-Eye_diseases_classification",
+          "lag_part1",
+          "keh"
+        ]
+      }
+    },
+    {
+      "run": "seed20261115/quota65_clean",
+      "latest": {
+        "epoch": 0,
+        "step": 900,
+        "optimizer_updates": 900,
+        "loss": 0.2571052734686366,
+        "n": 2046,
+        "per_source": {
+          "DATASET_101/ODIR-5K": {
+            "n": 277,
+            "auc": 0.8930431547619048
+          },
+          "Kaggle-Eye_diseases_classification": {
+            "n": 144,
+            "auc": 0.9843253968253969
+          },
+          "airogs-light-v2": {
+            "n": 767,
+            "auc": 0.9509417284286393
+          },
+          "beh": {
+            "n": 33,
+            "auc": 0.705
+          },
+          "chaksu": {
+            "n": 86,
+            "auc": null
+          },
+          "crfo": {
+            "n": 6,
+            "auc": 1.0
+          },
+          "fives": {
+            "n": 27,
+            "auc": 0.989010989010989
+          },
+          "fundus_avseg": {
+            "n": 3,
+            "auc": 1.0
+          },
+          "grape": {
+            "n": 58,
+            "auc": null
+          },
+          "hrf": {
+            "n": 4,
+            "auc": 0.75
+          },
+          "keh": {
+            "n": 153,
+            "auc": 0.9311111111111112
+          },
+          "lag_part1": {
+            "n": 481,
+            "auc": 0.9716659080564406
+          },
+          "les_av": {
+            "n": 2,
+            "auc": 1.0
+          },
+          "mshf": {
+            "n": 5,
+            "auc": null
+          }
+        },
+        "selection_value": 0.9462174598366986,
+        "selection_sources": [
+          "airogs-light-v2",
+          "DATASET_101/ODIR-5K",
+          "Kaggle-Eye_diseases_classification",
+          "lag_part1",
+          "keh"
+        ]
+      }
+    }
+  ],
+  "evaluated_checkpoint_evidence": [
+    {
+      "run": "seed20261115/expanded_clean",
+      "selected_update": 2400,
+      "updates": {
+        "1200": {
+          "checkpoint_sha256": "87a2cb4321f9fa0674e336c3d2bf5007e585853daa1396dcf9ddc7398c50d3da",
+          "prediction_sha256": "483f05249b54e773303a90725d5a8e50a8b1635386fb8475cb85936b7f2a9f3c",
+          "fingerprint": "1b7a54064619e08f140478931312c255756a6b04b0225df7b2a128dbb300c7c0"
+        },
+        "2400": {
+          "checkpoint_sha256": "109bd498e581ad657fd703ced441d3d509bff5d60bc9a5bade8c944ad5e01822",
+          "prediction_sha256": "7800310485d0a4de31606378502e10d32731364497df96f0e3247b34bb059afe",
+          "fingerprint": "1b7a54064619e08f140478931312c255756a6b04b0225df7b2a128dbb300c7c0"
+        }
+      }
+    },
+    {
+      "run": "seed20261115/original_clean",
+      "selected_update": 1800,
+      "updates": {
+        "1200": {
+          "checkpoint_sha256": "0bc37dc50ea9a786cdc53e461345274f84ca5df324f0a496c386a463aca111ce",
+          "prediction_sha256": "dd181784f7cad52dafddcf759f60c5850e5c0903eaf37be0681bf6b8efdfffeb",
+          "fingerprint": "8090e2b4049340556aac80e513aad165e3bdcefcd852a01fa9bcc051c8350ff4"
+        },
+        "1800": {
+          "checkpoint_sha256": "2bb0ed855fdd0e5b7edc4e382a84acc61c38813f7c4de07f5932b49f2d221c6f",
+          "prediction_sha256": "7903afde3bd4c4f8edfc52497c01d084ea11c1d0fc8feb8f618d834d351a46f5",
+          "fingerprint": "8090e2b4049340556aac80e513aad165e3bdcefcd852a01fa9bcc051c8350ff4"
+        },
+        "2400": {
+          "checkpoint_sha256": "58205bf0678cda7747ede968eae1c28c667eb8bb1bbdb6ffa05faccd830eec9b",
+          "prediction_sha256": "54a66ccf850731b7fe96f9d2b69277e3142ad78c5c001254aab392e66bf3f714",
+          "fingerprint": "8090e2b4049340556aac80e513aad165e3bdcefcd852a01fa9bcc051c8350ff4"
+        }
+      }
+    }
+  ],
+  "preflight": {
+    "passed": true,
+    "models": [
+      {
+        "arm": "expanded_mixed50",
+        "passed": true,
+        "weight_max_abs_difference": 0.0,
+        "step_records_exact": true,
+        "epoch_crossed": true,
+        "successful_updates": 6,
+        "workers": 2,
+        "fingerprint": "c3d062ad3fd2cfd88c741c4043f137406e059c71f0ed78fa0df7fdd97882f9ff",
+        "checkpoints_sha256": [
+          "99c92729004b22d10b638f2d267b572ac2f20428f344553b5b6eb33e48db8851",
+          "99c92729004b22d10b638f2d267b572ac2f20428f344553b5b6eb33e48db8851"
+        ]
+      },
+      {
+        "arm": "quota65_mixed50",
+        "passed": true,
+        "weight_max_abs_difference": 0.0,
+        "step_records_exact": true,
+        "epoch_crossed": true,
+        "successful_updates": 6,
+        "workers": 2,
+        "fingerprint": "ea60ac7fbf71aa75efa5716d4a84e259469e7cb3979fd2387463199523f9a460",
+        "checkpoints_sha256": [
+          "0ff185cdcb4dcf961436d697c21d9871f0d1bdc2648017c20319e0b950e5cb0b",
+          "0ff185cdcb4dcf961436d697c21d9871f0d1bdc2648017c20319e0b950e5cb0b"
+        ]
+      },
+      {
+        "arm": "quota65_defocus50",
+        "passed": true,
+        "weight_max_abs_difference": 0.0,
+        "step_records_exact": true,
+        "epoch_crossed": true,
+        "successful_updates": 6,
+        "workers": 2,
+        "fingerprint": "ee2162a352a6a255305756ef74acef6526576e8a19e052bf08bdb9a2f45095c5",
+        "checkpoints_sha256": [
+          "55ca2cd5e8de56cbcefdb3ad8f926191328e095089e363ee1fcd1094990bbe93",
+          "55ca2cd5e8de56cbcefdb3ad8f926191328e095089e363ee1fcd1094990bbe93"
+        ]
+      }
+    ]
+  },
+  "plan": {
+    "created_at": "2026-11-15T05:29:13.927888+00:00",
+    "seeds": [
+      20261115,
+      20261116,
+      20261117
+    ],
+    "arms": [
+      "original_clean",
+      "expanded_clean",
+      "quota65_clean",
+      "expanded_mixed50",
+      "quota65_mixed50",
+      "quota65_defocus50"
+    ],
+    "jobs": [
+      "seed20261115/original_clean",
+      "seed20261115/expanded_clean",
+      "seed20261115/quota65_clean",
+      "seed20261115/expanded_mixed50",
+      "seed20261115/quota65_mixed50",
+      "seed20261115/quota65_defocus50",
+      "seed20261116/original_clean",
+      "seed20261116/expanded_clean",
+      "seed20261116/quota65_clean",
+      "seed20261116/expanded_mixed50",
+      "seed20261116/quota65_mixed50",
+      "seed20261116/quota65_defocus50",
+      "seed20261117/original_clean",
+      "seed20261117/expanded_clean",
+      "seed20261117/quota65_clean",
+      "seed20261117/expanded_mixed50",
+      "seed20261117/quota65_mixed50",
+      "seed20261117/quota65_defocus50"
+    ],
+    "successful_updates_per_run": 2400,
+    "selection_sources": [
+      "airogs-light-v2",
+      "DATASET_101/ODIR-5K",
+      "Kaggle-Eye_diseases_classification",
+      "lag_part1",
+      "keh"
+    ],
+    "original_quota": 0.65,
+    "sampler_within_origins": "inverse_sqrt_source_class",
+    "saved_validation_updates": [
+      300,
+      600,
+      900,
+      1200,
+      1500,
+      1800,
+      2100,
+      2400
+    ],
+    "inference_roles": [
+      "val",
+      "boundary"
+    ],
+    "protected_test_inference": false,
+    "manifest_sha256": "6761e6d8076999de2e0bee2e5fb7832d490d16afac9341228e21499926fcad66",
+    "release_sha256": "eb5cbd0705839b7f7e664a5bf3c6f5296edfa6eebdbdfa846aed4138c7d59bb0"
+  },
+  "comparison": {
+    "rows": [
+      {
+        "seed": 20261115,
+        "arm": "original_clean",
+        "update": 1200,
+        "selected": false,
+        "source_auc": {
+          "airogs-light-v2": 0.9743069505825632,
+          "DATASET_101/ODIR-5K": 0.9374677668901494,
+          "Kaggle-Eye_diseases_classification": 0.9888017917133258,
+          "lag_part1": 0.9426111363981187,
+          "keh": 0.5888888888888889
+        },
+        "boundary": {
+          "n": 2053,
+          "positives": 814,
+          "positive_groups": 782,
+          "prevalence": 0.3964929371651242,
+          "auc": 0.9352622488215708,
+          "auprc": 0.9117949554726567,
+          "brier": 0.11178829769900633,
+          "ece_10_bins": 0.08405899201284958,
+          "cross_entropy": 0.39740538260426717,
+          "display_threshold": 0.5,
+          "positive_misses": 230,
+          "sensitivity": 0.7174447174447175,
+          "specificity": 0.9426957223567393
+        },
+        "stress": {
+          "defocus_2_at512": {
+            "n": 384,
+            "positives": 146,
+            "positive_groups": 144,
+            "prevalence": 0.3802083333333333,
+            "auc": 0.905433406239208,
+            "auprc": 0.8732311796427897,
+            "brier": 0.12112143666881663,
+            "ece_10_bins": 0.06282400207641103,
+            "cross_entropy": 0.4039505395224377,
+            "display_threshold": 0.5,
+            "positive_misses": 35,
+            "sensitivity": 0.7602739726027398,
+            "specificity": 0.8907563025210085
+          },
+          "exposure_070": {
+            "n": 384,
+            "positives": 146,
+            "positive_groups": 144,
+            "prevalence": 0.3802083333333333,
+            "auc": 0.9437377690802349,
+            "auprc": 0.9144685700439089,
+            "brier": 0.10140924501371794,
+            "ece_10_bins": 0.07198819110621221,
+            "cross_entropy": 0.36074333309444556,
+            "display_threshold": 0.5,
+            "positive_misses": 37,
+            "sensitivity": 0.7465753424657534,
+            "specificity": 0.9453781512605042
+          }
+        },
+        "real_poor": {
+          "n": 12,
+          "positives": 12,
+          "positive_groups": 12,
+          "prevalence": 1.0,
+          "auc": null,
+          "auprc": null,
+          "brier": 0.37711999774181376,
+          "ece_10_bins": 0.40019683695572894,
+          "cross_entropy": 1.6466418965796132,
+          "display_threshold": 0.5,
+          "positive_misses": 5,
+          "sensitivity": 0.5833333333333334,
+          "specificity": null
+        },
+        "origin_draws": {
+          "formal_v3": 19186,
+          "expansion_20261113": 0
+        },
+        "quality_error_ranking": {
+          "errors": 301,
+          "n": 2053,
+          "lowq_error_auc": 0.5316657564586842,
+          "uncertainty_error_auc": 0.823076427130266
+        }
+      },
+      {
+        "seed": 20261115,
+        "arm": "original_clean",
+        "update": 1800,
+        "selected": true,
+        "source_auc": {
+          "airogs-light-v2": 0.9792620865139949,
+          "DATASET_101/ODIR-5K": 0.9530685920577617,
+          "Kaggle-Eye_diseases_classification": 0.9892497200447928,
+          "lag_part1": 0.9434456076467911,
+          "keh": 0.6430769230769231
+        },
+        "boundary": {
+          "n": 2053,
+          "positives": 814,
+          "positive_groups": 782,
+          "prevalence": 0.3964929371651242,
+          "auc": 0.9384331502975571,
+          "auprc": 0.9083484182999046,
+          "brier": 0.10300760932328641,
+          "ece_10_bins": 0.06567187690167192,
+          "cross_entropy": 0.36016998307587716,
+          "display_threshold": 0.5,
+          "positive_misses": 135,
+          "sensitivity": 0.8341523341523341,
+          "specificity": 0.8845843422114609
+        },
+        "stress": {
+          "defocus_2_at512": {
+            "n": 384,
+            "positives": 146,
+            "positive_groups": 144,
+            "prevalence": 0.3802083333333333,
+            "auc": 0.8986128698054565,
+            "auprc": 0.8418260869999986,
+            "brier": 0.12567929299253933,
+            "ece_10_bins": 0.06317818986121539,
+            "cross_entropy": 0.4315982832574094,
+            "display_threshold": 0.5,
+            "positive_misses": 38,
+            "sensitivity": 0.7397260273972602,
+            "specificity": 0.8865546218487395
+          },
+          "exposure_070": {
+            "n": 384,
+            "positives": 146,
+            "positive_groups": 144,
+            "prevalence": 0.3802083333333333,
+            "auc": 0.9427017382295384,
+            "auprc": 0.9130265884648355,
+            "brier": 0.09766285553033961,
+            "ece_10_bins": 0.07531214049122344,
+            "cross_entropy": 0.3402652357039024,
+            "display_threshold": 0.5,
+            "positive_misses": 20,
+            "sensitivity": 0.863013698630137,
+            "specificity": 0.8907563025210085
+          }
+        },
+        "real_poor": {
+          "n": 12,
+          "positives": 12,
+          "positive_groups": 12,
+          "prevalence": 1.0,
+          "auc": null,
+          "auprc": null,
+          "brier": 0.35267241095921537,
+          "ece_10_bins": 0.3963793090855082,
+          "cross_entropy": 1.491893873163545,
+          "display_threshold": 0.5,
+          "positive_misses": 5,
+          "sensitivity": 0.5833333333333334,
+          "specificity": null
+        },
+        "origin_draws": {
+          "formal_v3": 28772,
+          "expansion_20261113": 0
+        },
+        "quality_error_ranking": {
+          "errors": 278,
+          "n": 2053,
+          "lowq_error_auc": 0.5256034046002636,
+          "uncertainty_error_auc": 0.8282014388489208
+        }
+      },
+      {
+        "seed": 20261115,
+        "arm": "original_clean",
+        "update": 2400,
+        "selected": false,
+        "source_auc": {
+          "airogs-light-v2": 0.9795768046069372,
+          "DATASET_101/ODIR-5K": 0.9381124290871583,
+          "Kaggle-Eye_diseases_classification": 0.9937290033594625,
+          "lag_part1": 0.945000758610226,
+          "keh": 0.5593162393162392
+        },
+        "boundary": {
+          "n": 2053,
+          "positives": 814,
+          "positive_groups": 782,
+          "prevalence": 0.3964929371651242,
+          "auc": 0.9428741971114852,
+          "auprc": 0.9173158798061773,
+          "brier": 0.09962856115136338,
+          "ece_10_bins": 0.06692269993079444,
+          "cross_entropy": 0.36163809553799325,
+          "display_threshold": 0.5,
+          "positive_misses": 133,
+          "sensitivity": 0.8366093366093366,
+          "specificity": 0.8942695722356739
+        },
+        "stress": {
+          "defocus_2_at512": {
+            "n": 384,
+            "positives": 146,
+            "positive_groups": 144,
+            "prevalence": 0.3802083333333333,
+            "auc": 0.9085127201565557,
+            "auprc": 0.8509357316994443,
+            "brier": 0.12379842787749529,
+            "ece_10_bins": 0.06922252407999557,
+            "cross_entropy": 0.4134320952355006,
+            "display_threshold": 0.5,
+            "positive_misses": 36,
+            "sensitivity": 0.7534246575342466,
+            "specificity": 0.8613445378151261
+          },
+          "exposure_070": {
+            "n": 384,
+            "positives": 146,
+            "positive_groups": 144,
+            "prevalence": 0.3802083333333333,
+            "auc": 0.9414642569356508,
+            "auprc": 0.9154840829389665,
+            "brier": 0.09263153734887213,
+            "ece_10_bins": 0.06262589697534703,
+            "cross_entropy": 0.3475162446226127,
+            "display_threshold": 0.5,
+            "positive_misses": 26,
+            "sensitivity": 0.821917808219178,
+            "specificity": 0.9117647058823529
+          }
+        },
+        "real_poor": {
+          "n": 12,
+          "positives": 12,
+          "positive_groups": 12,
+          "prevalence": 1.0,
+          "auc": null,
+          "auprc": null,
+          "brier": 0.4079703731284126,
+          "ece_10_bins": 0.43601536451994133,
+          "cross_entropy": 1.9058457543285667,
+          "display_threshold": 0.5,
+          "positive_misses": 5,
+          "sensitivity": 0.5833333333333334,
+          "specificity": null
+        },
+        "origin_draws": {
+          "formal_v3": 38358,
+          "expansion_20261113": 0
+        },
+        "quality_error_ranking": {
+          "errors": 264,
+          "n": 2053,
+          "lowq_error_auc": 0.5412304995172519,
+          "uncertainty_error_auc": 0.8300980740891304
+        }
+      },
+      {
+        "seed": 20261115,
+        "arm": "expanded_clean",
+        "update": 1200,
+        "selected": false,
+        "source_auc": {
+          "airogs-light-v2": 0.9643631980715146,
+          "DATASET_101/ODIR-5K": 0.9569365652398143,
+          "Kaggle-Eye_diseases_classification": 0.9746920492721165,
+          "lag_part1": 0.9892656653011682,
+          "keh": 0.9442735042735043
+        },
+        "boundary": {
+          "n": 2053,
+          "positives": 814,
+          "positive_groups": 782,
+          "prevalence": 0.3964929371651242,
+          "auc": 0.9724811758710064,
+          "auprc": 0.9572037567641025,
+          "brier": 0.06409715051608098,
+          "ece_10_bins": 0.0270529481969275,
+          "cross_entropy": 0.21380333947209124,
+          "display_threshold": 0.5,
+          "positive_misses": 69,
+          "sensitivity": 0.9152334152334153,
+          "specificity": 0.9071832122679581
+        },
+        "stress": {
+          "defocus_2_at512": {
+            "n": 384,
+            "positives": 146,
+            "positive_groups": 144,
+            "prevalence": 0.3802083333333333,
+            "auc": 0.9465292966501669,
+            "auprc": 0.9213866204132558,
+            "brier": 0.1319315402134058,
+            "ece_10_bins": 0.15150854052961665,
+            "cross_entropy": 0.39562576623824053,
+            "display_threshold": 0.5,
+            "positive_misses": 6,
+            "sensitivity": 0.958904109589041,
+            "specificity": 0.6680672268907563
+          },
+          "exposure_070": {
+            "n": 384,
+            "positives": 146,
+            "positive_groups": 144,
+            "prevalence": 0.3802083333333333,
+            "auc": 0.967969379532635,
+            "auprc": 0.9477188729951044,
+            "brier": 0.06719189270652141,
+            "ece_10_bins": 0.03023762634847079,
+            "cross_entropy": 0.227379906974708,
+            "display_threshold": 0.5,
+            "positive_misses": 14,
+            "sensitivity": 0.9041095890410958,
+            "specificity": 0.9033613445378151
+          }
+        },
+        "real_poor": {
+          "n": 12,
+          "positives": 12,
+          "positive_groups": 12,
+          "prevalence": 1.0,
+          "auc": null,
+          "auprc": null,
+          "brier": 0.003111215566621972,
+          "ece_10_bins": 0.018850291768709854,
+          "cross_entropy": 0.020637907666353823,
+          "display_threshold": 0.5,
+          "positive_misses": 0,
+          "sensitivity": 1.0,
+          "specificity": null
+        },
+        "origin_draws": {
+          "formal_v3": 9475,
+          "expansion_20261113": 9717
+        },
+        "quality_error_ranking": {
+          "errors": 184,
+          "n": 2053,
+          "lowq_error_auc": 0.5153505711028916,
+          "uncertainty_error_auc": 0.8798851978505129
+        }
+      },
+      {
+        "seed": 20261115,
+        "arm": "expanded_clean",
+        "update": 2400,
+        "selected": true,
+        "source_auc": {
+          "airogs-light-v2": 0.9670349537967056,
+          "DATASET_101/ODIR-5K": 0.9473955647240846,
+          "Kaggle-Eye_diseases_classification": 0.9789473684210528,
+          "lag_part1": 0.9906690942193901,
+          "keh": 0.941025641025641
+        },
+        "boundary": {
+          "n": 2053,
+          "positives": 814,
+          "positive_groups": 782,
+          "prevalence": 0.3964929371651242,
+          "auc": 0.9756391875035944,
+          "auprc": 0.9634986593063991,
+          "brier": 0.06035773998314177,
+          "ece_10_bins": 0.029519095564909927,
+          "cross_entropy": 0.20573578493977748,
+          "display_threshold": 0.5,
+          "positive_misses": 67,
+          "sensitivity": 0.9176904176904177,
+          "specificity": 0.9297820823244553
+        },
+        "stress": {
+          "defocus_2_at512": {
+            "n": 384,
+            "positives": 146,
+            "positive_groups": 144,
+            "prevalence": 0.3802083333333333,
+            "auc": 0.9458386094163693,
+            "auprc": 0.9119451081647787,
+            "brier": 0.09142543153936511,
+            "ece_10_bins": 0.027488449258183795,
+            "cross_entropy": 0.29000324196637045,
+            "display_threshold": 0.5,
+            "positive_misses": 20,
+            "sensitivity": 0.863013698630137,
+            "specificity": 0.8865546218487395
+          },
+          "exposure_070": {
+            "n": 384,
+            "positives": 146,
+            "positive_groups": 144,
+            "prevalence": 0.3802083333333333,
+            "auc": 0.9773224358236445,
+            "auprc": 0.9621550721625403,
+            "brier": 0.060334354271472934,
+            "ece_10_bins": 0.033990222005915526,
+            "cross_entropy": 0.19169416981627188,
+            "display_threshold": 0.5,
+            "positive_misses": 13,
+            "sensitivity": 0.910958904109589,
+            "specificity": 0.9201680672268907
+          }
+        },
+        "real_poor": {
+          "n": 12,
+          "positives": 12,
+          "positive_groups": 12,
+          "prevalence": 1.0,
+          "auc": null,
+          "auprc": null,
+          "brier": 1.942526637321862e-07,
+          "ece_10_bins": 0.00031860669453942503,
+          "cross_entropy": 0.00031870387201482037,
+          "display_threshold": 0.5,
+          "positive_misses": 0,
+          "sensitivity": 1.0,
+          "specificity": null
+        },
+        "origin_draws": {
+          "formal_v3": 18902,
+          "expansion_20261113": 19482
+        },
+        "quality_error_ranking": {
+          "errors": 154,
+          "n": 2053,
+          "lowq_error_auc": 0.5375009403445422,
+          "uncertainty_error_auc": 0.8716925517873385
+        }
+      }
+    ],
+    "update2400": {
+      "original_clean": {
+        "completed_seeds": [
+          20261115
+        ],
+        "n_seeds": 1,
+        "source_auc": {
+          "airogs-light-v2": {
+            "mean": 0.9795768046069372,
+            "values": [
+              0.9795768046069372
+            ],
+            "sd": null
+          },
+          "DATASET_101/ODIR-5K": {
+            "mean": 0.9381124290871583,
+            "values": [
+              0.9381124290871583
+            ],
+            "sd": null
+          },
+          "Kaggle-Eye_diseases_classification": {
+            "mean": 0.9937290033594625,
+            "values": [
+              0.9937290033594625
+            ],
+            "sd": null
+          },
+          "lag_part1": {
+            "mean": 0.945000758610226,
+            "values": [
+              0.945000758610226
+            ],
+            "sd": null
+          },
+          "keh": {
+            "mean": 0.5593162393162392,
+            "values": [
+              0.5593162393162392
+            ],
+            "sd": null
+          }
+        }
+      },
+      "expanded_clean": {
+        "completed_seeds": [
+          20261115
+        ],
+        "n_seeds": 1,
+        "source_auc": {
+          "airogs-light-v2": {
+            "mean": 0.9670349537967056,
+            "values": [
+              0.9670349537967056
+            ],
+            "sd": null
+          },
+          "DATASET_101/ODIR-5K": {
+            "mean": 0.9473955647240846,
+            "values": [
+              0.9473955647240846
+            ],
+            "sd": null
+          },
+          "Kaggle-Eye_diseases_classification": {
+            "mean": 0.9789473684210528,
+            "values": [
+              0.9789473684210528
+            ],
+            "sd": null
+          },
+          "lag_part1": {
+            "mean": 0.9906690942193901,
+            "values": [
+              0.9906690942193901
+            ],
+            "sd": null
+          },
+          "keh": {
+            "mean": 0.941025641025641,
+            "values": [
+              0.941025641025641
+            ],
+            "sd": null
+          }
+        }
+      }
+    },
+    "protected_test_inference": false
+  }
+}

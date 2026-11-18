@@ -1,0 +1,3727 @@
+{
+  "data_version": "expanded_20261113",
+  "disease_checkpoint": "expanded_degradation50/last.pt",
+  "disease_update": 1200,
+  "display_threshold": 0.5,
+  "quality_kind": "FTHNet_distilled_raw_regression",
+  "protected_test_inference": false,
+  "input_sha256": {
+    "runs/expanded_20261113/expanded_clean/last_development_predictions.csv": "c4a1473f61d4a76f279fffa30a64580281722beea4c3b4fe8b1de20b4b60ace4",
+    "data/prepared/eyeq_quality_v1/manifest.csv": "623e1945c71ca0af347b20f96e8017e8e168f3aafc1cfae3494cb7ac4c823b49",
+    "runs/expanded_20261113/expanded_degradation30/last_development_predictions.csv": "b4a692f7d2e3477a4728e412c53fa9a2fd5801f901efca1ae860d38c6e298a4c",
+    "data/prepared/expanded_20261113/manifest.csv": "6761e6d8076999de2e0bee2e5fb7832d490d16afac9341228e21499926fcad66",
+    "data/external/fives/Quality Assessment.xlsx": "b78bae7fc4d779d7e1e9f955081f6195a87f8608aa02c453121afaf6b6445c4c",
+    "data/audit/data_expansion_20261113/local_decisions.csv": "8b433e554c1e7d4543054d2cf553c83fda54bbfdc3e59f9819976d380a78c60f",
+    "tools/analyze_quality_errors_20261115.py": "fc4a9155dc9b6aba1facc4390b2c10183c2ebc83419e212913e617a8fcc8e857",
+    "data/prepared/formal_v3/manifest.csv": "b8c2bce2689b749bc8813a96fe5655513a5e15fada25e42fe07ea2aa05efd340",
+    "runs/expanded_20261113/expanded_degradation50/last_development_predictions.csv": "ccef34494e2e0abf9488e0c06fc3824a9932cbe70b5fd1bf399ebbb072a1ac75",
+    "data/external_quality/mshf/MSHF dataset 2.0/MSHF_quality_scores.xlsx": "40481a6f207bcd8f2e0daa8bd4c1da6a5a41c3161a5b97fa5c74d499970381f7",
+    "runs/expanded_20261113/pq_quality_20261114/verification.json": "276391f38e7f446b5ccc5a8912f5f558a60d0d1a96f0c1772ef4eb58a0a187b1",
+    "runs/followup_20261115/eyeq_development/quality_scores.csv": "8e967b994da8b361d57b985e6615d71a3d02221d2ff8b9a41cd35be3b7d5ded7",
+    "runs/followup_20261115/eyeq_development/verification.json": "b5c192f7dca7c064b6592e633695fb87432050ef0ca79d96a274d178f2953a5d",
+    "runs/expanded_20261113/pq_quality_20261114/quality_scores.csv": "be5d010a7f4c42ef0eb0befec45b8d321ce7c47a736945386ea1abaf45519832",
+    "runs/expanded_20261113/original_clean/last_development_predictions.csv": "799995355c47fca94d38dfa92709aaad9fd6b9061c175fbe46c3dab20f636212"
+  },
+  "roles": {
+    "boundary": {
+      "overall": {
+        "n": 2053,
+        "positive": 814,
+        "negative": 1239,
+        "groups": 1917,
+        "errors": 208,
+        "fn": 124,
+        "fp": 84,
+        "error_rate": 0.10131514856307842,
+        "fn_rate": 0.15233415233415235,
+        "fp_rate": 0.06779661016949153,
+        "q_mean": 0.5673293182295209
+      },
+      "quality_bins": {
+        "0–0.2": {
+          "n": 49,
+          "positive": 26,
+          "negative": 23,
+          "groups": 45,
+          "errors": 4,
+          "fn": 3,
+          "fp": 1,
+          "error_rate": 0.08163265306122448,
+          "fn_rate": 0.11538461538461539,
+          "fp_rate": 0.043478260869565216,
+          "q_mean": 0.14623389461514896,
+          "error_rate_group_interval95": [
+            0.0196078431372549,
+            0.1702127659574468
+          ]
+        },
+        "0.2–0.4": {
+          "n": 305,
+          "positive": 134,
+          "negative": 171,
+          "groups": 292,
+          "errors": 32,
+          "fn": 13,
+          "fp": 19,
+          "error_rate": 0.10491803278688525,
+          "fn_rate": 0.09701492537313433,
+          "fp_rate": 0.1111111111111111,
+          "q_mean": 0.3234973806338232,
+          "error_rate_group_interval95": [
+            0.07166123778501629,
+            0.14098465741908364
+          ]
+        },
+        "0.4–0.6": {
+          "n": 757,
+          "positive": 349,
+          "negative": 408,
+          "groups": 723,
+          "errors": 79,
+          "fn": 50,
+          "fp": 29,
+          "error_rate": 0.10435931307793923,
+          "fn_rate": 0.14326647564469913,
+          "fp_rate": 0.07107843137254902,
+          "q_mean": 0.5048994925094564,
+          "error_rate_group_interval95": [
+            0.0839997375328084,
+            0.12713031515540782
+          ]
+        },
+        "0.6–0.8": {
+          "n": 777,
+          "positive": 268,
+          "negative": 509,
+          "groups": 746,
+          "errors": 79,
+          "fn": 48,
+          "fp": 31,
+          "error_rate": 0.10167310167310167,
+          "fn_rate": 0.1791044776119403,
+          "fp_rate": 0.060903732809430254,
+          "q_mean": 0.6948721179477343,
+          "error_rate_group_interval95": [
+            0.08118295486207858,
+            0.12435897435897436
+          ]
+        },
+        "0.8–1": {
+          "n": 165,
+          "positive": 37,
+          "negative": 128,
+          "groups": 162,
+          "errors": 14,
+          "fn": 10,
+          "fp": 4,
+          "error_rate": 0.08484848484848485,
+          "fn_rate": 0.2702702702702703,
+          "fp_rate": 0.03125,
+          "q_mean": 0.8289113752769701,
+          "error_rate_group_interval95": [
+            0.04761200338123415,
+            0.13335365853658526
+          ]
+        }
+      },
+      "sources": {
+        "DATASET_101/ODIR-5K": {
+          "n": 305,
+          "positive": 28,
+          "negative": 277,
+          "groups": 193,
+          "errors": 25,
+          "fn": 12,
+          "fp": 13,
+          "error_rate": 0.08196721311475409,
+          "fn_rate": 0.42857142857142855,
+          "fp_rate": 0.04693140794223827,
+          "q_mean": 0.5057955142415937
+        },
+        "Kaggle-Eye_diseases_classification": {
+          "n": 142,
+          "positive": 95,
+          "negative": 47,
+          "groups": 142,
+          "errors": 12,
+          "fn": 9,
+          "fp": 3,
+          "error_rate": 0.08450704225352113,
+          "fn_rate": 0.09473684210526316,
+          "fp_rate": 0.06382978723404255,
+          "q_mean": 0.4528021134278724
+        },
+        "airogs-light-v2": {
+          "n": 773,
+          "positive": 380,
+          "negative": 393,
+          "groups": 772,
+          "errors": 92,
+          "fn": 69,
+          "fp": 23,
+          "error_rate": 0.11901681759379043,
+          "fn_rate": 0.18157894736842106,
+          "fp_rate": 0.058524173027989825,
+          "q_mean": 0.6026871455556209
+        },
+        "beh": {
+          "n": 33,
+          "positive": 8,
+          "negative": 25,
+          "groups": 33,
+          "errors": 3,
+          "fn": 2,
+          "fp": 1,
+          "error_rate": 0.09090909090909091,
+          "fn_rate": 0.25,
+          "fp_rate": 0.04,
+          "q_mean": 0.739264453902389
+        },
+        "chaksu": {
+          "n": 86,
+          "positive": 0,
+          "negative": 86,
+          "groups": 86,
+          "errors": 0,
+          "fn": 0,
+          "fp": 0,
+          "error_rate": 0.0,
+          "fn_rate": null,
+          "fp_rate": 0.0,
+          "q_mean": 0.4046570048775784
+        },
+        "crfo": {
+          "n": 5,
+          "positive": 3,
+          "negative": 2,
+          "groups": 3,
+          "errors": 2,
+          "fn": 0,
+          "fp": 2,
+          "error_rate": 0.4,
+          "fn_rate": 0.0,
+          "fp_rate": 1.0,
+          "q_mean": 0.6146922171115875
+        },
+        "fives": {
+          "n": 27,
+          "positive": 13,
+          "negative": 14,
+          "groups": 27,
+          "errors": 4,
+          "fn": 1,
+          "fp": 3,
+          "error_rate": 0.14814814814814814,
+          "fn_rate": 0.07692307692307693,
+          "fp_rate": 0.21428571428571427,
+          "q_mean": 0.6519419297024056
+        },
+        "fundus_avseg": {
+          "n": 3,
+          "positive": 1,
+          "negative": 2,
+          "groups": 3,
+          "errors": 0,
+          "fn": 0,
+          "fp": 0,
+          "error_rate": 0.0,
+          "fn_rate": 0.0,
+          "fp_rate": 0.0,
+          "q_mean": 0.8041093150774637
+        },
+        "grape": {
+          "n": 34,
+          "positive": 34,
+          "negative": 0,
+          "groups": 13,
+          "errors": 4,
+          "fn": 4,
+          "fp": 0,
+          "error_rate": 0.11764705882352941,
+          "fn_rate": 0.11764705882352941,
+          "fp_rate": null,
+          "q_mean": 0.6403066805180382
+        },
+        "hrf": {
+          "n": 4,
+          "positive": 2,
+          "negative": 2,
+          "groups": 4,
+          "errors": 1,
+          "fn": 1,
+          "fp": 0,
+          "error_rate": 0.25,
+          "fn_rate": 0.5,
+          "fp_rate": 0.0,
+          "q_mean": 0.7083830386400223
+        },
+        "keh": {
+          "n": 153,
+          "positive": 75,
+          "negative": 78,
+          "groups": 153,
+          "errors": 28,
+          "fn": 19,
+          "fp": 9,
+          "error_rate": 0.1830065359477124,
+          "fn_rate": 0.25333333333333335,
+          "fp_rate": 0.11538461538461539,
+          "q_mean": 0.47352315563392017
+        },
+        "lag_part1": {
+          "n": 481,
+          "positive": 169,
+          "negative": 312,
+          "groups": 481,
+          "errors": 36,
+          "fn": 7,
+          "fp": 29,
+          "error_rate": 0.07484407484407485,
+          "fn_rate": 0.04142011834319527,
+          "fp_rate": 0.09294871794871795,
+          "q_mean": 0.6215493914491174
+        },
+        "les_av": {
+          "n": 2,
+          "positive": 1,
+          "negative": 1,
+          "groups": 2,
+          "errors": 1,
+          "fn": 0,
+          "fp": 1,
+          "error_rate": 0.5,
+          "fn_rate": 0.0,
+          "fp_rate": 1.0,
+          "q_mean": 0.5175736397504807
+        },
+        "mshf": {
+          "n": 5,
+          "positive": 5,
+          "negative": 0,
+          "groups": 5,
+          "errors": 0,
+          "fn": 0,
+          "fp": 0,
+          "error_rate": 0.0,
+          "fn_rate": 0.0,
+          "fp_rate": null,
+          "q_mean": 0.18930753171443937
+        }
+      },
+      "by_source_quality": {
+        "DATASET_101/ODIR-5K": {
+          "0–0.2": {
+            "n": 15,
+            "positive": 1,
+            "negative": 14,
+            "groups": 11,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": 0.0,
+            "q_mean": 0.1402892082929611
+          },
+          "0.2–0.4": {
+            "n": 61,
+            "positive": 7,
+            "negative": 54,
+            "groups": 48,
+            "errors": 8,
+            "fn": 2,
+            "fp": 6,
+            "error_rate": 0.13114754098360656,
+            "fn_rate": 0.2857142857142857,
+            "fp_rate": 0.1111111111111111,
+            "q_mean": 0.3150908004065029
+          },
+          "0.4–0.6": {
+            "n": 137,
+            "positive": 12,
+            "negative": 125,
+            "groups": 106,
+            "errors": 10,
+            "fn": 4,
+            "fp": 6,
+            "error_rate": 0.072992700729927,
+            "fn_rate": 0.3333333333333333,
+            "fp_rate": 0.048,
+            "q_mean": 0.5063047637469578
+          },
+          "0.6–0.8": {
+            "n": 85,
+            "positive": 8,
+            "negative": 77,
+            "groups": 66,
+            "errors": 7,
+            "fn": 6,
+            "fp": 1,
+            "error_rate": 0.08235294117647059,
+            "fn_rate": 0.75,
+            "fp_rate": 0.012987012987012988,
+            "q_mean": 0.6794363688020145
+          },
+          "0.8–1": {
+            "n": 7,
+            "positive": 0,
+            "negative": 7,
+            "groups": 5,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.8324158447129386
+          }
+        },
+        "Kaggle-Eye_diseases_classification": {
+          "0–0.2": {
+            "n": 14,
+            "positive": 12,
+            "negative": 2,
+            "groups": 14,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": 0.0,
+            "q_mean": 0.14726352558604305
+          },
+          "0.2–0.4": {
+            "n": 39,
+            "positive": 33,
+            "negative": 6,
+            "groups": 39,
+            "errors": 2,
+            "fn": 2,
+            "fp": 0,
+            "error_rate": 0.05128205128205128,
+            "fn_rate": 0.06060606060606061,
+            "fp_rate": 0.0,
+            "q_mean": 0.30639946728180617
+          },
+          "0.4–0.6": {
+            "n": 59,
+            "positive": 43,
+            "negative": 16,
+            "groups": 59,
+            "errors": 7,
+            "fn": 5,
+            "fp": 2,
+            "error_rate": 0.11864406779661017,
+            "fn_rate": 0.11627906976744186,
+            "fp_rate": 0.125,
+            "q_mean": 0.48842634083861014
+          },
+          "0.6–0.8": {
+            "n": 28,
+            "positive": 7,
+            "negative": 21,
+            "groups": 28,
+            "errors": 3,
+            "fn": 2,
+            "fp": 1,
+            "error_rate": 0.10714285714285714,
+            "fn_rate": 0.2857142857142857,
+            "fp_rate": 0.047619047619047616,
+            "q_mean": 0.7064117448670524
+          },
+          "0.8–1": {
+            "n": 2,
+            "positive": 0,
+            "negative": 2,
+            "groups": 2,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.8449742794036865
+          }
+        },
+        "airogs-light-v2": {
+          "0–0.2": {
+            "n": 17,
+            "positive": 11,
+            "negative": 6,
+            "groups": 17,
+            "errors": 4,
+            "fn": 3,
+            "fp": 1,
+            "error_rate": 0.23529411764705882,
+            "fn_rate": 0.2727272727272727,
+            "fp_rate": 0.16666666666666666,
+            "q_mean": 0.15406848928507635
+          },
+          "0.2–0.4": {
+            "n": 95,
+            "positive": 60,
+            "negative": 35,
+            "groups": 95,
+            "errors": 11,
+            "fn": 7,
+            "fp": 4,
+            "error_rate": 0.11578947368421053,
+            "fn_rate": 0.11666666666666667,
+            "fp_rate": 0.11428571428571428,
+            "q_mean": 0.3236635978284635
+          },
+          "0.4–0.6": {
+            "n": 232,
+            "positive": 135,
+            "negative": 97,
+            "groups": 232,
+            "errors": 29,
+            "fn": 21,
+            "fp": 8,
+            "error_rate": 0.125,
+            "fn_rate": 0.15555555555555556,
+            "fp_rate": 0.08247422680412371,
+            "q_mean": 0.5090762110876625
+          },
+          "0.6–0.8": {
+            "n": 327,
+            "positive": 145,
+            "negative": 182,
+            "groups": 326,
+            "errors": 36,
+            "fn": 29,
+            "fp": 7,
+            "error_rate": 0.11009174311926606,
+            "fn_rate": 0.2,
+            "fp_rate": 0.038461538461538464,
+            "q_mean": 0.7018385081116213
+          },
+          "0.8–1": {
+            "n": 102,
+            "positive": 29,
+            "negative": 73,
+            "groups": 102,
+            "errors": 12,
+            "fn": 9,
+            "fp": 3,
+            "error_rate": 0.11764705882352941,
+            "fn_rate": 0.3103448275862069,
+            "fp_rate": 0.0410958904109589,
+            "q_mean": 0.8323831791971245
+          }
+        },
+        "beh": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 2,
+            "positive": 1,
+            "negative": 1,
+            "groups": 2,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": 0.0,
+            "q_mean": 0.2501166760921478
+          },
+          "0.4–0.6": {
+            "n": 1,
+            "positive": 0,
+            "negative": 1,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.4221442341804504
+          },
+          "0.6–0.8": {
+            "n": 15,
+            "positive": 4,
+            "negative": 11,
+            "groups": 15,
+            "errors": 1,
+            "fn": 1,
+            "fp": 0,
+            "error_rate": 0.06666666666666667,
+            "fn_rate": 0.25,
+            "fp_rate": 0.0,
+            "q_mean": 0.7320490121841431
+          },
+          "0.8–1": {
+            "n": 15,
+            "positive": 3,
+            "negative": 12,
+            "groups": 15,
+            "errors": 2,
+            "fn": 1,
+            "fp": 1,
+            "error_rate": 0.13333333333333333,
+            "fn_rate": 0.3333333333333333,
+            "fp_rate": 0.08333333333333333,
+            "q_mean": 0.8328409473101298
+          }
+        },
+        "chaksu": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 45,
+            "positive": 0,
+            "negative": 45,
+            "groups": 45,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.3385169479582045
+          },
+          "0.4–0.6": {
+            "n": 37,
+            "positive": 0,
+            "negative": 37,
+            "groups": 37,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.4574200027697795
+          },
+          "0.6–0.8": {
+            "n": 4,
+            "positive": 0,
+            "negative": 4,
+            "groups": 4,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.6606749147176743
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        },
+        "crfo": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.4–0.6": {
+            "n": 2,
+            "positive": 2,
+            "negative": 0,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.5207019299268723
+          },
+          "0.6–0.8": {
+            "n": 3,
+            "positive": 1,
+            "negative": 2,
+            "groups": 2,
+            "errors": 2,
+            "fn": 0,
+            "fp": 2,
+            "error_rate": 0.6666666666666666,
+            "fn_rate": 0.0,
+            "fp_rate": 1.0,
+            "q_mean": 0.6773524085680643
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        },
+        "fives": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.4–0.6": {
+            "n": 6,
+            "positive": 6,
+            "negative": 0,
+            "groups": 6,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.49827427168687183
+          },
+          "0.6–0.8": {
+            "n": 20,
+            "positive": 7,
+            "negative": 13,
+            "groups": 20,
+            "errors": 4,
+            "fn": 1,
+            "fp": 3,
+            "error_rate": 0.2,
+            "fn_rate": 0.14285714285714285,
+            "fp_rate": 0.23076923076923078,
+            "q_mean": 0.6898479431867599
+          },
+          "0.8–1": {
+            "n": 1,
+            "positive": 0,
+            "negative": 1,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.8158276081085205
+          }
+        },
+        "fundus_avseg": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.4–0.6": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.6–0.8": {
+            "n": 1,
+            "positive": 0,
+            "negative": 1,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.7850177884101868
+          },
+          "0.8–1": {
+            "n": 2,
+            "positive": 1,
+            "negative": 1,
+            "groups": 2,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": 0.0,
+            "q_mean": 0.8136550784111023
+          }
+        },
+        "grape": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 1,
+            "positive": 1,
+            "negative": 0,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.2972933650016784
+          },
+          "0.4–0.6": {
+            "n": 11,
+            "positive": 11,
+            "negative": 0,
+            "groups": 9,
+            "errors": 1,
+            "fn": 1,
+            "fp": 0,
+            "error_rate": 0.09090909090909091,
+            "fn_rate": 0.09090909090909091,
+            "fp_rate": null,
+            "q_mean": 0.5147200362248854
+          },
+          "0.6–0.8": {
+            "n": 19,
+            "positive": 19,
+            "negative": 0,
+            "groups": 9,
+            "errors": 3,
+            "fn": 3,
+            "fp": 0,
+            "error_rate": 0.15789473684210525,
+            "fn_rate": 0.15789473684210525,
+            "fp_rate": null,
+            "q_mean": 0.7054424348630404
+          },
+          "0.8–1": {
+            "n": 3,
+            "positive": 3,
+            "negative": 0,
+            "groups": 2,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.8026023705800375
+          }
+        },
+        "hrf": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.4–0.6": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.6–0.8": {
+            "n": 4,
+            "positive": 2,
+            "negative": 2,
+            "groups": 4,
+            "errors": 1,
+            "fn": 1,
+            "fp": 0,
+            "error_rate": 0.25,
+            "fn_rate": 0.5,
+            "fp_rate": 0.0,
+            "q_mean": 0.7083830386400223
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        },
+        "keh": {
+          "0–0.2": {
+            "n": 1,
+            "positive": 0,
+            "negative": 1,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.1636683046817779
+          },
+          "0.2–0.4": {
+            "n": 27,
+            "positive": 11,
+            "negative": 16,
+            "groups": 27,
+            "errors": 7,
+            "fn": 2,
+            "fp": 5,
+            "error_rate": 0.25925925925925924,
+            "fn_rate": 0.18181818181818182,
+            "fp_rate": 0.3125,
+            "q_mean": 0.3386617683702045
+          },
+          "0.4–0.6": {
+            "n": 117,
+            "positive": 62,
+            "negative": 55,
+            "groups": 117,
+            "errors": 21,
+            "fn": 17,
+            "fp": 4,
+            "error_rate": 0.1794871794871795,
+            "fn_rate": 0.27419354838709675,
+            "fp_rate": 0.07272727272727272,
+            "q_mean": 0.49662144189206964
+          },
+          "0.6–0.8": {
+            "n": 8,
+            "positive": 2,
+            "negative": 6,
+            "groups": 8,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": 0.0,
+            "q_mean": 0.6295997574925423
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        },
+        "lag_part1": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 32,
+            "positive": 18,
+            "negative": 14,
+            "groups": 32,
+            "errors": 4,
+            "fn": 0,
+            "fp": 4,
+            "error_rate": 0.125,
+            "fn_rate": 0.0,
+            "fp_rate": 0.2857142857142857,
+            "q_mean": 0.33887335006147623
+          },
+          "0.4–0.6": {
+            "n": 154,
+            "positive": 77,
+            "negative": 77,
+            "groups": 154,
+            "errors": 11,
+            "fn": 2,
+            "fp": 9,
+            "error_rate": 0.07142857142857142,
+            "fn_rate": 0.025974025974025976,
+            "fp_rate": 0.11688311688311688,
+            "q_mean": 0.5219088392211245
+          },
+          "0.6–0.8": {
+            "n": 262,
+            "positive": 73,
+            "negative": 189,
+            "groups": 262,
+            "errors": 21,
+            "fn": 5,
+            "fp": 16,
+            "error_rate": 0.08015267175572519,
+            "fn_rate": 0.0684931506849315,
+            "fp_rate": 0.08465608465608465,
+            "q_mean": 0.6898491403073755
+          },
+          "0.8–1": {
+            "n": 33,
+            "positive": 1,
+            "negative": 32,
+            "groups": 33,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": 0.0,
+            "q_mean": 0.8183901237718987
+          }
+        },
+        "les_av": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.4–0.6": {
+            "n": 1,
+            "positive": 1,
+            "negative": 0,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.4040039479732513
+          },
+          "0.6–0.8": {
+            "n": 1,
+            "positive": 0,
+            "negative": 1,
+            "groups": 1,
+            "errors": 1,
+            "fn": 0,
+            "fp": 1,
+            "error_rate": 1.0,
+            "fn_rate": null,
+            "fp_rate": 1.0,
+            "q_mean": 0.63114333152771
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        },
+        "mshf": {
+          "0–0.2": {
+            "n": 2,
+            "positive": 2,
+            "negative": 0,
+            "groups": 2,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.10830036550760265
+          },
+          "0.2–0.4": {
+            "n": 3,
+            "positive": 3,
+            "negative": 0,
+            "groups": 3,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.24331230918566385
+          },
+          "0.4–0.6": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.6–0.8": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        }
+      },
+      "quality_error_ranking": {
+        "error_auroc": 0.5091723994163019,
+        "error_auprc": 0.10102470290049993
+      },
+      "confident_errors": {
+        "n": 50,
+        "positive": 32,
+        "negative": 18,
+        "groups": 48,
+        "errors": 50,
+        "fn": 32,
+        "fp": 18,
+        "error_rate": 1.0,
+        "fn_rate": 1.0,
+        "fp_rate": 1.0,
+        "q_mean": 0.5782033118605614
+      },
+      "confident_highq_errors": {
+        "n": 41,
+        "positive": 29,
+        "negative": 12,
+        "groups": 39,
+        "errors": 41,
+        "fn": 29,
+        "fp": 12,
+        "error_rate": 1.0,
+        "fn_rate": 1.0,
+        "fp_rate": 1.0,
+        "q_mean": 0.6322324719370865
+      },
+      "correlation_q_disease": -0.19020124325029233,
+      "quality_error_ranking_by_class": {
+        "0": {
+          "error_auroc": 0.5950010307153164,
+          "error_auprc": 0.08727087930897598
+        },
+        "1": {
+          "error_auroc": 0.40816970546984577,
+          "error_auprc": 0.1254726236086109
+        }
+      },
+      "quality_error_ranking_by_source": {
+        "DATASET_101/ODIR-5K": {
+          "error_auroc": 0.5441428571428572,
+          "error_auprc": 0.0915776786961271
+        },
+        "Kaggle-Eye_diseases_classification": {
+          "error_auroc": 0.3301282051282051,
+          "error_auprc": 0.06367237546490771
+        },
+        "airogs-light-v2": {
+          "error_auroc": 0.519392836621337,
+          "error_auprc": 0.13952542897316747
+        },
+        "beh": {
+          "error_auroc": 0.3666666666666667,
+          "error_auprc": 0.10227272727272728
+        },
+        "crfo": {
+          "error_auroc": 0.0,
+          "error_auprc": 0.325
+        },
+        "fives": {
+          "error_auroc": 0.21739130434782608,
+          "error_auprc": 0.11530100334448161
+        },
+        "grape": {
+          "error_auroc": 0.4916666666666667,
+          "error_auprc": 0.18089912280701753
+        },
+        "hrf": {
+          "error_auroc": 1.0,
+          "error_auprc": 1.0
+        },
+        "keh": {
+          "error_auroc": 0.476,
+          "error_auprc": 0.1944339169772585
+        },
+        "lag_part1": {
+          "error_auroc": 0.6074906367041198,
+          "error_auprc": 0.10618376131897819
+        },
+        "les_av": {
+          "error_auroc": 0.0,
+          "error_auprc": 0.5
+        }
+      }
+    },
+    "val": {
+      "overall": {
+        "n": 2046,
+        "positive": 823,
+        "negative": 1223,
+        "groups": 1899,
+        "errors": 208,
+        "fn": 122,
+        "fp": 86,
+        "error_rate": 0.10166177908113393,
+        "fn_rate": 0.14823815309842042,
+        "fp_rate": 0.07031888798037612,
+        "q_mean": 0.5673468211285209
+      },
+      "quality_bins": {
+        "0–0.2": {
+          "n": 50,
+          "positive": 26,
+          "negative": 24,
+          "groups": 50,
+          "errors": 4,
+          "fn": 3,
+          "fp": 1,
+          "error_rate": 0.08,
+          "fn_rate": 0.11538461538461539,
+          "fp_rate": 0.041666666666666664,
+          "q_mean": 0.12968198008835313,
+          "error_rate_group_interval95": [
+            0.02,
+            0.16
+          ]
+        },
+        "0.2–0.4": {
+          "n": 300,
+          "positive": 135,
+          "negative": 165,
+          "groups": 290,
+          "errors": 36,
+          "fn": 19,
+          "fp": 17,
+          "error_rate": 0.12,
+          "fn_rate": 0.14074074074074075,
+          "fp_rate": 0.10303030303030303,
+          "q_mean": 0.32782223840554553,
+          "error_rate_group_interval95": [
+            0.08468477638876662,
+            0.15666666666666668
+          ]
+        },
+        "0.4–0.6": {
+          "n": 751,
+          "positive": 344,
+          "negative": 407,
+          "groups": 713,
+          "errors": 76,
+          "fn": 41,
+          "fp": 35,
+          "error_rate": 0.10119840213049268,
+          "fn_rate": 0.11918604651162791,
+          "fp_rate": 0.085995085995086,
+          "q_mean": 0.5037593647103493,
+          "error_rate_group_interval95": [
+            0.07957296186343914,
+            0.12315979148381606
+          ]
+        },
+        "0.6–0.8": {
+          "n": 791,
+          "positive": 286,
+          "negative": 505,
+          "groups": 757,
+          "errors": 83,
+          "fn": 50,
+          "fp": 33,
+          "error_rate": 0.10493046776232617,
+          "fn_rate": 0.17482517482517482,
+          "fp_rate": 0.06534653465346535,
+          "q_mean": 0.6943535086629363,
+          "error_rate_group_interval95": [
+            0.08478322816695635,
+            0.12706480304955528
+          ]
+        },
+        "0.8–1": {
+          "n": 154,
+          "positive": 32,
+          "negative": 122,
+          "groups": 150,
+          "errors": 9,
+          "fn": 9,
+          "fp": 0,
+          "error_rate": 0.05844155844155844,
+          "fn_rate": 0.28125,
+          "fp_rate": 0.0,
+          "q_mean": 0.8337916704741392,
+          "error_rate_group_interval95": [
+            0.02564102564102564,
+            0.09740259740259741
+          ]
+        }
+      },
+      "sources": {
+        "DATASET_101/ODIR-5K": {
+          "n": 277,
+          "positive": 21,
+          "negative": 256,
+          "groups": 180,
+          "errors": 21,
+          "fn": 7,
+          "fp": 14,
+          "error_rate": 0.07581227436823104,
+          "fn_rate": 0.3333333333333333,
+          "fp_rate": 0.0546875,
+          "q_mean": 0.5190138341825361
+        },
+        "Kaggle-Eye_diseases_classification": {
+          "n": 144,
+          "positive": 84,
+          "negative": 60,
+          "groups": 144,
+          "errors": 14,
+          "fn": 8,
+          "fp": 6,
+          "error_rate": 0.09722222222222222,
+          "fn_rate": 0.09523809523809523,
+          "fp_rate": 0.1,
+          "q_mean": 0.4603729555124624
+        },
+        "airogs-light-v2": {
+          "n": 767,
+          "positive": 382,
+          "negative": 385,
+          "groups": 767,
+          "errors": 97,
+          "fn": 71,
+          "fp": 26,
+          "error_rate": 0.12646675358539766,
+          "fn_rate": 0.18586387434554974,
+          "fp_rate": 0.06753246753246753,
+          "q_mean": 0.5937087884588067
+        },
+        "beh": {
+          "n": 33,
+          "positive": 8,
+          "negative": 25,
+          "groups": 33,
+          "errors": 5,
+          "fn": 3,
+          "fp": 2,
+          "error_rate": 0.15151515151515152,
+          "fn_rate": 0.375,
+          "fp_rate": 0.08,
+          "q_mean": 0.6665752031134836
+        },
+        "chaksu": {
+          "n": 86,
+          "positive": 0,
+          "negative": 86,
+          "groups": 86,
+          "errors": 0,
+          "fn": 0,
+          "fp": 0,
+          "error_rate": 0.0,
+          "fn_rate": null,
+          "fp_rate": 0.0,
+          "q_mean": 0.4150774828916372
+        },
+        "crfo": {
+          "n": 6,
+          "positive": 4,
+          "negative": 2,
+          "groups": 3,
+          "errors": 1,
+          "fn": 0,
+          "fp": 1,
+          "error_rate": 0.16666666666666666,
+          "fn_rate": 0.0,
+          "fp_rate": 0.5,
+          "q_mean": 0.5126295487085978
+        },
+        "fives": {
+          "n": 27,
+          "positive": 13,
+          "negative": 14,
+          "groups": 27,
+          "errors": 1,
+          "fn": 0,
+          "fp": 1,
+          "error_rate": 0.037037037037037035,
+          "fn_rate": 0.0,
+          "fp_rate": 0.07142857142857142,
+          "q_mean": 0.6555689832678547
+        },
+        "fundus_avseg": {
+          "n": 3,
+          "positive": 1,
+          "negative": 2,
+          "groups": 3,
+          "errors": 0,
+          "fn": 0,
+          "fp": 0,
+          "error_rate": 0.0,
+          "fn_rate": 0.0,
+          "fp_rate": 0.0,
+          "q_mean": 0.8329877058664957
+        },
+        "grape": {
+          "n": 58,
+          "positive": 58,
+          "negative": 0,
+          "groups": 13,
+          "errors": 3,
+          "fn": 3,
+          "fp": 0,
+          "error_rate": 0.05172413793103448,
+          "fn_rate": 0.05172413793103448,
+          "fp_rate": null,
+          "q_mean": 0.6098296138746985
+        },
+        "hrf": {
+          "n": 4,
+          "positive": 2,
+          "negative": 2,
+          "groups": 4,
+          "errors": 2,
+          "fn": 2,
+          "fp": 0,
+          "error_rate": 0.5,
+          "fn_rate": 1.0,
+          "fp_rate": 0.0,
+          "q_mean": 0.6787550300359726
+        },
+        "keh": {
+          "n": 153,
+          "positive": 75,
+          "negative": 78,
+          "groups": 153,
+          "errors": 19,
+          "fn": 13,
+          "fp": 6,
+          "error_rate": 0.12418300653594772,
+          "fn_rate": 0.17333333333333334,
+          "fp_rate": 0.07692307692307693,
+          "q_mean": 0.47161028548782946
+        },
+        "lag_part1": {
+          "n": 481,
+          "positive": 169,
+          "negative": 312,
+          "groups": 481,
+          "errors": 45,
+          "fn": 15,
+          "fp": 30,
+          "error_rate": 0.09355509355509356,
+          "fn_rate": 0.08875739644970414,
+          "fp_rate": 0.09615384615384616,
+          "q_mean": 0.6269910024196343
+        },
+        "les_av": {
+          "n": 2,
+          "positive": 1,
+          "negative": 1,
+          "groups": 2,
+          "errors": 0,
+          "fn": 0,
+          "fp": 0,
+          "error_rate": 0.0,
+          "fn_rate": 0.0,
+          "fp_rate": 0.0,
+          "q_mean": 0.5998791307210922
+        },
+        "mshf": {
+          "n": 5,
+          "positive": 5,
+          "negative": 0,
+          "groups": 5,
+          "errors": 0,
+          "fn": 0,
+          "fp": 0,
+          "error_rate": 0.0,
+          "fn_rate": 0.0,
+          "fp_rate": null,
+          "q_mean": 0.2727455198764801
+        }
+      },
+      "by_source_quality": {
+        "DATASET_101/ODIR-5K": {
+          "0–0.2": {
+            "n": 7,
+            "positive": 0,
+            "negative": 7,
+            "groups": 7,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.1570677246366228
+          },
+          "0.2–0.4": {
+            "n": 56,
+            "positive": 6,
+            "negative": 50,
+            "groups": 48,
+            "errors": 5,
+            "fn": 1,
+            "fp": 4,
+            "error_rate": 0.08928571428571429,
+            "fn_rate": 0.16666666666666666,
+            "fp_rate": 0.08,
+            "q_mean": 0.31510240291910513
+          },
+          "0.4–0.6": {
+            "n": 129,
+            "positive": 11,
+            "negative": 118,
+            "groups": 103,
+            "errors": 11,
+            "fn": 4,
+            "fp": 7,
+            "error_rate": 0.08527131782945736,
+            "fn_rate": 0.36363636363636365,
+            "fp_rate": 0.059322033898305086,
+            "q_mean": 0.517761578393537
+          },
+          "0.6–0.8": {
+            "n": 79,
+            "positive": 4,
+            "negative": 75,
+            "groups": 62,
+            "errors": 5,
+            "fn": 2,
+            "fp": 3,
+            "error_rate": 0.06329113924050633,
+            "fn_rate": 0.5,
+            "fp_rate": 0.04,
+            "q_mean": 0.6732667654375487
+          },
+          "0.8–1": {
+            "n": 6,
+            "positive": 0,
+            "negative": 6,
+            "groups": 5,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.8403842250506083
+          }
+        },
+        "Kaggle-Eye_diseases_classification": {
+          "0–0.2": {
+            "n": 13,
+            "positive": 8,
+            "negative": 5,
+            "groups": 13,
+            "errors": 1,
+            "fn": 0,
+            "fp": 1,
+            "error_rate": 0.07692307692307693,
+            "fn_rate": 0.0,
+            "fp_rate": 0.2,
+            "q_mean": 0.1224516168809854
+          },
+          "0.2–0.4": {
+            "n": 36,
+            "positive": 28,
+            "negative": 8,
+            "groups": 36,
+            "errors": 3,
+            "fn": 0,
+            "fp": 3,
+            "error_rate": 0.08333333333333333,
+            "fn_rate": 0.0,
+            "fp_rate": 0.375,
+            "q_mean": 0.31195904604262775
+          },
+          "0.4–0.6": {
+            "n": 57,
+            "positive": 36,
+            "negative": 21,
+            "groups": 57,
+            "errors": 6,
+            "fn": 4,
+            "fp": 2,
+            "error_rate": 0.10526315789473684,
+            "fn_rate": 0.1111111111111111,
+            "fp_rate": 0.09523809523809523,
+            "q_mean": 0.47990655323915316
+          },
+          "0.6–0.8": {
+            "n": 34,
+            "positive": 12,
+            "negative": 22,
+            "groups": 34,
+            "errors": 4,
+            "fn": 4,
+            "fp": 0,
+            "error_rate": 0.11764705882352941,
+            "fn_rate": 0.3333333333333333,
+            "fp_rate": 0.0,
+            "q_mean": 0.6724765213096843
+          },
+          "0.8–1": {
+            "n": 4,
+            "positive": 0,
+            "negative": 4,
+            "groups": 4,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.8131084144115448
+          }
+        },
+        "airogs-light-v2": {
+          "0–0.2": {
+            "n": 24,
+            "positive": 14,
+            "negative": 10,
+            "groups": 24,
+            "errors": 3,
+            "fn": 3,
+            "fp": 0,
+            "error_rate": 0.125,
+            "fn_rate": 0.21428571428571427,
+            "fp_rate": 0.0,
+            "q_mean": 0.12335866627593832
+          },
+          "0.2–0.4": {
+            "n": 93,
+            "positive": 61,
+            "negative": 32,
+            "groups": 93,
+            "errors": 14,
+            "fn": 12,
+            "fp": 2,
+            "error_rate": 0.15053763440860216,
+            "fn_rate": 0.19672131147540983,
+            "fp_rate": 0.0625,
+            "q_mean": 0.3241291978666859
+          },
+          "0.4–0.6": {
+            "n": 238,
+            "positive": 143,
+            "negative": 95,
+            "groups": 238,
+            "errors": 28,
+            "fn": 15,
+            "fp": 13,
+            "error_rate": 0.11764705882352941,
+            "fn_rate": 0.1048951048951049,
+            "fp_rate": 0.1368421052631579,
+            "q_mean": 0.4978637879385668
+          },
+          "0.6–0.8": {
+            "n": 313,
+            "positive": 140,
+            "negative": 173,
+            "groups": 313,
+            "errors": 44,
+            "fn": 33,
+            "fp": 11,
+            "error_rate": 0.14057507987220447,
+            "fn_rate": 0.2357142857142857,
+            "fp_rate": 0.06358381502890173,
+            "q_mean": 0.705127686547776
+          },
+          "0.8–1": {
+            "n": 99,
+            "positive": 24,
+            "negative": 75,
+            "groups": 99,
+            "errors": 8,
+            "fn": 8,
+            "fp": 0,
+            "error_rate": 0.08080808080808081,
+            "fn_rate": 0.3333333333333333,
+            "fp_rate": 0.0,
+            "q_mean": 0.8391259589580574
+          }
+        },
+        "beh": {
+          "0–0.2": {
+            "n": 2,
+            "positive": 0,
+            "negative": 2,
+            "groups": 2,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.1055366806685924
+          },
+          "0.2–0.4": {
+            "n": 4,
+            "positive": 3,
+            "negative": 1,
+            "groups": 4,
+            "errors": 3,
+            "fn": 2,
+            "fp": 1,
+            "error_rate": 0.75,
+            "fn_rate": 0.6666666666666666,
+            "fp_rate": 1.0,
+            "q_mean": 0.3717072010040283
+          },
+          "0.4–0.6": {
+            "n": 2,
+            "positive": 1,
+            "negative": 1,
+            "groups": 2,
+            "errors": 1,
+            "fn": 1,
+            "fp": 0,
+            "error_rate": 0.5,
+            "fn_rate": 1.0,
+            "fp_rate": 0.0,
+            "q_mean": 0.5287750661373138
+          },
+          "0.6–0.8": {
+            "n": 16,
+            "positive": 3,
+            "negative": 13,
+            "groups": 16,
+            "errors": 1,
+            "fn": 0,
+            "fp": 1,
+            "error_rate": 0.0625,
+            "fn_rate": 0.0,
+            "fp_rate": 0.07692307692307693,
+            "q_mean": 0.7334815301001072
+          },
+          "0.8–1": {
+            "n": 9,
+            "positive": 1,
+            "negative": 8,
+            "groups": 9,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": 0.0,
+            "q_mean": 0.8339805470572578
+          }
+        },
+        "chaksu": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 40,
+            "positive": 0,
+            "negative": 40,
+            "groups": 40,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.34196444451808927
+          },
+          "0.4–0.6": {
+            "n": 44,
+            "positive": 0,
+            "negative": 44,
+            "groups": 44,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.46938204155726865
+          },
+          "0.6–0.8": {
+            "n": 2,
+            "positive": 0,
+            "negative": 2,
+            "groups": 2,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.6826379597187042
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        },
+        "crfo": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.4–0.6": {
+            "n": 6,
+            "positive": 4,
+            "negative": 2,
+            "groups": 3,
+            "errors": 1,
+            "fn": 0,
+            "fp": 1,
+            "error_rate": 0.16666666666666666,
+            "fn_rate": 0.0,
+            "fp_rate": 0.5,
+            "q_mean": 0.5126295487085978
+          },
+          "0.6–0.8": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        },
+        "fives": {
+          "0–0.2": {
+            "n": 1,
+            "positive": 1,
+            "negative": 0,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.1744016855955124
+          },
+          "0.2–0.4": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.4–0.6": {
+            "n": 4,
+            "positive": 4,
+            "negative": 0,
+            "groups": 4,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.5230146944522858
+          },
+          "0.6–0.8": {
+            "n": 19,
+            "positive": 8,
+            "negative": 11,
+            "groups": 19,
+            "errors": 1,
+            "fn": 0,
+            "fp": 1,
+            "error_rate": 0.05263157894736842,
+            "fn_rate": 0.0,
+            "fp_rate": 0.09090909090909091,
+            "q_mean": 0.6807879335001895
+          },
+          "0.8–1": {
+            "n": 3,
+            "positive": 0,
+            "negative": 3,
+            "groups": 3,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.8329771161079407
+          }
+        },
+        "fundus_avseg": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.4–0.6": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.6–0.8": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.8–1": {
+            "n": 3,
+            "positive": 1,
+            "negative": 2,
+            "groups": 3,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": 0.0,
+            "q_mean": 0.8329877058664957
+          }
+        },
+        "grape": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 5,
+            "positive": 5,
+            "negative": 0,
+            "groups": 3,
+            "errors": 1,
+            "fn": 1,
+            "fp": 0,
+            "error_rate": 0.2,
+            "fn_rate": 0.2,
+            "fp_rate": null,
+            "q_mean": 0.33823405504226683
+          },
+          "0.4–0.6": {
+            "n": 18,
+            "positive": 18,
+            "negative": 0,
+            "groups": 10,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.5039617551697625
+          },
+          "0.6–0.8": {
+            "n": 29,
+            "positive": 29,
+            "negative": 0,
+            "groups": 12,
+            "errors": 1,
+            "fn": 1,
+            "fp": 0,
+            "error_rate": 0.034482758620689655,
+            "fn_rate": 0.034482758620689655,
+            "fp_rate": null,
+            "q_mean": 0.678035542882722
+          },
+          "0.8–1": {
+            "n": 6,
+            "positive": 6,
+            "negative": 0,
+            "groups": 3,
+            "errors": 1,
+            "fn": 1,
+            "fp": 0,
+            "error_rate": 0.16666666666666666,
+            "fn_rate": 0.16666666666666666,
+            "fp_rate": null,
+            "q_mean": 0.8241008321444193
+          }
+        },
+        "hrf": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.4–0.6": {
+            "n": 1,
+            "positive": 0,
+            "negative": 1,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.5832535028457642
+          },
+          "0.6–0.8": {
+            "n": 3,
+            "positive": 2,
+            "negative": 1,
+            "groups": 3,
+            "errors": 2,
+            "fn": 2,
+            "fp": 0,
+            "error_rate": 0.6666666666666666,
+            "fn_rate": 1.0,
+            "fp_rate": 0.0,
+            "q_mean": 0.7105888724327087
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        },
+        "keh": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 34,
+            "positive": 14,
+            "negative": 20,
+            "groups": 34,
+            "errors": 4,
+            "fn": 1,
+            "fp": 3,
+            "error_rate": 0.11764705882352941,
+            "fn_rate": 0.07142857142857142,
+            "fp_rate": 0.15,
+            "q_mean": 0.35374879486420574
+          },
+          "0.4–0.6": {
+            "n": 108,
+            "positive": 57,
+            "negative": 51,
+            "groups": 108,
+            "errors": 14,
+            "fn": 11,
+            "fp": 3,
+            "error_rate": 0.12962962962962962,
+            "fn_rate": 0.19298245614035087,
+            "fp_rate": 0.058823529411764705,
+            "q_mean": 0.49373191208751116
+          },
+          "0.6–0.8": {
+            "n": 11,
+            "positive": 4,
+            "negative": 7,
+            "groups": 11,
+            "errors": 1,
+            "fn": 1,
+            "fp": 0,
+            "error_rate": 0.09090909090909091,
+            "fn_rate": 0.25,
+            "fp_rate": 0.0,
+            "q_mean": 0.6187152862548828
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        },
+        "lag_part1": {
+          "0–0.2": {
+            "n": 2,
+            "positive": 2,
+            "negative": 0,
+            "groups": 2,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.1603046134114265
+          },
+          "0.2–0.4": {
+            "n": 29,
+            "positive": 15,
+            "negative": 14,
+            "groups": 29,
+            "errors": 6,
+            "fn": 2,
+            "fp": 4,
+            "error_rate": 0.20689655172413793,
+            "fn_rate": 0.13333333333333333,
+            "fp_rate": 0.2857142857142857,
+            "q_mean": 0.3320272585441326
+          },
+          "0.4–0.6": {
+            "n": 142,
+            "positive": 69,
+            "negative": 73,
+            "groups": 142,
+            "errors": 15,
+            "fn": 6,
+            "fp": 9,
+            "error_rate": 0.1056338028169014,
+            "fn_rate": 0.08695652173913043,
+            "fp_rate": 0.1232876712328767,
+            "q_mean": 0.5278338141424556
+          },
+          "0.6–0.8": {
+            "n": 284,
+            "positive": 83,
+            "negative": 201,
+            "groups": 284,
+            "errors": 24,
+            "fn": 7,
+            "fp": 17,
+            "error_rate": 0.08450704225352113,
+            "fn_rate": 0.08433734939759036,
+            "fp_rate": 0.0845771144278607,
+            "q_mean": 0.6939911510742885
+          },
+          "0.8–1": {
+            "n": 24,
+            "positive": 0,
+            "negative": 24,
+            "groups": 24,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.8161409969131151
+          }
+        },
+        "les_av": {
+          "0–0.2": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.2–0.4": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.4–0.6": {
+            "n": 1,
+            "positive": 0,
+            "negative": 1,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": null,
+            "fp_rate": 0.0,
+            "q_mean": 0.4534785449504852
+          },
+          "0.6–0.8": {
+            "n": 1,
+            "positive": 1,
+            "negative": 0,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.7462797164916992
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        },
+        "mshf": {
+          "0–0.2": {
+            "n": 1,
+            "positive": 1,
+            "negative": 0,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.1260616481304168
+          },
+          "0.2–0.4": {
+            "n": 3,
+            "positive": 3,
+            "negative": 0,
+            "groups": 3,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.2711898386478424
+          },
+          "0.4–0.6": {
+            "n": 1,
+            "positive": 1,
+            "negative": 0,
+            "groups": 1,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": 0.0,
+            "fn_rate": 0.0,
+            "fp_rate": null,
+            "q_mean": 0.4240964353084564
+          },
+          "0.6–0.8": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          },
+          "0.8–1": {
+            "n": 0,
+            "positive": 0,
+            "negative": 0,
+            "groups": 0,
+            "errors": 0,
+            "fn": 0,
+            "fp": 0,
+            "error_rate": null,
+            "fn_rate": null,
+            "fp_rate": null,
+            "q_mean": null
+          }
+        }
+      },
+      "quality_error_ranking": {
+        "error_auroc": 0.5237951996317067,
+        "error_auprc": 0.10955165973322092
+      },
+      "confident_errors": {
+        "n": 46,
+        "positive": 28,
+        "negative": 18,
+        "groups": 46,
+        "errors": 46,
+        "fn": 28,
+        "fp": 18,
+        "error_rate": 1.0,
+        "fn_rate": 1.0,
+        "fp_rate": 1.0,
+        "q_mean": 0.5170153243386227
+      },
+      "confident_highq_errors": {
+        "n": 34,
+        "positive": 21,
+        "negative": 13,
+        "groups": 34,
+        "errors": 34,
+        "fn": 21,
+        "fp": 13,
+        "error_rate": 1.0,
+        "fn_rate": 1.0,
+        "fp_rate": 1.0,
+        "q_mean": 0.5995722623432383
+      },
+      "correlation_q_disease": -0.19719942317473568,
+      "quality_error_ranking_by_class": {
+        "0": {
+          "error_auroc": 0.604865926244094,
+          "error_auprc": 0.09183193366387093
+        },
+        "1": {
+          "error_auroc": 0.42779635649306613,
+          "error_auprc": 0.13632258543950437
+        }
+      },
+      "quality_error_ranking_by_source": {
+        "DATASET_101/ODIR-5K": {
+          "error_auroc": 0.5124627976190476,
+          "error_auprc": 0.08310463416484211
+        },
+        "Kaggle-Eye_diseases_classification": {
+          "error_auroc": 0.4351648351648352,
+          "error_auprc": 0.09003094672556797
+        },
+        "airogs-light-v2": {
+          "error_auroc": 0.5321587936605632,
+          "error_auprc": 0.14826923010382637
+        },
+        "beh": {
+          "error_auroc": 0.8357142857142857,
+          "error_auprc": 0.45358395989974937
+        },
+        "crfo": {
+          "error_auroc": 0.6,
+          "error_auprc": 0.3333333333333333
+        },
+        "fives": {
+          "error_auroc": 0.3846153846153846,
+          "error_auprc": 0.058823529411764705
+        },
+        "grape": {
+          "error_auroc": 0.4,
+          "error_auprc": 0.1987373737373737
+        },
+        "hrf": {
+          "error_auroc": 0.0,
+          "error_auprc": 0.41666666666666663
+        },
+        "keh": {
+          "error_auroc": 0.5483110761979575,
+          "error_auprc": 0.1429436052107334
+        },
+        "lag_part1": {
+          "error_auroc": 0.5992864424057084,
+          "error_auprc": 0.1444767466048077
+        }
+      }
+    }
+  },
+  "quality_metadata": {
+    "strata": {
+      "train": {
+        "fives": {
+          "poor": {
+            "positive": 44,
+            "negative": 3
+          },
+          "other": {
+            "positive": 46,
+            "negative": 83
+          }
+        },
+        "mshf": {
+          "poor": {
+            "positive": 28,
+            "negative": 0
+          },
+          "other": {
+            "positive": 2,
+            "negative": 0
+          }
+        }
+      },
+      "val": {
+        "fives": {
+          "poor": {
+            "positive": 7,
+            "negative": 1
+          },
+          "other": {
+            "positive": 6,
+            "negative": 13
+          }
+        },
+        "mshf": {
+          "poor": {
+            "positive": 5,
+            "negative": 0
+          },
+          "other": {
+            "positive": 0,
+            "negative": 0
+          }
+        }
+      },
+      "boundary": {
+        "fives": {
+          "poor": {
+            "positive": 7,
+            "negative": 0
+          },
+          "other": {
+            "positive": 6,
+            "negative": 14
+          }
+        },
+        "mshf": {
+          "poor": {
+            "positive": 5,
+            "negative": 0
+          },
+          "other": {
+            "positive": 0,
+            "negative": 0
+          }
+        }
+      },
+      "test": {
+        "fives": {
+          "poor": {
+            "positive": 41,
+            "negative": 18
+          },
+          "other": {
+            "positive": 34,
+            "negative": 61
+          }
+        },
+        "mshf": {
+          "poor": {
+            "positive": 9,
+            "negative": 0
+          },
+          "other": {
+            "positive": 0,
+            "negative": 0
+          }
+        }
+      }
+    },
+    "quality_target_overlap": {
+      "original_quality": {
+        "training_n": 12147,
+        "same_file_hash_evaluation_images": 0
+      },
+      "eyeq_quality": {
+        "training_n": 4722,
+        "same_file_hash_evaluation_images": 0
+      }
+    },
+    "human_quality_score_checks": {
+      "fives": {
+        "n": 54,
+        "poor": 15,
+        "poor_q_median": 0.5260777473449707,
+        "other_q_median": 0.7007932662963867,
+        "poor_detection_auc": 0.9025641025641025,
+        "poor_q_below_point2": 1,
+        "poor_q_below_point4": 1,
+        "eyeq_poor_detection_auc": 0.9641025641025641
+      },
+      "mshf": {
+        "n": 10,
+        "poor": 10,
+        "poor_q_median": 0.24525967240333557,
+        "other_q_median": null,
+        "poor_detection_auc": null,
+        "poor_q_below_point2": 3,
+        "poor_q_below_point4": 9
+      }
+    },
+    "fives_training_quality_label_association": {
+      "table": [
+        [
+          44,
+          3
+        ],
+        [
+          46,
+          83
+        ]
+      ],
+      "odds_ratio": 26.463768115942027,
+      "fisher_p": 7.521272217145044e-13
+    },
+    "original_source_composition": {
+      "fives_official": {
+        "Train": {
+          "A": {
+            "n": 150,
+            "poor": 21
+          },
+          "D": {
+            "n": 150,
+            "poor": 42
+          },
+          "G": {
+            "n": 150,
+            "poor": 73
+          },
+          "N": {
+            "n": 150,
+            "poor": 5
+          }
+        },
+        "Test": {
+          "A": {
+            "n": 50,
+            "poor": 8
+          },
+          "D": {
+            "n": 50,
+            "poor": 14
+          },
+          "G": {
+            "n": 50,
+            "poor": 28
+          },
+          "N": {
+            "n": 50,
+            "poor": 17
+          }
+        }
+      },
+      "mshf_healthy": {
+        "n": 26,
+        "overall_poor": 0,
+        "negative_candidates": 26,
+        "excluded": 26,
+        "reasons": {
+          "duplicate_within_new_acquisition": 20,
+          "conflicting_identical_photo_labels|duplicate_within_new_acquisition": 6
+        }
+      }
+    },
+    "zero_error_precision": {
+      "upper_one_sided95_rate": {
+        "12": 0.22092219194555585,
+        "30": 0.09503385285530419,
+        "59": 0.049507609888227,
+        "100": 0.029513049607039932
+      },
+      "needed_zero_error_independent_cases_for_one_sided95_upper_below_point05": 59,
+      "approximate_cases_for_95_halfwidth_point05_at_rate_point10": 139
+    }
+  },
+  "crossfit_error_ranking": {
+    "n": 2053,
+    "errors": 208,
+    "error_prevalence": 0.10131514856307842,
+    "folds": 5,
+    "grouped_crossfit_seed": 20261115,
+    "models": {
+      "uncertainty": {
+        "error_auroc": 0.8772357723577237,
+        "error_auprc": 0.3853839745114791,
+        "review": {
+          "0.1": {
+            "k": 206,
+            "actual_review_fraction": 0.10034096444227959,
+            "captured_errors": 81,
+            "captured_fn": 54,
+            "remaining_errors": 127,
+            "remaining_fn": 70,
+            "remaining_images": 1847,
+            "remaining_error_rate": 0.06876015159718463
+          },
+          "0.2": {
+            "k": 411,
+            "actual_review_fraction": 0.20019483682415976,
+            "captured_errors": 145,
+            "captured_fn": 86,
+            "remaining_errors": 63,
+            "remaining_fn": 38,
+            "remaining_images": 1642,
+            "remaining_error_rate": 0.03836784409257003
+          },
+          "0.3": {
+            "k": 616,
+            "actual_review_fraction": 0.30004870920603993,
+            "captured_errors": 177,
+            "captured_fn": 102,
+            "remaining_errors": 31,
+            "remaining_fn": 22,
+            "remaining_images": 1437,
+            "remaining_error_rate": 0.021572720946416143
+          }
+        },
+        "error_auroc_interval": [
+          0.8573724702228764,
+          0.8960038767612327
+        ]
+      },
+      "low_quality": {
+        "error_auroc": 0.5091723994163019,
+        "error_auprc": 0.10102470290049993,
+        "review": {
+          "0.1": {
+            "k": 206,
+            "actual_review_fraction": 0.10034096444227959,
+            "captured_errors": 19,
+            "captured_fn": 8,
+            "remaining_errors": 189,
+            "remaining_fn": 116,
+            "remaining_images": 1847,
+            "remaining_error_rate": 0.10232809962100704
+          },
+          "0.2": {
+            "k": 411,
+            "actual_review_fraction": 0.20019483682415976,
+            "captured_errors": 39,
+            "captured_fn": 18,
+            "remaining_errors": 169,
+            "remaining_fn": 106,
+            "remaining_images": 1642,
+            "remaining_error_rate": 0.10292326431181487
+          },
+          "0.3": {
+            "k": 616,
+            "actual_review_fraction": 0.30004870920603993,
+            "captured_errors": 53,
+            "captured_fn": 28,
+            "remaining_errors": 155,
+            "remaining_fn": 96,
+            "remaining_images": 1437,
+            "remaining_error_rate": 0.10786360473208072
+          }
+        },
+        "error_auroc_interval": [
+          0.4702607153044121,
+          0.5476084562806699
+        ]
+      },
+      "p_model": {
+        "error_auroc": 0.877981029810298,
+        "error_auprc": 0.3775781048062262,
+        "review": {
+          "0.1": {
+            "k": 206,
+            "actual_review_fraction": 0.10034096444227959,
+            "captured_errors": 83,
+            "captured_fn": 58,
+            "remaining_errors": 125,
+            "remaining_fn": 66,
+            "remaining_images": 1847,
+            "remaining_error_rate": 0.0676773145641581
+          },
+          "0.2": {
+            "k": 411,
+            "actual_review_fraction": 0.20019483682415976,
+            "captured_errors": 141,
+            "captured_fn": 87,
+            "remaining_errors": 67,
+            "remaining_fn": 37,
+            "remaining_images": 1642,
+            "remaining_error_rate": 0.04080389768574909
+          },
+          "0.3": {
+            "k": 616,
+            "actual_review_fraction": 0.30004870920603993,
+            "captured_errors": 177,
+            "captured_fn": 108,
+            "remaining_errors": 31,
+            "remaining_fn": 16,
+            "remaining_images": 1437,
+            "remaining_error_rate": 0.021572720946416143
+          }
+        }
+      },
+      "pq_model": {
+        "error_auroc": 0.8782754846779237,
+        "error_auprc": 0.38431286580000956,
+        "review": {
+          "0.1": {
+            "k": 206,
+            "actual_review_fraction": 0.10034096444227959,
+            "captured_errors": 83,
+            "captured_fn": 59,
+            "remaining_errors": 125,
+            "remaining_fn": 65,
+            "remaining_images": 1847,
+            "remaining_error_rate": 0.0676773145641581
+          },
+          "0.2": {
+            "k": 411,
+            "actual_review_fraction": 0.20019483682415976,
+            "captured_errors": 142,
+            "captured_fn": 90,
+            "remaining_errors": 66,
+            "remaining_fn": 34,
+            "remaining_images": 1642,
+            "remaining_error_rate": 0.040194884287454324
+          },
+          "0.3": {
+            "k": 616,
+            "actual_review_fraction": 0.30004870920603993,
+            "captured_errors": 178,
+            "captured_fn": 109,
+            "remaining_errors": 30,
+            "remaining_fn": 15,
+            "remaining_images": 1437,
+            "remaining_error_rate": 0.020876826722338204
+          }
+        }
+      },
+      "p_source_model": {
+        "error_auroc": 0.8639279758182197,
+        "error_auprc": 0.34204453326522916,
+        "review": {
+          "0.1": {
+            "k": 206,
+            "actual_review_fraction": 0.10034096444227959,
+            "captured_errors": 81,
+            "captured_fn": 58,
+            "remaining_errors": 127,
+            "remaining_fn": 66,
+            "remaining_images": 1847,
+            "remaining_error_rate": 0.06876015159718463
+          },
+          "0.2": {
+            "k": 411,
+            "actual_review_fraction": 0.20019483682415976,
+            "captured_errors": 135,
+            "captured_fn": 86,
+            "remaining_errors": 73,
+            "remaining_fn": 38,
+            "remaining_images": 1642,
+            "remaining_error_rate": 0.044457978075517664
+          },
+          "0.3": {
+            "k": 616,
+            "actual_review_fraction": 0.30004870920603993,
+            "captured_errors": 171,
+            "captured_fn": 104,
+            "remaining_errors": 37,
+            "remaining_fn": 20,
+            "remaining_images": 1437,
+            "remaining_error_rate": 0.025748086290883786
+          }
+        }
+      },
+      "pq_source_model": {
+        "error_auroc": 0.8642484886387326,
+        "error_auprc": 0.3426146217181661,
+        "review": {
+          "0.1": {
+            "k": 206,
+            "actual_review_fraction": 0.10034096444227959,
+            "captured_errors": 81,
+            "captured_fn": 59,
+            "remaining_errors": 127,
+            "remaining_fn": 65,
+            "remaining_images": 1847,
+            "remaining_error_rate": 0.06876015159718463
+          },
+          "0.2": {
+            "k": 411,
+            "actual_review_fraction": 0.20019483682415976,
+            "captured_errors": 138,
+            "captured_fn": 87,
+            "remaining_errors": 70,
+            "remaining_fn": 37,
+            "remaining_images": 1642,
+            "remaining_error_rate": 0.04263093788063337
+          },
+          "0.3": {
+            "k": 616,
+            "actual_review_fraction": 0.30004870920603993,
+            "captured_errors": 170,
+            "captured_fn": 104,
+            "remaining_errors": 38,
+            "remaining_fn": 20,
+            "remaining_images": 1437,
+            "remaining_error_rate": 0.026443980514961725
+          }
+        }
+      },
+      "eyeq_low_quality": {
+        "error_auroc": 0.5232723577235772,
+        "error_auprc": 0.1040316000033984,
+        "review": {
+          "0.1": {
+            "k": 206,
+            "actual_review_fraction": 0.10034096444227959,
+            "captured_errors": 17,
+            "captured_fn": 9,
+            "remaining_errors": 191,
+            "remaining_fn": 115,
+            "remaining_images": 1847,
+            "remaining_error_rate": 0.10341093665403357
+          },
+          "0.2": {
+            "k": 411,
+            "actual_review_fraction": 0.20019483682415976,
+            "captured_errors": 37,
+            "captured_fn": 21,
+            "remaining_errors": 171,
+            "remaining_fn": 103,
+            "remaining_images": 1642,
+            "remaining_error_rate": 0.10414129110840438
+          },
+          "0.3": {
+            "k": 616,
+            "actual_review_fraction": 0.30004870920603993,
+            "captured_errors": 60,
+            "captured_fn": 32,
+            "remaining_errors": 148,
+            "remaining_fn": 92,
+            "remaining_images": 1437,
+            "remaining_error_rate": 0.10299234516353514
+          }
+        }
+      },
+      "p_eyeq_model": {
+        "error_auroc": 0.8775224098394829,
+        "error_auprc": 0.38177939629482444,
+        "review": {
+          "0.1": {
+            "k": 206,
+            "actual_review_fraction": 0.10034096444227959,
+            "captured_errors": 83,
+            "captured_fn": 59,
+            "remaining_errors": 125,
+            "remaining_fn": 65,
+            "remaining_images": 1847,
+            "remaining_error_rate": 0.0676773145641581
+          },
+          "0.2": {
+            "k": 411,
+            "actual_review_fraction": 0.20019483682415976,
+            "captured_errors": 145,
+            "captured_fn": 90,
+            "remaining_errors": 63,
+            "remaining_fn": 34,
+            "remaining_images": 1642,
+            "remaining_error_rate": 0.03836784409257003
+          },
+          "0.3": {
+            "k": 616,
+            "actual_review_fraction": 0.30004870920603993,
+            "captured_errors": 177,
+            "captured_fn": 108,
+            "remaining_errors": 31,
+            "remaining_fn": 16,
+            "remaining_images": 1437,
+            "remaining_error_rate": 0.021572720946416143
+          }
+        }
+      }
+    },
+    "contrasts": {
+      "pq_model minus p_model": {
+        "auc": {
+          "difference": 0.00029445486762569306,
+          "interval_95": [
+            -0.001580198129918095,
+            0.002254869057518288
+          ]
+        },
+        "auprc": {
+          "difference": 0.00673476099378334,
+          "interval_95": [
+            -0.014198950559474297,
+            0.027697364316830432
+          ]
+        },
+        "review": {
+          "0.1": {
+            "additional_errors_captured": 0,
+            "fixed_mask_group_bootstrap_interval_95": [
+              -6.0,
+              7.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -5.0,
+              5.0
+            ]
+          },
+          "0.2": {
+            "additional_errors_captured": 1,
+            "fixed_mask_group_bootstrap_interval_95": [
+              -3.0,
+              5.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -2.0,
+              7.0
+            ]
+          },
+          "0.3": {
+            "additional_errors_captured": 1,
+            "fixed_mask_group_bootstrap_interval_95": [
+              -2.0,
+              5.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -4.0,
+              5.0
+            ]
+          }
+        }
+      },
+      "pq_source_model minus p_source_model": {
+        "auc": {
+          "difference": 0.0003205128205129304,
+          "interval_95": [
+            -0.0018175860471612876,
+            0.0024421116146001198
+          ]
+        },
+        "auprc": {
+          "difference": 0.0005700884529369343,
+          "interval_95": [
+            -0.009327609312353921,
+            0.010707262939623863
+          ]
+        },
+        "review": {
+          "0.1": {
+            "additional_errors_captured": 0,
+            "fixed_mask_group_bootstrap_interval_95": [
+              -5.0,
+              5.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -4.0,
+              5.0
+            ]
+          },
+          "0.2": {
+            "additional_errors_captured": 3,
+            "fixed_mask_group_bootstrap_interval_95": [
+              -1.0,
+              8.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -1.0,
+              7.0
+            ]
+          },
+          "0.3": {
+            "additional_errors_captured": -1,
+            "fixed_mask_group_bootstrap_interval_95": [
+              -5.0,
+              2.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -3.0,
+              6.0
+            ]
+          }
+        }
+      },
+      "pq_model minus uncertainty": {
+        "auc": {
+          "difference": 0.001039712320200059,
+          "interval_95": [
+            -0.0033905183521053595,
+            0.005329600569945438
+          ]
+        },
+        "auprc": {
+          "difference": -0.0010711087114695372,
+          "interval_95": [
+            -0.02697709539601689,
+            0.026142621234329356
+          ]
+        },
+        "review": {
+          "0.1": {
+            "additional_errors_captured": 2,
+            "fixed_mask_group_bootstrap_interval_95": [
+              -4.0,
+              9.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -7.0,
+              6.0
+            ]
+          },
+          "0.2": {
+            "additional_errors_captured": -3,
+            "fixed_mask_group_bootstrap_interval_95": [
+              -9.0,
+              3.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -8.0,
+              6.0
+            ]
+          },
+          "0.3": {
+            "additional_errors_captured": 1,
+            "fixed_mask_group_bootstrap_interval_95": [
+              -6.0,
+              8.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -7.0,
+              9.0
+            ]
+          }
+        }
+      },
+      "p_eyeq_model minus p_model": {
+        "auc": {
+          "difference": -0.00045861997081508843,
+          "interval_95": [
+            -0.001968525854570119,
+            0.001032011035784649
+          ]
+        },
+        "auprc": {
+          "difference": 0.004201291488598213,
+          "interval_95": [
+            -0.013770958140992991,
+            0.02239329829113048
+          ]
+        },
+        "review": {
+          "0.1": {
+            "additional_errors_captured": 0,
+            "fixed_mask_group_bootstrap_interval_95": [
+              -5.0,
+              6.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -5.0,
+              4.0
+            ]
+          },
+          "0.2": {
+            "additional_errors_captured": 4,
+            "fixed_mask_group_bootstrap_interval_95": [
+              0.0,
+              9.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -2.0,
+              7.0
+            ]
+          },
+          "0.3": {
+            "additional_errors_captured": 0,
+            "fixed_mask_group_bootstrap_interval_95": [
+              -4.0,
+              4.0
+            ],
+            "matched_capacity_group_bootstrap_interval_95": [
+              -3.0,
+              4.0
+            ]
+          }
+        }
+      }
+    },
+    "split_sensitivity": [
+      {
+        "seed": 20261116,
+        "p": {
+          "error_auroc": 0.8778559516364395,
+          "error_auprc": 0.3854404186007213
+        },
+        "pq": {
+          "error_auroc": 0.8780644152595372,
+          "error_auprc": 0.38362018644716067
+        }
+      },
+      {
+        "seed": 20261117,
+        "p": {
+          "error_auroc": 0.8762742338961851,
+          "error_auprc": 0.3919787578703432
+        },
+        "pq": {
+          "error_auroc": 0.8762794454867625,
+          "error_auprc": 0.38532513560047144
+        }
+      }
+    ]
+  },
+  "historical_arms": {
+    "original_clean": {
+      "overall": {
+        "n": 2053,
+        "positive": 814,
+        "negative": 1239,
+        "groups": 1917,
+        "errors": 263,
+        "fn": 183,
+        "fp": 80,
+        "error_rate": 0.12810521188504628,
+        "fn_rate": 0.22481572481572482,
+        "fp_rate": 0.0645682001614205,
+        "q_mean": 0.5673293182295209
+      },
+      "quality_bins": {
+        "0–0.2": {
+          "n": 49,
+          "positive": 26,
+          "negative": 23,
+          "groups": 45,
+          "errors": 6,
+          "fn": 5,
+          "fp": 1,
+          "error_rate": 0.12244897959183673,
+          "fn_rate": 0.19230769230769232,
+          "fp_rate": 0.043478260869565216,
+          "q_mean": 0.14623389461514896
+        },
+        "0.2–0.4": {
+          "n": 305,
+          "positive": 134,
+          "negative": 171,
+          "groups": 292,
+          "errors": 39,
+          "fn": 26,
+          "fp": 13,
+          "error_rate": 0.12786885245901639,
+          "fn_rate": 0.19402985074626866,
+          "fp_rate": 0.07602339181286549,
+          "q_mean": 0.3234973806338232
+        },
+        "0.4–0.6": {
+          "n": 757,
+          "positive": 349,
+          "negative": 408,
+          "groups": 723,
+          "errors": 125,
+          "fn": 85,
+          "fp": 40,
+          "error_rate": 0.16512549537648613,
+          "fn_rate": 0.24355300859598855,
+          "fp_rate": 0.09803921568627451,
+          "q_mean": 0.5048994925094564
+        },
+        "0.6–0.8": {
+          "n": 777,
+          "positive": 268,
+          "negative": 509,
+          "groups": 746,
+          "errors": 80,
+          "fn": 56,
+          "fp": 24,
+          "error_rate": 0.10296010296010295,
+          "fn_rate": 0.208955223880597,
+          "fp_rate": 0.047151277013752456,
+          "q_mean": 0.6948721179477343
+        },
+        "0.8–1": {
+          "n": 165,
+          "positive": 37,
+          "negative": 128,
+          "groups": 162,
+          "errors": 13,
+          "fn": 11,
+          "fp": 2,
+          "error_rate": 0.07878787878787878,
+          "fn_rate": 0.2972972972972973,
+          "fp_rate": 0.015625,
+          "q_mean": 0.8289113752769701
+        }
+      },
+      "error_rank_lowq": {
+        "error_auroc": 0.5682923720712875,
+        "error_auprc": 0.1411701337917961
+      }
+    },
+    "expanded_clean": {
+      "overall": {
+        "n": 2053,
+        "positive": 814,
+        "negative": 1239,
+        "groups": 1917,
+        "errors": 210,
+        "fn": 119,
+        "fp": 91,
+        "error_rate": 0.10228933268387726,
+        "fn_rate": 0.14619164619164618,
+        "fp_rate": 0.07344632768361582,
+        "q_mean": 0.5673293182295209
+      },
+      "quality_bins": {
+        "0–0.2": {
+          "n": 49,
+          "positive": 26,
+          "negative": 23,
+          "groups": 45,
+          "errors": 6,
+          "fn": 4,
+          "fp": 2,
+          "error_rate": 0.12244897959183673,
+          "fn_rate": 0.15384615384615385,
+          "fp_rate": 0.08695652173913043,
+          "q_mean": 0.14623389461514896
+        },
+        "0.2–0.4": {
+          "n": 305,
+          "positive": 134,
+          "negative": 171,
+          "groups": 292,
+          "errors": 34,
+          "fn": 15,
+          "fp": 19,
+          "error_rate": 0.11147540983606558,
+          "fn_rate": 0.11194029850746269,
+          "fp_rate": 0.1111111111111111,
+          "q_mean": 0.3234973806338232
+        },
+        "0.4–0.6": {
+          "n": 757,
+          "positive": 349,
+          "negative": 408,
+          "groups": 723,
+          "errors": 77,
+          "fn": 46,
+          "fp": 31,
+          "error_rate": 0.10171730515191546,
+          "fn_rate": 0.1318051575931232,
+          "fp_rate": 0.07598039215686274,
+          "q_mean": 0.5048994925094564
+        },
+        "0.6–0.8": {
+          "n": 777,
+          "positive": 268,
+          "negative": 509,
+          "groups": 746,
+          "errors": 79,
+          "fn": 44,
+          "fp": 35,
+          "error_rate": 0.10167310167310167,
+          "fn_rate": 0.16417910447761194,
+          "fp_rate": 0.068762278978389,
+          "q_mean": 0.6948721179477343
+        },
+        "0.8–1": {
+          "n": 165,
+          "positive": 37,
+          "negative": 128,
+          "groups": 162,
+          "errors": 14,
+          "fn": 10,
+          "fp": 4,
+          "error_rate": 0.08484848484848485,
+          "fn_rate": 0.2702702702702703,
+          "fp_rate": 0.03125,
+          "q_mean": 0.8289113752769701
+        }
+      },
+      "error_rank_lowq": {
+        "error_auroc": 0.5111490065369609,
+        "error_auprc": 0.1056564365348784
+      }
+    },
+    "expanded_degradation30": {
+      "overall": {
+        "n": 2053,
+        "positive": 814,
+        "negative": 1239,
+        "groups": 1917,
+        "errors": 206,
+        "fn": 123,
+        "fp": 83,
+        "error_rate": 0.10034096444227959,
+        "fn_rate": 0.1511056511056511,
+        "fp_rate": 0.06698950766747377,
+        "q_mean": 0.5673293182295209
+      },
+      "quality_bins": {
+        "0–0.2": {
+          "n": 49,
+          "positive": 26,
+          "negative": 23,
+          "groups": 45,
+          "errors": 4,
+          "fn": 3,
+          "fp": 1,
+          "error_rate": 0.08163265306122448,
+          "fn_rate": 0.11538461538461539,
+          "fp_rate": 0.043478260869565216,
+          "q_mean": 0.14623389461514896
+        },
+        "0.2–0.4": {
+          "n": 305,
+          "positive": 134,
+          "negative": 171,
+          "groups": 292,
+          "errors": 34,
+          "fn": 15,
+          "fp": 19,
+          "error_rate": 0.11147540983606558,
+          "fn_rate": 0.11194029850746269,
+          "fp_rate": 0.1111111111111111,
+          "q_mean": 0.3234973806338232
+        },
+        "0.4–0.6": {
+          "n": 757,
+          "positive": 349,
+          "negative": 408,
+          "groups": 723,
+          "errors": 76,
+          "fn": 49,
+          "fp": 27,
+          "error_rate": 0.10039630118890357,
+          "fn_rate": 0.14040114613180515,
+          "fp_rate": 0.0661764705882353,
+          "q_mean": 0.5048994925094564
+        },
+        "0.6–0.8": {
+          "n": 777,
+          "positive": 268,
+          "negative": 509,
+          "groups": 746,
+          "errors": 79,
+          "fn": 48,
+          "fp": 31,
+          "error_rate": 0.10167310167310167,
+          "fn_rate": 0.1791044776119403,
+          "fp_rate": 0.060903732809430254,
+          "q_mean": 0.6948721179477343
+        },
+        "0.8–1": {
+          "n": 165,
+          "positive": 37,
+          "negative": 128,
+          "groups": 162,
+          "errors": 13,
+          "fn": 8,
+          "fp": 5,
+          "error_rate": 0.07878787878787878,
+          "fn_rate": 0.21621621621621623,
+          "fp_rate": 0.0390625,
+          "q_mean": 0.8289113752769701
+        }
+      },
+      "error_rank_lowq": {
+        "error_auroc": 0.5153699780804348,
+        "error_auprc": 0.10170460200603987
+      }
+    },
+    "expanded_degradation50": {
+      "overall": {
+        "n": 2053,
+        "positive": 814,
+        "negative": 1239,
+        "groups": 1917,
+        "errors": 208,
+        "fn": 124,
+        "fp": 84,
+        "error_rate": 0.10131514856307842,
+        "fn_rate": 0.15233415233415235,
+        "fp_rate": 0.06779661016949153,
+        "q_mean": 0.5673293182295209
+      },
+      "quality_bins": {
+        "0–0.2": {
+          "n": 49,
+          "positive": 26,
+          "negative": 23,
+          "groups": 45,
+          "errors": 4,
+          "fn": 3,
+          "fp": 1,
+          "error_rate": 0.08163265306122448,
+          "fn_rate": 0.11538461538461539,
+          "fp_rate": 0.043478260869565216,
+          "q_mean": 0.14623389461514896
+        },
+        "0.2–0.4": {
+          "n": 305,
+          "positive": 134,
+          "negative": 171,
+          "groups": 292,
+          "errors": 32,
+          "fn": 13,
+          "fp": 19,
+          "error_rate": 0.10491803278688525,
+          "fn_rate": 0.09701492537313433,
+          "fp_rate": 0.1111111111111111,
+          "q_mean": 0.3234973806338232
+        },
+        "0.4–0.6": {
+          "n": 757,
+          "positive": 349,
+          "negative": 408,
+          "groups": 723,
+          "errors": 79,
+          "fn": 50,
+          "fp": 29,
+          "error_rate": 0.10435931307793923,
+          "fn_rate": 0.14326647564469913,
+          "fp_rate": 0.07107843137254902,
+          "q_mean": 0.5048994925094564
+        },
+        "0.6–0.8": {
+          "n": 777,
+          "positive": 268,
+          "negative": 509,
+          "groups": 746,
+          "errors": 79,
+          "fn": 48,
+          "fp": 31,
+          "error_rate": 0.10167310167310167,
+          "fn_rate": 0.1791044776119403,
+          "fp_rate": 0.060903732809430254,
+          "q_mean": 0.6948721179477343
+        },
+        "0.8–1": {
+          "n": 165,
+          "positive": 37,
+          "negative": 128,
+          "groups": 162,
+          "errors": 14,
+          "fn": 10,
+          "fp": 4,
+          "error_rate": 0.08484848484848485,
+          "fn_rate": 0.2702702702702703,
+          "fp_rate": 0.03125,
+          "q_mean": 0.8289113752769701
+        }
+      },
+      "error_rank_lowq": {
+        "error_auroc": 0.5091723994163019,
+        "error_auprc": 0.10102470290049993
+      }
+    }
+  }
+}

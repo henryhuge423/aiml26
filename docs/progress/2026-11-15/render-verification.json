@@ -1,0 +1,16 @@
+{
+  "zh": {
+    "pages": 5,
+    "pdf_bytes": 670900,
+    "latex_retained": true,
+    "all_pages_rendered": true,
+    "layout_warnings": []
+  },
+  "en": {
+    "pages": 7,
+    "pdf_bytes": 451035,
+    "latex_retained": true,
+    "all_pages_rendered": true,
+    "layout_warnings": []
+  }
+}

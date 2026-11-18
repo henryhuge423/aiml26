@@ -1,8 +1,30 @@
 # Training runbook
 
-Updated November 13, 2026 · [中文](training-runbook.md)
+Updated November 15, 2026 · [中文](training-runbook.md)
 
-The current experiment release is `expanded_20261113`. All four training arms and development evaluations are complete; the [progress overview](../progress/2026-11-13/progress-overview.en.md) describes data and results. Run the commands below from the project root, `team_project/`.
+`followup_20261115` uses frozen data release `expanded_20261113`. All 18 runs have completed training and development evaluation: six conditions with three seeds, each trained for 2,400 parameter updates. See the [full training and quality analysis](../progress/2026-11-15/completed-experiments/completed-results.en.md). The previous four 1,200-update runs are also complete. Run commands from the project root, `team_project/`.
+
+## Completed-training status and reproduction
+
+```powershell
+Get-Content runs/followup_20261115/pipeline/status.json
+& ./tools/start_followup_experiments_20261115.ps1
+```
+
+The launcher checks for an existing driver, then trains and evaluates sequentially in a hidden background process. Completed training budgets are skipped; interrupted runs resume from `last.pt`. Input fingerprints bind data, configuration, initialization, and training implementation.
+
+`configs/followup_20261115/seed<seed>/` holds six condition configurations. `runs/followup_20261115/seed<seed>/<condition>/validation_checkpoints/` saves full weights, predictions, and metrics every 300 updates. Selection uses five main sources' mean AUROC. Development evaluation retains update-1,200, update-2,400, and selected-checkpoint results. `runs/followup_20261115/comparison.json` updates after each evaluated run, and `preflight/verification.json` records the three CUDA recovery checks.
+
+```powershell
+tools/training_python.cmd tools/evaluate_followup_20261115.py --summarize
+python tools/analyze_completed_followup_20261115.py
+python tools/report_completed_followup_20261115.py
+python tools/verify_completed_followup_20261115.py
+```
+
+These commands analyze saved predictions and build bilingual reports, PDFs, LaTeX, and ten figure sets in `completed-experiments/`. Image-level review scores are saved under `runs/followup_20261115/completed_analysis/`. Earlier reports at the date root retain the training-launch snapshot.
+
+## November 13 experiment records
 
 ## Environment, configurations, and outputs
 

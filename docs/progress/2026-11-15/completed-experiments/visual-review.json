@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "reviewed_at": "2026-11-15T13:48:08.613125+00:00",
+  "review_method": "Assistant visual examination of all rendered PDF pages and all bilingual figure images; bilingual prose and numerical interpretation reviewed.",
+  "documents": [
+    {
+      "language": "zh",
+      "pages": 9,
+      "all_pages_reviewed": true,
+      "prose_reviewed": true,
+      "sha256": {
+        "completed-results.zh.md": "969f684a7c6c8ac57b6426fce5000f6ae28304b8749ab8edb90ee873f37eab74",
+        "completed-results.zh.pdf": "a63483eed533868c9cb9086d33b51fff6eba8f96e57455c84580341920b44d29",
+        "completed-results.zh.tex": "b0aed3140dc3f35c557a0581e9152e320d5b18e948b9525787ce6aa814a68451"
+      }
+    },
+    {
+      "language": "en",
+      "pages": 10,
+      "all_pages_reviewed": true,
+      "prose_reviewed": true,
+      "sha256": {
+        "completed-results.en.md": "7314b57a4ca684a26833ce1b1dd2b589e455c383d0913c9713dfc42f9b04fca9",
+        "completed-results.en.pdf": "483bca569227098d7b43b59a916628c952b4fc2908ceed8c78c6047e520796dc",
+        "completed-results.en.tex": "e41cb300badb7f4919732082914f5b457a76a13cd59a5242e11ec5d2253cae81"
+      }
+    }
+  ],
+  "figures_reviewed": 20,
+  "figure_sha256": {
+    "disease-quality-distribution.en.png": "47a1d51bed7956f2c5ec1ac012c6a1a65dccb408dfb11d000a2f6f8565ea07e0",
+    "disease-quality-distribution.zh.png": "0e8e62a5044ff6549959cb499fa3fd74c4fc4c62a2ecbf188f237d85a30f62a5",
+    "misses-and-false-alarms.en.png": "9e78690d6211aeb738c83e7270b87a8f6b9dcedea04cc1ea63a196b494683cc9",
+    "misses-and-false-alarms.zh.png": "bfbf7c49821e84bee246565ce5dd6eb05d3e66e0c0faca0b4089845e7af02c8a",
+    "paired-source-effects.en.png": "cfcc131902140637c52a20c85b208af2c50d4b61bc10b2c01ad664ffe5d5ac7a",
+    "paired-source-effects.zh.png": "f6dcaf59fe203c967c7d0053653c3b9d96fe099e2d508f9b85f687b8eabe1e41",
+    "quality-error-rates.en.png": "258ef689961656748fe6025a53055f9546797bb3dedf847058bcda808407fa98",
+    "quality-error-rates.zh.png": "0620a21d27f3d8f36ac93e6fc20a74b81903df8b124aadcb91119754996c21c0",
+    "quality-review-effects.en.png": "806c91688d6beb0f1e51aae48e208513aa4c2a643dbc76264a0f12581c1b861c",
+    "quality-review-effects.zh.png": "5c7f75b840186ec865767454bb7e7ae19a14de8099cf02c3844d44fddb7a68f6",
+    "real-quality-composition.en.png": "21f2ebad0d9747518caa6933bcea163a592987c4c055e580fb76abea2ec34938",
+    "real-quality-composition.zh.png": "e9e3b6321602070689a04636c91028c7eb09e1fe4b182733a7b95a851742aa44",
+    "review-workload.en.png": "d476981533cb870376cefccd1beca499576b068e3fe84c3bfa1a91a7a0b7eccb",
+    "review-workload.zh.png": "a5c632e6e8c5f9178d1ca9e78d5959dfeed0384c310d76cab8f4cb0b9d58596a",
+    "source-auroc.en.png": "3cbeb8f2138ab4fbde8ae589a0c0be6f5a94cb4ab191eb0a9a6a54dbbde52316",
+    "source-auroc.zh.png": "0b341753696d07608be98424a3ce2f594a4a1df2b6b5312c47b84e3a3bc2db3d",
+    "stress-and-training-dose.en.png": "830c127e20b7c63d9743f818728873681dd8df2ac04fe46342190468816e3381",
+    "stress-and-training-dose.zh.png": "a3c385809ac4f6b486d599b38a4db502628628887372917b81457219aeee40b0",
+    "validation-curves.en.png": "346a6a2b95725ab8f1b7f3b41aa1562d35d735bbe3dbbcb7848f4470b3149e63",
+    "validation-curves.zh.png": "467a83843b49f5b376965ddd9d65946d8bdc1b88feb6854fee44aae0f87a5158"
+  },
+  "findings": {
+    "cropped_content": false,
+    "missing_glyphs": false,
+    "obscured_legends": false,
+    "english_initial_table_complete_on_page": 2,
+    "defocus_gain_identified_as_three_seed_mean": true
+  }
+}

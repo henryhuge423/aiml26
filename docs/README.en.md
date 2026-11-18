@@ -2,7 +2,7 @@
 
 English | [中文](README.md)
 
-Start with the [latest progress overview](progress/2026-11-13/progress-overview.en.md), then follow the data review, training results, and statistical analysis as needed. Operational documents describe current entry points; historical records retain the versions and context of earlier stages.
+Start with the [completed three-seed analysis](progress/2026-11-15/completed-experiments/completed-results.en.md), covering all 18 runs, ten bilingual figures, classification thresholds, and quality-guided review. Follow the [November 13 data review and experiments](progress/2026-11-13/README.en.md) as needed. Operational documents describe current entry points; historical records retain the versions and context of earlier stages.
 
 | Category | Entry point | Contents |
 |---|---|---|

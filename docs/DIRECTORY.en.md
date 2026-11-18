@@ -10,11 +10,12 @@ The Eye Sentinel repository occupies `team_project/` within the course workspace
 | `proposal-1106.pdf` | Current project proposal. |
 | `docs/README.md`, `docs/README.en.md` | [Documentation guide](README.en.md). |
 | `docs/progress/YYYY-MM-DD/` | Bilingual progress reports, PDFs, LaTeX, figures, and summaries by date. |
+| `docs/progress/2026-11-15/` | [Dated progress index](progress/2026-11-15/README.en.md). `completed-experiments/` holds the 18-run completion analysis, ten bilingual figures, and full statistics; the date root retains the earlier quality-analysis snapshot. |
 | `docs/progress/2026-11-13/` | [Combined dataset and degradation experiment materials](progress/2026-11-13/README.en.md), with `data-review/`, `training-results/`, and `experimental-analysis/`. |
 | `docs/operations/` | Current runbook, readiness checks, protocol, and next steps in both languages. |
 | `docs/research/` | Data-expansion research and structured outlines. |
 | `docs/historical/` | [Dated audits and earlier operations](historical/README.en.md), earlier dataset introduction, and speaker notes. `planning/` retains original designs and execution plans. |
-| `configs/` | Training configurations; `formal_v3/` is earlier training, and `expanded_20261113/` contains this round's four arms. |
+| `configs/` | Training configurations; `formal_v3/` and `expanded_20261113/` retain earlier experiments, and `followup_20261115/` holds the six-condition, three-seed queue. |
 | `training/` | Data loading, models, training, quality supervision, and fundus degradation. |
 | `tools/`, `tests/` | Data checks, training and report tools, and automated checks. |
 | `data/` | [Data guide](../data/README.en.md), source files, manifests, and audits. |

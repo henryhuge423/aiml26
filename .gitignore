@@ -101,6 +101,23 @@ runs/eyeq_quality_v1/*
 !runs/degradation_pilot_20261111/paired_scores.csv
 !runs/degradation_pilot_20261111/real_pairs_quality.csv
 !runs/degradation_pilot_20261111/distribution.png
+!runs/followup_20261115/
+runs/followup_20261115/*
+!runs/followup_20261115/README.md
+!runs/followup_20261115/README.en.md
+!runs/followup_20261115/experiment_plan.json
+!runs/followup_20261115/comparison.json
+!runs/followup_20261115/pipeline/
+runs/followup_20261115/pipeline/*
+!runs/followup_20261115/pipeline/status.json
+!runs/followup_20261115/preflight/
+runs/followup_20261115/preflight/*
+!runs/followup_20261115/preflight/verification.json
+!runs/followup_20261115/seed*/
+runs/followup_20261115/seed*/*
+!runs/followup_20261115/seed*/*/
+runs/followup_20261115/seed*/*/*
+!runs/followup_20261115/seed*/*/run_summary.json
 *.log
 *.jsonl
 

@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "score_identity_rows": 4099,
+  "input_hashes_verified": 15,
+  "checked_local_links": 138,
+  "documents": [
+    {
+      "language": "zh",
+      "pages": 5,
+      "sha256": {
+        "quality-and-training.zh.md": "6e8f515016598ab9411e57d31ad07f49d58e7f1e94aa696ce8e36aae8e29cf78",
+        "quality-and-training.zh.tex": "d53ad4b5bca6f877d57fc2b5269dda1bd9930f72b5357886b884e99431469585",
+        "quality-and-training.zh.pdf": "f4a37e90279a52f5e6c99aae3776f30f99e3d5cebb92bb180dc6f59149e67d1c",
+        "human-quality-scores.zh.png": "d554ee0867626636751ae3791d40e20ac392be163778097f541683666ddfcae5",
+        "quality-counts-rates.zh.png": "2256723fc80a454600efd0f7cf8597fa72d415eb65b9271886d2f6540f5af4d0",
+        "quality-label-composition.zh.png": "0b8975040af0203e5aac03f6e6ec6bb317f11cb24b5c9dcca4f30bcaba38e36d",
+        "review-comparison.zh.png": "c780f5af836adacf0b5c0dadf8310c7f22ca0b9f9a760e488a37dec075c84c73"
+      }
+    },
+    {
+      "language": "en",
+      "pages": 7,
+      "sha256": {
+        "quality-and-training.en.md": "21c8dbbd4076d47dce7e896f71f82045a16625c5fa6aaeb7511e8141807cbe83",
+        "quality-and-training.en.tex": "5dad41ce8df8d481946225293a33b0c15ea6ec69e2e527f03c50a95a3f443e21",
+        "quality-and-training.en.pdf": "253dbb6fa44f0677f966a31c1a30739030c53ff2acdd400eaf69f5cf11ab7544",
+        "human-quality-scores.en.png": "69eb52d9c10659dff349d35b80fdcfbcfe94ad3e18b797422728421734d7b996",
+        "quality-counts-rates.en.png": "84a40cd58c7f6e6b91c92e2b46c48e564628cde57a0023856ffa0441c8275cc3",
+        "quality-label-composition.en.png": "efbfecc124b5e964f184ba52e1d5e9231901903da037be1c7ec88fbb340ecc33",
+        "review-comparison.en.png": "26dc2b3116080ffb1089daa4c9ee84233461761907f430b3c0ebcc5c4b6baa81"
+      }
+    }
+  ],
+  "protected_test_inference": false,
+  "training_snapshot_sha256": "56276742b6e9de9dd29b6a2004b03dbec0846c4bb7eb5fb219cfebef4fabc202"
+}

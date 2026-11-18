@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "models": [
+    {
+      "arm": "expanded_mixed50",
+      "passed": true,
+      "weight_max_abs_difference": 0.0,
+      "step_records_exact": true,
+      "epoch_crossed": true,
+      "successful_updates": 6,
+      "workers": 2,
+      "fingerprint": "c3d062ad3fd2cfd88c741c4043f137406e059c71f0ed78fa0df7fdd97882f9ff",
+      "checkpoints_sha256": [
+        "99c92729004b22d10b638f2d267b572ac2f20428f344553b5b6eb33e48db8851",
+        "99c92729004b22d10b638f2d267b572ac2f20428f344553b5b6eb33e48db8851"
+      ]
+    },
+    {
+      "arm": "quota65_mixed50",
+      "passed": true,
+      "weight_max_abs_difference": 0.0,
+      "step_records_exact": true,
+      "epoch_crossed": true,
+      "successful_updates": 6,
+      "workers": 2,
+      "fingerprint": "ea60ac7fbf71aa75efa5716d4a84e259469e7cb3979fd2387463199523f9a460",
+      "checkpoints_sha256": [
+        "0ff185cdcb4dcf961436d697c21d9871f0d1bdc2648017c20319e0b950e5cb0b",
+        "0ff185cdcb4dcf961436d697c21d9871f0d1bdc2648017c20319e0b950e5cb0b"
+      ]
+    },
+    {
+      "arm": "quota65_defocus50",
+      "passed": true,
+      "weight_max_abs_difference": 0.0,
+      "step_records_exact": true,
+      "epoch_crossed": true,
+      "successful_updates": 6,
+      "workers": 2,
+      "fingerprint": "ee2162a352a6a255305756ef74acef6526576e8a19e052bf08bdb9a2f45095c5",
+      "checkpoints_sha256": [
+        "55ca2cd5e8de56cbcefdb3ad8f926191328e095089e363ee1fcd1094990bbe93",
+        "55ca2cd5e8de56cbcefdb3ad8f926191328e095089e363ee1fcd1094990bbe93"
+      ]
+    }
+  ]
+}
