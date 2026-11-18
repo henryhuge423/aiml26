@@ -1,6 +1,8 @@
 # Next experiments and evaluation
 
-Updated November 16, 2026 · [中文](next-steps.md)
+Updated November 18, 2026 · [中文](next-steps.md)
+
+The matched ResNet-50 completed 2,400 updates for seed 20261117. Repeat the controlled comparison with the other two established seeds and track misses and false positives at matched review workloads in AIROGS and pooled development. Fix the primary cohort and review rule before opening the reserved test sets. [Matched backbone comparison](../progress/2026-11-18/backbone-comparison.en.md)
 
 All 18 training and development evaluations are complete: six conditions with three common seeds, each trained for 2,400 parameter updates. The [full analysis](../progress/2026-11-15/completed-experiments/completed-results.en.md) provides ten figures comparing selected and end-of-budget checkpoints, source sampling, actual augmentation exposure, classification thresholds, and quality-guided review. The release is `expanded_20261113`; see [completion status](../../runs/followup_20261115/pipeline/status.json).
 

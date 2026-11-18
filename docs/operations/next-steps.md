@@ -1,6 +1,8 @@
 # 下一步实验与评价
 
-2026 年 11 月 16 日更新 · [English](next-steps.en.md)
+2026 年 11 月 18 日更新 · [English](next-steps.en.md)
+
+种子 20261117 的同协议 ResNet-50 已完成 2,400 次更新。先用另外两个既定种子复现这一对照，并在 AIROGS 与合并开发集分别核对等量复核后的漏诊和误报。固定主队列和复核规则后再打开预留测试集。[同协议模型对照](../progress/2026-11-18/backbone-comparison.zh.md)
 
 六方案、三个共同种子的 18 组训练和开发评价已全部完成，每组 2,400 次参数更新。[完整分析](../progress/2026-11-15/completed-experiments/completed-results.zh.md)提供十组图表，分别比较选中权重与训练结束权重、来源采样、实际退化次数、分类阈值和质量复核。数据版本为 `expanded_20261113`，完成状态见[执行记录](../../runs/followup_20261115/pipeline/status.json)。
 

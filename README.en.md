@@ -6,6 +6,8 @@ Eye Sentinel studies how glaucoma-classification scores and fundus-image quality
 
 ## Current progress · November 18, 2026
 
+The matched ResNet-50 completed 2,400 updates. The [matched backbone comparison](docs/progress/2026-11-18/backbone-comparison.en.md) reports misses, false positives, and paired intervals for the two architectures using the same development photographs, validation calibration cohorts, and review workload. [English PDF](docs/progress/2026-11-18/backbone-comparison.en.pdf) · [中文 PDF](docs/progress/2026-11-18/backbone-comparison.zh.pdf)
+
 At about 10% matched review, adding whole-image quality to the same disease classifier left three fewer misses on pooled development data and three more with AIROGS-only calibration. The gray-zone figures, workload comparison, and reserved-cohort inventory are complete. Two candidate cutoffs are fitted, and independent testing awaits the primary cohort definition. See the [gray-zone evaluation and proposal review](docs/progress/2026-11-18/gray-zone.en.md) ([English PDF](docs/progress/2026-11-18/gray-zone.en.pdf) · [中文 PDF](docs/progress/2026-11-18/gray-zone.zh.pdf)).
 
 ## Three-seed training · November 15, 2026

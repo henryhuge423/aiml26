@@ -6,6 +6,8 @@ Eye Sentinel 研究如何结合眼底照片的青光眼分类分数和图像质�
 
 ## 当前进度 · 2026 年 11 月 18 日
 
+同协议 ResNet-50 已完成 2,400 次更新。两套架构在相同开发照片、同来源验证校准和等量复核下的漏诊、误报及配对区间见[同协议模型对照](docs/progress/2026-11-18/backbone-comparison.zh.md)（[中文 PDF](docs/progress/2026-11-18/backbone-comparison.zh.pdf) · [English PDF](docs/progress/2026-11-18/backbone-comparison.en.pdf)）。
+
 在约 10% 的等量复核下，加入全图质量分数后，同一个疾病模型在合并开发集少漏诊 3 张，在单独校准的 AIROGS 开发集多漏诊 3 张。已完成灰区可视化、工作量比较和测试清单审计。两个候选阈值已拟合，独立测试等待确定主要评价队列。见[灰区评估与提案核对](docs/progress/2026-11-18/gray-zone.zh.md)（[中文 PDF](docs/progress/2026-11-18/gray-zone.zh.pdf) · [English PDF](docs/progress/2026-11-18/gray-zone.en.pdf)）。
 
 ## 三种子训练 · 2026 年 11 月 15 日
