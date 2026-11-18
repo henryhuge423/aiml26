@@ -2,7 +2,7 @@
 
 Eye Sentinel · November 18, 2026 · [中文](calibrated-defocus.zh.md) · [PDF](calibrated-defocus.en.pdf)
 
-**Calibrated defocus reduced the loss in ranking performance under mild simulated blur.** Across three matched training runs, AUROC on original AIROGS development images rose from **0.9687 to 0.9713**. With 3.2% referral positives and 10% review, false positives outside review fell from **18.3 to 11.0 per 1,000 photos**. Misses changed from **2.35 to 2.26 per 1,000**, with an interval that includes zero. Each comparison lists the original mix first.
+**Setting blur and exposure using real same-eye photos reduced the loss in ranking performance under mild simulated blur.** Across three matched training runs, AUROC on original development images from AIROGS, a public glaucoma screening dataset, rose from **0.9687 to 0.9713**. At 3.2% referral positives and 10% review, false positives outside review fell from **18.3 to 11.0 per 1,000 photos**. Misses changed from **2.35 to 2.26 per 1,000**, with a 95% interval for the difference that includes zero. Each comparison lists the original mix first.
 
 ## Matched training
 
@@ -14,11 +14,11 @@ Eye Sentinel · November 18, 2026 · [中文](calibrated-defocus.zh.md) · [PDF]
 | Original mix | Augment about half of training draws, equally across illumination, defocus and scatter |
 | Calibrated defocus | Keep the same draws and replace the image operation for the defocus cases |
 
-Original defocus combines Gaussian blur with noise or JPEG compression. Calibrated defocus applies blur and exposure drawn from a parameter bank fitted on 60 Real Fundus pairs. The experiment compares the full change to the defocus recipe. The calibrated median radius is 1.7 pixels at a 512-pixel field and the median exposure multiplier is 0.99. The three seeds drew defocus 3,292 / 3,228 / 3,306 times, respectively. Per-image sampling, source and label counts, and degradation-family draws matched the control in every seed.
+The original method simulates defocus with Gaussian blur followed by noise or lossy JPEG compression. The calibrated method sets blur and exposure using 60 Real Fundus pairs. The median blur radius is 1.7 pixels at a 512-pixel field, and the median exposure multiplier is 0.99, where 1 leaves brightness unchanged. A seed controls random choices such as which images are drawn. The two methods used identical image and degradation-type draws at each seed. The three seeds drew defocus 3,292, 3,228 and 3,306 times, respectively.
 
 ![Each thin trace represents a seed. Solid lines show the three-seed means. The right panel averages validation AUROC equally across AIROGS, ODIR, Kaggle, LAG and KEH.](calibrated-validation.en.png){width=98%}
 
-**AUROC** is the probability that a randomly chosen positive receives a higher score than a randomly chosen negative, with ties counted as half. Validation was run every 300 updates. The pilot compares the prespecified update-1,200 checkpoints on development data. The reserved independent tests remain sealed. [Frozen data release](../../../data/prepared/expanded_20261113/README.en.md) · [Calibration profile](../../../configs/calibrated_defocus_20261118/profile.json) · [Training code](../../../tools/run_calibrated_defocus_20261118.py) · [Evaluation code](../../../tools/evaluate_calibrated_defocus_20261118.py)
+**AUROC** measures ranking. It is the probability that a randomly chosen positive scores higher than a randomly chosen negative, with ties counted as half. Each update adjusts the model weights using a batch of training images. The validation set tracks progress every 300 updates. We compared the models saved at update 1,200 on development images. The reserved independent tests remain sealed. [Frozen data release](../../../data/prepared/expanded_20261113/README.en.md) · [Calibration profile](../../../configs/calibrated_defocus_20261118/profile.json) · [Training code](../../../tools/run_calibrated_defocus_20261118.py) · [Evaluation code](../../../tools/evaluate_calibrated_defocus_20261118.py)
 
 \newpage
 
@@ -43,7 +43,7 @@ AIROGS positives met the reference criteria for glaucoma referral. Pooled origin
 | Human-labeled low quality | 12 | 0 | Original 12 / 12 / 11 · Calibrated 12 / 12 / 12 |
 | Model quality score below 0.20 | 29 | 38 | Original 25 / 27 / 26 · Calibrated 24 / 27 / 28 |
 
-FIVES marks poor focus, illumination or contrast. MSHF uses a poor overall quality grade. The low model-quality group has an EyeQ–FTHNet score below 0.20. The human-labeled subgroup contains no negatives, so it cannot estimate false positives there. [FIVES dataset](https://www.nature.com/articles/s41597-022-01564-3) · [MSHF dataset](https://www.nature.com/articles/s41597-023-02188-x)
+FIVES and MSHF are fundus datasets with quality labels. FIVES flags poor focus, illumination or contrast, and MSHF uses a poor overall grade. The other group has a score below 0.20 from the quality model trained using EyeQ and FTHNet. Lower scores indicate poorer estimated quality. The human-labeled group contains only positives and supports a count of detections. [FIVES dataset](https://www.nature.com/articles/s41597-022-01564-3) · [MSHF dataset](https://www.nature.com/articles/s41597-023-02188-x)
 
 \newpage
 
@@ -61,12 +61,12 @@ Calibration improved agreement on the detail statistic. Under the same frozen di
 
 ## At a 10% review budget
 
-We reweighted 773 AIROGS development photos to **3.2% referral positives** and reviewed 100 per 1,000. Each model used the 95th percentile of its negative validation scores as its classification threshold. The gray zone prioritized scores close to that threshold and lower quality. A miss is a negative call on a reference-positive photo. A false positive is a referral call on a reference-negative photo. Outside review refers to photos omitted from the review list.
+We adjusted the weights of positive and negative photos among 773 AIROGS development images to reproduce the public training set's **3.2% referral-positive share**. The simulation reviews 100 photos per 1,000. Each model recommends referral above a threshold that about 95% of validation negatives score at or below. The gray zone prioritizes near-threshold or low-quality photos. A miss is a negative call on a referable photo, and a false positive is a referral call on a nonreferable photo. Rates per 1,000 use all photos. [Original AIROGS study](https://arxiv.org/html/2302.01738)
 
 ![Dots show seeds and diamonds show means. The last point on the left assumes reader sensitivity of 86% and specificity of 96.4%. The right panel shows false positives before routing and outside review.](calibrated-review-routing.en.png){width=92%}
 
 Per 1,000 photos, misses outside review changed by **−0.08**, with a 95% interval of [−0.47, +0.40]. False positives changed by **−7.30**, with an interval of [−14.27, −1.46]. The gray zone routed **60.3%** and **70.1%** of initial model errors. Under the reader scenario, final missed referrals were **3.63 to 3.65** per 1,000.
 
-![Earlier comparison at update 2,400. The paired percentages show reader sensitivity and specificity. The vertical line marks misses using the model alone. Two-model ranking uses the second model to help prioritize negative calls for review.](calibrated-expert-scenarios.en.png){width=92%}
+![Earlier comparison at update 2,400. The paired percentages show reader sensitivity and specificity. Two-model ranking uses a second model to prioritize negative calls. Net errors avoided are corrections minus new reader errors. The vertical line marks misses with the model alone.](calibrated-expert-scenarios.en.png){width=90%}
 
 The trained EyePACS readers achieved 86% sensitivity and 96.4% specificity, used here as a scenario for the review list. Sensitivity is the share of positives read correctly. Specificity is the share of negatives read correctly. At lower sensitivity, total errors can fall while missed referrals rise. Clinical benefit requires patient-level evaluation with independent reference examinations and final referral outcomes. [EyePACS reader study](https://pubmed.ncbi.nlm.nih.gov/37113471/) · [Earlier two-model analysis](review-failures.en.md) · [Results and hashes](calibrated-defocus-results.json)

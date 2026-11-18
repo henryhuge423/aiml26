@@ -102,13 +102,15 @@ review}\label{same-eye-calibration-of-fundus-degradation-and-review}
 Eye Sentinel · November 18, 2026 · \href{calibrated-defocus.zh.md}{中文}
 · \href{calibrated-defocus.en.pdf}{PDF}
 
-\textbf{Calibrated defocus reduced the loss in ranking performance under
-mild simulated blur.} Across three matched training runs, AUROC on
-original AIROGS development images rose from \textbf{0.9687 to 0.9713}.
-With 3.2\% referral positives and 10\% review, false positives outside
-review fell from \textbf{18.3 to 11.0 per 1,000 photos}. Misses changed
-from \textbf{2.35 to 2.26 per 1,000}, with an interval that includes
-zero. Each comparison lists the original mix first.
+\textbf{Setting blur and exposure using real same-eye photos reduced the
+loss in ranking performance under mild simulated blur.} Across three
+matched training runs, AUROC on original development images from AIROGS,
+a public glaucoma screening dataset, rose from \textbf{0.9687 to
+0.9713}. At 3.2\% referral positives and 10\% review, false positives
+outside review fell from \textbf{18.3 to 11.0 per 1,000 photos}. Misses
+changed from \textbf{2.35 to 2.26 per 1,000}, with a 95\% interval for
+the difference that includes zero. Each comparison lists the original
+mix first.
 
 \subsection{Matched training}\label{matched-training}
 
@@ -139,14 +141,14 @@ for the defocus cases \\
 \end{longtable}
 }
 
-Original defocus combines Gaussian blur with noise or JPEG compression.
-Calibrated defocus applies blur and exposure drawn from a parameter bank
-fitted on 60 Real Fundus pairs. The experiment compares the full change
-to the defocus recipe. The calibrated median radius is 1.7 pixels at a
-512-pixel field and the median exposure multiplier is 0.99. The three
-seeds drew defocus 3,292 / 3,228 / 3,306 times, respectively. Per-image
-sampling, source and label counts, and degradation-family draws matched
-the control in every seed.
+The original method simulates defocus with Gaussian blur followed by
+noise or lossy JPEG compression. The calibrated method sets blur and
+exposure using 60 Real Fundus pairs. The median blur radius is 1.7
+pixels at a 512-pixel field, and the median exposure multiplier is 0.99,
+where 1 leaves brightness unchanged. A seed controls random choices such
+as which images are drawn. The two methods used identical image and
+degradation-type draws at each seed. The three seeds drew defocus 3,292,
+3,228 and 3,306 times, respectively.
 
 \begin{figure}
 \centering
@@ -156,11 +158,12 @@ three-seed means. The right panel averages validation AUROC equally
 across AIROGS, ODIR, Kaggle, LAG and KEH.}
 \end{figure}
 
-\textbf{AUROC} is the probability that a randomly chosen positive
-receives a higher score than a randomly chosen negative, with ties
-counted as half. Validation was run every 300 updates. The pilot
-compares the prespecified update-1,200 checkpoints on development data.
-The reserved independent tests remain sealed.
+\textbf{AUROC} measures ranking. It is the probability that a randomly
+chosen positive scores higher than a randomly chosen negative, with ties
+counted as half. Each update adjusts the model weights using a batch of
+training images. The validation set tracks progress every 300 updates.
+We compared the models saved at update 1,200 on development images. The
+reserved independent tests remain sealed.
 \href{../../../data/prepared/expanded_20261113/README.en.md}{Frozen data
 release} ·
 \href{../../../configs/calibrated_defocus_20261118/profile.json}{Calibration
@@ -253,10 +256,12 @@ Calibrated 24 / 27 / 28 \\
 \end{longtable}
 }
 
-FIVES marks poor focus, illumination or contrast. MSHF uses a poor
-overall quality grade. The low model-quality group has an EyeQ--FTHNet
-score below 0.20. The human-labeled subgroup contains no negatives, so
-it cannot estimate false positives there.
+FIVES and MSHF are fundus datasets with quality labels. FIVES flags poor
+focus, illumination or contrast, and MSHF uses a poor overall grade. The
+other group has a score below 0.20 from the quality model trained using
+EyeQ and FTHNet. Lower scores indicate poorer estimated quality. The
+human-labeled group contains only positives and supports a count of
+detections.
 \href{https://www.nature.com/articles/s41597-022-01564-3}{FIVES dataset}
 · \href{https://www.nature.com/articles/s41597-023-02188-x}{MSHF
 dataset}
@@ -309,13 +314,15 @@ metrics and scores}
 
 \subsection{At a 10\% review budget}\label{at-a-10-review-budget}
 
-We reweighted 773 AIROGS development photos to \textbf{3.2\% referral
-positives} and reviewed 100 per 1,000. Each model used the 95th
-percentile of its negative validation scores as its classification
-threshold. The gray zone prioritized scores close to that threshold and
-lower quality. A miss is a negative call on a reference-positive photo.
-A false positive is a referral call on a reference-negative photo.
-Outside review refers to photos omitted from the review list.
+We adjusted the weights of positive and negative photos among 773 AIROGS
+development images to reproduce the public training set's \textbf{3.2\%
+referral-positive share}. The simulation reviews 100 photos per 1,000.
+Each model recommends referral above a threshold that about 95\% of
+validation negatives score at or below. The gray zone prioritizes
+near-threshold or low-quality photos. A miss is a negative call on a
+referable photo, and a false positive is a referral call on a
+nonreferable photo. Rates per 1,000 use all photos.
+\href{https://arxiv.org/html/2302.01738}{Original AIROGS study}
 
 \begin{figure}
 \centering
@@ -334,11 +341,12 @@ Under the reader scenario, final missed referrals were \textbf{3.63 to
 
 \begin{figure}
 \centering
-\includegraphics[width=0.92\linewidth,height=\textheight,keepaspectratio,alt={Earlier comparison at update 2,400. The paired percentages show reader sensitivity and specificity. The vertical line marks misses using the model alone. Two-model ranking uses the second model to help prioritize negative calls for review.}]{calibrated-expert-scenarios.en.png}
+\includegraphics[width=0.9\linewidth,height=\textheight,keepaspectratio,alt={Earlier comparison at update 2,400. The paired percentages show reader sensitivity and specificity. Two-model ranking uses a second model to prioritize negative calls. Net errors avoided are corrections minus new reader errors. The vertical line marks misses with the model alone.}]{calibrated-expert-scenarios.en.png}
 \caption{Earlier comparison at update 2,400. The paired percentages show
-reader sensitivity and specificity. The vertical line marks misses using
-the model alone. Two-model ranking uses the second model to help
-prioritize negative calls for review.}
+reader sensitivity and specificity. Two-model ranking uses a second
+model to prioritize negative calls. Net errors avoided are corrections
+minus new reader errors. The vertical line marks misses with the model
+alone.}
 \end{figure}
 
 The trained EyePACS readers achieved 86\% sensitivity and 96.4\%

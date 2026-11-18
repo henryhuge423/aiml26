@@ -2,7 +2,9 @@
 
 November 18, 2026 · [中文](review-failures.zh.md) · [PDF](review-failures.en.pdf)
 
-**A second model identified some referable photographs missed by the gray zone.** Each rule reviewed 78 of 773 AIROGS development photographs. We kept EfficientNet-B0's original calls and the review list for positive calls. Reranking the negative calls changed the number of missed referrals sent to review from 16 to 24. The table also shows an image-level scenario weighted to the 3.2% positive share in the original AIROGS public training set.
+**Using a second model to reorder negative calls increased the missed referrals sent to review from 16 to 24.** Each rule reviewed 78 of 773 development photographs from AIROGS, a public glaucoma screening dataset. EfficientNet-B0 made the initial calls. ResNet-50 helped prioritize negative calls for review. The reference label indicates whether a photo warrants referral. A miss is a negative call on a referable photo, and a false positive is a referral call on a nonreferable photo.
+
+Uncertainty ranking prioritizes scores closest to the referral threshold. The quality gray zone also gives priority to photos with lower quality scores. Quality scores range from 0 to 1, with higher values indicating better estimated quality. Two-model ranking keeps the quality gray zone's positive review list and the number of negative calls it reviews.
 
 | Photo mix | Review rule | All errors reviewed | Misses reviewed | Misses left per 1,000 |
 |---|---|---:|---:|---:|
@@ -13,11 +15,11 @@ November 18, 2026 · [中文](review-failures.zh.md) · [PDF](review-failures.en
 |   | Quality gray zone | 63.2% | 48.0% | 2.2 |
 |   | Two-model ranking | 65.2% | 70.0% | 1.3 |
 
-The development set contained 380 referable photographs. Reranking sent 8 additional missed referrals to review, with a paired 95% interval of [1, 12] photographs from linked-group resampling. At 3.2% positives, the difference was 0.93 per 1,000, with an interval of [0.09, 1.60]. The weighting preserves the development score distribution within each reference class. [Original AIROGS study](https://arxiv.org/html/2302.01738)
+The development set contained 380 referable photos. The 3.2% scenario changes their weight to match the public AIROGS training share and reviews 100 photos per 1,000. Coverage divides reviewed errors by the initial errors of that type. Misses left per 1,000 uses all photos. Compared with the quality gray zone, two-model ranking sent 8 extra misses to review, with a 95% interval of [1, 12]. At 3.2% positives, the gain was 0.93 per 1,000 [0.09, 1.60]. To estimate the intervals, we resampled same-patient or related photos together and compared both rules on each draw. [Original AIROGS study](https://arxiv.org/html/2302.01738)
 
-![Scores from both models on 380 referable photographs. Dashed lines mark each model's referral threshold.](review-model-disagreement.en.png){width=94%}
+![Each point represents a referable photo. E is EfficientNet-B0 and R is ResNet-50. Each model calls a photo positive above its own dashed threshold.](review-model-disagreement.en.png){width=88%}
 
-EfficientNet-B0 initially missed 50 photographs. ResNet-50 flagged 27 of those, including 15 of the 34 misses outside the quality gray zone. Both models called the remaining 19 negative. Both checkpoints used 2,400 updates under the matched training protocol. Logistic regression combined the two models' log-odds scores on 767 AIROGS validation images and used to reorder negative calls on development data. Negative-side capacity and the positive review list matched the quality gray zone. [Matched training record](backbone-comparison.en.md)
+EfficientNet-B0 initially missed 50 photographs. ResNet-50 flagged 27, including 15 of the 34 misses outside the quality gray zone. Both models called the other 19 outside-review misses negative. Both saved models came from update 2,400. We fit the combined score on 767 validation photos and evaluated it on a separate set of 773 development photos. [Matched training record](backbone-comparison.en.md)
 
 \newpage
 
@@ -29,10 +31,10 @@ We applied two levels of simulated blur to the same 773 AIROGS photos and kept t
 
 Among **120 real same-eye pairs** in Real Fundus, the poorer photo scored **lower in 45 pairs and higher in 75**. Only 1 pair crossed the threshold, from a negative call on the clearer photo to a positive call on the poorer photo. Real pairs can vary in focus, illumination and framing. The release supplies image-quality pairs without a glaucoma reference for this analysis. The results measure sensitivity to the choice of photo. [Real Fundus study](https://arxiv.org/abs/2201.00466)
 
-In the image review, one referable photograph had distinct vessel outlines and a quality score of 0.89. The two disease scores were 0.35 and 0.43, and the photo remained outside review after reranking. It is a candidate for blinded expert assessment of the disc and cup.
+One referable photo had distinct vessel outlines and a quality score of 0.89. Its referral scores of 0.35 and 0.43 were below both models' thresholds, and the photo remained outside review. A reader could assess the optic disc, where the optic nerve leaves the eye, and its central depression, the optic cup, without seeing the model calls.
 
 ## Next validation
 
-Keep the current quality gray zone as the baseline, and study the missed referrals that both models called negative. Prioritize first and repeat photos with an independent clinical reference and a record of whether the disc and cup are gradable. Evaluate consecutive patients from the intended site. At ten reviews per hundred patients, report both missed referrals remaining per thousand and the net number of errors experts actually correct. These experiments measure selection for review. Expert corrections and the clinical benefit of retakes remain to be measured. The analyses used one training seed and image-level development data. The reserved independent tests remain sealed.
+Keep the current quality gray zone as the comparison. Collect first and repeat photos with an independent clinical reference and record whether the disc and cup can be judged. In consecutive patients at the intended site, measure misses and net corrections at ten reviews per hundred patients. Net corrections are model errors the reader fixes minus new reader errors. This analysis measures which photos reach review using one training run per model. Reader corrections and the benefit of retakes remain to be measured. The independent test sets remain sealed.
 
 [Results and input hashes](review-failures-results.json) · [Analysis](../../../tools/analyze_review_failures_20261118.py) · [Figures](../../../tools/plot_review_failures_20261118.py)
